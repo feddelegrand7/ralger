@@ -23,7 +23,7 @@ devtools::install_github("feddelegrand7/ralger")
 
 This is an example which shows how to extract firms’ denomination from
 the website of the Algerian Chamber of Commerce and Industry (CACI). For
-simplicity, we’ll focus on firms operating in the capital.
+simplicity, we’ll focus on firms operating within the capital (Alger).
 
 ``` r
 library(ralger)
@@ -146,4 +146,4 @@ scrap_more(my_link, my_node, from = 0, to = 3)
 ```
 
 I appreciate any feedback, please reach out or DM at
-\[@ihaddadenfodil\](<https://twitter.com/IhaddadenFodil>).
+[ihaddadenfodil](https://twitter.com/IhaddadenFodil).
