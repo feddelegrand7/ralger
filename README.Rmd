@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ralger is to facilitate web scraping in R. 
+The goal of **ralger** is to facilitate web scraping in R. 
 
 ## Installation
 
@@ -40,6 +40,15 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 my_node <- ".listing_default" # see SelectorGadget
 
 scrap_one(my_link, my_node)
+
+```
+
+If you want to scrap multiple list pages, use the `scrap_more()` function. Here we'll scrap from page 0 to page 3 (included).  
+
+```{r example2}
+my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" # mind the change within the link
+
+scrap_more(my_link, my_node, from = 0, to = 3)
 
 ```
 
