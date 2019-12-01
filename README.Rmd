@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-# ralger
+# ralger <a><img src='man/figures/hex.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->

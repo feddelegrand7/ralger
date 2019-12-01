@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ralger
+# ralger <a><img src='man/figures/hex.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
