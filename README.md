@@ -56,11 +56,14 @@ scrap_one(my_link, my_node)
 ```
 
 If you want to scrap multiple list pages, use the `scrap_more()`
-function. Here we’ll scrap from page 0 to page 3 (included).
+function. **IMPORTANT: Note that the `scrap_more()` function requires
+your link to end with** `&page=`. Here we’ll scrap from page 0 to page 3
+(included).
 
 ``` r
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 
 # mind the change within the link
+# it ends with '&page='
 
 scrap_more(my_link, my_node, from = 0, to = 3)
 #>  [1] "ALTRUCK"                                                                      
