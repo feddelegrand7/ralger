@@ -1,17 +1,34 @@
-
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
-
-pacman::p_load(usethis, roxygen2, devtools, available)
+pacman::p_load(usethis, roxygen2, devtools, available, rvest, magrittr)
 
 
-# Find a package name
+# scraping one page
 
-available('ralger') # OK !
+scrap_one <- function(link, node){
+
+  data <- lapply(link,
+    function(url){
+      url %>% read_html() %>%
+        html_nodes(node) %>%
+        html_text()
+    })
+
+  return(unlist(data))
+}
+
+# scraping multiple pages
+
+scrap_more <- function(link, node, from = 0, to = 20){
+
+  data <- lapply(paste0(link, from:to),
+    function(url){
+      url %>% read_html() %>%
+        html_nodes(node) %>%
+        html_text()
+    })
+
+  return(unlist(data))
+}
 
 
-# sync with Github
+
 

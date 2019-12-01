@@ -6,8 +6,16 @@ Author: Mohamed El Fodil Ihaddaden
 Maintainer: The package maintainer <ihaddaden.fodeil@gmail.com>
 Description: The rvest package is powerful nevertheless it may challenging to use it, especially for new R users. 
     The ralger package facilitates its use by considering the most important elements of the web scraping procedure. 
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/feddelegrand7/ralger
 BugReports: https://github.com/feddelegrand7/ralger/issues
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    magrittr,
+    rvest
