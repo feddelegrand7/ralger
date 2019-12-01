@@ -7,7 +7,7 @@
 
 <!-- badges: end -->
 
-The goal of ralger is to …
+The goal of ralger is to facilitate web scraping in R.
 
 ## Installation
 
@@ -21,33 +21,36 @@ devtools::install_github("feddelegrand7/ralger")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is an example which shows how to extract firms’ denomination from
+the website of the Algerian Chamber of Commerce and Industry (CACI). For
+simplicity, we’ll focus on firms operating in the capital.
 
 ``` r
 library(ralger)
-## basic example code
+
+my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver"
+
+my_node <- ".listing_default" # see SelectorGadget
+
+scrap_one(my_link, my_node)
+#>  [1] "Adjerid Hanifa"                                                               
+#>  [2] "Dar Chamila"                                                                  
+#>  [3] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"
+#>  [4] "YOUKAIS"                                                                      
+#>  [5] "EDIMETAL"                                                                     
+#>  [6] "SYRIAN AIR LINES"                                                             
+#>  [7] "Turkish Airlines / Direction Générale"                                        
+#>  [8] "Aigle Azur / Agence Didouche Mourad"                                          
+#>  [9] "British Airways"                                                              
+#> [10] "DELTA"                                                                        
+#> [11] "Cabinet Ammiche Amer"                                                         
+#> [12] "VERITEX"                                                                      
+#> [13] "Kermiche Partener"                                                            
+#> [14] "Entreprise d'Architecture Aurea"                                              
+#> [15] "PROGOS"                                                                       
+#> [16] "Ambassade du Royaume d'Arabie Saoudite"                                       
+#> [17] "Ambassade de la République d'Argentine"                                       
+#> [18] "Ambassade du Burkina Faso"                                                    
+#> [19] "Ambassade du Canada"                                                          
+#> [20] "Ambassade de la République de Corée"
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
