@@ -15,8 +15,8 @@ available('ralger') # OK !
 
 # sync with Github
 
-use_git()
+use_git("initial commit")
 
-use_github()
+use_github(auth_token = github_token())
 
 
