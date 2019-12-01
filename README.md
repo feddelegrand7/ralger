@@ -59,7 +59,8 @@ If you want to scrap multiple list pages, use the `scrap_more()`
 function. Here we’ll scrap from page 0 to page 3 (included).
 
 ``` r
-my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" # mind the change within the link
+my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 
+# mind the change within the link
 
 scrap_more(my_link, my_node, from = 0, to = 3)
 #>  [1] "ALTRUCK"                                                                      
@@ -143,3 +144,6 @@ scrap_more(my_link, my_node, from = 0, to = 3)
 #> [79] "CSPA / Conseil Supérieur du Patronat Algérien"                                
 #> [80] "UNEB / Union Nationale des Entrepreneurs du Bâtiment"
 ```
+
+I appreciate any feedback, please reach out or DM at
+\[@ihaddadenfodil\](<https://twitter.com/IhaddadenFodil>).
