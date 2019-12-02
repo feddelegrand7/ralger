@@ -39,18 +39,19 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 
 my_node <- ".listing_default" # see SelectorGadget
 
-scrap_one(my_link, my_node)
+scrap_this(my_link, my_node)
 
 ```
 
-If you want to scrap multiple list pages, use the `scrap_more()` function. **IMPORTANT: Note that the `scrap_more()` function requires  your link   to end with** `&page=`. Here we'll scrap from page 0 to page 3 (included).  
+f you want to scrap multiple list pages, just use `scrap_this()` in conjunction with `paste()`. Suppose, we want to extract the above information from the first 3 pages (starts from 0): 
 
 ```{r example2}
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 
-# mind the change within the link
-# it ends with '&page='
 
-scrap_more(my_link, my_node, from = 0, to = 3)
+my_node <- ".listing_default"
+
+scrap_this(paste(my_link, 0:2), my_node)
+
 
 ```
 

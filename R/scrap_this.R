@@ -1,6 +1,6 @@
-# scraping one page
+# scraping a website
 
-#' Simple one page scraping
+#' function to scrap a website
 #'
 #' @param link the link of the webpage to scrap
 #' @param node the CSS element to consider, the SelectorGadget tool is highly recommanded
@@ -10,7 +10,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text
 #' @importFrom xml2 read_html
-scrap_one <- function(link, node){
+scrap_this <- function(link, node){
 
   data <- lapply(link,
     function(url){

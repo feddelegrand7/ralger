@@ -1,9 +1,9 @@
 
-test_that("scrap_one function", {
+test_that("scrap_this function", {
 
 expect_equal(
 
-  scrap_one(
+  scrap_this(
       link = "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver",
       node = ".listing_default"
     ),
