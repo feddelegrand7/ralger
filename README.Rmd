@@ -43,7 +43,7 @@ scrap_this(my_link, my_node)
 
 ```
 
-f you want to scrap multiple list pages, just use `scrap_this()` in conjunction with `paste()`. Suppose, we want to extract the above information from the first 3 pages (starts from 0): 
+If you want to scrap multiple list pages, just use `scrap_this()` in conjunction with `paste()`. Suppose, we want to extract the above information from the first 3 pages (starts from 0): 
 
 ```{r example2}
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 

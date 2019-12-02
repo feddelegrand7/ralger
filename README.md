@@ -55,7 +55,7 @@ scrap_this(my_link, my_node)
 #> [20] "Ambassade de la République de Corée"
 ```
 
-f you want to scrap multiple list pages, just use `scrap_this()` in
+If you want to scrap multiple list pages, just use `scrap_this()` in
 conjunction with `paste()`. Suppose, we want to extract the above
 information from the first 3 pages (starts from 0):
 
