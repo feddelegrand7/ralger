@@ -19,7 +19,7 @@ You can install the development version from
 devtools::install_github("feddelegrand7/ralger")
 ```
 
-## Example
+## scrap()
 
 This is an example which shows how to extract firms’ denomination from
 the website of the Algerian Chamber of Commerce and Industry (CACI). For
@@ -127,5 +127,62 @@ scrap(paste(my_link, 0:2), my_node)
 #> [60] "VERITAL/ Direction Générale"
 ```
 
-I appreciate any feedback, please reach out or DM at
+## tidy\_scrap()
+
+If you want to extract information in the form of a dataframe, you can
+use the `tidy_scrap()` function which returns a tidy dataframe according
+to the arguments that you introduce. The function takes three mandatory
+arguments:
+
+  - **link** : which is the link of the website you’re interested for;
+  - **nodes**: which is a vector of CSS elements that you want to
+    extract. These elements whill form the columns of your dataframe;
+  - **scrap\_names**: this argument represents the vector of names you
+    want to assign to your columns. Note that you should respect the
+    same order as within the **nodes** vector.
+
+### Example
+
+We’ll work on the famous [IMDb website](https://www.imdb.com/). Let’s
+say you need a dataframe composed of:
+
+  - The title of the 50 best ranked movies of all time;
+  - Their release year;
+  - Their rating.
+
+You we’ll need to use the `tidy_scrap()` function as follows:
+
+``` r
+
+my_link <- "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
+
+my_nodes <- c(
+  ".lister-item-header a", # The title 
+  ".text-muted.unbold", # The year of release 
+  ".ratings-imdb-rating strong" # The rating)
+  )
+
+names <- c("title", "year", "rating") # respect the nodes order
+
+
+tidy_scrap(my_link, my_nodes, scrap_names = names)
+#> # A tibble: 50 x 3
+#>    title                                         year   rating
+#>    <chr>                                         <chr>  <chr> 
+#>  1 The Shawshank Redemption                      (1994) 9.3   
+#>  2 The Godfather                                 (1972) 9.2   
+#>  3 The Dark Knight                               (2008) 9.0   
+#>  4 The Godfather: Part II                        (1974) 9.0   
+#>  5 The Lord of the Rings: The Return of the King (2003) 8.9   
+#>  6 Pulp Fiction                                  (1994) 8.9   
+#>  7 Schindler's List                              (1993) 8.9   
+#>  8 12 Angry Men                                  (1957) 8.9   
+#>  9 Inception                                     (2010) 8.8   
+#> 10 Fight Club                                    (1999) 8.8   
+#> # ... with 40 more rows
+```
+
+Note that all columns we’ll have the *character* class. You’ll need to
+convert them according to your needs. Finally, I appreciate any
+feedback, please reach out or DM at
 [ihaddadenfodil](https://twitter.com/IhaddadenFodil).
