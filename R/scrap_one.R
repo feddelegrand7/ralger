@@ -10,7 +10,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text
 #' @importFrom xml2 read_html
-scrap_this <- function(link, node){
+scrap_one <- function(link, node){
 
   data <- lapply(link,
     function(url){

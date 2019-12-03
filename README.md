@@ -21,7 +21,7 @@ devtools::install_github("feddelegrand7/ralger")
 
 ## Example
 
-This is an example which shows how to extract firms’ denomination from
+one is an example which shows how to extract firms’ denomination from
 the website of the Algerian Chamber of Commerce and Industry (CACI). For
 simplicity, we’ll focus on firms operating within the capital (Alger).
 
@@ -32,7 +32,7 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 
 my_node <- ".listing_default" # see SelectorGadget
 
-scrap_this(my_link, my_node)
+scrap_one(my_link, my_node)
 #>  [1] "Adjerid Hanifa"                                                               
 #>  [2] "Dar Chamila"                                                                  
 #>  [3] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"
@@ -55,7 +55,7 @@ scrap_this(my_link, my_node)
 #> [20] "Ambassade de la République de Corée"
 ```
 
-If you want to scrap multiple list pages, just use `scrap_this()` in
+If you want to scrap multiple list pages, just use `scrap_one()` in
 conjunction with `paste()`. Suppose, we want to extract the above
 information from the first 3 pages (starts from 0):
 
@@ -64,7 +64,7 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 
 my_node <- ".listing_default"
 
-scrap_this(paste(my_link, 0:2), my_node)
+scrap_one(paste(my_link, 0:2), my_node)
 #>  [1] "ALTRUCK"                                                                    
 #>  [2] "GFC Négoce"                                                                 
 #>  [3] "Esasoud Welding And Cutting"                                                
