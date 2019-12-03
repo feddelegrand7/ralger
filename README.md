@@ -21,7 +21,7 @@ devtools::install_github("feddelegrand7/ralger")
 
 ## Example
 
-one is an example which shows how to extract firms’ denomination from
+This is an example which shows how to extract firms’ denomination from
 the website of the Algerian Chamber of Commerce and Industry (CACI). For
 simplicity, we’ll focus on firms operating within the capital (Alger).
 
