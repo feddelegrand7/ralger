@@ -9,9 +9,9 @@ tidy_scrap(link, nodes, scrap_names)
 \arguments{
 \item{link}{the link of the webpage to scrap}
 
-\item{scrap_names}{the names of the expected columns}
+\item{nodes}{the vector of CSS elements to consider, the SelectorGadget tool is highly recommanded}
 
-\item{node}{the vector of CSS elements to consider, the SelectorGadget tool is highly recommanded}
+\item{scrap_names}{the names of the expected columns}
 }
 \description{
 function to scrap a tidy dataframe from a website
