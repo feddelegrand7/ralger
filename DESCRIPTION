@@ -16,7 +16,8 @@ Imports:
     magrittr,
     rvest,
     xml2,
-    testthat
+    testthat,
+    tidyr
 Suggests: knitr
 RoxygenNote: 6.1.1
 
