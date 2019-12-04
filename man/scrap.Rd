@@ -9,7 +9,7 @@ scrap(link, node)
 \arguments{
 \item{link}{the link of the webpage to scrap}
 
-\item{node}{the CSS element to consider, the SelectorGadget tool is highly recommanded}
+\item{node}{the CSS element to consider, the SelectorGadget tool is highly recommended}
 }
 \description{
 function to scrap a website
