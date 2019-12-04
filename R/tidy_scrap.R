@@ -3,7 +3,7 @@
 #' function to scrap a tidy dataframe from a website
 #'
 #' @param link the link of the webpage to scrap
-#' @param nodes the vector of CSS elements to consider, the SelectorGadget tool is highly recommanded
+#' @param nodes the vector of CSS elements to consider, the SelectorGadget tool is highly recommended
 #' @param scrap_names the names of the expected columns
 #' @return
 #' @export

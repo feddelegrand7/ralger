@@ -21,7 +21,7 @@ devtools::install_github("feddelegrand7/ralger")
 
 ## scrap()
 
-This is an example which shows how to extract firms’ denomination from
+This is an example which shows how to extract firms denomination from
 the website of the Algerian Chamber of Commerce and Industry (CACI). For
 simplicity, we’ll focus on firms operating within the capital (Alger).
 
@@ -136,7 +136,7 @@ arguments:
 
   - **link** : which is the link of the website you’re interested for;
   - **nodes**: which is a vector of CSS elements that you want to
-    extract. These elements whill form the columns of your dataframe;
+    extract. These elements will form the columns of your dataframe;
   - **scrap\_names**: this argument represents the vector of names you
     want to assign to your columns. Note that you should respect the
     same order as within the **nodes** vector.
