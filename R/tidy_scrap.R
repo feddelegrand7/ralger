@@ -14,6 +14,8 @@
 
 tidy_scrap <- function(link, nodes, scrap_names){
 
+  if(length(nodes) != length(scrap_names)) stop("nodes and scrap_names lengths do not match")
+
   allframes <- lapply(nodes, function(x) scrap(link, x))
 
   result <- do.call(cbind,allframes)
@@ -24,6 +26,4 @@ tidy_scrap <- function(link, nodes, scrap_names){
 
   return(result)
 }
-
-
 
