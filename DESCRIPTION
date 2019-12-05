@@ -1,11 +1,11 @@
 Package: ralger
 Type: Package
-Title: ralger makes it easy to scrap a website 
+Title: Scrap data from the web 
 Version: 0.1.0
 Author: Mohamed El Fodil Ihaddaden
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
-Description: The rvest package is powerful nevertheless it may be challenging for new R users to implement it. 
-    The ralger package facilitates its use by considering the most important elements of the web scraping process. 
+Description: ralger provides two functions that makes web scraping easier. 
+    The user has the ability to scrap as a vector or a tidy dataframe.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
