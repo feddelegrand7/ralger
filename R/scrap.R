@@ -4,7 +4,7 @@
 #'
 #' @param link the link of the webpage to scrap
 #' @param node the CSS element to consider, the SelectorGadget tool is highly recommended
-#' @return
+#' @return a character vector
 #' @export
 #'
 #' @importFrom magrittr %>%

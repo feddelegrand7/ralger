@@ -5,7 +5,7 @@
 #' @param link the link of the webpage to scrap
 #' @param nodes the vector of CSS elements to consider, the SelectorGadget tool is highly recommended
 #' @param scrap_names the names of the expected columns
-#' @return
+#' @return a tidy dataframe
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text
