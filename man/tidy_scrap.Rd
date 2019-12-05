@@ -13,6 +13,9 @@ tidy_scrap(link, nodes, scrap_names)
 
 \item{scrap_names}{the names of the expected columns}
 }
+\value{
+a tidy dataframe
+}
 \description{
 function to scrap a tidy dataframe from a website
 }

@@ -1,6 +1,6 @@
 Package: ralger
 Type: Package
-Title: Scrap Data from the web 
+Title: Easy Web Scraping
 Version: 0.1.0
 Author: Mohamed El Fodil Ihaddaden
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>

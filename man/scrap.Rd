@@ -11,6 +11,9 @@ scrap(link, node)
 
 \item{node}{the CSS element to consider, the SelectorGadget tool is highly recommended}
 }
+\value{
+a character vector
+}
 \description{
 function to scrap a website
 }
