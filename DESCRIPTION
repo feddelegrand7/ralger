@@ -1,7 +1,7 @@
 Package: ralger
 Type: Package
 Title: Easy Web Scraping
-Version: 0.1.0
+Version: 1.0.0
 Author: Mohamed El Fodil Ihaddaden
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
 Description: The goal of 'ralger' is to facilitate web scraping in R. 
@@ -20,4 +20,3 @@ Imports:
     tidyr
 Suggests: knitr
 RoxygenNote: 6.1.1
-
