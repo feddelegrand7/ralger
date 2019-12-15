@@ -5,12 +5,9 @@
 #' @param link the link of the webpage to scrap
 #' @param node the CSS element to consider, the SelectorGadget tool is highly recommended
 #' @return a character vector
-#' @example
-#' \donttest{
-#' # Extracting the books' title the 20 Best Sellers of 2019
-#' tidy_scrap("https://www.barnesandnoble.com/b/the-top-100-bestsellers-of-the-year/_/N-1p4d",
-#'    ".product-info-title a")
-#' }
+#' @examples
+#' # Extracting the books' title of the 20 Best Sellers of 2019 from the barnesandnoble website
+#' donttest{tidy_scrap("https://www.barnesandnoble.com/b/the-top-100-bestsellers-of-the-year/_/N-1p4d", ".product-info-title a")}
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text

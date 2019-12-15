@@ -6,9 +6,9 @@
 #' @param nodes the vector of CSS elements to consider, the SelectorGadget tool is highly recommended
 #' @param scrap_names the names of the expected columns
 #' @return a tidy dataframe
-#' @example
+#' @examples
+#' # Extracting as a tidy dataframe the books' title and author of the 20 Best Sellers of 2019 from the barnesandnoble website
 #' \donttest{
-#' # Extracting as a tidy dataframe the books' title and author of the 20 Best Sellers of 2019
 #' tidy_scrap("https://www.barnesandnoble.com/b/the-top-100-bestsellers-of-the-year/_/N-1p4d",
 #'    c(".product-info-title a", ".contributors a"),
 #'    c("title", "author"))
