@@ -19,3 +19,14 @@ a tidy dataframe
 \description{
 function to scrap a tidy dataframe from a website
 }
+\examples{
+\donttest{
+# Extracting imdb movie titles and rating
+
+link     <- "https://www.imdb.com/chart/top/"
+my_nodes <- c(".titleColumn a", "strong")
+names    <- c("title", "rating")
+
+tidy_scrap(link, my_nodes, names)}
+
+}

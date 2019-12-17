@@ -6,14 +6,14 @@
 #' @param nodes the vector of CSS elements to consider, the SelectorGadget tool is highly recommended
 #' @param scrap_names the names of the expected columns
 #' @return a tidy dataframe
-#' @examples
-#' # Extracting imdb movie titles and rating \donttest{
+#' @examples \donttest{
+#' # Extracting imdb movie titles and rating
 #'
-#' link <- "https://www.imdb.com/chart/top/"
+#' link     <- "https://www.imdb.com/chart/top/"
 #' my_nodes <- c(".titleColumn a", "strong")
-#' names <- c("title", "rating")
+#' names    <- c("title", "rating")
 #'
-#' tidy_scrap(link, my_nodes, names)
+#' tidy_scrap(link, my_nodes, names)}
 #'
 #' @export
 #' @importFrom magrittr %>%

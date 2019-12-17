@@ -7,8 +7,10 @@
 #' @return a character vector
 #' @examples \donttest{
 #' # Extracting imdb top 250 movie titles
+#'
 #' link <- "https://www.imdb.com/chart/top/"
 #' node <- ".titleColumn a"
+#'
 #' tidy_scrap(link, node)}
 #'
 #' @export
