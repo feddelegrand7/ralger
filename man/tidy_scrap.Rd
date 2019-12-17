@@ -19,11 +19,3 @@ a tidy dataframe
 \description{
 function to scrap a tidy dataframe from a website
 }
-\examples{
-# Extracting as a tidy dataframe the books' title and author of the 20 Best Sellers of 2019 from the barnesandnoble website
-\donttest{
-tidy_scrap("https://www.barnesandnoble.com/b/the-top-100-bestsellers-of-the-year/_/N-1p4d",
-   c(".product-info-title a", ".contributors a"),
-   c("title", "author"))
-}
-}

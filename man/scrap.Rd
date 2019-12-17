@@ -18,6 +18,10 @@ a character vector
 function to scrap a website
 }
 \examples{
-# Extracting the books' title of the 20 Best Sellers of 2019 from the barnesandnoble website
-donttest{tidy_scrap("https://www.barnesandnoble.com/b/the-top-100-bestsellers-of-the-year/_/N-1p4d", ".product-info-title a")}
+\donttest{
+# Extracting imdb top 250 movie titles
+link <- "https://www.imdb.com/chart/top/"
+node <- ".titleColumn a"
+tidy_scrap(link, node)}
+
 }
