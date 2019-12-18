@@ -45,9 +45,7 @@ tidy_scrap <- function(link, nodes, colnames, clean = FALSE){
   if (clean){
 
     result_clean <- result %>%
-      mutate_all(~str_replace_all(., "/n", " ")) %>%
       mutate_all(~str_replace_all(., "\n", " ")) %>%
-      mutate_all(~str_replace_all(., "/r", " ")) %>%
       mutate_all(~str_replace_all(., "\r", " ")) %>%
       mutate_all(str_trim)
     return(result_clean)
