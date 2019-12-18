@@ -1,6 +1,7 @@
 # scraping a website
 
-#' function to scrap a website
+#' Simple website scraping
+#' @description This function is used to scrap one element from a website.
 #'
 #' @param link the link of the webpage to scrap
 #' @param node the CSS element to consider, the SelectorGadget tool is highly recommended

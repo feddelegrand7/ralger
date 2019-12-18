@@ -2,7 +2,7 @@
 % Please edit documentation in R/tidy_scrap.R
 \name{tidy_scrap}
 \alias{tidy_scrap}
-\title{function to scrap a tidy dataframe from a website}
+\title{Tidy scrapping from a website}
 \usage{
 tidy_scrap(link, nodes, scrap_names)
 }
@@ -17,7 +17,7 @@ tidy_scrap(link, nodes, scrap_names)
 a tidy dataframe
 }
 \description{
-function to scrap a tidy dataframe from a website
+This function is used to scrap a tibble from a website.
 }
 \examples{
 \donttest{

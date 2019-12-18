@@ -1,6 +1,8 @@
 # scraping a tidy dataframe from a website
 
-#' function to scrap a tidy dataframe from a website
+#' Tidy scrapping from a website
+#'
+#' @description This function is used to scrap a tibble from a website.
 #'
 #' @param link the link of the webpage to scrap
 #' @param nodes the vector of CSS elements to consider, the SelectorGadget tool is highly recommended

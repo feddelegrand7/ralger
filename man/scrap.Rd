@@ -2,7 +2,7 @@
 % Please edit documentation in R/scrap.R
 \name{scrap}
 \alias{scrap}
-\title{function to scrap a website}
+\title{Simple website scraping}
 \usage{
 scrap(link, node)
 }
@@ -15,7 +15,7 @@ scrap(link, node)
 a character vector
 }
 \description{
-function to scrap a website
+This function is used to scrap one element from a website.
 }
 \examples{
 \donttest{
