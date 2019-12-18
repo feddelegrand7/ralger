@@ -2,8 +2,12 @@
 
 export(scrap)
 export(tidy_scrap)
+importFrom(dplyr,mutate_all)
 importFrom(magrittr,"%>%")
 importFrom(rvest,html_nodes)
 importFrom(rvest,html_text)
+importFrom(stringr,str_replace)
+importFrom(stringr,str_replace_all)
+importFrom(stringr,str_trim)
 importFrom(tidyr,as_tibble)
 importFrom(xml2,read_html)

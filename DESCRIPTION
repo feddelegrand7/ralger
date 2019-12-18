@@ -17,6 +17,8 @@ Imports:
     rvest,
     xml2,
     testthat,
-    tidyr
+    tidyr,
+    dplyr,
+    stringr
 Suggests: knitr
 RoxygenNote: 6.1.1

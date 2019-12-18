@@ -2,16 +2,18 @@
 % Please edit documentation in R/tidy_scrap.R
 \name{tidy_scrap}
 \alias{tidy_scrap}
-\title{Tidy scrapping from a website}
+\title{Website Tidy scraping}
 \usage{
-tidy_scrap(link, nodes, scrap_names)
+tidy_scrap(link, nodes, colnames, clean = FALSE)
 }
 \arguments{
 \item{link}{the link of the webpage to scrap}
 
 \item{nodes}{the vector of CSS elements to consider, the SelectorGadget tool is highly recommended}
 
-\item{scrap_names}{the names of the expected columns}
+\item{colnames}{the names of the expected columns}
+
+\item{clean}{logical. Should the function clean the extracted tibble or not ? Default is FALSE.}
 }
 \value{
 a tidy dataframe

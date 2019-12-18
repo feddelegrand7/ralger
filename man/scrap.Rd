@@ -4,12 +4,14 @@
 \alias{scrap}
 \title{Simple website scraping}
 \usage{
-scrap(link, node)
+scrap(link, node, clean = FALSE)
 }
 \arguments{
 \item{link}{the link of the webpage to scrap}
 
 \item{node}{the CSS element to consider, the SelectorGadget tool is highly recommended}
+
+\item{clean}{logical. Should the function clean the extracted vector or not ? Default is FALSE.}
 }
 \value{
 a character vector
@@ -24,6 +26,6 @@ This function is used to scrap one element from a website.
 link <- "https://www.imdb.com/chart/top/"
 node <- ".titleColumn a"
 
-tidy_scrap(link, node)}
+scrap(link, node)}
 
 }

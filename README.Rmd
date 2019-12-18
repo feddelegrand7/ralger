@@ -91,5 +91,5 @@ tidy_scrap(my_link, my_nodes, scrap_names = names)
 
 
 ```
-Note that all columns will be of *character* class. You'll need to convert them according to your needs. Finally, I appreciate any feedback, please reach out or DM at [ihaddadenfodil](https://twitter.com/IhaddadenFodil). 
+Note that all columns will be of *character* class. You'll need to convert them according to your needs. Finally, I appreciate any feedback, please reach out or DM at [ihaddadenfodil](https://twitter.com/moh_fodil). 
 

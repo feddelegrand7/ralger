@@ -4,14 +4,14 @@ test_that("scrap() function", {
 expect_equal(
 
   scrap(
-      link = "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver",
-      node = ".listing_default"
+      link = "https://www.imdb.com/chart/top/",
+      node = ".titleColumn a"
     ),
 
-  unlist(lapply("http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver",
+  unlist(lapply("https://www.imdb.com/chart/top/",
       function(url){
         url %>% read_html() %>%
-          html_nodes(".listing_default") %>%
+          html_nodes(".titleColumn a") %>%
           html_text()
       }))
 
