@@ -38,6 +38,9 @@ scrap <- function(link, node, clean = FALSE){
 
     data_clean <- unlist(data) %>%
       str_replace_all("/n", " ") %>%
+      str_replace_all("\n", " ") %>%
+      str_replace_all("/r", " ") %>%
+      str_replace_all("\r", " ") %>%
       str_trim()
     return(data_clean)
 

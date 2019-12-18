@@ -140,9 +140,7 @@ to the arguments that you introduce. The function takes four arguments:
   - **colnames**: this argument represents the vector of names you want
     to assign to your columns. Note that you should respect the same
     order as within the **nodes** vector;
-  - **clean**: if true the function will clean the tibble’s columns. In
-    other words it will remove the “*/n*” often encountered and trim the
-    unneeded blank spaces (both sides).
+  - **clean**: if true the function will clean the tibble’s columns.
 
 ### Example
 

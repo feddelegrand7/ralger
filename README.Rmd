@@ -58,11 +58,12 @@ scrap(paste(my_link, 0:2), my_node)
 
 ## tidy_scrap()
 
-If you want to extract information in the form of a dataframe, you can use the `tidy_scrap()` function which returns a tidy dataframe according to the arguments that you introduce. The function takes three mandatory arguments:
+If you want to extract information in the form of a dataframe, you can use the `tidy_scrap()` function which returns a tidy dataframe according to the arguments that you introduce. The function takes four arguments:
 
 - **link** : which is the link of the website you're interested for;
 - **nodes**: which is a vector of CSS elements that you want to extract. These elements will form the columns of your dataframe;
-- **scrap_names**: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the **nodes** vector. 
+- **colnames**: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the **nodes** vector;
+- **clean**: if true the function will clean the tibble's columns. 
 
 ### Example
 
@@ -87,7 +88,7 @@ my_nodes <- c(
 names <- c("title", "year", "rating") # respect the nodes order
 
 
-tidy_scrap(my_link, my_nodes, scrap_names = names)
+tidy_scrap(my_link, my_nodes, colnames = names)
 
 
 ```
