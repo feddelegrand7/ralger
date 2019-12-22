@@ -5,6 +5,12 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
+
+[![Downloads from the RStudio CRAN
+mirror](https://cranlogs.r-pkg.org/badges/ralger)](https://cran.r-project.org/package=ralger)
+
 <!-- badges: end -->
 
 The goal of **ralger** is to facilitate web scraping in R.
