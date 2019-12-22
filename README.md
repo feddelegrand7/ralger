@@ -11,7 +11,14 @@ The goal of **ralger** is to facilitate web scraping in R.
 
 ## Installation
 
-You can install the development version from
+You can install the ralger package from
+[CRAN](https://cran.r-project.org/) with:
+
+``` r
+install.packages("ralger")
+```
+
+or you can install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -24,14 +31,14 @@ devtools::install_github("feddelegrand7/ralger")
 This is an example which shows how to extract firms denomination from
 the website of the [Algerian Chamber of Commerce and
 Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we’ll focus
-on firms operating within the capital (Alger).
+on firms operating within the capital (Algiers).
 
 ``` r
 library(ralger)
 
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver"
 
-my_node <- ".listing_default" # see SelectorGadget
+my_node <- ".listing_default" # The CSS element, we recommend SelectorGadget
 
 scrap(my_link, my_node)
 #>  [1] "Adjerid Hanifa"                                                               
@@ -130,28 +137,28 @@ scrap(paste(my_link, 0:2), my_node)
 
 ## tidy\_scrap()
 
-If you want to extract information in the form of a dataframe, you can
-use the `tidy_scrap()` function which returns a tidy dataframe according
-to the arguments that you introduce. The function takes four arguments:
+If you want to extract a dataframe from a web page, you can use the
+`tidy_scrap()` function which returns a tidy dataframe according to the
+arguments that you introduce. The function takes four arguments:
 
-  - **link** : which is the link of the website you’re interested for;
-  - **nodes**: which is a vector of CSS elements that you want to
-    extract. These elements will form the columns of your dataframe;
+  - **link** : the link of the website you’re interested for
+  - **nodes**: a vector of CSS elements that you want to extract. These
+    elements will form the columns of your dataframe
   - **colnames**: this argument represents the vector of names you want
     to assign to your columns. Note that you should respect the same
-    order as within the **nodes** vector;
+    order as within the **nodes** vector
   - **clean**: if true the function will clean the tibble’s columns.
 
 ### Example
 
 We’ll work on the famous [IMDb website](https://www.imdb.com/). Let’s
-say you need a dataframe composed of:
+say we need a dataframe composed of:
 
   - The title of the 50 best ranked movies of all time;
   - Their release year;
   - Their rating.
 
-You we’ll need to use the `tidy_scrap()` function as follows:
+We will need to use the `tidy_scrap()` function as follows:
 
 ``` r
 
@@ -183,7 +190,7 @@ tidy_scrap(my_link, my_nodes, colnames = names)
 #> # ... with 40 more rows
 ```
 
-Note that all columns will be of *character* class. You’ll need to
-convert them according to your needs. Finally, I appreciate any
-feedback, please reach out or DM at
-[ihaddadenfodil](https://twitter.com/moh_fodil).
+Note that all columns will be of *character* class. We’ll have to
+convert them according to our needs. Finally, I appreciate any feedback,
+please reach out or DM at
+[ihaddaden\_moh\_fodil](https://twitter.com/moh_fodil).
