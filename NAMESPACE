@@ -2,6 +2,8 @@
 
 export(scrap)
 export(tidy_scrap)
+importFrom(crayon,bgRed)
+importFrom(crayon,green)
 importFrom(dplyr,mutate_all)
 importFrom(magrittr,"%>%")
 importFrom(robotstxt,paths_allowed)

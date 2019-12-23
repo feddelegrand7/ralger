@@ -24,8 +24,31 @@
 #' @importFrom stringr str_replace_all
 #' @importFrom stringr str_trim
 #' @importFrom robotstxt paths_allowed
+#' @importFrom crayon green
+#' @importFrom crayon bgRed
 
 scrap <- function(link, node, clean = FALSE, askRobot = FALSE){
+
+
+  if(askRobot){
+
+    if(paths_allowed(link) == TRUE){
+
+      message(green("It's ok you're allowed to scrap this web page"))
+
+    } else {
+
+      message(bgRed("WARNING: you're not allowed to scrap this web page"))
+
+    }
+
+
+  }
+
+
+
+
+
 
   data <- lapply(link,
     function(url){
@@ -45,20 +68,7 @@ scrap <- function(link, node, clean = FALSE, askRobot = FALSE){
 
   }
 
-  if(askRobot){
 
-    if(path_allowed(link) == TRUE){
-
-      message("It's ok you're allowed to scrap this web page")
-
-    } else {
-
-      message("WARNING: you're not allowed to scrap this web page")
-
-    }
-
-
-  }
 
 
 }

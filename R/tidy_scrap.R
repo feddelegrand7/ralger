@@ -33,6 +33,21 @@ tidy_scrap <- function(link, nodes, colnames, clean = FALSE, askRobot = FALSE){
 
   if(length(nodes) != length(colnames)) stop("nodes and colnames lengths do not match")
 
+  if(askRobot){
+
+    if(paths_allowed(link) == TRUE){
+
+      message(green("It's ok you're allowed to scrap this web page"))
+
+    } else {
+
+      message(bgRed("WARNING: you're not allowed to scrap this web page"))
+
+    }
+
+
+  }
+
   allframes <- lapply(nodes, function(x) scrap(link, x))
 
   result <- do.call(cbind,allframes)
@@ -49,22 +64,6 @@ tidy_scrap <- function(link, nodes, colnames, clean = FALSE, askRobot = FALSE){
       mutate_all(~str_replace_all(., c("\n" = " ","\r" = " "))) %>%
       mutate_all(str_trim)
     return(result_clean)
-
-  }
-
-
-  if(askRobot){
-
-    if(path_allowed(link) == TRUE){
-
-      message("It's ok you're allowed to scrap this page")
-
-    } else {
-
-      message("WARNING: you're not allowed to scrap this web page")
-
-    }
-
 
   }
 

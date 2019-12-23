@@ -20,6 +20,7 @@ Imports:
     tidyr,
     dplyr,
     stringr,
-    robotstxt
+    robotstxt,
+    crayon
 Suggests: knitr
 RoxygenNote: 6.1.1
