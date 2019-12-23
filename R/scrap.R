@@ -22,8 +22,9 @@
 #' @importFrom xml2 read_html
 #' @importFrom stringr str_replace_all
 #' @importFrom stringr str_trim
+#' @importFrom robotstxt paths_allowed
 
-scrap <- function(link, node, clean = FALSE){
+scrap <- function(link, node, clean = FALSE, askRobot = FALSE){
 
   data <- lapply(link,
     function(url){
@@ -43,10 +44,23 @@ scrap <- function(link, node, clean = FALSE){
 
   }
 
+  if(askRobot){
+
+    if(path_allowed(link) == TRUE){
+
+      message("It's ok you're allowed to scrap this page")
+
+    } else {
+
+      message("WARNING: you're not allowed to scrap this web page")
+
+    }
+
+
+  }
 
 
 }
-
 
 
 

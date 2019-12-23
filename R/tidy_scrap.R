@@ -28,7 +28,7 @@
 #' @importFrom dplyr mutate_all
 
 
-tidy_scrap <- function(link, nodes, colnames, clean = FALSE){
+tidy_scrap <- function(link, nodes, colnames, clean = FALSE, askRobot = FALSE){
 
   if(length(nodes) != length(colnames)) stop("nodes and colnames lengths do not match")
 
@@ -50,5 +50,26 @@ tidy_scrap <- function(link, nodes, colnames, clean = FALSE){
     return(result_clean)
 
   }
+
+
+  if(askRobot){
+
+    if(path_allowed(link) == TRUE){
+
+      message("It's ok you're allowed to scrap this page")
+
+    } else {
+
+      message("WARNING: you're not allowed to scrap this web page")
+
+    }
+
+
+  }
+
+
+
+
+
 }
 

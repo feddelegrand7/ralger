@@ -4,7 +4,7 @@
 \alias{scrap}
 \title{Simple website scraping}
 \usage{
-scrap(link, node, clean = FALSE)
+scrap(link, node, clean = FALSE, askRobot = FALSE)
 }
 \arguments{
 \item{link}{the link of the webpage to scrap}

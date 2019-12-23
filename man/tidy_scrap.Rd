@@ -4,7 +4,7 @@
 \alias{tidy_scrap}
 \title{Website Tidy scraping}
 \usage{
-tidy_scrap(link, nodes, colnames, clean = FALSE)
+tidy_scrap(link, nodes, colnames, clean = FALSE, askRobot = FALSE)
 }
 \arguments{
 \item{link}{the link of the webpage to scrap}
