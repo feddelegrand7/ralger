@@ -12,6 +12,8 @@ scrap(link, node, clean = FALSE, askRobot = FALSE)
 \item{node}{the CSS element to consider, the SelectorGadget tool is highly recommended}
 
 \item{clean}{logical. Should the function clean the extracted vector or not ? Default is FALSE.}
+
+\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
 }
 \value{
 a character vector
