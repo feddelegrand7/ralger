@@ -2,8 +2,11 @@
 
 export(scrap)
 export(tidy_scrap)
+importFrom(crayon,bgRed)
+importFrom(crayon,green)
 importFrom(dplyr,mutate_all)
 importFrom(magrittr,"%>%")
+importFrom(robotstxt,paths_allowed)
 importFrom(rvest,html_nodes)
 importFrom(rvest,html_text)
 importFrom(stringr,str_replace)

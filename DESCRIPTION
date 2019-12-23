@@ -19,6 +19,8 @@ Imports:
     testthat,
     tidyr,
     dplyr,
-    stringr
+    stringr,
+    robotstxt,
+    crayon
 Suggests: knitr
 RoxygenNote: 6.1.1

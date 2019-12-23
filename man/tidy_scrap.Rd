@@ -4,19 +4,21 @@
 \alias{tidy_scrap}
 \title{Website Tidy scraping}
 \usage{
-tidy_scrap(link, nodes, colnames, clean = FALSE)
+tidy_scrap(link, nodes, colnames, clean = FALSE, askRobot = FALSE)
 }
 \arguments{
 \item{link}{the link of the webpage to scrap}
 
-\item{nodes}{the vector of CSS elements to consider, the SelectorGadget tool is highly recommended}
+\item{nodes}{the vector of CSS elements to consider, the SelectorGadget tool is highly recommended.}
 
-\item{colnames}{the names of the expected columns}
+\item{colnames}{the names of the expected columns.}
 
 \item{clean}{logical. Should the function clean the extracted tibble or not ? Default is FALSE.}
+
+\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
 }
 \value{
-a tidy dataframe
+a tidy dataframe.
 }
 \description{
 This function is used to scrap a tibble from a website.
