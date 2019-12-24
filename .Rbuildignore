@@ -4,3 +4,6 @@
 ^LICENSE\.md$
 ^cran-comments\.md$
 ^CRAN-RELEASE$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
