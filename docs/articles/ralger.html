@@ -104,11 +104,11 @@
 <a class="sourceLine" id="cb1-6" title="6">)</a>
 <a class="sourceLine" id="cb1-7" title="7"></a>
 <a class="sourceLine" id="cb1-8" title="8">data</a></code></pre></div>
-<pre><code>##  [1] "Renée Zellweger"    "Cynthia Erivo"      "Scarlett Johansson"
-##  [4] "Saoirse Ronan"      "Charlize Theron"    "Glenn Close"       
+<pre><code>##  [1] "Renée Zellweger"    "Scarlett Johansson" "Saoirse Ronan"     
+##  [4] "Charlize Theron"    "Cynthia Erivo"      "Glenn Close"       
 ##  [7] "Lady Gaga"          "Nicole Kidman"      "Melissa McCarthy"  
-## [10] "Rosamund Pike"      "Frances McDormand"  "Meryl Streep"      
-## [13] "Michelle Williams"  "Jessica Chastain"   "Sally Hawkins"     
+## [10] "Rosamund Pike"      "Frances McDormand"  "Sally Hawkins"     
+## [13] "Meryl Streep"       "Michelle Williams"  "Jessica Chastain"  
 ## [16] "Isabelle Huppert"   "Amy Adams"          "Jessica Chastain"  
 ## [19] "Ruth Negga"         "Natalie Portman"</code></pre>
 <p>Pretty simple right ? I hope so. Anyway, the problem here is that the main page displays only 20 nominees, from 2017 to 2020. What if we wanted to extract all nominees in history ? Indeed, you’re right, we’d have to scroll multiple pages (20 to be exact) across the website. In this context, we need to use <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> in conjunction with <code><a href="../reference/scrap.html">scrap()</a></code> as follows:</p>
@@ -122,6 +122,41 @@
 <pre><code>## [1] 350</code></pre>
 <p>And here we’re we have our 350 nominees !!! 😄</p>
 </div>
+<div id="tidy_scrap" class="section level1">
+<h1 class="hasAnchor">
+<a href="#tidy_scrap" class="anchor"></a>tidy_scrap()</h1>
+<p>Now, imagine that we need a data frame composed of two columns :</p>
+<ul>
+<li>Actress: The names of Golden Globe Best Actress Nominees,</li>
+<li>Movie: The movie title for which they were nominated,</li>
+</ul>
+<p>To construct our data frame we’ll use the <code><a href="../reference/tidy_scrap.html">tidy_scrap()</a></code> function as follows:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">links &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(link, <span class="dv">0</span><span class="op">:</span><span class="dv">20</span>, <span class="dt">sep =</span> <span class="st">""</span>) <span class="co"># The links required to extract the 350 observations</span></a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3">nodes &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">".primary-nominee a"</span>, <span class="st">".secondary-nominee"</span>)</a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5">column_names &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Actress"</span>, <span class="st">"Movie"</span>)</a>
+<a class="sourceLine" id="cb5-6" title="6"></a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8">global_df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/tidy_scrap.html">tidy_scrap</a></span>(links, nodes, column_names)</a></code></pre></div>
+<pre><code>## Warning in (function (..., deparse.level = 1) : number of rows of result is
+## not a multiple of vector length (arg 2)</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(global_df, <span class="dt">n =</span> <span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 10 x 2
+##    Actress            Movie                   
+##    &lt;chr&gt;              &lt;chr&gt;                   
+##  1 Renée Zellweger    Judy                    
+##  2 Scarlett Johansson Marriage Story          
+##  3 Saoirse Ronan      Little Women            
+##  4 Charlize Theron    Bombshell               
+##  5 Cynthia Erivo      Harriet                 
+##  6 Glenn Close        Wife, The               
+##  7 Lady Gaga          Star Is Born, A (2018)  
+##  8 Nicole Kidman      Destroyer               
+##  9 Melissa McCarthy   Can You Ever Forgive Me?
+## 10 Rosamund Pike      Private War, A</code></pre>
+<p>If you have any feedback don’t hesitate to make a pull request or reach out on <a href="https://twitter.com/moh_fodil">Twitter</a>.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -130,6 +165,7 @@
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#scrap">scrap()</a></li>
+      <li><a href="#tidy_scrap">tidy_scrap()</a></li>
       </ul>
 </div>
       </div>
