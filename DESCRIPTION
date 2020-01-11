@@ -9,7 +9,7 @@ Description: The goal of 'ralger' is to facilitate web scraping in R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL:  https://CRAN.R-project.org/package=ralger, https://github.com/feddelegrand7/ralger, https://feddelegrand7.github.io/ralger/
+URL: https://CRAN.R-project.org/package=ralger, https://github.com/feddelegrand7/ralger, https://feddelegrand7.github.io/ralger/
 BugReports: https://github.com/feddelegrand7/ralger/issues
 VignetteBuilder: knitr
 Imports: 
@@ -22,5 +22,7 @@ Imports:
     stringr,
     robotstxt,
     crayon
-Suggests: knitr
+Suggests: 
+    knitr,
+    rmarkdown
 RoxygenNote: 6.1.1

@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ralger • ralger</title>
+<title>Getting_Started • ralger</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="ralger">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Getting_Started">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -49,6 +49,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/Getting_Started.html">Getting_Started</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
@@ -73,17 +85,17 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>ralger</h1>
+      <h1>Getting_Started</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/feddelegrand7/ralger/blob/master/vignettes/ralger.Rmd"><code>vignettes/ralger.Rmd</code></a></small>
-      <div class="hidden name"><code>ralger.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/feddelegrand7/ralger/blob/master/vignettes/Getting_Started.Rmd"><code>vignettes/Getting_Started.Rmd</code></a></small>
+      <div class="hidden name"><code>Getting_Started.Rmd</code></div>
 
     </div>
 
     
     
-<p>ralger is a package that aims to facilitate to the maximum web scraping in R. For scraping some data, you only need two elements, the <strong>link</strong> of the web page and the <strong>html</strong> or <strong>css</strong> node that references the needed information. Don’t panic, you don’t have to spend hours learning html and css. You can just use the <strong>SelectorGadget</strong> chrome extension. You can check out this <a href="https://www.youtube.com/watch?v=oqNTfWrGdbk">tutorial</a> for more information.</p>
+<p>ralger is a package that aims to facilitate to the maximum web scraping in R. For scraping some data, you only need two elements, the <strong>link</strong> of the web page and the <strong>html</strong> or <strong>css</strong> tag that references the information needed. Don’t panic, you don’t need to spend hours learning html and css. In this context, I highly recommend using the <strong>SelectorGadget</strong> chrome extension. You can check out this <a href="https://www.youtube.com/watch?v=oqNTfWrGdbk">tutorial</a> for more info.</p>
 <div id="scrap" class="section level1">
 <h1 class="hasAnchor">
 <a href="#scrap" class="anchor"></a>scrap()</h1>
@@ -92,10 +104,7 @@
 <li><p>The link: <a href="https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama" class="uri">https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama</a></p></li>
 <li><p>The node: .primary-nominee a</p></li>
 </ul>
-<p>And that’s it, we’re ready to scrap !</p>
-<div class="figure">
-<img src="https://www.goldenglobes.com/sites/default/files/styles/portrait_medium/public/nomination/cover_images/renee_zellweger_1_0.jpg?itok=G2uI2Iuw" alt="2020 best actress winner"><p class="caption">2020 best actress winner</p>
-</div>
+<p>And that’s it we’re ready to scrap !</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ralger)</a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
 <a class="sourceLine" id="cb1-3" title="3">data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/scrap.html">scrap</a></span>(</a>
@@ -107,11 +116,11 @@
 <pre><code>##  [1] "Renée Zellweger"    "Cynthia Erivo"      "Scarlett Johansson"
 ##  [4] "Saoirse Ronan"      "Charlize Theron"    "Glenn Close"       
 ##  [7] "Lady Gaga"          "Nicole Kidman"      "Melissa McCarthy"  
-## [10] "Rosamund Pike"      "Frances McDormand"  "Meryl Streep"      
-## [13] "Michelle Williams"  "Jessica Chastain"   "Sally Hawkins"     
+## [10] "Rosamund Pike"      "Frances McDormand"  "Jessica Chastain"  
+## [13] "Sally Hawkins"      "Meryl Streep"       "Michelle Williams" 
 ## [16] "Isabelle Huppert"   "Amy Adams"          "Jessica Chastain"  
 ## [19] "Ruth Negga"         "Natalie Portman"</code></pre>
-<p>Pretty simple right ? I hope so. Anyway, the problem here is that the main page displays only 20 nominees, from 2017 to 2020. What if we wanted to extract all nominees in history ? Indeed, you’re right, we’d have to scroll multiple pages (20 to be exact) across the website. In this context, we need to use <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> in conjunction with <code><a href="../reference/scrap.html">scrap()</a></code> as follows:</p>
+<p>Pretty simple right ? I hope so. Anyway, the problem here is that the main page displays only 20 nominees, from 2017 to 2020. What if wanted to extract all nominees in history ? Indeed, you’re right, we’d have to scroll multiple pages (20 to be exact) across the website. In this context, we need to use <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> in conjunction with <code><a href="../reference/scrap.html">scrap()</a></code> as follows:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">link &lt;-<span class="st"> "https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page="</span> <span class="co"># Mind the change in the link structure "page=" </span></a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
 <a class="sourceLine" id="cb3-3" title="3">node &lt;-<span class="st"> ".primary-nominee a"</span> <span class="co"># we use the same node as previously</span></a>
