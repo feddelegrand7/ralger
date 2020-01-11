@@ -17,6 +17,7 @@ vignette: >
 
 ralger is a package that aims to facilitate to the maximum web scraping in R. For scraping some data, you only need two elements, the **link** of the web page and the **html** or **css** node that references the needed information. Don't panic, you don't have to spend hours learning html and css. You can just use the **SelectorGadget** chrome extension. You can check out this [tutorial](https://www.youtube.com/watch?v=oqNTfWrGdbk) for more information.
 
+----------------------------------------------------
 
 # scrap()
 
@@ -56,6 +57,8 @@ length(data_all)
 
 ```
 And here we're we have our 350 nominees !!! `r emo::ji("smile")` 
+
+------------------------------------------------------------
 
  
 # tidy_scrap()
