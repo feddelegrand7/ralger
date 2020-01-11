@@ -84,6 +84,7 @@
     
     
 <p>ralger is a package that aims to facilitate to the maximum web scraping in R. For scraping some data, you only need two elements, the <strong>link</strong> of the web page and the <strong>html</strong> or <strong>css</strong> node that references the needed information. Don’t panic, you don’t have to spend hours learning html and css. You can just use the <strong>SelectorGadget</strong> chrome extension. You can check out this <a href="https://www.youtube.com/watch?v=oqNTfWrGdbk">tutorial</a> for more information.</p>
+<hr>
 <div id="scrap" class="section level1">
 <h1 class="hasAnchor">
 <a href="#scrap" class="anchor"></a>scrap()</h1>
@@ -104,11 +105,11 @@
 <a class="sourceLine" id="cb1-6" title="6">)</a>
 <a class="sourceLine" id="cb1-7" title="7"></a>
 <a class="sourceLine" id="cb1-8" title="8">data</a></code></pre></div>
-<pre><code>##  [1] "Renée Zellweger"    "Scarlett Johansson" "Saoirse Ronan"     
-##  [4] "Charlize Theron"    "Cynthia Erivo"      "Glenn Close"       
+<pre><code>##  [1] "Renée Zellweger"    "Cynthia Erivo"      "Scarlett Johansson"
+##  [4] "Saoirse Ronan"      "Charlize Theron"    "Glenn Close"       
 ##  [7] "Lady Gaga"          "Nicole Kidman"      "Melissa McCarthy"  
-## [10] "Rosamund Pike"      "Frances McDormand"  "Sally Hawkins"     
-## [13] "Meryl Streep"       "Michelle Williams"  "Jessica Chastain"  
+## [10] "Rosamund Pike"      "Frances McDormand"  "Meryl Streep"      
+## [13] "Michelle Williams"  "Jessica Chastain"   "Sally Hawkins"     
 ## [16] "Isabelle Huppert"   "Amy Adams"          "Jessica Chastain"  
 ## [19] "Ruth Negga"         "Natalie Portman"</code></pre>
 <p>Pretty simple right ? I hope so. Anyway, the problem here is that the main page displays only 20 nominees, from 2017 to 2020. What if we wanted to extract all nominees in history ? Indeed, you’re right, we’d have to scroll multiple pages (20 to be exact) across the website. In this context, we need to use <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> in conjunction with <code><a href="../reference/scrap.html">scrap()</a></code> as follows:</p>
@@ -121,6 +122,7 @@
 <a class="sourceLine" id="cb3-7" title="7"><span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(data_all)</a></code></pre></div>
 <pre><code>## [1] 350</code></pre>
 <p>And here we’re we have our 350 nominees !!! 😄</p>
+<hr>
 </div>
 <div id="tidy_scrap" class="section level1">
 <h1 class="hasAnchor">
@@ -138,10 +140,10 @@
 <a class="sourceLine" id="cb5-5" title="5">column_names &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Actress"</span>, <span class="st">"Movie"</span>)</a>
 <a class="sourceLine" id="cb5-6" title="6"></a>
 <a class="sourceLine" id="cb5-7" title="7"></a>
-<a class="sourceLine" id="cb5-8" title="8">global_df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/tidy_scrap.html">tidy_scrap</a></span>(links, nodes, column_names)</a></code></pre></div>
-<pre><code>## Warning in (function (..., deparse.level = 1) : number of rows of result is
-## not a multiple of vector length (arg 2)</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(global_df, <span class="dt">n =</span> <span class="dv">10</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb5-8" title="8">global_df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/tidy_scrap.html">tidy_scrap</a></span>(links, nodes, column_names)</a>
+<a class="sourceLine" id="cb5-9" title="9"></a>
+<a class="sourceLine" id="cb5-10" title="10"></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(global_df, <span class="dt">n =</span> <span class="dv">10</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 10 x 2
 ##    Actress            Movie                   
 ##    &lt;chr&gt;              &lt;chr&gt;                   

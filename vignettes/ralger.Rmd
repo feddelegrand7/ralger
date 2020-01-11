@@ -70,7 +70,7 @@ Now, imagine that we need a data frame composed of two columns :
 
 To construct our data frame we'll use the `tidy_scrap()` function as follows: 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 links <- paste(link, 0:20, sep = "") # The links required to extract the 350 observations
 
