@@ -79,7 +79,6 @@
 </h1></div>
 <!-- badges: start -->
 
-<p><a href="https://cran.r-project.org/package=ralger"><img src="https://cranlogs.r-pkg.org/badges/ralger" alt="Downloads from the RStudio CRAN mirror"></a></p>
 <!-- badges: end -->
 <p>The goal of <strong>ralger</strong> is to facilitate web scraping in R.</p>
 <div id="installation" class="section level2">
@@ -96,98 +95,99 @@
 <a href="#scrap" class="anchor"></a>scrap()</h2>
 <p>This is an example which shows how to extract firms denomination from the website of the <a href="http://elmouchir.caci.dz">Algerian Chamber of Commerce and Industry</a> (CACI). For simplicity, we’ll focus on firms operating within the capital (Algiers).</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ralger)</a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3">my_link &lt;-<span class="st"> "http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver"</span></a>
-<a class="sourceLine" id="cb3-4" title="4"></a>
-<a class="sourceLine" id="cb3-5" title="5">my_node &lt;-<span class="st"> ".listing_default"</span> <span class="co"># The CSS element, we recommend SelectorGadget</span></a>
-<a class="sourceLine" id="cb3-6" title="6"></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="kw"><a href="reference/scrap.html">scrap</a></span>(my_link, my_node)</a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt;  [1] "Adjerid Hanifa"                                                               </span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt;  [2] "Dar Chamila"                                                                  </span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt;  [3] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;  [4] "YOUKAIS"                                                                      </span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;  [5] "EDIMETAL"                                                                     </span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt;  [6] "SYRIAN AIR LINES"                                                             </span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt;  [7] "Turkish Airlines / Direction Générale"                                        </span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt;  [8] "Aigle Azur / Agence Didouche Mourad"                                          </span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt;  [9] "British Airways"                                                              </span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; [10] "DELTA"                                                                        </span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; [11] "Cabinet Ammiche Amer"                                                         </span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; [12] "VERITEX"                                                                      </span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; [13] "Kermiche Partener"                                                            </span></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; [14] "PROGOS"                                                                       </span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; [15] "Ambassade du Royaume d'Arabie Saoudite"                                       </span></a>
-<a class="sourceLine" id="cb3-23" title="23"><span class="co">#&gt; [16] "Ambassade de la République d'Argentine"                                       </span></a>
-<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt; [17] "Ambassade du Burkina Faso"                                                    </span></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; [18] "Ambassade du Canada"                                                          </span></a>
-<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; [19] "Ambassade de la République de Corée"                                          </span></a>
-<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; [20] "Ambassade de la République de Côte d'Ivoire"</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">#&gt; Warning: package 'ralger' was built under R version 3.6.2</span></a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4">my_link &lt;-<span class="st"> "http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver"</span></a>
+<a class="sourceLine" id="cb3-5" title="5"></a>
+<a class="sourceLine" id="cb3-6" title="6">my_node &lt;-<span class="st"> ".listing_default"</span> <span class="co"># The CSS element, we recommend SelectorGadget</span></a>
+<a class="sourceLine" id="cb3-7" title="7"></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="kw"><a href="reference/scrap.html">scrap</a></span>(my_link, my_node)</a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt;  [1] "Adjerid Hanifa"                                                               </span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt;  [2] "Dar Chamila"                                                                  </span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;  [3] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                        </span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;  [4] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt;  [5] "YOUKAIS"                                                                      </span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt;  [6] "EDIMETAL"                                                                     </span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt;  [7] "SYRIAN AIR LINES"                                                             </span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt;  [8] "Turkish Airlines / Direction Générale"                                        </span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt;  [9] "Aigle Azur / Agence Didouche Mourad"                                          </span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; [10] "British Airways"                                                              </span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; [11] "DELTA"                                                                        </span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; [12] "Cabinet Ammiche Amer"                                                         </span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; [13] "VERITEX"                                                                      </span></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; [14] "Kermiche Partener"                                                            </span></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="co">#&gt; [15] "PROGOS"                                                                       </span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt; [16] "Ambassade du Royaume d'Arabie Saoudite"                                       </span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; [17] "Ambassade de la République d'Argentine"                                       </span></a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; [18] "Ambassade du Burkina Faso"                                                    </span></a>
+<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; [19] "Ambassade du Canada"                                                          </span></a>
+<a class="sourceLine" id="cb3-28" title="28"><span class="co">#&gt; [20] "Ambassade de la République de Corée"</span></a></code></pre></div>
 <p>If you want to scrap multiple list pages, just use <code><a href="reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code>. Suppose, we want to extract the above information from the first 3 pages (starts from 0):</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">my_link &lt;-<span class="st"> "http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver&amp;page="</span> </a>
 <a class="sourceLine" id="cb4-2" title="2"></a>
 <a class="sourceLine" id="cb4-3" title="3">my_node &lt;-<span class="st"> ".listing_default"</span></a>
 <a class="sourceLine" id="cb4-4" title="4"></a>
 <a class="sourceLine" id="cb4-5" title="5"><span class="kw"><a href="reference/scrap.html">scrap</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(my_link, <span class="dv">0</span><span class="op">:</span><span class="dv">2</span>), my_node)</a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt;  [1] "Esasoud Welding And Cutting"                                                </span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt;  [2] "Huan Yu"                                                                    </span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt;  [3] "HRLI"                                                                       </span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt;  [4] "Dar El Hikma"                                                               </span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt;  [5] "Trans Canal Centre / Khemis El Khechna"                                     </span></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt;  [6] "Direction Régionale Centre / Ex Trans Canal Centre"                         </span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt;  [7] "Egt Sidi Fredj / Club Azur Plage"                                           </span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt;  [8] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                 </span></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt;  [9] "SPE / Sociéte Algérienne de Production d’Electricité"                       </span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; [10] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"        </span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; [11] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"</span></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; [12] "Clef du Sud"                                                                </span></a>
-<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; [13] "Adrien.Dz"                                                                  </span></a>
-<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; [14] "MPV"                                                                        </span></a>
-<a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; [15] "SCAL / La Société des Ciments de l'Algérois"                                </span></a>
-<a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt; [16] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                          </span></a>
-<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; [17] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                           </span></a>
-<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; [18] "VERITAL/ Direction Générale"                                                </span></a>
-<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; [19] "Wilaya d'Alger"                                                             </span></a>
-<a class="sourceLine" id="cb4-25" title="25"><span class="co">#&gt; [20] "Officine Abeille"                                                           </span></a>
-<a class="sourceLine" id="cb4-26" title="26"><span class="co">#&gt; [21] "Esasoud Welding And Cutting"                                                </span></a>
-<a class="sourceLine" id="cb4-27" title="27"><span class="co">#&gt; [22] "Huan Yu"                                                                    </span></a>
-<a class="sourceLine" id="cb4-28" title="28"><span class="co">#&gt; [23] "HRLI"                                                                       </span></a>
-<a class="sourceLine" id="cb4-29" title="29"><span class="co">#&gt; [24] "Dar El Hikma"                                                               </span></a>
-<a class="sourceLine" id="cb4-30" title="30"><span class="co">#&gt; [25] "Trans Canal Centre / Khemis El Khechna"                                     </span></a>
-<a class="sourceLine" id="cb4-31" title="31"><span class="co">#&gt; [26] "Direction Régionale Centre / Ex Trans Canal Centre"                         </span></a>
-<a class="sourceLine" id="cb4-32" title="32"><span class="co">#&gt; [27] "Egt Sidi Fredj / Club Azur Plage"                                           </span></a>
-<a class="sourceLine" id="cb4-33" title="33"><span class="co">#&gt; [28] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                 </span></a>
-<a class="sourceLine" id="cb4-34" title="34"><span class="co">#&gt; [29] "SPE / Sociéte Algérienne de Production d’Electricité"                       </span></a>
-<a class="sourceLine" id="cb4-35" title="35"><span class="co">#&gt; [30] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"        </span></a>
-<a class="sourceLine" id="cb4-36" title="36"><span class="co">#&gt; [31] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"</span></a>
-<a class="sourceLine" id="cb4-37" title="37"><span class="co">#&gt; [32] "Clef du Sud"                                                                </span></a>
-<a class="sourceLine" id="cb4-38" title="38"><span class="co">#&gt; [33] "Adrien.Dz"                                                                  </span></a>
-<a class="sourceLine" id="cb4-39" title="39"><span class="co">#&gt; [34] "MPV"                                                                        </span></a>
-<a class="sourceLine" id="cb4-40" title="40"><span class="co">#&gt; [35] "SCAL / La Société des Ciments de l'Algérois"                                </span></a>
-<a class="sourceLine" id="cb4-41" title="41"><span class="co">#&gt; [36] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                          </span></a>
-<a class="sourceLine" id="cb4-42" title="42"><span class="co">#&gt; [37] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                           </span></a>
-<a class="sourceLine" id="cb4-43" title="43"><span class="co">#&gt; [38] "VERITAL/ Direction Générale"                                                </span></a>
-<a class="sourceLine" id="cb4-44" title="44"><span class="co">#&gt; [39] "Wilaya d'Alger"                                                             </span></a>
-<a class="sourceLine" id="cb4-45" title="45"><span class="co">#&gt; [40] "Officine Abeille"                                                           </span></a>
-<a class="sourceLine" id="cb4-46" title="46"><span class="co">#&gt; [41] "Esasoud Welding And Cutting"                                                </span></a>
-<a class="sourceLine" id="cb4-47" title="47"><span class="co">#&gt; [42] "Huan Yu"                                                                    </span></a>
-<a class="sourceLine" id="cb4-48" title="48"><span class="co">#&gt; [43] "HRLI"                                                                       </span></a>
-<a class="sourceLine" id="cb4-49" title="49"><span class="co">#&gt; [44] "Dar El Hikma"                                                               </span></a>
-<a class="sourceLine" id="cb4-50" title="50"><span class="co">#&gt; [45] "Trans Canal Centre / Khemis El Khechna"                                     </span></a>
-<a class="sourceLine" id="cb4-51" title="51"><span class="co">#&gt; [46] "Direction Régionale Centre / Ex Trans Canal Centre"                         </span></a>
-<a class="sourceLine" id="cb4-52" title="52"><span class="co">#&gt; [47] "Egt Sidi Fredj / Club Azur Plage"                                           </span></a>
-<a class="sourceLine" id="cb4-53" title="53"><span class="co">#&gt; [48] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                 </span></a>
-<a class="sourceLine" id="cb4-54" title="54"><span class="co">#&gt; [49] "SPE / Sociéte Algérienne de Production d’Electricité"                       </span></a>
-<a class="sourceLine" id="cb4-55" title="55"><span class="co">#&gt; [50] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"        </span></a>
-<a class="sourceLine" id="cb4-56" title="56"><span class="co">#&gt; [51] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"</span></a>
-<a class="sourceLine" id="cb4-57" title="57"><span class="co">#&gt; [52] "Clef du Sud"                                                                </span></a>
-<a class="sourceLine" id="cb4-58" title="58"><span class="co">#&gt; [53] "Adrien.Dz"                                                                  </span></a>
-<a class="sourceLine" id="cb4-59" title="59"><span class="co">#&gt; [54] "MPV"                                                                        </span></a>
-<a class="sourceLine" id="cb4-60" title="60"><span class="co">#&gt; [55] "SCAL / La Société des Ciments de l'Algérois"                                </span></a>
-<a class="sourceLine" id="cb4-61" title="61"><span class="co">#&gt; [56] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                          </span></a>
-<a class="sourceLine" id="cb4-62" title="62"><span class="co">#&gt; [57] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                           </span></a>
-<a class="sourceLine" id="cb4-63" title="63"><span class="co">#&gt; [58] "VERITAL/ Direction Générale"                                                </span></a>
-<a class="sourceLine" id="cb4-64" title="64"><span class="co">#&gt; [59] "Wilaya d'Alger"                                                             </span></a>
-<a class="sourceLine" id="cb4-65" title="65"><span class="co">#&gt; [60] "Officine Abeille"</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt;  [1] "Direction Régionale Centre / Ex Trans Canal Centre"                                                                            </span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt;  [2] "Egt Sidi Fredj / Club Azur Plage"                                                                                              </span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt;  [3] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    </span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt;  [4] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          </span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt;  [5] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt;  [6] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt;  [7] "Clef du Sud / Miftah El Djanoub"                                                                                               </span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt;  [8] "Adrien.Dz"                                                                                                                     </span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt;  [9] "MPV"                                                                                                                           </span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; [10] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; [11] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; [12] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span></a>
+<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; [13] "VERITAL/ Direction Générale"                                                                                                   </span></a>
+<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; [14] "Wilaya d'Alger"                                                                                                                </span></a>
+<a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; [15] "Officine Abeille"                                                                                                              </span></a>
+<a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt; [16] "Twingle"                                                                                                                       </span></a>
+<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; [17] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span></a>
+<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; [18] "Les Pages Jaunes"                                                                                                              </span></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; [19] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span></a>
+<a class="sourceLine" id="cb4-25" title="25"><span class="co">#&gt; [20] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span></a>
+<a class="sourceLine" id="cb4-26" title="26"><span class="co">#&gt; [21] "Direction Régionale Centre / Ex Trans Canal Centre"                                                                            </span></a>
+<a class="sourceLine" id="cb4-27" title="27"><span class="co">#&gt; [22] "Egt Sidi Fredj / Club Azur Plage"                                                                                              </span></a>
+<a class="sourceLine" id="cb4-28" title="28"><span class="co">#&gt; [23] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    </span></a>
+<a class="sourceLine" id="cb4-29" title="29"><span class="co">#&gt; [24] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          </span></a>
+<a class="sourceLine" id="cb4-30" title="30"><span class="co">#&gt; [25] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span></a>
+<a class="sourceLine" id="cb4-31" title="31"><span class="co">#&gt; [26] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span></a>
+<a class="sourceLine" id="cb4-32" title="32"><span class="co">#&gt; [27] "Clef du Sud / Miftah El Djanoub"                                                                                               </span></a>
+<a class="sourceLine" id="cb4-33" title="33"><span class="co">#&gt; [28] "Adrien.Dz"                                                                                                                     </span></a>
+<a class="sourceLine" id="cb4-34" title="34"><span class="co">#&gt; [29] "MPV"                                                                                                                           </span></a>
+<a class="sourceLine" id="cb4-35" title="35"><span class="co">#&gt; [30] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span></a>
+<a class="sourceLine" id="cb4-36" title="36"><span class="co">#&gt; [31] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span></a>
+<a class="sourceLine" id="cb4-37" title="37"><span class="co">#&gt; [32] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span></a>
+<a class="sourceLine" id="cb4-38" title="38"><span class="co">#&gt; [33] "VERITAL/ Direction Générale"                                                                                                   </span></a>
+<a class="sourceLine" id="cb4-39" title="39"><span class="co">#&gt; [34] "Wilaya d'Alger"                                                                                                                </span></a>
+<a class="sourceLine" id="cb4-40" title="40"><span class="co">#&gt; [35] "Officine Abeille"                                                                                                              </span></a>
+<a class="sourceLine" id="cb4-41" title="41"><span class="co">#&gt; [36] "Twingle"                                                                                                                       </span></a>
+<a class="sourceLine" id="cb4-42" title="42"><span class="co">#&gt; [37] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span></a>
+<a class="sourceLine" id="cb4-43" title="43"><span class="co">#&gt; [38] "Les Pages Jaunes"                                                                                                              </span></a>
+<a class="sourceLine" id="cb4-44" title="44"><span class="co">#&gt; [39] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span></a>
+<a class="sourceLine" id="cb4-45" title="45"><span class="co">#&gt; [40] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span></a>
+<a class="sourceLine" id="cb4-46" title="46"><span class="co">#&gt; [41] "Direction Régionale Centre / Ex Trans Canal Centre"                                                                            </span></a>
+<a class="sourceLine" id="cb4-47" title="47"><span class="co">#&gt; [42] "Egt Sidi Fredj / Club Azur Plage"                                                                                              </span></a>
+<a class="sourceLine" id="cb4-48" title="48"><span class="co">#&gt; [43] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    </span></a>
+<a class="sourceLine" id="cb4-49" title="49"><span class="co">#&gt; [44] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          </span></a>
+<a class="sourceLine" id="cb4-50" title="50"><span class="co">#&gt; [45] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span></a>
+<a class="sourceLine" id="cb4-51" title="51"><span class="co">#&gt; [46] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span></a>
+<a class="sourceLine" id="cb4-52" title="52"><span class="co">#&gt; [47] "Clef du Sud / Miftah El Djanoub"                                                                                               </span></a>
+<a class="sourceLine" id="cb4-53" title="53"><span class="co">#&gt; [48] "Adrien.Dz"                                                                                                                     </span></a>
+<a class="sourceLine" id="cb4-54" title="54"><span class="co">#&gt; [49] "MPV"                                                                                                                           </span></a>
+<a class="sourceLine" id="cb4-55" title="55"><span class="co">#&gt; [50] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span></a>
+<a class="sourceLine" id="cb4-56" title="56"><span class="co">#&gt; [51] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span></a>
+<a class="sourceLine" id="cb4-57" title="57"><span class="co">#&gt; [52] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span></a>
+<a class="sourceLine" id="cb4-58" title="58"><span class="co">#&gt; [53] "VERITAL/ Direction Générale"                                                                                                   </span></a>
+<a class="sourceLine" id="cb4-59" title="59"><span class="co">#&gt; [54] "Wilaya d'Alger"                                                                                                                </span></a>
+<a class="sourceLine" id="cb4-60" title="60"><span class="co">#&gt; [55] "Officine Abeille"                                                                                                              </span></a>
+<a class="sourceLine" id="cb4-61" title="61"><span class="co">#&gt; [56] "Twingle"                                                                                                                       </span></a>
+<a class="sourceLine" id="cb4-62" title="62"><span class="co">#&gt; [57] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span></a>
+<a class="sourceLine" id="cb4-63" title="63"><span class="co">#&gt; [58] "Les Pages Jaunes"                                                                                                              </span></a>
+<a class="sourceLine" id="cb4-64" title="64"><span class="co">#&gt; [59] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span></a>
+<a class="sourceLine" id="cb4-65" title="65"><span class="co">#&gt; [60] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"</span></a></code></pre></div>
 </div>
 <div id="tidy_scrap" class="section level2">
 <h2 class="hasAnchor">
