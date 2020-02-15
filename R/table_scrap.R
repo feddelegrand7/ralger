@@ -18,7 +18,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_table
-#' @importFrom tidyr as_tibble
 #' @importFrom purrr pluck
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green
@@ -45,8 +44,6 @@ table_scrap <- function(link, askRobot = FALSE){
   }
 
   table <- link %>% read_html() %>% html_table() %>% purrr::pluck(1)
-
-  table <- as_tibble(table)
 
   return(table)
 
