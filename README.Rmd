@@ -14,6 +14,12 @@ knitr::opts_chunk$set(
 ```
 # ralger <a><img src='man/figures/hex.png' align="right" height="200" /></a>
 
+```{r}
+badgecreatr::badgeplacer()
+
+```
+
+
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
 

@@ -27,6 +27,10 @@
 #' @importFrom stringr str_replace
 #' @importFrom stringr str_trim
 #' @importFrom dplyr mutate_all
+#' @importFrom crayon green
+#' @importFrom crayon bgRed
+#' @importFrom robotstxt paths_allowed
+
 
 
 tidy_scrap <- function(link, nodes, colnames, clean = FALSE, askRobot = FALSE){
