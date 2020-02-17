@@ -41,9 +41,11 @@ weblink_scrap <- function(link, contains = NULL, askRobot = FALSE){
 
     }
 
+    }
 
 
-    if(is.null(contain)){
+
+    if(is.null(contains)){
 
       link %>%
         read_html() %>%
@@ -62,16 +64,8 @@ weblink_scrap <- function(link, contains = NULL, askRobot = FALSE){
     }
 
 
-
   }
 
-
-
-
-
-
-
-  }
 
 
 
