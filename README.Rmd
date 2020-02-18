@@ -88,9 +88,9 @@ If you want to extract a dataframe from a web page, you can use the `tidy_scrap(
 
 We'll work on the famous [IMDb website](https://www.imdb.com/). Let's say we need a dataframe composed of:
 
-- The title of the 50 best ranked movies of all time;
-- Their release year;
-- Their rating.
+- The title of the 50 best ranked movies of all time
+- Their release year
+- Their rating
 
 We will need to use the `tidy_scrap()` function as follows: 
 

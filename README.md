@@ -195,7 +195,7 @@ tidy_scrap(my_link, my_nodes, colnames = names)
 #> # ... with 40 more rows
 ```
 
-Note that all columns will be of *character* class. We’ll have to
-convert them according to our needs. Finally, I appreciate any feedback,
-please reach out or DM at
+Note that all columns will be of *character* class. you’ll have to
+convert them according to your needs. Finally, I appreciate any
+feedback, please reach out or DM at
 [ihaddaden\_moh\_fodil](https://twitter.com/moh_fodil).
