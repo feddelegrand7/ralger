@@ -43,7 +43,10 @@ table_scrap <- function(link, askRobot = FALSE){
 
   }
 
-  table <- link %>% read_html() %>% html_table() %>% purrr::pluck(1)
+  table <- link %>%
+    read_html() %>%
+    html_table() %>%
+    purrr::pluck(1)
 
   return(table)
 

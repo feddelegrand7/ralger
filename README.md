@@ -198,4 +198,4 @@ tidy_scrap(my_link, my_nodes, colnames = names)
 Note that all columns will be of *character* class. you’ll have to
 convert them according to your needs. Finally, I appreciate any
 feedback, please reach out or DM at
-[ihaddaden\_moh\_fodil](https://twitter.com/moh_fodil) .
+[ihaddaden\_moh\_fodil](https://twitter.com/moh_fodil).
