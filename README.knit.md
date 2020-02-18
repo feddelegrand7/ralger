@@ -1,44 +1,48 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+
 # ralger <a><img src='man/figures/hex.png' align="right" height="200" /></a>
 
-<!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
+
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
 
 <!-- badges: end -->
 
+
+
+
 [![](http://cranlogs.r-pkg.org/badges/grand-total/ralger?color=blue)](https://cran.r-project.org/package=ralger)
 
-The goal of **ralger** is to facilitate web scraping in R.
+The goal of **ralger** is to facilitate web scraping in R. 
 
 ## Installation
 
-You can install the ralger package from
-[CRAN](https://cran.r-project.org/) with:
+You can install the ralger package from [CRAN](https://cran.r-project.org/) with:
 
-``` r
+
+```r
 install.packages("ralger")
+
 ```
 
-or you can install the development version from
-[GitHub](https://github.com/) with:
+or you can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("feddelegrand7/ralger")
 ```
-
 ## scrap()
 
-This is an example which shows how to extract firms denomination from
-the website of the [Algerian Chamber of Commerce and
-Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we’ll focus
-on firms operating within the capital (Algiers).
+This is an example which shows how to extract firms denomination from the website of the [Algerian Chamber of Commerce and Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we'll focus on firms operating within the capital (Algiers). 
 
-``` r
+
+```r
 library(ralger)
 
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver"
@@ -68,11 +72,10 @@ scrap(my_link, my_node)
 #> [20] "Ambassade du Canada"
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in
-conjunction with `paste()`. Suppose, we want to extract the above
-information from the first 3 pages (starts from 0):
+If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste()`. Suppose, we want to extract the above information from the first 3 pages (starts from 0): 
 
-``` r
+
+```r
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 
 
 my_node <- ".listing_default"
@@ -140,32 +143,28 @@ scrap(paste(my_link, 0:2), my_node)
 #> [60] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
 ```
 
-## tidy\_scrap()
 
-If you want to extract a dataframe from a web page, you can use the
-`tidy_scrap()` function which returns a tidy dataframe according to the
-arguments that you introduce. The function takes four arguments:
+## tidy_scrap()
 
-  - **link** : the link of the website you’re interested for
-  - **nodes**: a vector of CSS elements that you want to extract. These
-    elements will form the columns of your dataframe
-  - **colnames**: this argument represents the vector of names you want
-    to assign to your columns. Note that you should respect the same
-    order as within the **nodes** vector
-  - **clean**: if true the function will clean the tibble’s columns.
+If you want to extract a dataframe from a web page, you can use the `tidy_scrap()` function which returns a tidy dataframe according to the arguments that you introduce. The function takes four arguments:
+
+- **link** : the link of the website you're interested for
+- **nodes**: a vector of CSS elements that you want to extract. These elements will form the columns of your dataframe
+- **colnames**: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the **nodes** vector
+- **clean**: if true the function will clean the tibble's columns. 
 
 ### Example
 
-We’ll work on the famous [IMDb website](https://www.imdb.com/). Let’s
-say we need a dataframe composed of:
+We'll work on the famous [IMDb website](https://www.imdb.com/). Let's say we need a dataframe composed of:
 
-  - The title of the 50 best ranked movies of all time
-  - Their release year
-  - Their rating
+- The title of the 50 best ranked movies of all time
+- Their release year
+- Their rating
 
-We will need to use the `tidy_scrap()` function as follows:
+We will need to use the `tidy_scrap()` function as follows: 
 
-``` r
+
+```r
 
 my_link <- "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
 
@@ -194,8 +193,5 @@ tidy_scrap(my_link, my_nodes, colnames = names)
 #> 10 Fight Club                                    (1999) 8.8   
 #> # ... with 40 more rows
 ```
+Note that all columns will be of *character* class. We'll have to convert them according to our needs. Finally, I appreciate any feedback, please reach out or DM at [ihaddaden_moh_fodil](https://twitter.com/moh_fodil). 
 
-Note that all columns will be of *character* class. We’ll have to
-convert them according to our needs. Finally, I appreciate any feedback,
-please reach out or DM at
-[ihaddaden\_moh\_fodil](https://twitter.com/moh_fodil).

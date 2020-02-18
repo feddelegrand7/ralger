@@ -14,16 +14,21 @@ knitr::opts_chunk$set(
 ```
 # ralger <a><img src='man/figures/hex.png' align="right" height="200" /></a>
 
-```{r}
-badgecreatr::badgeplacer()
-
-```
 
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
 
 <!-- badges: end -->
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, results="hide"}
+library("badger")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+cat(badge_cran_download("ralger", "grand-total", "blue"))
+```
 
 The goal of **ralger** is to facilitate web scraping in R. 
 
