@@ -5,7 +5,7 @@
 #' @description This function is used to scrap a tibble from a website.
 #'
 #' @param link the link of the webpage to scrap
-#' @param contains filter the web links according the character string provided. Particulary useful when extracting PDF or xlsx links (works also with regex)
+#' @param contain filter the web links according the character string provided. Particulary useful when extracting PDF or xlsx links (works also with regex)
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.
 #' @return a character vector.
 #' @examples \donttest{
@@ -26,7 +26,7 @@
 
 
 
-weblink_scrap <- function(link, contains = NULL, askRobot = FALSE){
+weblink_scrap <- function(link, contain = NULL, askRobot = FALSE){
 
 
   if(askRobot){
@@ -45,7 +45,7 @@ weblink_scrap <- function(link, contains = NULL, askRobot = FALSE){
 
 
 
-    if(is.null(contains)){
+    if(is.null(contain)){
 
       link %>%
         read_html() %>%
