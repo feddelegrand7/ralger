@@ -2,7 +2,7 @@
 % Please edit documentation in R/weblink_scrap.R
 \name{weblink_scrap}
 \alias{weblink_scrap}
-\title{Website Tidy scraping}
+\title{Website web links scraping}
 \usage{
 weblink_scrap(link, contain = NULL, askRobot = FALSE)
 }
@@ -17,7 +17,7 @@ weblink_scrap(link, contain = NULL, askRobot = FALSE)
 a character vector.
 }
 \description{
-This function is used to scrap a tibble from a website.
+This function is used to scrap web links from a website.
 }
 \examples{
 \donttest{

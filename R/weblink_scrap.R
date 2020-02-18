@@ -1,8 +1,8 @@
-# scraping a tidy dataframe from a website
+# scraping web links from a website
 
-#' Website Tidy scraping
+#' Website web links scraping
 #'
-#' @description This function is used to scrap a tibble from a website.
+#' @description This function is used to scrap web links from a website.
 #'
 #' @param link the link of the webpage to scrap
 #' @param contain filter the web links according the character string provided. Particulary useful when extracting PDF or xlsx links (works also with regex)
