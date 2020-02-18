@@ -5,7 +5,7 @@ Version: 1.1.0
 Author: Mohamed El Fodil Ihaddaden
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
 Description: The goal of 'ralger' is to facilitate web scraping in R. 
-    The user has the ability to extract a vector with scrap() or a tidy dataframe using tidy_scrap().
+    The user has the ability to extract a vector with scrap(), a tidy dataframe using tidy_scrap(), a table with table_scrap() and weblinks with weblinks_scrap().
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
