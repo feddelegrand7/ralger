@@ -21,7 +21,8 @@ Imports:
     dplyr,
     stringr,
     robotstxt,
-    crayon
+    crayon, 
+    purrr
 Suggests: 
     knitr,
     rmarkdown
