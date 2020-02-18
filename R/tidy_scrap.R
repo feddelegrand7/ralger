@@ -5,7 +5,7 @@
 #' @description This function is used to scrap a tibble from a website.
 #'
 #' @param link the link of the webpage to scrap
-#' @param nodes the vector of CSS elements to consider, the SelectorGadget tool is highly recommended.
+#' @param nodes the vector of HTML or CSS elements to consider, the SelectorGadget tool is highly recommended.
 #' @param colnames the names of the expected columns.
 #' @param clean logical. Should the function clean the extracted tibble or not ? Default is FALSE.
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.

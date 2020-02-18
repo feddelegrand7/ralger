@@ -5,7 +5,7 @@
 #' @description This function is used to scrap one element from a website.
 #'
 #' @param link the link of the webpage to scrap
-#' @param node the CSS element to consider, the SelectorGadget tool is highly recommended
+#' @param node the HTML or CSS element to consider, the SelectorGadget tool is highly recommended
 #' @param clean logical. Should the function clean the extracted vector or not ? Default is FALSE.
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.
 #' @return a character vector

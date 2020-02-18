@@ -12,7 +12,7 @@ R CMD check succeeded
 
 ---------------------------------------
 
-This is the new version of the package which includes these new functionalities: 
+This is a new version of the ralger package which includes these new functionalities: 
 
 - A new argument within each function :askRobot: which allows the user to check if he has the right to scrap a web page 
 

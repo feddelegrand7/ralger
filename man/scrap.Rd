@@ -9,7 +9,7 @@ scrap(link, node, clean = FALSE, askRobot = FALSE)
 \arguments{
 \item{link}{the link of the webpage to scrap}
 
-\item{node}{the CSS element to consider, the SelectorGadget tool is highly recommended}
+\item{node}{the HTML or CSS element to consider, the SelectorGadget tool is highly recommended}
 
 \item{clean}{logical. Should the function clean the extracted vector or not ? Default is FALSE.}
 

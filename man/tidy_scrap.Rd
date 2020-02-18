@@ -9,7 +9,7 @@ tidy_scrap(link, nodes, colnames, clean = FALSE, askRobot = FALSE)
 \arguments{
 \item{link}{the link of the webpage to scrap}
 
-\item{nodes}{the vector of CSS elements to consider, the SelectorGadget tool is highly recommended.}
+\item{nodes}{the vector of HTML or CSS elements to consider, the SelectorGadget tool is highly recommended.}
 
 \item{colnames}{the names of the expected columns.}
 
