@@ -1,4 +1,4 @@
-# ralger (development version)
+# ralger 1.1.0
 
 # ralger 1.0.0
 
