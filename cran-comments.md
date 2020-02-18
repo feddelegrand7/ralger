@@ -1,20 +1,18 @@
 ## Submission of a new version
 ---------------------------------------
-Duration: 3m 50.5s
+-- R CMD check results --------------------------------------- ralger 1.1.0 ----
+Duration: 2m 34.4s
 
-> checking top-level files ... NOTE
-  Non-standard file/directory found at top level:
-    'bootstrap.min.css'
-
-0 errors v | 0 warnings v | 1 note x
+0 errors v | 0 warnings v | 0 notes v
 
 R CMD check succeeded
+
 
 ---------------------------------------
 
 This is a new version of the ralger package which includes these new functionalities: 
 
-- A new argument within each function :askRobot: which allows the user to check if he has the right to scrap a web page 
+- A new argument within each function :askRobot: which allows the user to check if she has the right to scrap a web page 
 
 - I've modified the clean argument to make it faster 
 
