@@ -7,7 +7,7 @@
 #' @param link the link of the webpage containing the table to scrap
 
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.
-#' @return a tidy dataframe.
+#' @return a dataframe object.
 #' @examples \donttest{
 #' # Extracting premier ligue 2019/2020 top scorers
 #'
