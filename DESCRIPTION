@@ -1,7 +1,7 @@
 Package: ralger
 Type: Package
 Title: Easy Web Scraping
-Version: 1.1.0
+Version: 1.1.1
 Author: Mohamed El Fodil Ihaddaden
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
 Description: The goal of 'ralger' is to facilitate web scraping in R. 
