@@ -7,7 +7,7 @@
 scrap(link, node, clean = FALSE, askRobot = FALSE)
 }
 \arguments{
-\item{link}{the link of the webpage to scrap}
+\item{link}{the link of the web page to scrap}
 
 \item{node}{the HTML or CSS element to consider, the SelectorGadget tool is highly recommended}
 

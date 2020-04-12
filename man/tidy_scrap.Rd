@@ -7,7 +7,7 @@
 tidy_scrap(link, nodes, colnames, clean = FALSE, askRobot = FALSE)
 }
 \arguments{
-\item{link}{the link of the webpage to scrap}
+\item{link}{the link of the web page to scrap}
 
 \item{nodes}{the vector of HTML or CSS elements to consider, the SelectorGadget tool is highly recommended.}
 
@@ -18,7 +18,7 @@ tidy_scrap(link, nodes, colnames, clean = FALSE, askRobot = FALSE)
 \item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
 }
 \value{
-a tidy dataframe.
+a tidy data frame.
 }
 \description{
 This function is used to scrap a tibble from a website.

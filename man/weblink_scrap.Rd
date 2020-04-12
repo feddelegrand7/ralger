@@ -7,9 +7,9 @@
 weblink_scrap(link, contain = NULL, askRobot = FALSE)
 }
 \arguments{
-\item{link}{the link of the webpage to scrap}
+\item{link}{the link of the web page to scrap}
 
-\item{contain}{filter the web links according the character string provided. Particulary useful when extracting PDF or xlsx links (works also with regex)}
+\item{contain}{filter the web links according the character string provided. Particularly useful when extracting PDF or xlsx links (works also with regex)}
 
 \item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
 }

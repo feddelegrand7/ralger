@@ -7,7 +7,7 @@
 table_scrap(link, choose = 1, header = T, askRobot = FALSE)
 }
 \arguments{
-\item{link}{the link of the webpage containing the table to scrap}
+\item{link}{the link of the web page containing the table to scrap}
 
 \item{choose}{an integer indicating which table to scrap}
 
@@ -16,7 +16,7 @@ table_scrap(link, choose = 1, header = T, askRobot = FALSE)
 \item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
 }
 \value{
-a dataframe object.
+a data frame object.
 }
 \description{
 This function is used to scrap an html table from a website.
