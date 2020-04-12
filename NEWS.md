@@ -9,7 +9,7 @@
 # ralger 1.1.1
 
 Two new functions: 
- - `able_scrap()`: allows the user to extract an HTML table from a web page.  
+ - `table_scrap()`: allows the user to extract an HTML table from a web page.  
  - `weblink_scrap()`: allows the user to extract all web links within a web page. 
  
 Also, introducting a new arguments within each function : __askRobot__
