@@ -5,7 +5,8 @@
 #' @description This function is used to scrap an html table from a website.
 #'
 #' @param link the link of the webpage containing the table to scrap
-
+#' @param choose an integer indicating which table to scrap
+#' @param header do you want the first line to be the leader (default to TRUE)
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.
 #' @return a dataframe object.
 #' @examples \donttest{
@@ -25,7 +26,7 @@
 
 
 
-table_scrap <- function(link, askRobot = FALSE){
+table_scrap <- function(link, choose = 1, header = T, askRobot = FALSE){
 
 
   if(askRobot){
@@ -45,8 +46,8 @@ table_scrap <- function(link, askRobot = FALSE){
 
   table <- link %>%
     read_html() %>%
-    html_table() %>%
-    purrr::pluck(1)
+    html_table(header) %>%
+    purrr::pluck(choose)
 
   return(table)
 
