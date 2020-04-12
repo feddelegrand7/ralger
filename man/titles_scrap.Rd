@@ -11,10 +11,10 @@ titles_scrap(link, contain = NULL, askRobot = FALSE)
 
 \item{contain}{filter the titles according to the character string provided.}
 
-\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.}
+\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE}
 }
 \value{
-a character vector.
+a character vector
 }
 \description{
 This function is used to scrape titles from a website. Useful for scraping daily electronic newspapers' titles.

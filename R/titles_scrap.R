@@ -6,8 +6,8 @@
 #'
 #' @param link the link of the web page to scrape
 #' @param contain filter the titles according to the character string provided.
-#' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.
-#' @return a character vector.
+#' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE
+#' @return a character vector
 #' @examples \donttest{
 #' # Extracting the current titles of the New York Times
 #'
@@ -16,14 +16,14 @@
 #' titles_scrap(link)}
 #'
 #' @export
-#' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text html_attr
 #' @importFrom xml2 read_html
 #' @importFrom stringr str_subset
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
 #' @importFrom robotstxt paths_allowed
-#' @importFrom tibble tibble
+#' @importFrom magrittr %>%
+
 
 
 
@@ -60,7 +60,7 @@ titles_scrap <- function(link, contain = NULL, askRobot = FALSE){
 
     data <- c(h1, h2)
 
-    return(tibble(titles = data))
+    return(data)
 
 
   } else {
@@ -68,18 +68,19 @@ titles_scrap <- function(link, contain = NULL, askRobot = FALSE){
     h1 <- link %>%
       read_html() %>%
       html_nodes("h1") %>%
-      html_text() %>%
+      html_text()
 
     h2 <- link %>%
       read_html() %>%
       html_nodes("h2") %>%
-      html_text() %>%
+      html_text()
 
 
-    data <- c(h1, h2) %>% str_subset(contain)
+    data <- c(h1, h2) %>%
+      str_subset(contain)
 
 
-    return(tibble(titles = data))
+    return(data)
 
 
   }

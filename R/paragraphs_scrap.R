@@ -1,4 +1,4 @@
-# scraping paragraph text from a website
+# scraping paragraphs from a website
 
 #' Website text paragraph scraping
 #'
@@ -24,7 +24,6 @@
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
 #' @importFrom robotstxt paths_allowed
-#' @importFrom tibble tibble
 
 
 
