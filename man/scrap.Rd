@@ -7,19 +7,19 @@
 scrap(link, node, clean = FALSE, askRobot = FALSE)
 }
 \arguments{
-\item{link}{the link of the web page to scrap}
+\item{link}{the link of the web page to scrape}
 
 \item{node}{the HTML or CSS element to consider, the SelectorGadget tool is highly recommended}
 
 \item{clean}{logical. Should the function clean the extracted vector or not ? Default is FALSE.}
 
-\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
+\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.}
 }
 \value{
 a character vector
 }
 \description{
-This function is used to scrap one element from a website.
+This function is used to scrape one element from a website.
 }
 \examples{
 \donttest{

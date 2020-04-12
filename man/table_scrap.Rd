@@ -7,19 +7,19 @@
 table_scrap(link, choose = 1, header = T, askRobot = FALSE)
 }
 \arguments{
-\item{link}{the link of the web page containing the table to scrap}
+\item{link}{the link of the web page containing the table to scrape}
 
-\item{choose}{an integer indicating which table to scrap}
+\item{choose}{an integer indicating which table to scrape}
 
 \item{header}{do you want the first line to be the leader (default to TRUE)}
 
-\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
+\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.}
 }
 \value{
 a data frame object.
 }
 \description{
-This function is used to scrap an html table from a website.
+This function is used to scrape an html table from a website.
 }
 \examples{
 \donttest{

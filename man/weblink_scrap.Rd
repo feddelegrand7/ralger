@@ -7,17 +7,17 @@
 weblink_scrap(link, contain = NULL, askRobot = FALSE)
 }
 \arguments{
-\item{link}{the link of the web page to scrap}
+\item{link}{the link of the web page to scrape}
 
-\item{contain}{filter the web links according the character string provided. Particularly useful when extracting PDF or xlsx links (works also with regex)}
+\item{contain}{filter the web links according to the character string provided.}
 
-\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
+\item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.}
 }
 \value{
 a character vector.
 }
 \description{
-This function is used to scrap web links from a website.
+This function is used to scrape web links from a website.
 }
 \examples{
 \donttest{
