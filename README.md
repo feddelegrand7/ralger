@@ -12,8 +12,6 @@ status](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org
 
 [![](http://cranlogs.r-pkg.org/badges/grand-total/ralger?color=blue)](https://cran.r-project.org/package=ralger)
 
-<a href="https://www.buymeacoffee.com/Fodil" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
 The goal of **ralger** is to facilitate web scraping in R.
 
 ## Installation
@@ -80,72 +78,97 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 my_node <- ".listing_default"
 
 scrap(paste(my_link, 0:2), my_node)
-#>  [1] "Egt Sidi Fredj / Club Azur Plage"                                                                                              
-#>  [2] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    
-#>  [3] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          
-#>  [4] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           
-#>  [5] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   
-#>  [6] "Clef du Sud / Miftah El Djanoub"                                                                                               
-#>  [7] "MPV"                                                                                                                           
-#>  [8] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
-#>  [9] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
-#> [10] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
-#> [11] "VERITAL/ Direction Générale"                                                                                                   
-#> [12] "Wilaya d'Alger"                                                                                                                
-#> [13] "Officine Abeille"                                                                                                              
-#> [14] "Twingle"                                                                                                                       
-#> [15] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
-#> [16] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
-#> [17] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
-#> [18] "Conseil Constitutionnel"                                                                                                       
-#> [19] "Ambassade de la République de Serbie"                                                                                          
-#> [20] "Conseil de la Nation"                                                                                                          
-#> [21] "Egt Sidi Fredj / Club Azur Plage"                                                                                              
-#> [22] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    
-#> [23] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          
-#> [24] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           
-#> [25] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   
-#> [26] "Clef du Sud / Miftah El Djanoub"                                                                                               
-#> [27] "MPV"                                                                                                                           
-#> [28] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
-#> [29] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
-#> [30] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
-#> [31] "VERITAL/ Direction Générale"                                                                                                   
-#> [32] "Wilaya d'Alger"                                                                                                                
-#> [33] "Officine Abeille"                                                                                                              
-#> [34] "Twingle"                                                                                                                       
-#> [35] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
-#> [36] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
-#> [37] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
-#> [38] "Conseil Constitutionnel"                                                                                                       
-#> [39] "Ambassade de la République de Serbie"                                                                                          
-#> [40] "Conseil de la Nation"                                                                                                          
-#> [41] "Egt Sidi Fredj / Club Azur Plage"                                                                                              
-#> [42] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    
-#> [43] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          
-#> [44] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           
-#> [45] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   
-#> [46] "Clef du Sud / Miftah El Djanoub"                                                                                               
-#> [47] "MPV"                                                                                                                           
-#> [48] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
-#> [49] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
-#> [50] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
-#> [51] "VERITAL/ Direction Générale"                                                                                                   
-#> [52] "Wilaya d'Alger"                                                                                                                
-#> [53] "Officine Abeille"                                                                                                              
-#> [54] "Twingle"                                                                                                                       
-#> [55] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
-#> [56] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
-#> [57] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
-#> [58] "Conseil Constitutionnel"                                                                                                       
-#> [59] "Ambassade de la République de Serbie"                                                                                          
-#> [60] "Conseil de la Nation"
+#>  [1] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    
+#>  [2] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          
+#>  [3] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           
+#>  [4] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   
+#>  [5] "Clef du Sud / Miftah El Djanoub"                                                                                               
+#>  [6] "MPV"                                                                                                                           
+#>  [7] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
+#>  [8] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
+#>  [9] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
+#> [10] "VERITAL/ Direction Générale"                                                                                                   
+#> [11] "Wilaya d'Alger"                                                                                                                
+#> [12] "Officine Abeille"                                                                                                              
+#> [13] "Twingle"                                                                                                                       
+#> [14] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
+#> [15] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
+#> [16] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
+#> [17] "Conseil Constitutionnel"                                                                                                       
+#> [18] "Ambassade de la République de Serbie"                                                                                          
+#> [19] "Conseil de la Nation"                                                                                                          
+#> [20] "Radio El Bahdja"                                                                                                               
+#> [21] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    
+#> [22] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          
+#> [23] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           
+#> [24] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   
+#> [25] "Clef du Sud / Miftah El Djanoub"                                                                                               
+#> [26] "MPV"                                                                                                                           
+#> [27] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
+#> [28] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
+#> [29] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
+#> [30] "VERITAL/ Direction Générale"                                                                                                   
+#> [31] "Wilaya d'Alger"                                                                                                                
+#> [32] "Officine Abeille"                                                                                                              
+#> [33] "Twingle"                                                                                                                       
+#> [34] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
+#> [35] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
+#> [36] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
+#> [37] "Conseil Constitutionnel"                                                                                                       
+#> [38] "Ambassade de la République de Serbie"                                                                                          
+#> [39] "Conseil de la Nation"                                                                                                          
+#> [40] "Radio El Bahdja"                                                                                                               
+#> [41] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    
+#> [42] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          
+#> [43] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           
+#> [44] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   
+#> [45] "Clef du Sud / Miftah El Djanoub"                                                                                               
+#> [46] "MPV"                                                                                                                           
+#> [47] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
+#> [48] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
+#> [49] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
+#> [50] "VERITAL/ Direction Générale"                                                                                                   
+#> [51] "Wilaya d'Alger"                                                                                                                
+#> [52] "Officine Abeille"                                                                                                              
+#> [53] "Twingle"                                                                                                                       
+#> [54] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
+#> [55] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
+#> [56] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
+#> [57] "Conseil Constitutionnel"                                                                                                       
+#> [58] "Ambassade de la République de Serbie"                                                                                          
+#> [59] "Conseil de la Nation"                                                                                                          
+#> [60] "Radio El Bahdja"
+```
+
+# table\_scrap()
+
+If you want to extrang an **HTML Table**, you can use the
+`table_scrap()` function. Take a look at this
+[webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW)
+which lists the highest gross revenues in the cinema industry. You can
+extract the HTML table as follows:
+
+``` r
+
+
+data <- table_scrap(link ="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW")
+
+head(data)
+#>   Rank                                      Title Lifetime Gross Year
+#> 1    1                          Avengers: Endgame $2,797,800,564 2019
+#> 2    2                                     Avatar $2,790,439,000 2009
+#> 3    3                                    Titanic $2,196,043,167 1997
+#> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,223,624 2015
+#> 5    5                     Avengers: Infinity War $2,048,359,754 2018
+#> 6    6                              Black Panther $2,047,313,161 2018
 ```
 
 ## tidy\_scrap()
 
-If you want to extract a dataframe from a web page, you can use the
-`tidy_scrap()` function which returns a tidy dataframe according to the
+Sometimes you’ll find some useful information on the internet that you
+want to extract in a tabular manner however these information are not
+provided in an HTML format. In this context, you can use the
+`tidy_scrap()` function which returns a tidy data frame according to the
 arguments that you introduce. The function takes four arguments:
 
   - **link** : the link of the website you’re interested for
@@ -181,10 +204,17 @@ names <- c("title", "year", "rating") # respect the nodes order
 
 
 tidy_scrap(my_link, my_nodes, colnames = names)
-#> Warning: The `x` argument of `as_tibble.matrix()` must have column names if `.name_repair` is omitted as of tibble 2.0.0.
+#> Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.
 #> Using compatibility `.name_repair`.
 #> This warning is displayed once every 8 hours.
 #> Call `lifecycle::last_warnings()` to see where this warning was generated.
+#> Warning: `...` is not empty.
+#> 
+#> We detected these problematic arguments:
+#> * `needs_dots`
+#> 
+#> These dots only exist to allow future extensions and should be empty.
+#> Did you misspecify an argument?
 #> # A tibble: 50 x 3
 #>    title                                         year   rating
 #>    <chr>                                         <chr>  <chr> 
@@ -202,6 +232,11 @@ tidy_scrap(my_link, my_nodes, colnames = names)
 ```
 
 Note that all columns will be of *character* class. you’ll have to
-convert them according to your needs. Finally, I appreciate any
-feedback, please reach out or DM at
-[ihaddaden\_moh\_fodil](https://twitter.com/moh_fodil).
+convert them according to your needs.
+
+## Code of Conduct
+
+Please note that the ralger project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

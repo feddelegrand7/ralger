@@ -75,10 +75,25 @@ scrap(paste(my_link, 0:2), my_node)
 
 ```
 
+# table_scrap()
+
+If you want to extrang an __HTML Table__, you can use the `table_scrap()` function. Take a look at this [webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW) which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows: 
+
+```{r}
+
+
+data <- table_scrap(link ="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW")
+
+head(data)
+
+
+```
+
+
 
 ## tidy_scrap()
 
-If you want to extract a dataframe from a web page, you can use the `tidy_scrap()` function which returns a tidy dataframe according to the arguments that you introduce. The function takes four arguments:
+Sometimes you'll find some useful information on the internet that you want to extract in a tabular manner however these information are not provided in an HTML format. In this context, you can use the `tidy_scrap()` function which returns a tidy data frame according to the arguments that you introduce. The function takes four arguments:
 
 - **link** : the link of the website you're interested for
 - **nodes**: a vector of CSS elements that you want to extract. These elements will form the columns of your dataframe
@@ -112,5 +127,11 @@ tidy_scrap(my_link, my_nodes, colnames = names)
 
 
 ```
-Note that all columns will be of *character* class. you'll have to convert them according to your needs. Finally, I appreciate any feedback, please reach out or DM at [ihaddaden_moh_fodil](https://twitter.com/moh_fodil).  
+Note that all columns will be of *character* class. you'll have to convert them according to your needs. 
+
+
+
+## Code of Conduct
+
+Please note that the ralger project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
