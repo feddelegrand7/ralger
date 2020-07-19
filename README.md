@@ -151,9 +151,9 @@ scrap(paste(my_link, 0:2), my_node)
 #> [60] "Radio El Bahdja"
 ```
 
-# table\_scrap()
+## table\_scrap()
 
-If you want to extrang an **HTML Table**, you can use the
+If you want to extract an **HTML Table**, you can use the
 `table_scrap()` function. Take a look at this
 [webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW)
 which lists the highest gross revenues in the cinema industry. You can
@@ -215,17 +215,6 @@ names <- c("title", "year", "rating") # respect the nodes order
 
 
 tidy_scrap(my_link, my_nodes, colnames = names)
-#> Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.
-#> Using compatibility `.name_repair`.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_warnings()` to see where this warning was generated.
-#> Warning: `...` is not empty.
-#> 
-#> We detected these problematic arguments:
-#> * `needs_dots`
-#> 
-#> These dots only exist to allow future extensions and should be empty.
-#> Did you misspecify an argument?
 #> # A tibble: 50 x 3
 #>    title                                         year   rating
 #>    <chr>                                         <chr>  <chr> 

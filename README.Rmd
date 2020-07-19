@@ -80,9 +80,9 @@ scrap(paste(my_link, 0:2), my_node)
 
 ```
 
-# table_scrap()
+## table_scrap()
 
-If you want to extrang an __HTML Table__, you can use the `table_scrap()` function. Take a look at this [webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW) which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows: 
+If you want to extract an __HTML Table__, you can use the `table_scrap()` function. Take a look at this [webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW) which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows: 
 
 ```{r}
 
@@ -115,7 +115,7 @@ We'll work on the famous [IMDb website](https://www.imdb.com/). Let's say we nee
 
 We will need to use the `tidy_scrap()` function as follows: 
 
-```{r example3}
+```{r example3, message=FALSE, warning=FALSE}
 
 my_link <- "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
 
