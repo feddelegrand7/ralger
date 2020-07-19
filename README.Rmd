@@ -32,6 +32,9 @@ knitr::opts_chunk$set(
 
 
 [![Travis build status](https://travis-ci.com/feddelegrand7/ralger.svg?branch=master)](https://travis-ci.com/feddelegrand7/ralger)
+
+[![R badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
+
 <!-- badges: end -->
 
 

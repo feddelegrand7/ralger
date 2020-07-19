@@ -21,6 +21,10 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r
 
 [![Travis build
 status](https://travis-ci.com/feddelegrand7/ralger.svg?branch=master)](https://travis-ci.com/feddelegrand7/ralger)
+
+[![R
+badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
+
 <!-- badges: end -->
 
 The goal of **ralger** is to facilitate web scraping in R.
