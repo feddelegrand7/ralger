@@ -5,12 +5,20 @@
 
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
 
+[![CRAN\_time\_from\_release](https://www.r-pkg.org/badges/ago/ralger)](https://cran.r-project.org/package=ralger)
+
+[![CRAN\_latest\_release\_date](https://www.r-pkg.org/badges/last-release/ralger)](https://cran.r-project.org/package=ralger)
+
+[![metacran
+downloads](https://cranlogs.r-pkg.org/badges/ralger)](https://cran.r-project.org/package=ralger)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
+
+[![Travis build
+status](https://travis-ci.com/feddelegrand7/ralger.svg?branch=master)](https://travis-ci.com/feddelegrand7/ralger)
 <!-- badges: end -->
-
-[![](http://cranlogs.r-pkg.org/badges/grand-total/ralger?color=blue)](https://cran.r-project.org/package=ralger)
 
 The goal of **ralger** is to facilitate web scraping in R.
 
@@ -157,10 +165,10 @@ head(data)
 #>   Rank                                      Title Lifetime Gross Year
 #> 1    1                          Avengers: Endgame $2,797,800,564 2019
 #> 2    2                                     Avatar $2,790,439,000 2009
-#> 3    3                                    Titanic $2,196,043,167 1997
+#> 3    3                                    Titanic $2,196,094,287 1997
 #> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,223,624 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
-#> 6    6                              Black Panther $2,047,313,161 2018
+#> 6    6                             Jurassic World $1,670,400,637 2015
 ```
 
 ## tidy\_scrap()
