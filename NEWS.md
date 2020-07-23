@@ -1,3 +1,5 @@
+# ralger 2.0.1
+
 # ralger 2.0.0
 
 1- I've added the __choose__ argument to the `table_scrap()` function, which allows the user to choose which table to extract.
