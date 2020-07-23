@@ -8,6 +8,7 @@
 #' @param choose an integer indicating which table to scrape
 #' @param header do you want the first line to be the leader (default to TRUE)
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.
+#' @param fill logical. Should be set to TRUE when the table has an inconsistent number of columns.
 #' @return a data frame object.
 #' @examples \donttest{
 #' # Extracting premier ligue 2019/2020 top scorers
@@ -26,7 +27,7 @@
 
 
 
-table_scrap <- function(link, choose = 1, header = T, askRobot = FALSE){
+table_scrap <- function(link, choose = 1, header = T, askRobot = FALSE, fill = FALSE){
 
 
   if(askRobot){
@@ -44,9 +45,11 @@ table_scrap <- function(link, choose = 1, header = T, askRobot = FALSE){
 
   }
 
+
+
   table <- link %>%
     read_html() %>%
-    html_table(header, fill = T) %>%
+    html_table(header, fill = fill) %>%
     purrr::pluck(choose)
 
   return(table)
