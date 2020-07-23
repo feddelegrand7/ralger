@@ -2,7 +2,9 @@ Package: ralger
 Type: Package
 Title: Easy Web Scraping
 Version: 2.0.0
-Author: Mohamed El Fodil Ihaddaden
+Authors@R: c(
+    person("Mohamed El Fodil", "Ihaddaden", email = "ihaddaden.fodeil@gmail.com", role = c("aut", "cre")),
+    person("Ezekiel", "Ogundepo", role = c("ctb"))) 
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
 Description: The goal of 'ralger' is to facilitate web scraping in R. 
     The user has the ability to extract a vector with scrap(), a tidy dataframe using tidy_scrap(), a table with table_scrap() and web links with weblink_scrap().
@@ -26,4 +28,4 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
