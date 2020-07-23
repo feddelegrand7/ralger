@@ -46,7 +46,7 @@ table_scrap <- function(link, choose = 1, header = T, askRobot = FALSE){
 
   table <- link %>%
     read_html() %>%
-    html_table(header) %>%
+    html_table(header, fill = T) %>%
     purrr::pluck(choose)
 
   return(table)
