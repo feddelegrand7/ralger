@@ -27,7 +27,9 @@ badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://gi
 
 <!-- badges: end -->
 
-The goal of **ralger** is to facilitate web scraping in R.
+The goal of **ralger** is to facilitate web scraping in R. For a quick
+video tutorial, I gave a talk at useR2020, which you can find
+[here](https://www.youtube.com/watch?v=OHi6E8jegQg)
 
 ## Installation
 
@@ -172,7 +174,7 @@ head(data)
 #>   Rank                                      Title Lifetime Gross Year
 #> 1    1                          Avengers: Endgame $2,797,800,564 2019
 #> 2    2                                     Avatar $2,790,439,000 2009
-#> 3    3                                    Titanic $2,196,094,287 1997
+#> 3    3                                    Titanic $2,196,094,610 1997
 #> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,223,624 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
 #> 6    6                             Jurassic World $1,670,400,637 2015
@@ -222,16 +224,16 @@ tidy_scrap(my_link, my_nodes, colnames = names)
 #> # A tibble: 50 x 3
 #>    title                                         year   rating
 #>    <chr>                                         <chr>  <chr> 
-#>  1 The Shawshank Redemption                      (1994) 9.3   
-#>  2 The Godfather                                 (1972) 9.2   
-#>  3 The Dark Knight                               (2008) 9.0   
-#>  4 The Godfather: Part II                        (1974) 9.0   
-#>  5 The Lord of the Rings: The Return of the King (2003) 8.9   
-#>  6 Pulp Fiction                                  (1994) 8.9   
-#>  7 Schindler's List                              (1993) 8.9   
-#>  8 12 Angry Men                                  (1957) 8.9   
-#>  9 Inception                                     (2010) 8.8   
-#> 10 Fight Club                                    (1999) 8.8   
+#>  1 Dil Bechara                                   (2020) 9.8   
+#>  2 The Shawshank Redemption                      (1994) 9.3   
+#>  3 The Godfather                                 (1972) 9.2   
+#>  4 The Dark Knight                               (2008) 9.0   
+#>  5 The Godfather: Part II                        (1974) 9.0   
+#>  6 Hamilton                                      (2020) 8.9   
+#>  7 The Lord of the Rings: The Return of the King (2003) 8.9   
+#>  8 Pulp Fiction                                  (1994) 8.9   
+#>  9 Schindler's List                              (1993) 8.9   
+#> 10 12 Angry Men                                  (1957) 8.9   
 #> # ... with 40 more rows
 ```
 

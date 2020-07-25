@@ -39,7 +39,7 @@ knitr::opts_chunk$set(
 
 
 
-The goal of **ralger** is to facilitate web scraping in R. 
+The goal of **ralger** is to facilitate web scraping in R. For a quick video tutorial, I gave a talk at useR2020, which you can find [here](https://www.youtube.com/watch?v=OHi6E8jegQg) 
 
 ## Installation
 
