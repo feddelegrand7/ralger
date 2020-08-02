@@ -27,5 +27,6 @@ Imports:
     purrr
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 RoxygenNote: 7.1.1
