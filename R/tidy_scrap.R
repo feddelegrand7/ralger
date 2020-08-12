@@ -55,10 +55,8 @@ tidy_scrap <- function(link, nodes, colnames, clean = FALSE, askRobot = FALSE){
   allframes <- lapply(nodes, function(x) scrap(link, x))
 
   result <- do.call(cbind,allframes)
-
+  colnames(result) <- colnames
   result <- as_tibble(result)
-
-  names(result) <- colnames
 
   if (!clean) return(result)
 
@@ -70,10 +68,6 @@ tidy_scrap <- function(link, nodes, colnames, clean = FALSE, askRobot = FALSE){
     return(result_clean)
 
   }
-
-
-
-
 
 }
 
