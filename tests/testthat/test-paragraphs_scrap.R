@@ -1,5 +1,5 @@
 test_that("paragraphs_scrap() works", {
-  expect_equal(
+  expect_identical(
 
     paragraphs_scrap(link = "https://www.nytimes.com/")
 
