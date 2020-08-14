@@ -5,7 +5,6 @@ expect_equal(
 
   weblink_scrap("https://www.worldbank.org/en/research")
 
-
   ,
 
   "https://www.worldbank.org/en/research" %>%
