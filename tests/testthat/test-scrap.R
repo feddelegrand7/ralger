@@ -16,10 +16,7 @@ expect_equal(
       }))
 
     )
-})
 
-
-test_that("scrap() function returns a character vector", {
 
   expect_vector(
 
@@ -28,7 +25,24 @@ test_that("scrap() function returns a character vector", {
       node = ".titleColumn a"
     )
   )
+
+  expect_type(
+
+    scrap(
+      link = "https://www.imdb.com/chart/top/",
+      node = ".titleColumn a"
+    ),
+
+    "character"
+
+  )
+
+
+
+
 })
+
+
 
 
 
