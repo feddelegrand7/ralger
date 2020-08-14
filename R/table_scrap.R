@@ -30,22 +30,18 @@
 table_scrap <- function(link, choose = 1, header = T, askRobot = FALSE, fill = FALSE){
 
 
-  if(askRobot){
 
-    if(paths_allowed(link) == TRUE){
-
+  if (askRobot) {
+    if (paths_allowed(link) == TRUE) {
       message(green("It's ok you're allowed to scrap this web page"))
 
     } else {
-
       message(bgRed("WARNING: you're not allowed to scrap this web page"))
 
     }
 
 
   }
-
-
 
   table <- link %>%
     read_html() %>%
