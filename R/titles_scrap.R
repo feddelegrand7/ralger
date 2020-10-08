@@ -5,7 +5,8 @@
 #' @description This function is used to scrape titles (h1, h2 & h3 html tags) from a website. Useful for scraping daily electronic newspapers' titles.
 #'
 #' @param link the link of the web page to scrape
-#' @param contain filter the titles according to the character string provided.
+#' @param contain filter the titles according to a character string provided.
+#' @param case_sensitive logical. Should the contain argument be case sensitive ? defaults to FALSE
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE
 #' @return a character vector
 #' @examples \donttest{
