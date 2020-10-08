@@ -4,12 +4,14 @@
 \alias{weblink_scrap}
 \title{Website web links scraping}
 \usage{
-weblink_scrap(link, contain = NULL, askRobot = FALSE)
+weblink_scrap(link, contain = NULL, case_sensitive = FALSE, askRobot = FALSE)
 }
 \arguments{
 \item{link}{the link of the web page to scrape}
 
 \item{contain}{filter the web links according to the character string provided.}
+
+\item{case_sensitive}{logical. Should the contain argument be case sensitive ? defaults to FALSE}
 
 \item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.}
 }

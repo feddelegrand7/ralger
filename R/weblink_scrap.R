@@ -6,6 +6,7 @@
 #'
 #' @param link the link of the web page to scrape
 #' @param contain filter the web links according to the character string provided.
+#' @param case_sensitive logical. Should the contain argument be case sensitive ? defaults to FALSE
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.
 #' @return a character vector.
 #' @examples \donttest{
@@ -26,7 +27,10 @@
 
 
 
-weblink_scrap <- function(link, contain = NULL, askRobot = FALSE){
+weblink_scrap <- function(link,
+                          contain = NULL,
+                          case_sensitive = FALSE,
+                          askRobot = FALSE){
 
 
   if(askRobot){
@@ -43,22 +47,19 @@ weblink_scrap <- function(link, contain = NULL, askRobot = FALSE){
 
     }
 
-
+  links <- link %>%
+    read_html() %>%
+    html_nodes("a") %>%
+    html_attr("href")
 
     if(is.null(contain)){
 
-      link %>%
-        read_html() %>%
-        html_nodes("a") %>%
-        html_attr("href")
+      return(links)
 
     } else {
 
-      link %>%
-        read_html() %>%
-        html_nodes("a") %>%
-        html_attr("href") %>%
-        str_subset(contain)
+
+      links[grepl(contain, links, ignore.case = !case_sensitive)]
 
 
     }
