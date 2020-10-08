@@ -31,20 +31,20 @@ paragraphs_scrap <- function(link,
                              contain = NULL,
                              case_sensitive = FALSE,
                              collapse = FALSE,
-                             askRobot = FALSE){
+                             askRobot = FALSE) {
 
 
-  if(askRobot){
-
-    if(paths_allowed(link) == TRUE){
-
-      message(green("It's ok you're allowed to scrap this web page"))
+  if (askRobot) {
+    if (paths_allowed(link) == TRUE) {
+      message(green("the robot.txt doesn't prohibit scraping this web page"))
 
     } else {
-
-      message(bgRed("WARNING: you're not allowed to scrap this web page"))
+      message(bgRed(
+        "WARNING: the robot.txt doesn't allow scraping this web page"
+      ))
 
     }
+
 
   }
 
@@ -55,45 +55,31 @@ paragraphs_scrap <- function(link,
     html_text()
 
 
-  if(is.null(contain) & collapse == F){
-
-
+  if (is.null(contain) & collapse == F) {
     return(data)
 
 
-  } else if (is.null(contain) & collapse == T){
+  } else if (is.null(contain) & collapse == T) {
+    return(paste(data, collapse = " "))
+
+
+
+  } else if (!is.null(contain) & collapse == F) {
+    return(data[grepl(contain, data, ignore.case = !case_sensitive)])
+
+
+
+  } else {
+    message("if you decide to collapse the paragraphs, the contain argument will be ignored")
 
 
     return(paste(data, collapse = " "))
 
 
 
-  } else if (!is.null(contain) & collapse == F){
-
-
-    return(data[grepl(contain, data, ignore.case = !case_sensitive)])
-
-
-
-  } else {
-
-    message("if you decide to collapse the paragraphs, the contain argument will be ignored")
-
-
-      return(paste(data, collapse = " "))
-
-
-
   }
 
 
 
 
-  }
-
-
-
-
-
-
-
+}

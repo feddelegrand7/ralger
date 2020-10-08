@@ -33,40 +33,45 @@
 
 
 
-tidy_scrap <- function(link, nodes, colnames, clean = FALSE, askRobot = FALSE){
+tidy_scrap <-
+  function(link,
+           nodes,
+           colnames,
+           clean = FALSE,
+           askRobot = FALSE) {
 
-  if(length(nodes) != length(colnames))
-    stop("nodes and colnames lengths do not match")
 
-  if (askRobot) {
-    if (paths_allowed(link) == TRUE) {
-      message(green("It's ok you're allowed to scrap this web page"))
+    if (length(nodes) != length(colnames))
+      stop("nodes and colnames lengths do not match")
 
-    } else {
-      message(bgRed("WARNING: you're not allowed to scrap this web page"))
+    if (askRobot) {
+      if (paths_allowed(link) == TRUE) {
+        message(green("the robot.txt doesn't prohibit scraping this web page"))
+
+      } else {
+        message(bgRed(
+          "WARNING: the robot.txt doesn't allow scraping this web page"
+        ))
+
+      }
+    }
+
+    allframes <- lapply(nodes, function(x)
+      scrap(link, x))
+
+    result <- do.call(cbind, allframes)
+    colnames(result) <- colnames
+    result <- as_tibble(result)
+
+    if (!clean)
+      return(result)
+
+    if (clean) {
+      result_clean <- result %>%
+        mutate_all(~ str_replace_all(., c("\n" = " ", "\r" = " "))) %>%
+        mutate_all(str_trim)
+      return(result_clean)
 
     }
 
-
   }
-
-  allframes <- lapply(nodes, function(x)
-    scrap(link, x))
-
-  result <- do.call(cbind, allframes)
-  colnames(result) <- colnames
-  result <- as_tibble(result)
-
-  if (!clean)
-    return(result)
-
-  if (clean) {
-    result_clean <- result %>%
-      mutate_all( ~ str_replace_all(., c("\n" = " ", "\r" = " "))) %>%
-      mutate_all(str_trim)
-    return(result_clean)
-
-  }
-
-}
-

@@ -31,18 +31,21 @@ titles_scrap <- function(link,
                          contain = NULL,
                          case_sensitive = FALSE,
                          askRobot = FALSE) {
+
+
   if (askRobot) {
     if (paths_allowed(link) == TRUE) {
-      message(green("It's ok you're allowed to scrap this web page"))
+      message(green("the robot.txt doesn't prohibit scraping this web page"))
 
     } else {
-      message(bgRed("WARNING: you're not allowed to scrap this web page"))
+      message(bgRed(
+        "WARNING: the robot.txt doesn't allow scraping this web page"
+      ))
 
     }
 
+
   }
-
-
 
   h1 <- link %>%
     read_html() %>%
@@ -63,12 +66,10 @@ titles_scrap <- function(link,
 
 
   if (is.null(contain)) {
-
     return(data)
 
 
   } else {
-
     data[grepl(contain, data, ignore.case = !case_sensitive)]
 
   }

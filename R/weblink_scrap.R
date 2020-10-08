@@ -29,46 +29,32 @@
 weblink_scrap <- function(link,
                           contain = NULL,
                           case_sensitive = FALSE,
-                          askRobot = FALSE){
+                          askRobot = FALSE) {
 
 
-  if(askRobot){
-
-    if(paths_allowed(link) == TRUE){
-
-      message(green("It's ok you're allowed to scrap this web page"))
+  if (askRobot) {
+    if (paths_allowed(link) == TRUE) {
+      message(green("the robot.txt doesn't prohibit scraping this web page"))
 
     } else {
-
-      message(bgRed("WARNING: you're not allowed to scrap this web page"))
+      message(bgRed(
+        "WARNING: the robot.txt doesn't allow scraping this web page"
+      ))
 
     }
-
-    }
+  }
 
   links <- link %>%
     read_html() %>%
     html_nodes("a") %>%
     html_attr("href")
 
-    if(is.null(contain)){
+  if (is.null(contain)) {
+    return(links)
 
-      return(links)
-
-    } else {
-
-
-      links[grepl(contain, links, ignore.case = !case_sensitive)]
-
-
-    }
-
-
+  } else {
+    links[grepl(contain, links, ignore.case = !case_sensitive)]
   }
 
 
-
-
-
-
-
+}

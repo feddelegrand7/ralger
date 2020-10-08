@@ -27,31 +27,33 @@
 
 
 
-table_scrap <- function(link, choose = 1, header = T, askRobot = FALSE, fill = FALSE){
+table_scrap <-
+  function(link,
+           choose = 1,
+           header = T,
+           askRobot = FALSE,
+           fill = FALSE) {
 
 
+    if (askRobot) {
+      if (paths_allowed(link) == TRUE) {
+        message(green("the robot.txt doesn't prohibit scraping this web page"))
 
-  if (askRobot) {
-    if (paths_allowed(link) == TRUE) {
-      message(green("It's ok you're allowed to scrap this web page"))
+      } else {
+        message(bgRed(
+          "WARNING: the robot.txt doesn't allow scraping this web page"
+        ))
 
-    } else {
-      message(bgRed("WARNING: you're not allowed to scrap this web page"))
+      }
 
     }
 
+    table <- link %>%
+      read_html() %>%
+      html_table(header, fill = fill) %>%
+      purrr::pluck(choose)
 
-  }
-
-  table <- link %>%
-    read_html() %>%
-    html_table(header, fill = fill) %>%
-    purrr::pluck(choose)
-
-  return(table)
+    return(table)
 
 
   }
-
-
-
