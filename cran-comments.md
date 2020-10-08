@@ -7,4 +7,12 @@ Duration: 1m 55.8s
 
 ---------------------------------------
 
-1- Thanks to Ezekiel (ctb) I've added an argument to the table_scrap() function which is fill = F (the argument is from the rvest package), the user has now the ability to set fill = TRUE when dealing with tables with inconsistent number of columns. 
+- I've changed the message printed when using the askRobot argument, which is now more precise. 
+
+- I've cleaned considerably the code. 
+
+- I've replace the str_detect function from string by the grepl base R function which provides the ability to enable/disable case sentitive character searching. 
+
+- I've added new tests. 
+
+- I've added the h3 html tag to the titles_scrap function. Now when executed the user gets the h1, h2 and h3 elements from a web page (h1 and h2 only before)
