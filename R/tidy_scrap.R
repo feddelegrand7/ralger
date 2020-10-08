@@ -33,12 +33,11 @@
 
 
 
-tidy_scrap <-
-  function(link,
-           nodes,
-           colnames,
-           clean = FALSE,
-           askRobot = FALSE) {
+tidy_scrap <- function(link,
+                       nodes,
+                       colnames,
+                       clean = FALSE,
+                       askRobot = FALSE) {
 
 
     if (length(nodes) != length(colnames))
