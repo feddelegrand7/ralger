@@ -4,18 +4,24 @@
 \alias{paragraphs_scrap}
 \title{Website text paragraph scraping}
 \usage{
-paragraphs_scrap(link, contain = NULL, collapse = FALSE, askRobot = FALSE)
+paragraphs_scrap(
+  link,
+  contain = NULL,
+  case_sensitive = FALSE,
+  collapse = FALSE,
+  askRobot = FALSE
+)
 }
 \arguments{
 \item{link}{the link of the web page to scrape}
 
 \item{contain}{filter the paragraphs according to the character string provided.}
 
+\item{case_sensitive}{logical. Should the contain argument be case sensitive ? defaults to FALSE}
+
 \item{collapse}{if TRUE the paragraphs will be collapsed into one element and the contain argument ignored.}
 
 \item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.}
-
-\item{case_sensitive}{logical. Should the contain argument be case sensitive ? defaults to FALSE}
 }
 \value{
 a character vector.

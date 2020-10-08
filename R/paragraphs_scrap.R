@@ -28,7 +28,11 @@
 
 
 
-paragraphs_scrap <- function(link, contain = NULL, collapse = FALSE, askRobot = FALSE){
+paragraphs_scrap <- function(link,
+                             contain = NULL,
+                             case_sensitive = FALSE,
+                             collapse = FALSE,
+                             askRobot = FALSE){
 
 
   if(askRobot){
