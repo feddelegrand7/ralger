@@ -31,7 +31,7 @@ This function is used to scrape text paragraphs from a website.
 }
 \examples{
 \donttest{
-# Extracting the paragraphs displayed on the health topic of the New York Times
+# Extracting the paragraphs displayed on the health page of the New York Times
 
 link     <- "https://www.nytimes.com/section/health"
 

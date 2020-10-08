@@ -11,7 +11,7 @@
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrap the web page ? Default is FALSE.
 #' @return a character vector.
 #' @examples \donttest{
-#' # Extracting the paragraphs displayed on the health topic of the New York Times
+#' # Extracting the paragraphs displayed on the health page of the New York Times
 #'
 #' link     <- "https://www.nytimes.com/section/health"
 #'
@@ -21,7 +21,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text html_attr
 #' @importFrom xml2 read_html
-#' @importFrom stringr str_subset
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
 #' @importFrom robotstxt paths_allowed

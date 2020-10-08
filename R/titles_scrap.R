@@ -19,7 +19,6 @@
 #' @export
 #' @importFrom rvest html_nodes html_text html_attr
 #' @importFrom xml2 read_html
-#' @importFrom stringr str_subset
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
 #' @importFrom robotstxt paths_allowed
