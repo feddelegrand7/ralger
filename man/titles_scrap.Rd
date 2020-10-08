@@ -17,7 +17,7 @@ titles_scrap(link, contain = NULL, askRobot = FALSE)
 a character vector
 }
 \description{
-This function is used to scrape titles from a website. Useful for scraping daily electronic newspapers' titles.
+This function is used to scrape titles (h1, h2 & h3 html tags) from a website. Useful for scraping daily electronic newspapers' titles.
 }
 \examples{
 \donttest{

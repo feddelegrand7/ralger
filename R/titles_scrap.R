@@ -2,7 +2,7 @@
 
 #' Website title scraping
 #'
-#' @description This function is used to scrape titles from a website. Useful for scraping daily electronic newspapers' titles.
+#' @description This function is used to scrape titles (h1, h2 & h3 html tags) from a website. Useful for scraping daily electronic newspapers' titles.
 #'
 #' @param link the link of the web page to scrape
 #' @param contain filter the titles according to the character string provided.
@@ -27,17 +27,15 @@
 
 
 
-titles_scrap <- function(link, contain = NULL, askRobot = FALSE){
-
-
-  if(askRobot){
-
-    if(paths_allowed(link) == TRUE){
-
+titles_scrap <- function(link,
+                         contain = NULL,
+                         case_sensitive = FALSE,
+                         askRobot = FALSE) {
+  if (askRobot) {
+    if (paths_allowed(link) == TRUE) {
       message(green("It's ok you're allowed to scrap this web page"))
 
     } else {
-
       message(bgRed("WARNING: you're not allowed to scrap this web page"))
 
     }
@@ -46,51 +44,34 @@ titles_scrap <- function(link, contain = NULL, askRobot = FALSE){
 
 
 
-  if(is.null(contain)){
+  h1 <- link %>%
+    read_html() %>%
+    html_nodes("h1") %>%
+    html_text()
 
-    h1 <- link %>%
-      read_html() %>%
-      html_nodes("h1") %>%
-      html_text()
+  h2 <- link %>%
+    read_html() %>%
+    html_nodes("h2") %>%
+    html_text()
 
-    h2 <- link %>%
-      read_html() %>%
-      html_nodes("h2") %>%
-      html_text()
+  h3 <- link %>%
+    read_html() %>%
+    html_nodes("h3") %>%
+    html_text()
 
-    data <- c(h1, h2)
+  data <- c(h1, h2, h3)
+
+
+  if (is.null(contain)) {
 
     return(data)
 
 
   } else {
 
-    h1 <- link %>%
-      read_html() %>%
-      html_nodes("h1") %>%
-      html_text()
-
-    h2 <- link %>%
-      read_html() %>%
-      html_nodes("h2") %>%
-      html_text()
-
-
-    data <- c(h1, h2) %>%
-      str_subset(contain)
-
-
-    return(data)
-
+    data[grepl(contain, data, ignore.case = !case_sensitive)]
 
   }
 
 
 }
-
-
-
-
-
-
-
