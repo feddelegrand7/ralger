@@ -1,17 +1,16 @@
 ## Submission of a new version
----------------------------------------
--- R CMD check results --------------------------- ralger 2.0.1 ----
-Duration: 1m 55.8s
+-- R CMD check results ---------------------------- ralger 2.1.0 ----
+Duration: 2m 37.8s
 
 0 errors √ | 0 warnings √ | 0 notes √
-
 ---------------------------------------
+
 
 - I've changed the message printed when using the askRobot argument, which is now more precise. 
 
 - I've cleaned considerably the code. 
 
-- I've replace the str_detect function from string by the grepl base R function which provides the ability to enable/disable case sentitive character searching. 
+- I've replace the str_detect function from string by the grepl base R function which provides the ability to enable/disable case sensitive character searching. 
 
 - I've added new tests. 
 
