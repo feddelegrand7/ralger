@@ -73,14 +73,14 @@ scrap(link = my_link, node = my_node)
 
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste()`. Suppose, we want to extract the above information from the first 3 pages (starts from 0): 
+If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. Suppose, we want to extract the above information from the first 3 pages (starts from 0): 
 
 ```{r example2}
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 
 
 my_node <- ".listing_default"
 
-scrap(link = paste(my_link, 0:2), node = my_node)
+scrap(link = paste0(my_link, 0:2), node = my_node)
 
 ```
 
