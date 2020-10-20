@@ -29,6 +29,14 @@ expect_equal(
 
   )
 
+  expect_gt(length(weblink_scrap("https://www.worldbank.org/en/research")),
+            1)
+
+
+  expect_error(weblink_scrap(""))
+
+
+  expect_false(!is.character(weblink_scrap("https://www.worldbank.org/en/research")))
 
 
 
