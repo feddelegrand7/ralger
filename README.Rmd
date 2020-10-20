@@ -59,16 +59,16 @@ devtools::install_github("feddelegrand7/ralger")
 ```
 ## scrap()
 
-This is an example which shows how to extract firms denomination from the website of the [Algerian Chamber of Commerce and Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we'll focus on firms operating within the capital (Algiers). 
+This is an example which shows how to extract firms' denomination from the website of the [Algerian Chamber of Commerce and Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we'll focus on firms operating within the capital (Algiers). 
 
 ```{r example}
 library(ralger)
 
 my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver"
 
-my_node <- ".listing_default" # The CSS element, we recommend SelectorGadget
+my_node <- ".listing_default" # The CSS class, we recommend SelectorGadget
 
-scrap(my_link, my_node)
+scrap(link = my_link, node = my_node)
 
 
 ```
@@ -80,9 +80,12 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 
 my_node <- ".listing_default"
 
-scrap(paste(my_link, 0:2), my_node)
+scrap(link = paste(my_link, 0:2), node = my_node)
 
 ```
+
+Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = T` to ask the `robots.txt` file if it's permitted to scrape a specific web page.  
+
 
 ## table_scrap()
 
@@ -98,20 +101,22 @@ head(data)
 
 ```
 
+__When you deal with a web page that contains many HTML table you can use the `choose` argument to target a specific table__
 
 
 ## tidy_scrap()
 
 Sometimes you'll find some useful information on the internet that you want to extract in a tabular manner however these information are not provided in an HTML format. In this context, you can use the `tidy_scrap()` function which returns a tidy data frame according to the arguments that you introduce. The function takes four arguments:
 
-- **link** : the link of the website you're interested for
-- **nodes**: a vector of CSS elements that you want to extract. These elements will form the columns of your dataframe
-- **colnames**: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the **nodes** vector
-- **clean**: if true the function will clean the tibble's columns. 
+- **link** : the link of the website you're interested for;
+- **nodes**: a vector of CSS elements that you want to extract. These elements will form the columns of your data frame;
+- **colnames**: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the **nodes** vector;
+- **clean**: if true the function will clean the tibble's columns;
+- **askRobot**: ask the robots.txt file if it's permitted to scrape the web page. 
 
 ### Example
 
-We'll work on the famous [IMDb website](https://www.imdb.com/). Let's say we need a dataframe composed of:
+We'll work on the famous [IMDb website](https://www.imdb.com/). Let's say we need a data frame composed of:
 
 - The title of the 50 best ranked movies of all time
 - Their release year
@@ -132,11 +137,84 @@ my_nodes <- c(
 names <- c("title", "year", "rating") # respect the nodes order
 
 
-tidy_scrap(my_link, my_nodes, colnames = names)
+tidy_scrap(link = my_link, nodes = my_nodes, colnames = names)
 
 
 ```
+
 Note that all columns will be of *character* class. you'll have to convert them according to your needs. 
+
+
+
+## titles_scrap()
+
+Using `titles_scrap()`, one can efficiently scrape titles which correspond to the _h1, h2 & h3_ HTML tags. 
+
+
+
+### Example 
+
+If we go to the [New York Times](https://www.nytimes.com/), we can easily extract the titles displayed within a specific web page : 
+
+
+```{r example4}
+
+
+titles_scrap(link = "https://www.nytimes.com/")
+
+
+
+```
+
+Further, it's possible to filter the results using the `contain` argument: 
+
+
+```{r}
+
+titles_scrap(link = "https://www.nytimes.com/", contain = "York", case_sensitive = FALSE)
+
+
+
+```
+
+
+## paragraphs_scrap()
+
+
+In the same way, we can use the `paragraphs_scrap()` function to extract paragraphs. This function relies on the `p` HTML tag.  
+
+Let's get some paragraphs from the lovely [ropensci.org](https://ropensci.org/) website: 
+
+
+```{r}
+
+paragraphs_scrap(link = "https://ropensci.org/")
+
+```
+
+If needed, it's possible to collapse the paragraphs into one bag of words: 
+
+
+```{r}
+
+paragraphs_scrap(link = "https://ropensci.org/", collapse = TRUE)
+
+```
+
+
+## weblink_scrap()
+
+`weblink_scrap()` is used to srape the web links available within a web page. Useful in some cases, for example, getting a list of the available PDFs: 
+
+
+```{r}
+
+weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports/", 
+              contain = "PDF", 
+              case_sensitive = FALSE)
+
+
+```
 
 
 
