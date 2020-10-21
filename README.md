@@ -186,7 +186,7 @@ head(data)
 #> 6    6                             Jurassic World $1,670,401,444 2015
 ```
 
-**When you deal with a web page that contains many HTML table you can
+**When you deal with a web page that contains many HTML tables you can
 use the `choose` argument to target a specific table**
 
 ## tidy\_scrap()
