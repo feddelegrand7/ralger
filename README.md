@@ -159,7 +159,7 @@ scrap(link = paste0(my_link, 0:2), node = my_node)
 #> [60] "Ambassade de la République Fédérale du Nigeria"
 ```
 
-Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you
+Thanks to the [robotstxt](https://github.com/ropensci/robotstxt) package, you
 can set `askRobot = T` to ask the `robots.txt` file if it’s permitted to
 scrape a specific web page.
 
