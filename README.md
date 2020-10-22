@@ -87,7 +87,7 @@ scrap(link = my_link, node = my_node)
 #> [20] "Ambassade du Burkina Faso"
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in
+If you want to scrape multiple list pages, just use `scrap()` in
 conjunction with `paste0()`. Suppose, we want to extract the above
 information from the first 3 pages (starts from 0):
 
