@@ -152,7 +152,7 @@ scrap(link = paste0(my_link, 0:2), node = my_node)
 ```
 
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt) package, you
-can set `askRobot = T` to ask the `robots.txt` file if it’s permitted to
+can set `askRobot = TRUE` to ask the `robots.txt` file if it’s permitted to
 scrape a specific web page.
 
 ## table\_scrap()
@@ -187,7 +187,7 @@ Sometimes you’ll find some useful information on the internet that you
 want to extract in a tabular manner however these information are not
 provided in an HTML format. In this context, you can use the
 `tidy_scrap()` function which returns a tidy data frame according to the
-arguments that you introduce. The function takes four arguments:
+arguments that you introduce. The function has five parameters:
 
   - **link** : the link of the website you’re interested for;
   - **nodes**: a vector of CSS elements that you want to extract. These
