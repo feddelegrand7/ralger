@@ -6,7 +6,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Easy Web Scraping • ralger</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -14,6 +20,7 @@
 <script src="pkgdown.js"></script><meta property="og:title" content="Easy Web Scraping">
 <meta property="og:description" content="The goal of ralger is to facilitate web scraping in R. 
     The user has the ability to extract a vector with scrap(), a tidy dataframe using tidy_scrap(), a table with table_scrap() and web links with weblink_scrap().">
+<meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -87,7 +94,7 @@
   <div class="contents col-md-9">
 <div id="ralger-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#ralger-" class="anchor"></a>ralger <a><img src="reference/figures/hex.png" align="right" height="200"></a>
+<a href="#ralger-" class="anchor"></a>ralger <a><img src="reference/figures/logo.png" align="right" height="200"></a>
 </h1></div>
 <!-- badges: start -->
 
@@ -95,7 +102,7 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the ralger package from <a href="https://cran.r-project.org/">CRAN</a> with:</p>
+<p>You can install the <code>ralger</code> package from <a href="https://cran.r-project.org/">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ralger"</span><span class="op">)</span></code></pre></div>
 <p>or you can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
@@ -126,42 +133,42 @@
 <span class="co">#&gt;  [9] "Turkish Airlines / Direction Générale"                                        </span>
 <span class="co">#&gt; [10] "Aigle Azur / Agence Didouche Mourad"                                          </span>
 <span class="co">#&gt; [11] "British Airways"                                                              </span>
-<span class="co">#&gt; [12] "DELTA"                                                                        </span>
-<span class="co">#&gt; [13] "Cabinet Ammiche Amer"                                                         </span>
-<span class="co">#&gt; [14] "VERITEX"                                                                      </span>
-<span class="co">#&gt; [15] "Kermiche Partener"                                                            </span>
-<span class="co">#&gt; [16] "Marine Soft"                                                                  </span>
-<span class="co">#&gt; [17] "PROGOS"                                                                       </span>
-<span class="co">#&gt; [18] "Ambassade du Royaume d'Arabie Saoudite"                                       </span>
-<span class="co">#&gt; [19] "Ambassade de la République d'Argentine"                                       </span>
-<span class="co">#&gt; [20] "Ambassade du Burkina Faso"</span></code></pre></div>
-<p>If you want to scrape multiple list pages, just use <code><a href="reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>. Suppose, we want to extract the above information from the first 3 pages (starts from 0):</p>
+<span class="co">#&gt; [12] "Cabinet Ammiche Amer"                                                         </span>
+<span class="co">#&gt; [13] "VERITEX"                                                                      </span>
+<span class="co">#&gt; [14] "Kermiche Partener"                                                            </span>
+<span class="co">#&gt; [15] "Marine Soft"                                                                  </span>
+<span class="co">#&gt; [16] "PROGOS"                                                                       </span>
+<span class="co">#&gt; [17] "Ambassade du Royaume d'Arabie Saoudite"                                       </span>
+<span class="co">#&gt; [18] "Ambassade de la République d'Argentine"                                       </span>
+<span class="co">#&gt; [19] "Ambassade du Burkina Faso"                                                    </span>
+<span class="co">#&gt; [20] "Ambassade du Canada"</span></code></pre></div>
+<p>If you want to scrap multiple list pages, just use <code><a href="reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>. Suppose, we want to extract the above information from the first 3 pages (starts from 0):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver&amp;page="</span> 
 
 <span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">".listing_default"</span>
 
 <span class="fu"><a href="reference/scrap.html">scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">my_link</span>, <span class="fl">0</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span>, node <span class="op">=</span> <span class="va">my_node</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span>
-<span class="co">#&gt;  [2] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span>
-<span class="co">#&gt;  [3] "Clef du Sud / Miftah El Djanoub"                                                                                               </span>
-<span class="co">#&gt;  [4] "MPV"                                                                                                                           </span>
-<span class="co">#&gt;  [5] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span>
-<span class="co">#&gt;  [6] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span>
-<span class="co">#&gt;  [7] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span>
-<span class="co">#&gt;  [8] "VERITAL/ Direction Générale"                                                                                                   </span>
-<span class="co">#&gt;  [9] "Wilaya d'Alger"                                                                                                                </span>
-<span class="co">#&gt; [10] "Officine Abeille"                                                                                                              </span>
-<span class="co">#&gt; [11] "Twingle"                                                                                                                       </span>
-<span class="co">#&gt; [12] "FCM"                                                                                                                           </span>
-<span class="co">#&gt; [13] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span>
-<span class="co">#&gt; [14] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span>
-<span class="co">#&gt; [15] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span>
-<span class="co">#&gt; [16] "Conseil Constitutionnel"                                                                                                       </span>
-<span class="co">#&gt; [17] "Ambassade de la République de Serbie"                                                                                          </span>
-<span class="co">#&gt; [18] "Conseil de la Nation"                                                                                                          </span>
-<span class="co">#&gt; [19] "Radio El Bahdja"                                                                                                               </span>
-<span class="co">#&gt; [20] "Radio Mitidja"                                                                                                                 </span>
+<span class="co">#&gt;  [1] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span>
+<span class="co">#&gt;  [2] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span>
+<span class="co">#&gt;  [3] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span>
+<span class="co">#&gt;  [4] "VERITAL/ Direction Générale"                                                                                                   </span>
+<span class="co">#&gt;  [5] "Wilaya d'Alger"                                                                                                                </span>
+<span class="co">#&gt;  [6] "Officine Abeille"                                                                                                              </span>
+<span class="co">#&gt;  [7] "Twingle"                                                                                                                       </span>
+<span class="co">#&gt;  [8] "FCM"                                                                                                                           </span>
+<span class="co">#&gt;  [9] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span>
+<span class="co">#&gt; [10] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span>
+<span class="co">#&gt; [11] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span>
+<span class="co">#&gt; [12] "Conseil Constitutionnel"                                                                                                       </span>
+<span class="co">#&gt; [13] "Ambassade de la République de Serbie"                                                                                          </span>
+<span class="co">#&gt; [14] "Conseil de la Nation"                                                                                                          </span>
+<span class="co">#&gt; [15] "Radio El Bahdja"                                                                                                               </span>
+<span class="co">#&gt; [16] "Radio Mitidja"                                                                                                                 </span>
+<span class="co">#&gt; [17] "Mina Sport"                                                                                                                    </span>
+<span class="co">#&gt; [18] "Geete Services Industries"                                                                                                     </span>
+<span class="co">#&gt; [19] "Ambassade De Pologne"                                                                                                          </span>
+<span class="co">#&gt; [20] "LHC/ Laboratoire de l'Habitat &amp; de Construction Alger"                                                                         </span>
 <span class="co">#&gt; [21] "Adjerid Hanifa"                                                                                                                </span>
 <span class="co">#&gt; [22] "Dar Chamila"                                                                                                                   </span>
 <span class="co">#&gt; [23] "BNP Paribas / Agences Alger Bordj El Kiffan"                                                                                   </span>
@@ -173,36 +180,36 @@
 <span class="co">#&gt; [29] "Turkish Airlines / Direction Générale"                                                                                         </span>
 <span class="co">#&gt; [30] "Aigle Azur / Agence Didouche Mourad"                                                                                           </span>
 <span class="co">#&gt; [31] "British Airways"                                                                                                               </span>
-<span class="co">#&gt; [32] "DELTA"                                                                                                                         </span>
-<span class="co">#&gt; [33] "Cabinet Ammiche Amer"                                                                                                          </span>
-<span class="co">#&gt; [34] "VERITEX"                                                                                                                       </span>
-<span class="co">#&gt; [35] "Kermiche Partener"                                                                                                             </span>
-<span class="co">#&gt; [36] "Marine Soft"                                                                                                                   </span>
-<span class="co">#&gt; [37] "PROGOS"                                                                                                                        </span>
-<span class="co">#&gt; [38] "Ambassade du Royaume d'Arabie Saoudite"                                                                                        </span>
-<span class="co">#&gt; [39] "Ambassade de la République d'Argentine"                                                                                        </span>
-<span class="co">#&gt; [40] "Ambassade du Burkina Faso"                                                                                                     </span>
-<span class="co">#&gt; [41] "Ambassade du Canada"                                                                                                           </span>
-<span class="co">#&gt; [42] "Ambassade de la République de Corée"                                                                                           </span>
-<span class="co">#&gt; [43] "Ambassade de la République de Côte d'Ivoire"                                                                                   </span>
-<span class="co">#&gt; [44] "Ambassade des Emirats Arabes Unis"                                                                                             </span>
-<span class="co">#&gt; [45] "Ambassade du Royaume d'Espagne"                                                                                                </span>
-<span class="co">#&gt; [46] "Ambassade des Etats Unis d’Amérique"                                                                                           </span>
-<span class="co">#&gt; [47] "Ambassade de la République de Guinée Bissau"                                                                                   </span>
-<span class="co">#&gt; [48] "Ambassade du Royaume Hachémite de Jordanie"                                                                                    </span>
-<span class="co">#&gt; [49] "ONDA / Office National des Droits d'Auteurs"                                                                                   </span>
-<span class="co">#&gt; [50] "Ambassade de la République du Mali"                                                                                            </span>
-<span class="co">#&gt; [51] "Ambassade du Royaume du Maroc"                                                                                                 </span>
-<span class="co">#&gt; [52] "Ambassade de la République du Niger"                                                                                           </span>
-<span class="co">#&gt; [53] "Ambassade de la République Islamique du Pakistan"                                                                              </span>
-<span class="co">#&gt; [54] "RPL / Réseaux Poids Lourds"                                                                                                    </span>
-<span class="co">#&gt; [55] "Ambassade de l'Etat de Palestine"                                                                                              </span>
-<span class="co">#&gt; [56] "Ambassade du Royaume de Suède"                                                                                                 </span>
-<span class="co">#&gt; [57] "Ambassade de la République Yemenite"                                                                                           </span>
-<span class="co">#&gt; [58] "Ambassade de la République Démocratique du Congo"                                                                              </span>
-<span class="co">#&gt; [59] "Ambassade de la République Arabe Sahraouie Démocratique"                                                                       </span>
-<span class="co">#&gt; [60] "Ambassade de la République Fédérale du Nigeria"</span></code></pre></div>
-<p>Thanks to the <a href="https://github.com/ropensci/robotstxt">robotstxt</a> package, you can set <code>askRobot = TRUE</code> to ask the <code>robots.txt</code> file if it’s permitted to scrape a specific web page.</p>
+<span class="co">#&gt; [32] "Cabinet Ammiche Amer"                                                                                                          </span>
+<span class="co">#&gt; [33] "VERITEX"                                                                                                                       </span>
+<span class="co">#&gt; [34] "Kermiche Partener"                                                                                                             </span>
+<span class="co">#&gt; [35] "Marine Soft"                                                                                                                   </span>
+<span class="co">#&gt; [36] "PROGOS"                                                                                                                        </span>
+<span class="co">#&gt; [37] "Ambassade du Royaume d'Arabie Saoudite"                                                                                        </span>
+<span class="co">#&gt; [38] "Ambassade de la République d'Argentine"                                                                                        </span>
+<span class="co">#&gt; [39] "Ambassade du Burkina Faso"                                                                                                     </span>
+<span class="co">#&gt; [40] "Ambassade du Canada"                                                                                                           </span>
+<span class="co">#&gt; [41] "Ambassade de la République de Corée"                                                                                           </span>
+<span class="co">#&gt; [42] "Ambassade de la République de Côte d'Ivoire"                                                                                   </span>
+<span class="co">#&gt; [43] "Ambassade des Emirats Arabes Unis"                                                                                             </span>
+<span class="co">#&gt; [44] "Ambassade du Royaume d'Espagne"                                                                                                </span>
+<span class="co">#&gt; [45] "Ambassade des Etats Unis d’Amérique"                                                                                           </span>
+<span class="co">#&gt; [46] "Ambassade de la République de Guinée Bissau"                                                                                   </span>
+<span class="co">#&gt; [47] "Ambassade du Royaume Hachémite de Jordanie"                                                                                    </span>
+<span class="co">#&gt; [48] "ONDA / Office National des Droits d'Auteurs"                                                                                   </span>
+<span class="co">#&gt; [49] "Ambassade de la République du Mali"                                                                                            </span>
+<span class="co">#&gt; [50] "Ambassade du Royaume du Maroc"                                                                                                 </span>
+<span class="co">#&gt; [51] "Ambassade de la République du Niger"                                                                                           </span>
+<span class="co">#&gt; [52] "Ambassade de la République Islamique du Pakistan"                                                                              </span>
+<span class="co">#&gt; [53] "RPL / Réseaux Poids Lourds"                                                                                                    </span>
+<span class="co">#&gt; [54] "Ambassade de l'Etat de Palestine"                                                                                              </span>
+<span class="co">#&gt; [55] "Ambassade du Royaume de Suède"                                                                                                 </span>
+<span class="co">#&gt; [56] "Ambassade de la République Yemenite"                                                                                           </span>
+<span class="co">#&gt; [57] "Ambassade de la République Démocratique du Congo"                                                                              </span>
+<span class="co">#&gt; [58] "Ambassade de la République Arabe Sahraouie Démocratique"                                                                       </span>
+<span class="co">#&gt; [59] "Ambassade de la République Fédérale du Nigeria"                                                                                </span>
+<span class="co">#&gt; [60] "Ambassade du Sultanat d'Oman"</span></code></pre></div>
+<p>Thanks to the <a href="https://github.com/ropensci/robotstxt">robotstxt</a>, you can set <code>askRobot = T</code> to ask the <code>robots.txt</code> file if it’s permitted to scrape a specific web page.</p>
 </div>
 <div id="table_scrap" class="section level2">
 <h2 class="hasAnchor">
@@ -217,16 +224,16 @@
 <span class="co">#&gt;   Rank                                      Title Lifetime Gross Year</span>
 <span class="co">#&gt; 1    1                          Avengers: Endgame $2,797,800,564 2019</span>
 <span class="co">#&gt; 2    2                                     Avatar $2,790,439,092 2009</span>
-<span class="co">#&gt; 3    3                                    Titanic $2,195,169,869 1997</span>
-<span class="co">#&gt; 4    4 Star Wars: Episode VII - The Force Awakens $2,068,224,036 2015</span>
+<span class="co">#&gt; 3    3                                    Titanic $2,195,170,133 1997</span>
+<span class="co">#&gt; 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015</span>
 <span class="co">#&gt; 5    5                     Avengers: Infinity War $2,048,359,754 2018</span>
 <span class="co">#&gt; 6    6                             Jurassic World $1,670,401,444 2015</span></code></pre></div>
-<p><strong>When you deal with a web page that contains many HTML tables you can use the <code>choose</code> argument to target a specific table</strong></p>
+<p><strong>When you deal with a web page that contains many HTML table you can use the <code>choose</code> argument to target a specific table</strong></p>
 </div>
 <div id="tidy_scrap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#tidy_scrap" class="anchor"></a>tidy_scrap()</h2>
-<p>Sometimes you’ll find some useful information on the internet that you want to extract in a tabular manner however these information are not provided in an HTML format. In this context, you can use the <code><a href="reference/tidy_scrap.html">tidy_scrap()</a></code> function which returns a tidy data frame according to the arguments that you introduce. The function has five parameters:</p>
+<p>Sometimes you’ll find some useful information on the internet that you want to extract in a tabular manner however these information are not provided in an HTML format. In this context, you can use the <code><a href="reference/tidy_scrap.html">tidy_scrap()</a></code> function which returns a tidy data frame according to the arguments that you introduce. The function takes four arguments:</p>
 <ul>
 <li>
 <strong>link</strong> : the link of the website you’re interested for;</li>
@@ -292,53 +299,68 @@
 <code class="sourceCode R">
 
 <span class="fu"><a href="reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "The Book Review Podcast"                                                                     </span>
-<span class="co">#&gt;  [2] "Listen to ‘Sway’ With Kara Swisher"                                                          </span>
-<span class="co">#&gt;  [3] "Listen to the Modern Love Podcast"                                                           </span>
-<span class="co">#&gt;  [4] "Justice Department Files Antitrust Suit Against Google"                                      </span>
-<span class="co">#&gt;  [5] "Most Aggressive Challenge to Tech Giants in a Generation"                                    </span>
-<span class="co">#&gt;  [6] "Google Up Against Laws That Thwarted Microsoft (and Others Since 1890)"                      </span>
-<span class="co">#&gt;  [7] "What is Google accused of and what will be its defense? Here’s a quick overview of the case."</span>
-<span class="co">#&gt;  [8] "McConnell Advises White House Not to Strike Stimulus Deal With Pelosi"                       </span>
-<span class="co">#&gt;  [9] "No, New York isn’t putting New Jersey, Connecticut or Pennsylvania on the quarantine list."  </span>
-<span class="co">#&gt; [10] " "                                                                                           </span>
-<span class="co">#&gt; [11] "A Third Coronavirus Surge Has Taken Root in the U.S."                                        </span>
-<span class="co">#&gt; [12] "Tracking the Coronavirus ›"                                                                  </span>
-<span class="co">#&gt; [13] "Florida Breaks an Early Voting Record; Crowds Gather in Wisconsin"                           </span>
-<span class="co">#&gt; [14] "A Gated Community in N.Y.C. Where Trump Flags Fly"                                           </span>
-<span class="co">#&gt; [15] "Will Florida, the Recount State, Be Ready for the Election?"                                 </span>
-<span class="co">#&gt; [16] "With College Campuses Quiet, Some Democrats Fear Losing Students’ Votes"                     </span>
-<span class="co">#&gt; [17] "Our survey shows a shift toward Joe Biden among college-educated white voters in Georgia."   </span>
-<span class="co">#&gt; [18] "How the ‘Spygate’ Attacks Fizzled"                                                           </span>
-<span class="co">#&gt; [19] "After Doping Scandal, Russia Hacked 2018 Olympics, U.S. and Britain Say"                     </span>
-<span class="co">#&gt; [20] "Kamala Harris, Mass Incarceration and Me"                                                    </span>
-<span class="co">#&gt; [21] "Trump Is Giving Up"                                                                          </span>
-<span class="co">#&gt; [22] "A Priest Who Left the Church for Love"                                                       </span>
-<span class="co">#&gt; [23] "The Justice Dept.’s Lawsuit Against Google: Too Little, Too Late"                            </span>
-<span class="co">#&gt; [24] "I’m Drowning in Campaign Lit and Freaking Out About My Mail-In Ballot"                       </span>
-<span class="co">#&gt; [25] "Think America Couldn’t Become a Dystopian Police State?"                                     </span>
-<span class="co">#&gt; [26] "What Fans of ‘Herd Immunity’ Don’t Tell You"                                                 </span>
-<span class="co">#&gt; [27] "How Should an Atheist Think About Death?"                                                    </span>
-<span class="co">#&gt; [28] "Why Biden Will Need to Spend Big"                                                            </span>
-<span class="co">#&gt; [29] "The Real Divide in America Is Between Political Junkies and Everyone Else"                   </span>
-<span class="co">#&gt; [30] "I Am Watching My Planet, My Home, Die"                                                       </span>
-<span class="co">#&gt; [31] "I Was Reagan’s Solicitor General. Here’s What to Do With the Court."                         </span>
-<span class="co">#&gt; [32] "Despite Everything, People Still Have Weddings at ‘Plantation’ Sites"                        </span>
-<span class="co">#&gt; [33] "‘They Just Get It’: How Women in M.L.B. Found Support in a Group Text"                       </span>
-<span class="co">#&gt; [34] "Review: Martin Amis Offers an ‘Inside Story’ of His Relationships"                           </span>
-<span class="co">#&gt; [35] "Site Index"                                                                                  </span>
-<span class="co">#&gt; [36] "Site Information Navigation"                                                                 </span>
-<span class="co">#&gt; [37] "Where cases are\n\t\thighest\n\t\tper capita\n\t"                                                 </span>
-<span class="co">#&gt; [38] "U.S. hot spots ›"                                                                            </span>
-<span class="co">#&gt; [39] "Worldwide ›"                                                                                 </span>
-<span class="co">#&gt; [40] "Opinion"                                                                                     </span>
-<span class="co">#&gt; [41] "Editors’ Picks"                                                                              </span>
-<span class="co">#&gt; [42] "Advertisement"</span></code></pre></div>
+<span class="co">#&gt;  [1] " Live Updates "                                                                                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt;  [2] " See full presidential results "                                                                                                                                                                                                                                                                                          </span>
+<span class="co">#&gt;  [3] " Key States "                                                                                                                                                                                                                                                                                                             </span>
+<span class="co">#&gt;  [4] "U.S. Surpasses 10 Million Coronavirus Cases"                                                                                                                                                                                                                                                                              </span>
+<span class="co">#&gt;  [5] "An Explanation for Some Covid-19 Deaths May Not Be Holding Up"                                                                                                                                                                                                                                                            </span>
+<span class="co">#&gt;  [6] "Alex Trebek, Longtime Host of ‘Jeopardy!,’ Dies at 80"                                                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt;  [7] "O Captain, My ‘Jeopardy!’ Captain"                                                                                                                                                                                                                                                                                        </span>
+<span class="co">#&gt;  [8] "“We have no idea what the show is going to be without him.” Fans mourned the loss of Alex Trebek."                                                                                                                                                                                                                        </span>
+<span class="co">#&gt;  [9] "Making It Work"                                                                                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt; [10] "Yes, it is possible to buy a good used computer online. Here’s how."                                                                                                                                                                                                                                                      </span>
+<span class="co">#&gt; [11] "If you’re on edge, try taking a controlled breath."                                                                                                                                                                                                                                                                       </span>
+<span class="co">#&gt; [12] "The Weekender"                                                                                                                                                                                                                                                                                                            </span>
+<span class="co">#&gt; [13] "Did you follow the news this week? Take our quiz."                                                                                                                                                                                                                                                                        </span>
+<span class="co">#&gt; [14] "We Hereby Dump Trump"                                                                                                                                                                                                                                                                                                     </span>
+<span class="co">#&gt; [15] "What Alex Trebek Was Really Like"                                                                                                                                                                                                                                                                                         </span>
+<span class="co">#&gt; [16] "Black Empowerment Outside the Headlines"                                                                                                                                                                                                                                                                                  </span>
+<span class="co">#&gt; [17] "The Human Experience Will Not Be Quantified"                                                                                                                                                                                                                                                                              </span>
+<span class="co">#&gt; [18] "Elections Don’t Have to Be So Chaotic and Excruciating"                                                                                                                                                                                                                                                                   </span>
+<span class="co">#&gt; [19] "A Loving Chastisement for America"                                                                                                                                                                                                                                                                                        </span>
+<span class="co">#&gt; [20] "Victory for Joe Biden, at Last"                                                                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt; [21] "Is There a Trumpism After Trump?"                                                                                                                                                                                                                                                                                         </span>
+<span class="co">#&gt; [22] "A Black Hero in the Jim Crow Navy"                                                                                                                                                                                                                                                                                        </span>
+<span class="co">#&gt; [23] "Biden Can’t Be F.D.R. He Could Still Be L.B.J."                                                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt; [24] "Why You Should Brave the ‘Bad’ Weather"                                                                                                                                                                                                                                                                                   </span>
+<span class="co">#&gt; [25] "How Do You Know When Society Is About to Fall Apart?"                                                                                                                                                                                                                                                                     </span>
+<span class="co">#&gt; [26] "‘Saturday Night Live’ Sends Off Trump With a Ballad"                                                                                                                                                                                                                                                                      </span>
+<span class="co">#&gt; [27] "Review: At Home With Our Ancient Cousins, the Neanderthals"                                                                                                                                                                                                                                                               </span>
+<span class="co">#&gt; [28] "Site Index"                                                                                                                                                                                                                                                                                                               </span>
+<span class="co">#&gt; [29] "Site Information Navigation"                                                                                                                                                                                                                                                                                              </span>
+<span class="co">#&gt; [30] "As Biden Plans for Day 1, G.O.P. Navigates Trump’s Refusal to Concede"                                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt; [31] "George W. Bush Congratulates Biden"                                                                                                                                                                                                                                                                                       </span>
+<span class="co">#&gt; [32] ".css-11f6h48{margin-right:5px;}.css-11f6h48:hover{border-bottom:1px solid #e2e2e2;}Putin is silent on Biden’s victory, foreshadowing tense years ahead..css-m7dmkp{font-family:nyt-franklin,helvetica,arial,sans-serif;color:#d0021b;font-weight:600;font-size:0.75rem;line-height:0.8125rem;display:inline-block;}1h ago"</span>
+<span class="co">#&gt; [33] "Christian conservatives reflect on Trump’s loss and look ahead.1h ago"                                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt; [34] "Here are 5 things the Biden administration could do quickly on the environment.1h ago"                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt; [35] "Biden’s German shepherds will restore a presidential tradition.2h ago"                                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt; [36] "President"                                                                                                                                                                                                                                                                                                                </span>
+<span class="co">#&gt; [37] "Senate"                                                                                                                                                                                                                                                                                                                   </span>
+<span class="co">#&gt; [38] "House"                                                                                                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt; [39] "Senate"                                                                                                                                                                                                                                                                                                                   </span>
+<span class="co">#&gt; [40] "House"                                                                                                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt; [41] "Five Takeaways From Biden’s Victory Speech"                                                                                                                                                                                                                                                                               </span>
+<span class="co">#&gt; [42] "Why the Biden Economy Could Be the Same Long Slog as the Obama Economy"                                                                                                                                                                                                                                                   </span>
+<span class="co">#&gt; [43] "‘A Long Time Coming’: Black Women Celebrate Harris’s Ascension"                                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt; [44] "Kamala Harris’s ancestral village in India rejoiced, but many wondered what changes may come."                                                                                                                                                                                                                            </span>
+<span class="co">#&gt; [45] "What’s Next for Trump? Family Business Awaits His Return"                                                                                                                                                                                                                                                                 </span>
+<span class="co">#&gt; [46] "Analysis: Dancing in the Streets for Joe Biden"                                                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt; [47] "A Crisis Candidacy, Then Party Unity"                                                                                                                                                                                                                                                                                     </span>
+<span class="co">#&gt; [48] "As a Bitter Election Ends, 26 Americans Look to the Future"                                                                                                                                                                                                                                                               </span>
+<span class="co">#&gt; [49] "For 9 of 10 Voters, Protests Over Police Violence Played Role in Their Choice"                                                                                                                                                                                                                                            </span>
+<span class="co">#&gt; [50] "Georgia, From Reliably Republican to Political Ground Zero"                                                                                                                                                                                                                                                               </span>
+<span class="co">#&gt; [51] "‘It’s Such a Relief’: Biden Voters Rebuild a Wall That Trump Smashed"                                                                                                                                                                                                                                                     </span>
+<span class="co">#&gt; [52] "How Biden Flipped Pennsylvania and Won the Election"                                                                                                                                                                                                                                                                      </span>
+<span class="co">#&gt; [53] "With control of the Senate unclear, liberal Democrats are lining up to press their agenda."                                                                                                                                                                                                                               </span>
+<span class="co">#&gt; [54] "AT HOME"                                                                                                                                                                                                                                                                                                                  </span>
+<span class="co">#&gt; [55] "Opinion"                                                                                                                                                                                                                                                                                                                  </span>
+<span class="co">#&gt; [56] "Editors’ Picks"                                                                                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt; [57] "Advertisement"</span></code></pre></div>
 <p>Further, it’s possible to filter the results using the <code>contain</code> argument:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span>, contain <span class="op">=</span> <span class="st">"York"</span>, case_sensitive <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [1] "No, New York isn’t putting New Jersey, Connecticut or Pennsylvania on the quarantine list."</span></code></pre></div>
+<span class="co">#&gt; character(0)</span></code></pre></div>
 </div>
 </div>
 <div id="paragraphs_scrap" class="section level2">

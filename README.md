@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ralger <a><img src='man/figures/hex.png' align="right" height="200" /></a>
+# ralger <a><img src='man/figures/logo.png' align="right" height="200" /></a>
 
 <!-- badges: start -->
 
@@ -27,7 +27,7 @@ video tutorial, I gave a talk at useR2020, which you can find
 
 ## Installation
 
-You can install the ralger package from
+You can install the `ralger` package from
 [CRAN](https://cran.r-project.org/) with:
 
 ``` r
@@ -68,18 +68,18 @@ scrap(link = my_link, node = my_node)
 #>  [9] "Turkish Airlines / Direction Générale"                                        
 #> [10] "Aigle Azur / Agence Didouche Mourad"                                          
 #> [11] "British Airways"                                                              
-#> [12] "DELTA"                                                                        
-#> [13] "Cabinet Ammiche Amer"                                                         
-#> [14] "VERITEX"                                                                      
-#> [15] "Kermiche Partener"                                                            
-#> [16] "Marine Soft"                                                                  
-#> [17] "PROGOS"                                                                       
-#> [18] "Ambassade du Royaume d'Arabie Saoudite"                                       
-#> [19] "Ambassade de la République d'Argentine"                                       
-#> [20] "Ambassade du Burkina Faso"
+#> [12] "Cabinet Ammiche Amer"                                                         
+#> [13] "VERITEX"                                                                      
+#> [14] "Kermiche Partener"                                                            
+#> [15] "Marine Soft"                                                                  
+#> [16] "PROGOS"                                                                       
+#> [17] "Ambassade du Royaume d'Arabie Saoudite"                                       
+#> [18] "Ambassade de la République d'Argentine"                                       
+#> [19] "Ambassade du Burkina Faso"                                                    
+#> [20] "Ambassade du Canada"
 ```
 
-If you want to scrape multiple list pages, just use `scrap()` in
+If you want to scrap multiple list pages, just use `scrap()` in
 conjunction with `paste0()`. Suppose, we want to extract the above
 information from the first 3 pages (starts from 0):
 
@@ -89,26 +89,26 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 my_node <- ".listing_default"
 
 scrap(link = paste0(my_link, 0:2), node = my_node)
-#>  [1] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           
-#>  [2] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   
-#>  [3] "Clef du Sud / Miftah El Djanoub"                                                                                               
-#>  [4] "MPV"                                                                                                                           
-#>  [5] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
-#>  [6] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
-#>  [7] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
-#>  [8] "VERITAL/ Direction Générale"                                                                                                   
-#>  [9] "Wilaya d'Alger"                                                                                                                
-#> [10] "Officine Abeille"                                                                                                              
-#> [11] "Twingle"                                                                                                                       
-#> [12] "FCM"                                                                                                                           
-#> [13] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
-#> [14] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
-#> [15] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
-#> [16] "Conseil Constitutionnel"                                                                                                       
-#> [17] "Ambassade de la République de Serbie"                                                                                          
-#> [18] "Conseil de la Nation"                                                                                                          
-#> [19] "Radio El Bahdja"                                                                                                               
-#> [20] "Radio Mitidja"                                                                                                                 
+#>  [1] "SCAL / La Société des Ciments de l'Algérois"                                                                                   
+#>  [2] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             
+#>  [3] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
+#>  [4] "VERITAL/ Direction Générale"                                                                                                   
+#>  [5] "Wilaya d'Alger"                                                                                                                
+#>  [6] "Officine Abeille"                                                                                                              
+#>  [7] "Twingle"                                                                                                                       
+#>  [8] "FCM"                                                                                                                           
+#>  [9] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
+#> [10] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
+#> [11] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
+#> [12] "Conseil Constitutionnel"                                                                                                       
+#> [13] "Ambassade de la République de Serbie"                                                                                          
+#> [14] "Conseil de la Nation"                                                                                                          
+#> [15] "Radio El Bahdja"                                                                                                               
+#> [16] "Radio Mitidja"                                                                                                                 
+#> [17] "Mina Sport"                                                                                                                    
+#> [18] "Geete Services Industries"                                                                                                     
+#> [19] "Ambassade De Pologne"                                                                                                          
+#> [20] "LHC/ Laboratoire de l'Habitat & de Construction Alger"                                                                         
 #> [21] "Adjerid Hanifa"                                                                                                                
 #> [22] "Dar Chamila"                                                                                                                   
 #> [23] "BNP Paribas / Agences Alger Bordj El Kiffan"                                                                                   
@@ -120,39 +120,39 @@ scrap(link = paste0(my_link, 0:2), node = my_node)
 #> [29] "Turkish Airlines / Direction Générale"                                                                                         
 #> [30] "Aigle Azur / Agence Didouche Mourad"                                                                                           
 #> [31] "British Airways"                                                                                                               
-#> [32] "DELTA"                                                                                                                         
-#> [33] "Cabinet Ammiche Amer"                                                                                                          
-#> [34] "VERITEX"                                                                                                                       
-#> [35] "Kermiche Partener"                                                                                                             
-#> [36] "Marine Soft"                                                                                                                   
-#> [37] "PROGOS"                                                                                                                        
-#> [38] "Ambassade du Royaume d'Arabie Saoudite"                                                                                        
-#> [39] "Ambassade de la République d'Argentine"                                                                                        
-#> [40] "Ambassade du Burkina Faso"                                                                                                     
-#> [41] "Ambassade du Canada"                                                                                                           
-#> [42] "Ambassade de la République de Corée"                                                                                           
-#> [43] "Ambassade de la République de Côte d'Ivoire"                                                                                   
-#> [44] "Ambassade des Emirats Arabes Unis"                                                                                             
-#> [45] "Ambassade du Royaume d'Espagne"                                                                                                
-#> [46] "Ambassade des Etats Unis d’Amérique"                                                                                           
-#> [47] "Ambassade de la République de Guinée Bissau"                                                                                   
-#> [48] "Ambassade du Royaume Hachémite de Jordanie"                                                                                    
-#> [49] "ONDA / Office National des Droits d'Auteurs"                                                                                   
-#> [50] "Ambassade de la République du Mali"                                                                                            
-#> [51] "Ambassade du Royaume du Maroc"                                                                                                 
-#> [52] "Ambassade de la République du Niger"                                                                                           
-#> [53] "Ambassade de la République Islamique du Pakistan"                                                                              
-#> [54] "RPL / Réseaux Poids Lourds"                                                                                                    
-#> [55] "Ambassade de l'Etat de Palestine"                                                                                              
-#> [56] "Ambassade du Royaume de Suède"                                                                                                 
-#> [57] "Ambassade de la République Yemenite"                                                                                           
-#> [58] "Ambassade de la République Démocratique du Congo"                                                                              
-#> [59] "Ambassade de la République Arabe Sahraouie Démocratique"                                                                       
-#> [60] "Ambassade de la République Fédérale du Nigeria"
+#> [32] "Cabinet Ammiche Amer"                                                                                                          
+#> [33] "VERITEX"                                                                                                                       
+#> [34] "Kermiche Partener"                                                                                                             
+#> [35] "Marine Soft"                                                                                                                   
+#> [36] "PROGOS"                                                                                                                        
+#> [37] "Ambassade du Royaume d'Arabie Saoudite"                                                                                        
+#> [38] "Ambassade de la République d'Argentine"                                                                                        
+#> [39] "Ambassade du Burkina Faso"                                                                                                     
+#> [40] "Ambassade du Canada"                                                                                                           
+#> [41] "Ambassade de la République de Corée"                                                                                           
+#> [42] "Ambassade de la République de Côte d'Ivoire"                                                                                   
+#> [43] "Ambassade des Emirats Arabes Unis"                                                                                             
+#> [44] "Ambassade du Royaume d'Espagne"                                                                                                
+#> [45] "Ambassade des Etats Unis d’Amérique"                                                                                           
+#> [46] "Ambassade de la République de Guinée Bissau"                                                                                   
+#> [47] "Ambassade du Royaume Hachémite de Jordanie"                                                                                    
+#> [48] "ONDA / Office National des Droits d'Auteurs"                                                                                   
+#> [49] "Ambassade de la République du Mali"                                                                                            
+#> [50] "Ambassade du Royaume du Maroc"                                                                                                 
+#> [51] "Ambassade de la République du Niger"                                                                                           
+#> [52] "Ambassade de la République Islamique du Pakistan"                                                                              
+#> [53] "RPL / Réseaux Poids Lourds"                                                                                                    
+#> [54] "Ambassade de l'Etat de Palestine"                                                                                              
+#> [55] "Ambassade du Royaume de Suède"                                                                                                 
+#> [56] "Ambassade de la République Yemenite"                                                                                           
+#> [57] "Ambassade de la République Démocratique du Congo"                                                                              
+#> [58] "Ambassade de la République Arabe Sahraouie Démocratique"                                                                       
+#> [59] "Ambassade de la République Fédérale du Nigeria"                                                                                
+#> [60] "Ambassade du Sultanat d'Oman"
 ```
 
-Thanks to the [robotstxt](https://github.com/ropensci/robotstxt) package, you
-can set `askRobot = TRUE` to ask the `robots.txt` file if it’s permitted to
+Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you
+can set `askRobot = T` to ask the `robots.txt` file if it’s permitted to
 scrape a specific web page.
 
 ## table\_scrap()
@@ -172,13 +172,13 @@ head(data)
 #>   Rank                                      Title Lifetime Gross Year
 #> 1    1                          Avengers: Endgame $2,797,800,564 2019
 #> 2    2                                     Avatar $2,790,439,092 2009
-#> 3    3                                    Titanic $2,195,169,869 1997
-#> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,224,036 2015
+#> 3    3                                    Titanic $2,195,170,133 1997
+#> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
 #> 6    6                             Jurassic World $1,670,401,444 2015
 ```
 
-**When you deal with a web page that contains many HTML tables you can
+**When you deal with a web page that contains many HTML table you can
 use the `choose` argument to target a specific table**
 
 ## tidy\_scrap()
@@ -187,7 +187,7 @@ Sometimes you’ll find some useful information on the internet that you
 want to extract in a tabular manner however these information are not
 provided in an HTML format. In this context, you can use the
 `tidy_scrap()` function which returns a tidy data frame according to the
-arguments that you introduce. The function has five parameters:
+arguments that you introduce. The function takes four arguments:
 
   - **link** : the link of the website you’re interested for;
   - **nodes**: a vector of CSS elements that you want to extract. These
@@ -257,48 +257,63 @@ easily extract the titles displayed within a specific web page :
 
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "The Book Review Podcast"                                                                     
-#>  [2] "Listen to ‘Sway’ With Kara Swisher"                                                          
-#>  [3] "Listen to the Modern Love Podcast"                                                           
-#>  [4] "Justice Department Files Antitrust Suit Against Google"                                      
-#>  [5] "Most Aggressive Challenge to Tech Giants in a Generation"                                    
-#>  [6] "Google Up Against Laws That Thwarted Microsoft (and Others Since 1890)"                      
-#>  [7] "What is Google accused of and what will be its defense? Here’s a quick overview of the case."
-#>  [8] "McConnell Advises White House Not to Strike Stimulus Deal With Pelosi"                       
-#>  [9] "No, New York isn’t putting New Jersey, Connecticut or Pennsylvania on the quarantine list."  
-#> [10] " "                                                                                           
-#> [11] "A Third Coronavirus Surge Has Taken Root in the U.S."                                        
-#> [12] "Tracking the Coronavirus ›"                                                                  
-#> [13] "Florida Breaks an Early Voting Record; Crowds Gather in Wisconsin"                           
-#> [14] "A Gated Community in N.Y.C. Where Trump Flags Fly"                                           
-#> [15] "Will Florida, the Recount State, Be Ready for the Election?"                                 
-#> [16] "With College Campuses Quiet, Some Democrats Fear Losing Students’ Votes"                     
-#> [17] "Our survey shows a shift toward Joe Biden among college-educated white voters in Georgia."   
-#> [18] "How the ‘Spygate’ Attacks Fizzled"                                                           
-#> [19] "After Doping Scandal, Russia Hacked 2018 Olympics, U.S. and Britain Say"                     
-#> [20] "Kamala Harris, Mass Incarceration and Me"                                                    
-#> [21] "Trump Is Giving Up"                                                                          
-#> [22] "A Priest Who Left the Church for Love"                                                       
-#> [23] "The Justice Dept.’s Lawsuit Against Google: Too Little, Too Late"                            
-#> [24] "I’m Drowning in Campaign Lit and Freaking Out About My Mail-In Ballot"                       
-#> [25] "Think America Couldn’t Become a Dystopian Police State?"                                     
-#> [26] "What Fans of ‘Herd Immunity’ Don’t Tell You"                                                 
-#> [27] "How Should an Atheist Think About Death?"                                                    
-#> [28] "Why Biden Will Need to Spend Big"                                                            
-#> [29] "The Real Divide in America Is Between Political Junkies and Everyone Else"                   
-#> [30] "I Am Watching My Planet, My Home, Die"                                                       
-#> [31] "I Was Reagan’s Solicitor General. Here’s What to Do With the Court."                         
-#> [32] "Despite Everything, People Still Have Weddings at ‘Plantation’ Sites"                        
-#> [33] "‘They Just Get It’: How Women in M.L.B. Found Support in a Group Text"                       
-#> [34] "Review: Martin Amis Offers an ‘Inside Story’ of His Relationships"                           
-#> [35] "Site Index"                                                                                  
-#> [36] "Site Information Navigation"                                                                 
-#> [37] "Where cases are\n\t\thighest\n\t\tper capita\n\t"                                                 
-#> [38] "U.S. hot spots ›"                                                                            
-#> [39] "Worldwide ›"                                                                                 
-#> [40] "Opinion"                                                                                     
-#> [41] "Editors’ Picks"                                                                              
-#> [42] "Advertisement"
+#>  [1] " Live Updates "                                                                                                                                                                                                                                                                                                           
+#>  [2] " See full presidential results "                                                                                                                                                                                                                                                                                          
+#>  [3] " Key States "                                                                                                                                                                                                                                                                                                             
+#>  [4] "U.S. Surpasses 10 Million Coronavirus Cases"                                                                                                                                                                                                                                                                              
+#>  [5] "An Explanation for Some Covid-19 Deaths May Not Be Holding Up"                                                                                                                                                                                                                                                            
+#>  [6] "Alex Trebek, Longtime Host of ‘Jeopardy!,’ Dies at 80"                                                                                                                                                                                                                                                                    
+#>  [7] "O Captain, My ‘Jeopardy!’ Captain"                                                                                                                                                                                                                                                                                        
+#>  [8] "“We have no idea what the show is going to be without him.” Fans mourned the loss of Alex Trebek."                                                                                                                                                                                                                        
+#>  [9] "Making It Work"                                                                                                                                                                                                                                                                                                           
+#> [10] "Yes, it is possible to buy a good used computer online. Here’s how."                                                                                                                                                                                                                                                      
+#> [11] "If you’re on edge, try taking a controlled breath."                                                                                                                                                                                                                                                                       
+#> [12] "The Weekender"                                                                                                                                                                                                                                                                                                            
+#> [13] "Did you follow the news this week? Take our quiz."                                                                                                                                                                                                                                                                        
+#> [14] "We Hereby Dump Trump"                                                                                                                                                                                                                                                                                                     
+#> [15] "What Alex Trebek Was Really Like"                                                                                                                                                                                                                                                                                         
+#> [16] "Black Empowerment Outside the Headlines"                                                                                                                                                                                                                                                                                  
+#> [17] "The Human Experience Will Not Be Quantified"                                                                                                                                                                                                                                                                              
+#> [18] "Elections Don’t Have to Be So Chaotic and Excruciating"                                                                                                                                                                                                                                                                   
+#> [19] "A Loving Chastisement for America"                                                                                                                                                                                                                                                                                        
+#> [20] "Victory for Joe Biden, at Last"                                                                                                                                                                                                                                                                                           
+#> [21] "Is There a Trumpism After Trump?"                                                                                                                                                                                                                                                                                         
+#> [22] "A Black Hero in the Jim Crow Navy"                                                                                                                                                                                                                                                                                        
+#> [23] "Biden Can’t Be F.D.R. He Could Still Be L.B.J."                                                                                                                                                                                                                                                                           
+#> [24] "Why You Should Brave the ‘Bad’ Weather"                                                                                                                                                                                                                                                                                   
+#> [25] "How Do You Know When Society Is About to Fall Apart?"                                                                                                                                                                                                                                                                     
+#> [26] "‘Saturday Night Live’ Sends Off Trump With a Ballad"                                                                                                                                                                                                                                                                      
+#> [27] "Review: At Home With Our Ancient Cousins, the Neanderthals"                                                                                                                                                                                                                                                               
+#> [28] "Site Index"                                                                                                                                                                                                                                                                                                               
+#> [29] "Site Information Navigation"                                                                                                                                                                                                                                                                                              
+#> [30] "As Biden Plans for Day 1, G.O.P. Navigates Trump’s Refusal to Concede"                                                                                                                                                                                                                                                    
+#> [31] "George W. Bush Congratulates Biden"                                                                                                                                                                                                                                                                                       
+#> [32] ".css-11f6h48{margin-right:5px;}.css-11f6h48:hover{border-bottom:1px solid #e2e2e2;}Putin is silent on Biden’s victory, foreshadowing tense years ahead..css-m7dmkp{font-family:nyt-franklin,helvetica,arial,sans-serif;color:#d0021b;font-weight:600;font-size:0.75rem;line-height:0.8125rem;display:inline-block;}1h ago"
+#> [33] "Christian conservatives reflect on Trump’s loss and look ahead.1h ago"                                                                                                                                                                                                                                                    
+#> [34] "Here are 5 things the Biden administration could do quickly on the environment.1h ago"                                                                                                                                                                                                                                    
+#> [35] "Biden’s German shepherds will restore a presidential tradition.2h ago"                                                                                                                                                                                                                                                    
+#> [36] "President"                                                                                                                                                                                                                                                                                                                
+#> [37] "Senate"                                                                                                                                                                                                                                                                                                                   
+#> [38] "House"                                                                                                                                                                                                                                                                                                                    
+#> [39] "Senate"                                                                                                                                                                                                                                                                                                                   
+#> [40] "House"                                                                                                                                                                                                                                                                                                                    
+#> [41] "Five Takeaways From Biden’s Victory Speech"                                                                                                                                                                                                                                                                               
+#> [42] "Why the Biden Economy Could Be the Same Long Slog as the Obama Economy"                                                                                                                                                                                                                                                   
+#> [43] "‘A Long Time Coming’: Black Women Celebrate Harris’s Ascension"                                                                                                                                                                                                                                                           
+#> [44] "Kamala Harris’s ancestral village in India rejoiced, but many wondered what changes may come."                                                                                                                                                                                                                            
+#> [45] "What’s Next for Trump? Family Business Awaits His Return"                                                                                                                                                                                                                                                                 
+#> [46] "Analysis: Dancing in the Streets for Joe Biden"                                                                                                                                                                                                                                                                           
+#> [47] "A Crisis Candidacy, Then Party Unity"                                                                                                                                                                                                                                                                                     
+#> [48] "As a Bitter Election Ends, 26 Americans Look to the Future"                                                                                                                                                                                                                                                               
+#> [49] "For 9 of 10 Voters, Protests Over Police Violence Played Role in Their Choice"                                                                                                                                                                                                                                            
+#> [50] "Georgia, From Reliably Republican to Political Ground Zero"                                                                                                                                                                                                                                                               
+#> [51] "‘It’s Such a Relief’: Biden Voters Rebuild a Wall That Trump Smashed"                                                                                                                                                                                                                                                     
+#> [52] "How Biden Flipped Pennsylvania and Won the Election"                                                                                                                                                                                                                                                                      
+#> [53] "With control of the Senate unclear, liberal Democrats are lining up to press their agenda."                                                                                                                                                                                                                               
+#> [54] "AT HOME"                                                                                                                                                                                                                                                                                                                  
+#> [55] "Opinion"                                                                                                                                                                                                                                                                                                                  
+#> [56] "Editors’ Picks"                                                                                                                                                                                                                                                                                                           
+#> [57] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -307,7 +322,7 @@ argument:
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/", contain = "York", case_sensitive = FALSE)
-#> [1] "No, New York isn’t putting New Jersey, Connecticut or Pennsylvania on the quarantine list."
+#> character(0)
 ```
 
 ## paragraphs\_scrap()
