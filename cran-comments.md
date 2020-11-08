@@ -5,13 +5,25 @@ Duration: 2m 37.8s
 0 errors √ | 0 warnings √ | 0 notes √
 ---------------------------------------
 
+Fixing issues related to : 
 
-- I've changed the message printed when using the askRobot argument, which is now more precise. 
+"It looks as if the CRAN policy
 
-- I've cleaned considerably the code. 
+'Packages which use Internet resources should fail gracefully with an
+informative message if the resource is not available or has changed (and
+not give a check warning nor error).'
 
-- I've replace the str_detect function from string by the grepl base R function which provides the ability to enable/disable case sensitive character searching. 
+needs to be implemented here."
 
-- I've added new tests. 
+Email received the 08th November 2020 from Professor Brian D. Ripley,
 
-- I've added the h3 html tag to the titles_scrap function. Now when executed the user gets the h1, h2 and h3 elements from a web page (h1 and h2 only before)
+#######################
+Answers
+#######################
+
+Thank you very much for your feedback. In order to fix the above mentioned issue I have wrapped all the `ralger` functions inside a `tryCatch()` function. Now `ralger` detects catches the following errors: 
+
++ No internet connection: In this case, `ralger` displays a message and returns `NA` 
++ Invalid link: package's functions display an informative message and returns also `NA`
+
+

@@ -1,8 +1,8 @@
 ---
-title: "Functions overview"
+title: "Functions Overview"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Functions overview}
+  %\VignetteIndexEntry{Functions Overview}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -195,4 +195,5 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 ## Code of Conduct
 
 Please note that the ralger project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
 
