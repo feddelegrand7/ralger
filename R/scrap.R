@@ -53,8 +53,6 @@ scrap <- function(link,
 
       expr = {
 
-        if(!clean){
-
         data <- lapply(link,
                  function(url) {
                    url %>% read_html() %>%
@@ -62,23 +60,17 @@ scrap <- function(link,
                      html_text()
                  })
 
-        return(data)
+
+        if(!clean){
+
+        return(unlist(data))
 
         } else {
         
-        data <- lapply(link,
-                 function(url) {
-                   url %>% read_html() %>%
-                     html_nodes(node) %>%
-                     html_text()
-                 })
-
-
-        data_clean <- unlist(data) %>%
+        unlist(data) %>%
         str_replace_all(c("\n" = " ", "\r" = " ", "\t" = " ")) %>%
         str_trim()
-        return(data_clean)
-          
+                  
         }
 
       }, 
