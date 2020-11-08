@@ -21,17 +21,18 @@
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text
 #' @importFrom xml2 read_html
-#' @importFrom stringr str_replace_all
-#' @importFrom stringr str_trim
+#' @importFrom stringr str_replace_all str_trim 
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
+#' @importFrom curl has_internet
 
 scrap <- function(link,
                   node,
                   clean = FALSE,
                   askRobot = FALSE) {
 
+###################### Ask robot related ##################################################
   if (askRobot) {
 
     if (paths_allowed(link) == TRUE) {
@@ -43,29 +44,66 @@ scrap <- function(link,
       ))
 
     }
-
-
   }
 
-  data <- lapply(link,
+  #########################################################################################
+
+    tryCatch(
+
+
+      expr = {
+
+        if(!clean){
+
+        data <- lapply(link,
                  function(url) {
                    url %>% read_html() %>%
                      html_nodes(node) %>%
                      html_text()
                  })
 
-  if (!clean)
-    return({
-      unlist(data)
-    })
+        return(data)
 
-  if (clean) {
-    data_clean <- unlist(data) %>%
-      str_replace_all(c("\n" = " ", "\r" = " ")) %>%
-      str_trim()
-    return(data_clean)
+        } else {
+        
+        data <- lapply(link,
+                 function(url) {
+                   url %>% read_html() %>%
+                     html_nodes(node) %>%
+                     html_text()
+                 })
 
-  }
+
+        data_clean <- unlist(data) %>%
+        str_replace_all(c("\n" = " ", "\r" = " ", "\t" = " ")) %>%
+        str_trim()
+        return(data_clean)
+          
+        }
+
+      }, 
+
+    error = function(cond){
+
+      if(!curl::has_internet()){
+
+        message("Please check your internet connexion: ")
+
+        message(cond)
+
+        return(NA)
+
+      } else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+
+          message(paste0("The URL doesn't seem to be a valid one: ", link))
+
+          message("Here the original error message: ")
+
+          message(cond)
+
+          return(NA)
+      }})
 
 
 }
+

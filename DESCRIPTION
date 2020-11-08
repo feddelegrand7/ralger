@@ -24,8 +24,9 @@ Imports:
     dplyr,
     stringr,
     robotstxt,
-    crayon, 
-    purrr
+    crayon,
+    purrr,
+    curl
 Suggests: 
     knitr,
     rmarkdown,
