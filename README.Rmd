@@ -162,7 +162,7 @@ Further, it's possible to filter the results using the `contain` argument:
 
 ```{r}
 
-titles_scrap(link = "https://www.nytimes.com/", contain = "York", case_sensitive = FALSE)
+titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
 
 
 

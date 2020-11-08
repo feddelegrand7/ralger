@@ -1,9 +1,8 @@
 ## Submission of a new version
--- R CMD check results ---------------------------- ralger 2.1.0 ----
-Duration: 2m 37.8s
+-- R CMD check results --------------- ralger 2.2.0 ----
+Duration: 2m 31.9s
 
 0 errors √ | 0 warnings √ | 0 notes √
----------------------------------------
 
 Fixing issues related to : 
 
@@ -27,4 +26,7 @@ Thank you very much for your feedback. In order to fix the above mentioned issue
 + Invalid link: package's functions display an informative message and returns also `NA`
 
 
+If you have any suggestions, please don't hesitate. 
+
+Best regards. 
 
