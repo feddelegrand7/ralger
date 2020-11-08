@@ -27,3 +27,4 @@ Thank you very much for your feedback. In order to fix the above mentioned issue
 + Invalid link: package's functions display an informative message and returns also `NA`
 
 
+
