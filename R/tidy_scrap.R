@@ -30,7 +30,7 @@
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
 #' @importFrom robotstxt paths_allowed
-
+#' @importFrom curl has_internet
 
 
 tidy_scrap <- function(link,
@@ -39,6 +39,9 @@ tidy_scrap <- function(link,
                        clean = FALSE,
                        askRobot = FALSE) {
 
+
+
+######################### Ask Robot part #####################################################
 
     if (length(nodes) != length(colnames))
       stop("nodes and colnames lengths do not match")
@@ -55,22 +58,57 @@ tidy_scrap <- function(link,
       }
     }
 
-    allframes <- lapply(nodes, function(x)
-      scrap(link, x))
+###############################################################################################
 
-    result <- do.call(cbind, allframes)
-    colnames(result) <- colnames
-    result <- as_tibble(result)
 
-    if (!clean)
-      return(result)
+tryCatch(
 
-    if (clean) {
-      result_clean <- result %>%
-        mutate_all(~ str_replace_all(., c("\n" = " ", "\r" = " "))) %>%
+expr = {
+
+allframes <- lapply(nodes, function(x) scrap(link, x))
+
+result <- do.call(cbind, allframes)
+
+colnames(result) <- colnames
+
+result <- as_tibble(result)
+
+result <- result %>% unnest(col = all_of(colnames))
+
+
+if (!clean){
+
+  return(result)
+
+} else {
+
+result %>%
+        mutate_all(~ str_replace_all(., c("\n" = " ", "\r" = " ", "\t" = " "))) %>%
         mutate_all(str_trim)
-      return(result_clean)
 
-    }
+}
+      
+}, 
+
+error = function(cond){
+
+      if(!curl::has_internet()){
+
+        message("Please check your internet connexion: ")
+
+        message(cond)
+
+        return(NA)
+
+      } else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+
+          message(paste0("The URL doesn't seem to be a valid one: ", link))
+
+          message("Here the original error message: ")
+
+          message(cond)
+
+          return(NA)
+      }})
 
   }
