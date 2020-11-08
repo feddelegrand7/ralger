@@ -24,6 +24,8 @@
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
+#' @importFrom curl has_internet
+
 
 
 
@@ -34,6 +36,8 @@ table_scrap <-
            askRobot = FALSE,
            fill = FALSE) {
 
+
+############################## Ask robot part ###################################################
 
     if (askRobot) {
       if (paths_allowed(link) == TRUE) {
@@ -48,12 +52,41 @@ table_scrap <-
 
     }
 
-    table <- link %>%
+#################################################################################################
+
+
+tryCatch(
+
+expr = {
+
+link %>%
       read_html() %>%
       html_table(header, fill = fill) %>%
       purrr::pluck(choose)
 
-    return(table)
 
+  }, 
 
-  }
+error = function(cond){
+
+if(!curl::has_internet()){
+
+        message("Please check your internet connexion: ")
+
+        message(cond)
+
+        return(NA)
+
+      } else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+
+          message(paste0("The URL doesn't seem to be a valid one: ", link))
+
+          message("Here the original error message: ")
+
+          message(cond)
+
+          return(NA)
+      }
+}
+
+)}

@@ -109,6 +109,8 @@ error = function(cond){
           message(cond)
 
           return(NA)
-      }})
+      }
+      }
+      )
 
   }
