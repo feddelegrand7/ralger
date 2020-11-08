@@ -6,25 +6,17 @@
 <!-- badges: start -->
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
-
 [![CRAN\_time\_from\_release](https://www.r-pkg.org/badges/ago/ralger)](https://cran.r-project.org/package=ralger)
-
 [![CRAN\_latest\_release\_date](https://www.r-pkg.org/badges/last-release/ralger)](https://cran.r-project.org/package=ralger)
-
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/ralger)](https://cran.r-project.org/package=ralger)
-
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r-project.org/package=ralger)
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
-
 [![Travis build
 status](https://travis-ci.com/feddelegrand7/ralger.svg?branch=master)](https://travis-ci.com/feddelegrand7/ralger)
-
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
-
 [![Codecov test
 coverage](https://codecov.io/gh/feddelegrand7/ralger/branch/master/graph/badge.svg)](https://codecov.io/gh/feddelegrand7/ralger?branch=master)
 <!-- badges: end -->
@@ -87,7 +79,7 @@ scrap(link = my_link, node = my_node)
 #> [20] "Ambassade du Burkina Faso"
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in
+If you want to scrape multiple list pages, just use `scrap()` in
 conjunction with `paste0()`. Suppose, we want to extract the above
 information from the first 3 pages (starts from 0):
 
@@ -159,8 +151,8 @@ scrap(link = paste0(my_link, 0:2), node = my_node)
 #> [60] "Ambassade de la République Fédérale du Nigeria"
 ```
 
-Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you
-can set `askRobot = T` to ask the `robots.txt` file if it’s permitted to
+Thanks to the [robotstxt](https://github.com/ropensci/robotstxt) package, you
+can set `askRobot = TRUE` to ask the `robots.txt` file if it’s permitted to
 scrape a specific web page.
 
 ## table\_scrap()
@@ -186,7 +178,7 @@ head(data)
 #> 6    6                             Jurassic World $1,670,401,444 2015
 ```
 
-**When you deal with a web page that contains many HTML table you can
+**When you deal with a web page that contains many HTML tables you can
 use the `choose` argument to target a specific table**
 
 ## tidy\_scrap()
@@ -195,7 +187,7 @@ Sometimes you’ll find some useful information on the internet that you
 want to extract in a tabular manner however these information are not
 provided in an HTML format. In this context, you can use the
 `tidy_scrap()` function which returns a tidy data frame according to the
-arguments that you introduce. The function takes four arguments:
+arguments that you introduce. The function has five parameters:
 
   - **link** : the link of the website you’re interested for;
   - **nodes**: a vector of CSS elements that you want to extract. These
