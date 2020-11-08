@@ -23,8 +23,7 @@
 #' @importFrom crayon bgRed
 #' @importFrom robotstxt paths_allowed
 #' @importFrom magrittr %>%
-
-
+#' @importFrom curl has_internet
 
 
 titles_scrap <- function(link,
@@ -32,6 +31,8 @@ titles_scrap <- function(link,
                          case_sensitive = FALSE,
                          askRobot = FALSE) {
 
+
+###################### Ask Robot part ######################################################
 
   if (askRobot) {
     if (paths_allowed(link) == TRUE) {
@@ -43,36 +44,51 @@ titles_scrap <- function(link,
       ))
 
     }
-
-
   }
+###########################################################################################
 
-  h1 <- link %>%
-    read_html() %>%
-    html_nodes("h1") %>%
-    html_text()
+tryCatch(
 
-  h2 <- link %>%
-    read_html() %>%
-    html_nodes("h2") %>%
-    html_text()
+expr = {
 
-  h3 <- link %>%
-    read_html() %>%
-    html_nodes("h3") %>%
-    html_text()
+alltitles <- lapply(c("h1", "h2", "h3"), function(x) scrap(link, x))
 
-  data <- c(h1, h2, h3)
+data <- do.call(c, alltitles)
 
-
-  if (is.null(contain)) {
+if (is.null(contain)) {
+    
     return(data)
 
-
   } else {
+
     data[grepl(contain, data, ignore.case = !case_sensitive)]
 
   }
 
+}, 
+
+error = function(cond){
+
+if(!curl::has_internet()){
+
+        message("Please check your internet connexion: ")
+
+        message(cond)
+
+        return(NA)
+
+} else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+
+          message(paste0("The URL doesn't seem to be a valid one: ", link))
+
+          message("Here the original error message: ")
+
+          message(cond)
+
+          return(NA)
+      }
+}
+
+)
 
 }
