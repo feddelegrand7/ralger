@@ -1,16 +1,16 @@
 
 
-h1 <- "https://www.nytimes.com/" %>%
+h1 <- "https://www.un.org/en/" %>%
   read_html() %>%
   html_nodes("h1") %>%
   html_text()
 
-h2 <- "https://www.nytimes.com/" %>%
+h2 <- "https://www.un.org/en/" %>%
   read_html() %>%
   html_nodes("h2") %>%
   html_text()
 
-h3 <- "https://www.nytimes.com/" %>%
+h3 <- "https://www.un.org/en/" %>%
   read_html() %>%
   html_nodes("h3") %>%
   html_text()
@@ -20,7 +20,7 @@ test_that("titles_scrap() works", {
   expect_equivalent(
 
 
-  titles_scrap("https://www.nytimes.com/")
+  titles_scrap("https://www.un.org/en/")
 
 
     ,
@@ -34,11 +34,11 @@ test_that("titles_scrap() works", {
 
   ###############################################################################
 
-  expect_type(titles_scrap("https://www.nytimes.com/"),
+  expect_type(titles_scrap("https://www.un.org/en/"),
               "character")
 
   ###############################################################################
 
-  expect_vector(titles_scrap("https://www.nytimes.com/"))
+  expect_vector(titles_scrap("https://www.un.org/en/"))
 
 })
