@@ -23,6 +23,7 @@
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
 #' @importFrom robotstxt paths_allowed
+#' @importFrom curl has_internet
 
 
 
@@ -31,6 +32,7 @@ weblink_scrap <- function(link,
                           case_sensitive = FALSE,
                           askRobot = FALSE) {
 
+  ################################### Ask Robot Part #################################################
 
   if (askRobot) {
     if (paths_allowed(link) == TRUE) {
@@ -43,8 +45,13 @@ weblink_scrap <- function(link,
 
     }
   }
+########################################################################################################
 
-  links <- link %>%
+tryCatch(
+
+expr = {
+
+link <- link %>%
     read_html() %>%
     html_nodes("a") %>%
     html_attr("href")
@@ -56,5 +63,29 @@ weblink_scrap <- function(link,
     links[grepl(contain, links, ignore.case = !case_sensitive)]
   }
 
+}, 
 
+error = function(cond){
+
+if(!has_internet()){
+
+        message("Please check your internet connexion: ")
+
+        message(cond)
+
+        return(NA)
+
+} else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+
+          message(paste0("The URL doesn't seem to be a valid one: ", link))
+
+          message("Here the original error message: ")
+
+          message(cond)
+
+          return(NA)
+      }
+}
+
+)
 }

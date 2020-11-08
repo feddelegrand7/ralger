@@ -69,7 +69,7 @@ link %>%
 
 error = function(cond){
 
-if(!curl::has_internet()){
+if(!has_internet()){
 
         message("Please check your internet connexion: ")
 
