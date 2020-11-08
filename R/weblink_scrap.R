@@ -51,7 +51,7 @@ tryCatch(
 
 expr = {
 
-link <- link %>%
+links <- links %>%
     read_html() %>%
     html_nodes("a") %>%
     html_attr("href")
