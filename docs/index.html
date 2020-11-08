@@ -6,20 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Easy Web Scraping • ralger</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Easy Web Scraping">
 <meta property="og:description" content="The goal of ralger is to facilitate web scraping in R. 
-    The user has the ability to extract a vector with scrap() or a tidy dataframe using tidy_scrap().">
-<meta name="twitter:card" content="summary">
+    The user has the ability to extract a vector with scrap(), a tidy dataframe using tidy_scrap(), a table with table_scrap() and web links with weblink_scrap().">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ralger</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
       </span>
     </div>
 
@@ -45,10 +45,22 @@
   </a>
 </li>
 <li>
-  <a href="articles/ralger.html">Get started</a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/Functions%20overview.html">Functions overview</a>
+    </li>
+    <li>
+      <a href="articles/Introduction.html">Quick example</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
@@ -56,7 +68,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/feddelegrand7/ralger">
+  <a href="https://github.com/feddelegrand7/ralger/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -79,180 +91,344 @@
 </h1></div>
 <!-- badges: start -->
 
-<!-- badges: end -->
-<p>The goal of <strong>ralger</strong> is to facilitate web scraping in R.</p>
+<p>The goal of <strong>ralger</strong> is to facilitate web scraping in R. For a quick video tutorial, I gave a talk at useR2020, which you can find <a href="https://www.youtube.com/watch?v=OHi6E8jegQg">here</a></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the ralger package from <a href="https://cran.r-project.org/">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"ralger"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ralger"</span><span class="op">)</span></code></pre></div>
 <p>or you can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"feddelegrand7/ralger"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"feddelegrand7/ralger"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="scrap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#scrap" class="anchor"></a>scrap()</h2>
-<p>This is an example which shows how to extract firms denomination from the website of the <a href="http://elmouchir.caci.dz">Algerian Chamber of Commerce and Industry</a> (CACI). For simplicity, we’ll focus on firms operating within the capital (Algiers).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ralger)</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co">#&gt; Warning: package 'ralger' was built under R version 3.6.2</span></a>
-<a class="sourceLine" id="cb3-3" title="3"></a>
-<a class="sourceLine" id="cb3-4" title="4">my_link &lt;-<span class="st"> "http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver"</span></a>
-<a class="sourceLine" id="cb3-5" title="5"></a>
-<a class="sourceLine" id="cb3-6" title="6">my_node &lt;-<span class="st"> ".listing_default"</span> <span class="co"># The CSS element, we recommend SelectorGadget</span></a>
-<a class="sourceLine" id="cb3-7" title="7"></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="kw"><a href="reference/scrap.html">scrap</a></span>(my_link, my_node)</a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt;  [1] "Adjerid Hanifa"                                                               </span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt;  [2] "Dar Chamila"                                                                  </span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;  [3] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                        </span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;  [4] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt;  [5] "YOUKAIS"                                                                      </span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt;  [6] "EDIMETAL"                                                                     </span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt;  [7] "SYRIAN AIR LINES"                                                             </span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt;  [8] "Turkish Airlines / Direction Générale"                                        </span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt;  [9] "Aigle Azur / Agence Didouche Mourad"                                          </span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; [10] "British Airways"                                                              </span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; [11] "DELTA"                                                                        </span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; [12] "Cabinet Ammiche Amer"                                                         </span></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; [13] "VERITEX"                                                                      </span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; [14] "Kermiche Partener"                                                            </span></a>
-<a class="sourceLine" id="cb3-23" title="23"><span class="co">#&gt; [15] "PROGOS"                                                                       </span></a>
-<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt; [16] "Ambassade du Royaume d'Arabie Saoudite"                                       </span></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; [17] "Ambassade de la République d'Argentine"                                       </span></a>
-<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; [18] "Ambassade du Burkina Faso"                                                    </span></a>
-<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; [19] "Ambassade du Canada"                                                          </span></a>
-<a class="sourceLine" id="cb3-28" title="28"><span class="co">#&gt; [20] "Ambassade de la République de Corée"</span></a></code></pre></div>
-<p>If you want to scrap multiple list pages, just use <code><a href="reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code>. Suppose, we want to extract the above information from the first 3 pages (starts from 0):</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">my_link &lt;-<span class="st"> "http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver&amp;page="</span> </a>
-<a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3">my_node &lt;-<span class="st"> ".listing_default"</span></a>
-<a class="sourceLine" id="cb4-4" title="4"></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="kw"><a href="reference/scrap.html">scrap</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(my_link, <span class="dv">0</span><span class="op">:</span><span class="dv">2</span>), my_node)</a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt;  [1] "Direction Régionale Centre / Ex Trans Canal Centre"                                                                            </span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt;  [2] "Egt Sidi Fredj / Club Azur Plage"                                                                                              </span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt;  [3] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    </span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt;  [4] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          </span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt;  [5] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt;  [6] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt;  [7] "Clef du Sud / Miftah El Djanoub"                                                                                               </span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt;  [8] "Adrien.Dz"                                                                                                                     </span></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt;  [9] "MPV"                                                                                                                           </span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; [10] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; [11] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; [12] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span></a>
-<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; [13] "VERITAL/ Direction Générale"                                                                                                   </span></a>
-<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; [14] "Wilaya d'Alger"                                                                                                                </span></a>
-<a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; [15] "Officine Abeille"                                                                                                              </span></a>
-<a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt; [16] "Twingle"                                                                                                                       </span></a>
-<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; [17] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span></a>
-<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; [18] "Les Pages Jaunes"                                                                                                              </span></a>
-<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; [19] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span></a>
-<a class="sourceLine" id="cb4-25" title="25"><span class="co">#&gt; [20] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span></a>
-<a class="sourceLine" id="cb4-26" title="26"><span class="co">#&gt; [21] "Direction Régionale Centre / Ex Trans Canal Centre"                                                                            </span></a>
-<a class="sourceLine" id="cb4-27" title="27"><span class="co">#&gt; [22] "Egt Sidi Fredj / Club Azur Plage"                                                                                              </span></a>
-<a class="sourceLine" id="cb4-28" title="28"><span class="co">#&gt; [23] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    </span></a>
-<a class="sourceLine" id="cb4-29" title="29"><span class="co">#&gt; [24] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          </span></a>
-<a class="sourceLine" id="cb4-30" title="30"><span class="co">#&gt; [25] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span></a>
-<a class="sourceLine" id="cb4-31" title="31"><span class="co">#&gt; [26] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span></a>
-<a class="sourceLine" id="cb4-32" title="32"><span class="co">#&gt; [27] "Clef du Sud / Miftah El Djanoub"                                                                                               </span></a>
-<a class="sourceLine" id="cb4-33" title="33"><span class="co">#&gt; [28] "Adrien.Dz"                                                                                                                     </span></a>
-<a class="sourceLine" id="cb4-34" title="34"><span class="co">#&gt; [29] "MPV"                                                                                                                           </span></a>
-<a class="sourceLine" id="cb4-35" title="35"><span class="co">#&gt; [30] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span></a>
-<a class="sourceLine" id="cb4-36" title="36"><span class="co">#&gt; [31] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span></a>
-<a class="sourceLine" id="cb4-37" title="37"><span class="co">#&gt; [32] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span></a>
-<a class="sourceLine" id="cb4-38" title="38"><span class="co">#&gt; [33] "VERITAL/ Direction Générale"                                                                                                   </span></a>
-<a class="sourceLine" id="cb4-39" title="39"><span class="co">#&gt; [34] "Wilaya d'Alger"                                                                                                                </span></a>
-<a class="sourceLine" id="cb4-40" title="40"><span class="co">#&gt; [35] "Officine Abeille"                                                                                                              </span></a>
-<a class="sourceLine" id="cb4-41" title="41"><span class="co">#&gt; [36] "Twingle"                                                                                                                       </span></a>
-<a class="sourceLine" id="cb4-42" title="42"><span class="co">#&gt; [37] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span></a>
-<a class="sourceLine" id="cb4-43" title="43"><span class="co">#&gt; [38] "Les Pages Jaunes"                                                                                                              </span></a>
-<a class="sourceLine" id="cb4-44" title="44"><span class="co">#&gt; [39] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span></a>
-<a class="sourceLine" id="cb4-45" title="45"><span class="co">#&gt; [40] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span></a>
-<a class="sourceLine" id="cb4-46" title="46"><span class="co">#&gt; [41] "Direction Régionale Centre / Ex Trans Canal Centre"                                                                            </span></a>
-<a class="sourceLine" id="cb4-47" title="47"><span class="co">#&gt; [42] "Egt Sidi Fredj / Club Azur Plage"                                                                                              </span></a>
-<a class="sourceLine" id="cb4-48" title="48"><span class="co">#&gt; [43] "EGT Zeralda / Entreprise de Gestion Touristique de Zeralda"                                                                    </span></a>
-<a class="sourceLine" id="cb4-49" title="49"><span class="co">#&gt; [44] "SPE / Sociéte Algérienne de Production d’Electricité"                                                                          </span></a>
-<a class="sourceLine" id="cb4-50" title="50"><span class="co">#&gt; [45] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span></a>
-<a class="sourceLine" id="cb4-51" title="51"><span class="co">#&gt; [46] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span></a>
-<a class="sourceLine" id="cb4-52" title="52"><span class="co">#&gt; [47] "Clef du Sud / Miftah El Djanoub"                                                                                               </span></a>
-<a class="sourceLine" id="cb4-53" title="53"><span class="co">#&gt; [48] "Adrien.Dz"                                                                                                                     </span></a>
-<a class="sourceLine" id="cb4-54" title="54"><span class="co">#&gt; [49] "MPV"                                                                                                                           </span></a>
-<a class="sourceLine" id="cb4-55" title="55"><span class="co">#&gt; [50] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span></a>
-<a class="sourceLine" id="cb4-56" title="56"><span class="co">#&gt; [51] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span></a>
-<a class="sourceLine" id="cb4-57" title="57"><span class="co">#&gt; [52] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span></a>
-<a class="sourceLine" id="cb4-58" title="58"><span class="co">#&gt; [53] "VERITAL/ Direction Générale"                                                                                                   </span></a>
-<a class="sourceLine" id="cb4-59" title="59"><span class="co">#&gt; [54] "Wilaya d'Alger"                                                                                                                </span></a>
-<a class="sourceLine" id="cb4-60" title="60"><span class="co">#&gt; [55] "Officine Abeille"                                                                                                              </span></a>
-<a class="sourceLine" id="cb4-61" title="61"><span class="co">#&gt; [56] "Twingle"                                                                                                                       </span></a>
-<a class="sourceLine" id="cb4-62" title="62"><span class="co">#&gt; [57] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span></a>
-<a class="sourceLine" id="cb4-63" title="63"><span class="co">#&gt; [58] "Les Pages Jaunes"                                                                                                              </span></a>
-<a class="sourceLine" id="cb4-64" title="64"><span class="co">#&gt; [59] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span></a>
-<a class="sourceLine" id="cb4-65" title="65"><span class="co">#&gt; [60] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"</span></a></code></pre></div>
+<p>This is an example which shows how to extract firms’ denomination from the website of the <a href="http://elmouchir.caci.dz">Algerian Chamber of Commerce and Industry</a> (CACI). For simplicity, we’ll focus on firms operating within the capital (Algiers).</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/feddelegrand7/ralger">ralger</a></span><span class="op">)</span>
+
+<span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver"</span>
+
+<span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">".listing_default"</span> <span class="co"># The CSS class, we recommend SelectorGadget</span>
+
+<span class="fu"><a href="reference/scrap.html">scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="va">my_link</span>, node <span class="op">=</span> <span class="va">my_node</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "Adjerid Hanifa"                                                               </span>
+<span class="co">#&gt;  [2] "Dar Chamila"                                                                  </span>
+<span class="co">#&gt;  [3] "BNP Paribas / Agences Alger Bordj El Kiffan"                                  </span>
+<span class="co">#&gt;  [4] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                        </span>
+<span class="co">#&gt;  [5] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"</span>
+<span class="co">#&gt;  [6] "YOUKAIS"                                                                      </span>
+<span class="co">#&gt;  [7] "EDIMETAL"                                                                     </span>
+<span class="co">#&gt;  [8] "SYRIAN AIR LINES"                                                             </span>
+<span class="co">#&gt;  [9] "Turkish Airlines / Direction Générale"                                        </span>
+<span class="co">#&gt; [10] "Aigle Azur / Agence Didouche Mourad"                                          </span>
+<span class="co">#&gt; [11] "British Airways"                                                              </span>
+<span class="co">#&gt; [12] "DELTA"                                                                        </span>
+<span class="co">#&gt; [13] "Cabinet Ammiche Amer"                                                         </span>
+<span class="co">#&gt; [14] "VERITEX"                                                                      </span>
+<span class="co">#&gt; [15] "Kermiche Partener"                                                            </span>
+<span class="co">#&gt; [16] "Marine Soft"                                                                  </span>
+<span class="co">#&gt; [17] "PROGOS"                                                                       </span>
+<span class="co">#&gt; [18] "Ambassade du Royaume d'Arabie Saoudite"                                       </span>
+<span class="co">#&gt; [19] "Ambassade de la République d'Argentine"                                       </span>
+<span class="co">#&gt; [20] "Ambassade du Burkina Faso"</span></code></pre></div>
+<p>If you want to scrape multiple list pages, just use <code><a href="reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>. Suppose, we want to extract the above information from the first 3 pages (starts from 0):</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver&amp;page="</span> 
+
+<span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">".listing_default"</span>
+
+<span class="fu"><a href="reference/scrap.html">scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">my_link</span>, <span class="fl">0</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span>, node <span class="op">=</span> <span class="va">my_node</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "GRTG / Société Algérienne de Gestion du Réseau de Transport  de Gaz"                                                           </span>
+<span class="co">#&gt;  [2] "GRTE  / Société Algérienne de Gestion du Réseau de Transport de Electricité"                                                   </span>
+<span class="co">#&gt;  [3] "Clef du Sud / Miftah El Djanoub"                                                                                               </span>
+<span class="co">#&gt;  [4] "MPV"                                                                                                                           </span>
+<span class="co">#&gt;  [5] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span>
+<span class="co">#&gt;  [6] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span>
+<span class="co">#&gt;  [7] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span>
+<span class="co">#&gt;  [8] "VERITAL/ Direction Générale"                                                                                                   </span>
+<span class="co">#&gt;  [9] "Wilaya d'Alger"                                                                                                                </span>
+<span class="co">#&gt; [10] "Officine Abeille"                                                                                                              </span>
+<span class="co">#&gt; [11] "Twingle"                                                                                                                       </span>
+<span class="co">#&gt; [12] "FCM"                                                                                                                           </span>
+<span class="co">#&gt; [13] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span>
+<span class="co">#&gt; [14] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span>
+<span class="co">#&gt; [15] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span>
+<span class="co">#&gt; [16] "Conseil Constitutionnel"                                                                                                       </span>
+<span class="co">#&gt; [17] "Ambassade de la République de Serbie"                                                                                          </span>
+<span class="co">#&gt; [18] "Conseil de la Nation"                                                                                                          </span>
+<span class="co">#&gt; [19] "Radio El Bahdja"                                                                                                               </span>
+<span class="co">#&gt; [20] "Radio Mitidja"                                                                                                                 </span>
+<span class="co">#&gt; [21] "Adjerid Hanifa"                                                                                                                </span>
+<span class="co">#&gt; [22] "Dar Chamila"                                                                                                                   </span>
+<span class="co">#&gt; [23] "BNP Paribas / Agences Alger Bordj El Kiffan"                                                                                   </span>
+<span class="co">#&gt; [24] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                                                                         </span>
+<span class="co">#&gt; [25] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"                                                 </span>
+<span class="co">#&gt; [26] "YOUKAIS"                                                                                                                       </span>
+<span class="co">#&gt; [27] "EDIMETAL"                                                                                                                      </span>
+<span class="co">#&gt; [28] "SYRIAN AIR LINES"                                                                                                              </span>
+<span class="co">#&gt; [29] "Turkish Airlines / Direction Générale"                                                                                         </span>
+<span class="co">#&gt; [30] "Aigle Azur / Agence Didouche Mourad"                                                                                           </span>
+<span class="co">#&gt; [31] "British Airways"                                                                                                               </span>
+<span class="co">#&gt; [32] "DELTA"                                                                                                                         </span>
+<span class="co">#&gt; [33] "Cabinet Ammiche Amer"                                                                                                          </span>
+<span class="co">#&gt; [34] "VERITEX"                                                                                                                       </span>
+<span class="co">#&gt; [35] "Kermiche Partener"                                                                                                             </span>
+<span class="co">#&gt; [36] "Marine Soft"                                                                                                                   </span>
+<span class="co">#&gt; [37] "PROGOS"                                                                                                                        </span>
+<span class="co">#&gt; [38] "Ambassade du Royaume d'Arabie Saoudite"                                                                                        </span>
+<span class="co">#&gt; [39] "Ambassade de la République d'Argentine"                                                                                        </span>
+<span class="co">#&gt; [40] "Ambassade du Burkina Faso"                                                                                                     </span>
+<span class="co">#&gt; [41] "Ambassade du Canada"                                                                                                           </span>
+<span class="co">#&gt; [42] "Ambassade de la République de Corée"                                                                                           </span>
+<span class="co">#&gt; [43] "Ambassade de la République de Côte d'Ivoire"                                                                                   </span>
+<span class="co">#&gt; [44] "Ambassade des Emirats Arabes Unis"                                                                                             </span>
+<span class="co">#&gt; [45] "Ambassade du Royaume d'Espagne"                                                                                                </span>
+<span class="co">#&gt; [46] "Ambassade des Etats Unis d’Amérique"                                                                                           </span>
+<span class="co">#&gt; [47] "Ambassade de la République de Guinée Bissau"                                                                                   </span>
+<span class="co">#&gt; [48] "Ambassade du Royaume Hachémite de Jordanie"                                                                                    </span>
+<span class="co">#&gt; [49] "ONDA / Office National des Droits d'Auteurs"                                                                                   </span>
+<span class="co">#&gt; [50] "Ambassade de la République du Mali"                                                                                            </span>
+<span class="co">#&gt; [51] "Ambassade du Royaume du Maroc"                                                                                                 </span>
+<span class="co">#&gt; [52] "Ambassade de la République du Niger"                                                                                           </span>
+<span class="co">#&gt; [53] "Ambassade de la République Islamique du Pakistan"                                                                              </span>
+<span class="co">#&gt; [54] "RPL / Réseaux Poids Lourds"                                                                                                    </span>
+<span class="co">#&gt; [55] "Ambassade de l'Etat de Palestine"                                                                                              </span>
+<span class="co">#&gt; [56] "Ambassade du Royaume de Suède"                                                                                                 </span>
+<span class="co">#&gt; [57] "Ambassade de la République Yemenite"                                                                                           </span>
+<span class="co">#&gt; [58] "Ambassade de la République Démocratique du Congo"                                                                              </span>
+<span class="co">#&gt; [59] "Ambassade de la République Arabe Sahraouie Démocratique"                                                                       </span>
+<span class="co">#&gt; [60] "Ambassade de la République Fédérale du Nigeria"</span></code></pre></div>
+<p>Thanks to the <a href="https://github.com/ropensci/robotstxt">robotstxt</a> package, you can set <code>askRobot = TRUE</code> to ask the <code>robots.txt</code> file if it’s permitted to scrape a specific web page.</p>
+</div>
+<div id="table_scrap" class="section level2">
+<h2 class="hasAnchor">
+<a href="#table_scrap" class="anchor"></a>table_scrap()</h2>
+<p>If you want to extract an <strong>HTML Table</strong>, you can use the <code><a href="reference/table_scrap.html">table_scrap()</a></code> function. Take a look at this <a href="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW">webpage</a> which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/table_scrap.html">table_scrap</a></span><span class="op">(</span>link <span class="op">=</span><span class="st">"https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW"</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
+<span class="co">#&gt;   Rank                                      Title Lifetime Gross Year</span>
+<span class="co">#&gt; 1    1                          Avengers: Endgame $2,797,800,564 2019</span>
+<span class="co">#&gt; 2    2                                     Avatar $2,790,439,092 2009</span>
+<span class="co">#&gt; 3    3                                    Titanic $2,195,169,869 1997</span>
+<span class="co">#&gt; 4    4 Star Wars: Episode VII - The Force Awakens $2,068,224,036 2015</span>
+<span class="co">#&gt; 5    5                     Avengers: Infinity War $2,048,359,754 2018</span>
+<span class="co">#&gt; 6    6                             Jurassic World $1,670,401,444 2015</span></code></pre></div>
+<p><strong>When you deal with a web page that contains many HTML tables you can use the <code>choose</code> argument to target a specific table</strong></p>
 </div>
 <div id="tidy_scrap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#tidy_scrap" class="anchor"></a>tidy_scrap()</h2>
-<p>If you want to extract a dataframe from a web page, you can use the <code><a href="reference/tidy_scrap.html">tidy_scrap()</a></code> function which returns a tidy dataframe according to the arguments that you introduce. The function takes four arguments:</p>
+<p>Sometimes you’ll find some useful information on the internet that you want to extract in a tabular manner however these information are not provided in an HTML format. In this context, you can use the <code><a href="reference/tidy_scrap.html">tidy_scrap()</a></code> function which returns a tidy data frame according to the arguments that you introduce. The function has five parameters:</p>
 <ul>
 <li>
-<strong>link</strong> : the link of the website you’re interested for</li>
+<strong>link</strong> : the link of the website you’re interested for;</li>
 <li>
-<strong>nodes</strong>: a vector of CSS elements that you want to extract. These elements will form the columns of your dataframe</li>
+<strong>nodes</strong>: a vector of CSS elements that you want to extract. These elements will form the columns of your data frame;</li>
 <li>
-<strong>colnames</strong>: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the <strong>nodes</strong> vector</li>
+<strong>colnames</strong>: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the <strong>nodes</strong> vector;</li>
 <li>
-<strong>clean</strong>: if true the function will clean the tibble’s columns.</li>
+<strong>clean</strong>: if true the function will clean the tibble’s columns;</li>
+<li>
+<strong>askRobot</strong>: ask the robots.txt file if it’s permitted to scrape the web page.</li>
 </ul>
 <div id="example" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h3>
-<p>We’ll work on the famous <a href="https://www.imdb.com/">IMDb website</a>. Let’s say we need a dataframe composed of:</p>
+<p>We’ll work on the famous <a href="https://www.imdb.com/">IMDb website</a>. Let’s say we need a data frame composed of:</p>
 <ul>
-<li>The title of the 50 best ranked movies of all time;</li>
-<li>Their release year;</li>
-<li>Their rating.</li>
+<li>The title of the 50 best ranked movies of all time</li>
+<li>Their release year</li>
+<li>Their rating</li>
 </ul>
 <p>We will need to use the <code><a href="reference/tidy_scrap.html">tidy_scrap()</a></code> function as follows:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"></a>
-<a class="sourceLine" id="cb5-2" title="2">my_link &lt;-<span class="st"> "https://www.imdb.com/search/title/?groups=top_250&amp;sort=user_rating"</span></a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4">my_nodes &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(</a>
-<a class="sourceLine" id="cb5-5" title="5">  <span class="st">".lister-item-header a"</span>, <span class="co"># The title </span></a>
-<a class="sourceLine" id="cb5-6" title="6">  <span class="st">".text-muted.unbold"</span>, <span class="co"># The year of release </span></a>
-<a class="sourceLine" id="cb5-7" title="7">  <span class="st">".ratings-imdb-rating strong"</span> <span class="co"># The rating)</span></a>
-<a class="sourceLine" id="cb5-8" title="8">  )</a>
-<a class="sourceLine" id="cb5-9" title="9"></a>
-<a class="sourceLine" id="cb5-10" title="10">names &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"title"</span>, <span class="st">"year"</span>, <span class="st">"rating"</span>) <span class="co"># respect the nodes order</span></a>
-<a class="sourceLine" id="cb5-11" title="11"></a>
-<a class="sourceLine" id="cb5-12" title="12"></a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="kw"><a href="reference/tidy_scrap.html">tidy_scrap</a></span>(my_link, my_nodes, <span class="dt">colnames =</span> names)</a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; # A tibble: 50 x 3</span></a>
-<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt;    title                                         year   rating</span></a>
-<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt;    &lt;chr&gt;                                         &lt;chr&gt;  &lt;chr&gt; </span></a>
-<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt;  1 The Shawshank Redemption                      (1994) 9.3   </span></a>
-<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt;  2 The Godfather                                 (1972) 9.2   </span></a>
-<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt;  3 The Dark Knight                               (2008) 9.0   </span></a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt;  4 The Godfather: Part II                        (1974) 9.0   </span></a>
-<a class="sourceLine" id="cb5-21" title="21"><span class="co">#&gt;  5 The Lord of the Rings: The Return of the King (2003) 8.9   </span></a>
-<a class="sourceLine" id="cb5-22" title="22"><span class="co">#&gt;  6 Pulp Fiction                                  (1994) 8.9   </span></a>
-<a class="sourceLine" id="cb5-23" title="23"><span class="co">#&gt;  7 Schindler's List                              (1993) 8.9   </span></a>
-<a class="sourceLine" id="cb5-24" title="24"><span class="co">#&gt;  8 12 Angry Men                                  (1957) 8.9   </span></a>
-<a class="sourceLine" id="cb5-25" title="25"><span class="co">#&gt;  9 Inception                                     (2010) 8.8   </span></a>
-<a class="sourceLine" id="cb5-26" title="26"><span class="co">#&gt; 10 Fight Club                                    (1999) 8.8   </span></a>
-<a class="sourceLine" id="cb5-27" title="27"><span class="co">#&gt; # ... with 40 more rows</span></a></code></pre></div>
-<p>Note that all columns will be of <em>character</em> class. We’ll have to convert them according to our needs. Finally, I appreciate any feedback, please reach out or DM at <a href="https://twitter.com/moh_fodil">ihaddaden_moh_fodil</a>.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"https://www.imdb.com/search/title/?groups=top_250&amp;sort=user_rating"</span>
+
+<span class="va">my_nodes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
+  <span class="st">".lister-item-header a"</span>, <span class="co"># The title </span>
+  <span class="st">".text-muted.unbold"</span>, <span class="co"># The year of release </span>
+  <span class="st">".ratings-imdb-rating strong"</span> <span class="co"># The rating)</span>
+  <span class="op">)</span>
+
+<span class="va">names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"title"</span>, <span class="st">"year"</span>, <span class="st">"rating"</span><span class="op">)</span> <span class="co"># respect the nodes order</span>
+
+
+<span class="fu"><a href="reference/tidy_scrap.html">tidy_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="va">my_link</span>, nodes <span class="op">=</span> <span class="va">my_nodes</span>, colnames <span class="op">=</span> <span class="va">names</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 50 x 3</span>
+<span class="co">#&gt;    title                                         year   rating</span>
+<span class="co">#&gt;    &lt;chr&gt;                                         &lt;chr&gt;  &lt;chr&gt; </span>
+<span class="co">#&gt;  1 The Shawshank Redemption                      (1994) 9.3   </span>
+<span class="co">#&gt;  2 The Godfather                                 (1972) 9.2   </span>
+<span class="co">#&gt;  3 The Dark Knight                               (2008) 9.0   </span>
+<span class="co">#&gt;  4 The Godfather: Part II                        (1974) 9.0   </span>
+<span class="co">#&gt;  5 The Lord of the Rings: The Return of the King (2003) 8.9   </span>
+<span class="co">#&gt;  6 Pulp Fiction                                  (1994) 8.9   </span>
+<span class="co">#&gt;  7 Schindler's List                              (1993) 8.9   </span>
+<span class="co">#&gt;  8 12 Angry Men                                  (1957) 8.9   </span>
+<span class="co">#&gt;  9 Inception                                     (2010) 8.8   </span>
+<span class="co">#&gt; 10 Fight Club                                    (1999) 8.8   </span>
+<span class="co">#&gt; # ... with 40 more rows</span></code></pre></div>
+<p>Note that all columns will be of <em>character</em> class. you’ll have to convert them according to your needs.</p>
 </div>
+</div>
+<div id="titles_scrap" class="section level2">
+<h2 class="hasAnchor">
+<a href="#titles_scrap" class="anchor"></a>titles_scrap()</h2>
+<p>Using <code><a href="reference/titles_scrap.html">titles_scrap()</a></code>, one can efficiently scrape titles which correspond to the <em>h1, h2 &amp; h3</em> HTML tags.</p>
+<div id="example-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-1" class="anchor"></a>Example</h3>
+<p>If we go to the <a href="https://www.nytimes.com/">New York Times</a>, we can easily extract the titles displayed within a specific web page :</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+
+<span class="fu"><a href="reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "The Book Review Podcast"                                                                     </span>
+<span class="co">#&gt;  [2] "Listen to ‘Sway’ With Kara Swisher"                                                          </span>
+<span class="co">#&gt;  [3] "Listen to the Modern Love Podcast"                                                           </span>
+<span class="co">#&gt;  [4] "Justice Department Files Antitrust Suit Against Google"                                      </span>
+<span class="co">#&gt;  [5] "Most Aggressive Challenge to Tech Giants in a Generation"                                    </span>
+<span class="co">#&gt;  [6] "Google Up Against Laws That Thwarted Microsoft (and Others Since 1890)"                      </span>
+<span class="co">#&gt;  [7] "What is Google accused of and what will be its defense? Here’s a quick overview of the case."</span>
+<span class="co">#&gt;  [8] "McConnell Advises White House Not to Strike Stimulus Deal With Pelosi"                       </span>
+<span class="co">#&gt;  [9] "No, New York isn’t putting New Jersey, Connecticut or Pennsylvania on the quarantine list."  </span>
+<span class="co">#&gt; [10] " "                                                                                           </span>
+<span class="co">#&gt; [11] "A Third Coronavirus Surge Has Taken Root in the U.S."                                        </span>
+<span class="co">#&gt; [12] "Tracking the Coronavirus ›"                                                                  </span>
+<span class="co">#&gt; [13] "Florida Breaks an Early Voting Record; Crowds Gather in Wisconsin"                           </span>
+<span class="co">#&gt; [14] "A Gated Community in N.Y.C. Where Trump Flags Fly"                                           </span>
+<span class="co">#&gt; [15] "Will Florida, the Recount State, Be Ready for the Election?"                                 </span>
+<span class="co">#&gt; [16] "With College Campuses Quiet, Some Democrats Fear Losing Students’ Votes"                     </span>
+<span class="co">#&gt; [17] "Our survey shows a shift toward Joe Biden among college-educated white voters in Georgia."   </span>
+<span class="co">#&gt; [18] "How the ‘Spygate’ Attacks Fizzled"                                                           </span>
+<span class="co">#&gt; [19] "After Doping Scandal, Russia Hacked 2018 Olympics, U.S. and Britain Say"                     </span>
+<span class="co">#&gt; [20] "Kamala Harris, Mass Incarceration and Me"                                                    </span>
+<span class="co">#&gt; [21] "Trump Is Giving Up"                                                                          </span>
+<span class="co">#&gt; [22] "A Priest Who Left the Church for Love"                                                       </span>
+<span class="co">#&gt; [23] "The Justice Dept.’s Lawsuit Against Google: Too Little, Too Late"                            </span>
+<span class="co">#&gt; [24] "I’m Drowning in Campaign Lit and Freaking Out About My Mail-In Ballot"                       </span>
+<span class="co">#&gt; [25] "Think America Couldn’t Become a Dystopian Police State?"                                     </span>
+<span class="co">#&gt; [26] "What Fans of ‘Herd Immunity’ Don’t Tell You"                                                 </span>
+<span class="co">#&gt; [27] "How Should an Atheist Think About Death?"                                                    </span>
+<span class="co">#&gt; [28] "Why Biden Will Need to Spend Big"                                                            </span>
+<span class="co">#&gt; [29] "The Real Divide in America Is Between Political Junkies and Everyone Else"                   </span>
+<span class="co">#&gt; [30] "I Am Watching My Planet, My Home, Die"                                                       </span>
+<span class="co">#&gt; [31] "I Was Reagan’s Solicitor General. Here’s What to Do With the Court."                         </span>
+<span class="co">#&gt; [32] "Despite Everything, People Still Have Weddings at ‘Plantation’ Sites"                        </span>
+<span class="co">#&gt; [33] "‘They Just Get It’: How Women in M.L.B. Found Support in a Group Text"                       </span>
+<span class="co">#&gt; [34] "Review: Martin Amis Offers an ‘Inside Story’ of His Relationships"                           </span>
+<span class="co">#&gt; [35] "Site Index"                                                                                  </span>
+<span class="co">#&gt; [36] "Site Information Navigation"                                                                 </span>
+<span class="co">#&gt; [37] "Where cases are\n\t\thighest\n\t\tper capita\n\t"                                                 </span>
+<span class="co">#&gt; [38] "U.S. hot spots ›"                                                                            </span>
+<span class="co">#&gt; [39] "Worldwide ›"                                                                                 </span>
+<span class="co">#&gt; [40] "Opinion"                                                                                     </span>
+<span class="co">#&gt; [41] "Editors’ Picks"                                                                              </span>
+<span class="co">#&gt; [42] "Advertisement"</span></code></pre></div>
+<p>Further, it’s possible to filter the results using the <code>contain</code> argument:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="fu"><a href="reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span>, contain <span class="op">=</span> <span class="st">"York"</span>, case_sensitive <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; [1] "No, New York isn’t putting New Jersey, Connecticut or Pennsylvania on the quarantine list."</span></code></pre></div>
+</div>
+</div>
+<div id="paragraphs_scrap" class="section level2">
+<h2 class="hasAnchor">
+<a href="#paragraphs_scrap" class="anchor"></a>paragraphs_scrap()</h2>
+<p>In the same way, we can use the <code><a href="reference/paragraphs_scrap.html">paragraphs_scrap()</a></code> function to extract paragraphs. This function relies on the <code>p</code> HTML tag.</p>
+<p>Let’s get some paragraphs from the lovely <a href="https://ropensci.org/">ropensci.org</a> website:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="fu"><a href="reference/paragraphs_scrap.html">paragraphs_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://ropensci.org/"</span><span class="op">)</span>
+<span class="co">#&gt;  [1] ""                                                                                                                                                                                                                                                                        </span>
+<span class="co">#&gt;  [2] "We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem"                                                                                                                           </span>
+<span class="co">#&gt;  [3] "Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages."                                                      </span>
+<span class="co">#&gt;  [4] "Workflow Tools for Your Code and Data"                                                                                                                                                                                                                                   </span>
+<span class="co">#&gt;  [5] "Get Data from the Web"                                                                                                                                                                                                                                                   </span>
+<span class="co">#&gt;  [6] "Convert and Munge Data"                                                                                                                                                                                                                                                  </span>
+<span class="co">#&gt;  [7] "Document and Release Your Data"                                                                                                                                                                                                                                          </span>
+<span class="co">#&gt;  [8] "Visualize Data"                                                                                                                                                                                                                                                          </span>
+<span class="co">#&gt;  [9] "Work with Databases From R"                                                                                                                                                                                                                                              </span>
+<span class="co">#&gt; [10] "Access, Manipulate, Convert Geospatial Data"                                                                                                                                                                                                                             </span>
+<span class="co">#&gt; [11] "Interact with Web Resources"                                                                                                                                                                                                                                             </span>
+<span class="co">#&gt; [12] "Use Image &amp; Audio Data"                                                                                                                                                                                                                                                  </span>
+<span class="co">#&gt; [13] "Analyze Scientific Papers (and Text in General)"                                                                                                                                                                                                                         </span>
+<span class="co">#&gt; [14] "Secure Your Data and Workflow"                                                                                                                                                                                                                                           </span>
+<span class="co">#&gt; [15] "Handle and Transform Taxonomic Information"                                                                                                                                                                                                                              </span>
+<span class="co">#&gt; [16] "Get inspired by real examples of how our packages can be used."                                                                                                                                                                                                          </span>
+<span class="co">#&gt; [17] "Or browse scientific publications that cited our packages."                                                                                                                                                                                                              </span>
+<span class="co">#&gt; [18] "Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure."                                                             </span>
+<span class="co">#&gt; [19] "We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative &amp; more efficient review process\n  "                                                                                                                      </span>
+<span class="co">#&gt; [20] "Based on best practices of software development and standards of R, it’s\napplications and user base."                                                                                                                                                                   </span>
+<span class="co">#&gt; [21] "Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reporoducible science"                                                                                                                     </span>
+<span class="co">#&gt; [22] "We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process."</span>
+<span class="co">#&gt; [23] "Discover, learn and get involved in helping to shape the future of Data Science"                                                                                                                                                                                         </span>
+<span class="co">#&gt; [24] "Join in our quarterly Community Calls with fellow developers and scientists - open\nto all"                                                                                                                                                                              </span>
+<span class="co">#&gt; [25] "Upcoming events including meetings at which our team members are speaking."                                                                                                                                                                                              </span>
+<span class="co">#&gt; [26] "The latest developments from rOpenSci and the wider R community"                                                                                                                                                                                                         </span>
+<span class="co">#&gt; [27] "Release notes, updates and package related developements"                                                                                                                                                                                                                </span>
+<span class="co">#&gt; [28] "A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive."                                                                                                    </span>
+<span class="co">#&gt; [29] "Happy rOpenSci users can be found at"                                                                                                                                                                                                                                    </span>
+<span class="co">#&gt; [30] "Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"</span></code></pre></div>
+<p>If needed, it’s possible to collapse the paragraphs into one bag of words:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="fu"><a href="reference/paragraphs_scrap.html">paragraphs_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://ropensci.org/"</span>, collapse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; [1] " We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages. Workflow Tools for Your Code and Data Get Data from the Web Convert and Munge Data Document and Release Your Data Visualize Data Work with Databases From R Access, Manipulate, Convert Geospatial Data Interact with Web Resources Use Image &amp; Audio Data Analyze Scientific Papers (and Text in General) Secure Your Data and Workflow Handle and Transform Taxonomic Information Get inspired by real examples of how our packages can be used. Or browse scientific publications that cited our packages. Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure. We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative &amp; more efficient review process\n   Based on best practices of software development and standards of R, it’s\napplications and user base. Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reporoducible science We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process. Discover, learn and get involved in helping to shape the future of Data Science Join in our quarterly Community Calls with fellow developers and scientists - open\nto all Upcoming events including meetings at which our team members are speaking. The latest developments from rOpenSci and the wider R community Release notes, updates and package related developements A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive. Happy rOpenSci users can be found at Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"</span></code></pre></div>
+</div>
+<div id="weblink_scrap" class="section level2">
+<h2 class="hasAnchor">
+<a href="#weblink_scrap" class="anchor"></a>weblink_scrap()</h2>
+<p><code><a href="reference/weblink_scrap.html">weblink_scrap()</a></code> is used to srape the web links available within a web page. Useful in some cases, for example, getting a list of the available PDFs:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="fu"><a href="reference/weblink_scrap.html">weblink_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.worldbank.org/en/access-to-information/reports/"</span>, 
+              contain <span class="op">=</span> <span class="st">"PDF"</span>, 
+              case_sensitive <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "http://pubdocs.worldbank.org/en/304561593192266592/pdf/A2i-2019-annual-report-FINAL.pdf"                         </span>
+<span class="co">#&gt;  [2] "http://pubdocs.worldbank.org/en/539071573586305710/pdf/A2I-annual-report-2018-Final.pdf"                         </span>
+<span class="co">#&gt;  [3] "http://pubdocs.worldbank.org/en/742661529439484831/WBG-AI-2017-annual-report.pdf"                                </span>
+<span class="co">#&gt;  [4] "http://pubdocs.worldbank.org/en/814331507317964642/A2i-annualreport-2016.pdf"                                    </span>
+<span class="co">#&gt;  [5] "http://pubdocs.worldbank.org/en/229551497905271134/Experience-18-month-report-Dec-2012.pdf"                      </span>
+<span class="co">#&gt;  [6] "http://pubdocs.worldbank.org/en/835741505831037845/pdf/2016-AI-Survey-Report-Final.pdf"                          </span>
+<span class="co">#&gt;  [7] "http://pubdocs.worldbank.org/en/698801505831644664/pdf/AI-Survey-written-comments-Final-2016.pdf"                </span>
+<span class="co">#&gt;  [8] "http://pubdocs.worldbank.org/pubdocs/publicdoc/2016/3/150501459179518612/Write-in-comments-in-2015-AI-Survey.pdf"</span>
+<span class="co">#&gt;  [9] "http://pubdocs.worldbank.org/pubdocs/publicdoc/2015/6/766701433971800319/Written-comments-in-2014-AI-Survey.pdf" </span>
+<span class="co">#&gt; [10] "http://pubdocs.worldbank.org/pubdocs/publicdoc/2015/6/512551434127742109/2013-AI-Survey-Written-comments.pdf"    </span>
+<span class="co">#&gt; [11] "http://pubdocs.worldbank.org/pubdocs/publicdoc/2015/6/5361434129036318/2012-AI-Survey-Written-comments.pdf"      </span>
+<span class="co">#&gt; [12] "http://pubdocs.worldbank.org/pubdocs/publicdoc/2015/6/168151434129035939/2011-AI-Survey-Written-comments.pdf"    </span>
+<span class="co">#&gt; [13] "https://ppfdocuments.azureedge.net/e5c12f4e-7f50-44f7-a0d8-78614350f97cAnnex2.pdf"                               </span>
+<span class="co">#&gt; [14] "http://pubdocs.worldbank.org/pubdocs/publicdoc/2016/4/785921460482892684/PPF-Mapping-AI-Policy.pdf"              </span>
+<span class="co">#&gt; [15] "http://pubdocs.worldbank.org/pubdocs/publicdoc/2015/6/453041434139030640/AI-Interpretations.pdf"                 </span>
+<span class="co">#&gt; [16] "http://pubdocs.worldbank.org/en/157711583443319835/pdf/Access-to-Information-Policy-Spanish.pdf"                 </span>
+<span class="co">#&gt; [17] "http://pubdocs.worldbank.org/en/270371588347691497/pdf/Access-to-Information-Policy-Arabic.pdf"                  </span>
+<span class="co">#&gt; [18] "http://pubdocs.worldbank.org/en/939471588348288176/pdf/Access-to-Information-Directive-Procedure-Arabic.pdf"     </span>
+<span class="co">#&gt; [19] "http://pubdocs.worldbank.org/en/248301574182372360/World-Bank-consultations-guidelines.pdf"</span></code></pre></div>
+</div>
+<div id="code-of-conduct" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
+<p>Please note that the ralger project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=ralger">https://​cloud.r-project.org/​package=ralger</a>
 </li>
-<li>Browse source code at <br><a href="https://github.com/feddelegrand7/ralger">https://​github.com/​feddelegrand7/​ralger</a>
+<li>Browse source code at <br><a href="https://github.com/feddelegrand7/ralger/">https://​github.com/​feddelegrand7/​ralger/​</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/feddelegrand7/ralger/issues">https://​github.com/​feddelegrand7/​ralger/​issues</a>
 </li>
@@ -265,17 +441,32 @@
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Mohamed El Fodil Ihaddaden <br><small class="roles"> Maintainer </small>  </li>
+<li>Mohamed El Fodil Ihaddaden <br><small class="roles"> Author, maintainer </small>  </li>
+<li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
 
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=ralger"><img src="https://www.r-pkg.org/badges/version/ralger" alt="CRAN status"></a></li>
+<li><a href="https://cran.r-project.org/package=ralger"><img src="https://www.r-pkg.org/badges/version/ralger" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=ralger"><img src="https://www.r-pkg.org/badges/ago/ralger" alt="CRAN_time_from_release"></a></li>
+<li><a href="https://cran.r-project.org/package=ralger"><img src="https://www.r-pkg.org/badges/last-release/ralger" alt="CRAN_latest_release_date"></a></li>
+<li><a href="https://cran.r-project.org/package=ralger"><img src="https://cranlogs.r-pkg.org/badges/ralger" alt="metacran downloads"></a></li>
+<li><a href="https://cran.r-project.org/package=ralger"><img src="https://cranlogs.r-pkg.org/badges/grand-total/ralger" alt="metacran downloads"></a></li>
+<li><a href="https://choosealicense.com/licenses/mit/"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a></li>
+<li><a href="https://travis-ci.com/feddelegrand7/ralger"><img src="https://travis-ci.com/feddelegrand7/ralger.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://github.com/feddelegrand7/ralger"><img src="https://img.shields.io/badge/Build%20with-%E2%99%A5%20and%20R-blue" alt="R badge"></a></li>
+<li><a href="https://codecov.io/gh/feddelegrand7/ralger?branch=master"><img src="https://codecov.io/gh/feddelegrand7/ralger/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 </div>
@@ -287,7 +478,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

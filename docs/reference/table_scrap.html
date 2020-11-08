@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Website Tidy scraping — tidy_scrap • ralger</title>
+<title>HTML table scraping — table_scrap • ralger</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Website Tidy scraping — tidy_scrap" />
-<meta property="og:description" content="This function is used to scrape a tibble from a website." />
+<meta property="og:title" content="HTML table scraping — table_scrap" />
+<meta property="og:description" content="This function is used to scrape an html table from a website." />
 
 
 
@@ -126,70 +126,79 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Website Tidy scraping</h1>
-    <small class="dont-index">Source: <a href='https://github.com/feddelegrand7/ralger/blob/master/R/tidy_scrap.R'><code>R/tidy_scrap.R</code></a></small>
-    <div class="hidden name"><code>tidy_scrap.Rd</code></div>
+    <h1>HTML table scraping</h1>
+    <small class="dont-index">Source: <a href='https://github.com/feddelegrand7/ralger/blob/master/R/table_scrap.R'><code>R/table_scrap.R</code></a></small>
+    <div class="hidden name"><code>table_scrap.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function is used to scrape a tibble from a website.</p>
+    <p>This function is used to scrape an html table from a website.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tidy_scrap</span><span class='op'>(</span><span class='va'>link</span>, <span class='va'>nodes</span>, <span class='va'>colnames</span>, clean <span class='op'>=</span> <span class='cn'>FALSE</span>, askRobot <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>table_scrap</span><span class='op'>(</span><span class='va'>link</span>, choose <span class='op'>=</span> <span class='fl'>1</span>, header <span class='op'>=</span> <span class='cn'>T</span>, askRobot <span class='op'>=</span> <span class='cn'>FALSE</span>, fill <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>link</th>
-      <td><p>the link of the web page to scrape</p></td>
+      <td><p>the link of the web page containing the table to scrape</p></td>
     </tr>
     <tr>
-      <th>nodes</th>
-      <td><p>the vector of HTML or CSS elements to consider, the SelectorGadget tool is highly recommended.</p></td>
+      <th>choose</th>
+      <td><p>an integer indicating which table to scrape</p></td>
     </tr>
     <tr>
-      <th>colnames</th>
-      <td><p>the names of the expected columns.</p></td>
-    </tr>
-    <tr>
-      <th>clean</th>
-      <td><p>logical. Should the function clean the extracted tibble or not ? Default is FALSE.</p></td>
+      <th>header</th>
+      <td><p>do you want the first line to be the leader (default to TRUE)</p></td>
     </tr>
     <tr>
       <th>askRobot</th>
       <td><p>logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.</p></td>
     </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>logical. Should be set to TRUE when the table has an inconsistent number of columns.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a tidy data frame.</p>
+    <p>a data frame object.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='co'># Extracting imdb movie titles and rating</span>
+<span class='co'># Extracting premier ligue 2019/2020 top scorers</span>
 
-<span class='va'>link</span>     <span class='op'>&lt;-</span> <span class='st'>"https://www.imdb.com/chart/top/"</span>
-<span class='va'>my_nodes</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>".titleColumn a"</span>, <span class='st'>"strong"</span><span class='op'>)</span>
-<span class='va'>names</span>    <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"title"</span>, <span class='st'>"rating"</span><span class='op'>)</span>
-
-<span class='fu'>tidy_scrap</span><span class='op'>(</span><span class='va'>link</span>, <span class='va'>my_nodes</span>, <span class='va'>names</span><span class='op'>)</span><span class='co'># }</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 250 x 2</span><span>
-#&gt;    title                                             rating
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                             </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span> The Shawshank Redemption                          9.2   
-#&gt; </span><span style='color: #555555;'> 2</span><span> The Godfather                                     9.1   
-#&gt; </span><span style='color: #555555;'> 3</span><span> The Godfather: Part II                            9.0   
-#&gt; </span><span style='color: #555555;'> 4</span><span> The Dark Knight                                   9.0   
-#&gt; </span><span style='color: #555555;'> 5</span><span> 12 Angry Men                                      8.9   
-#&gt; </span><span style='color: #555555;'> 6</span><span> Schindler's List                                  8.9   
-#&gt; </span><span style='color: #555555;'> 7</span><span> The Lord of the Rings: The Return of the King     8.9   
-#&gt; </span><span style='color: #555555;'> 8</span><span> Pulp Fiction                                      8.8   
-#&gt; </span><span style='color: #555555;'> 9</span><span> Il buono, il brutto, il cattivo                   8.8   
-#&gt; </span><span style='color: #555555;'>10</span><span> The Lord of the Rings: The Fellowship of the Ring 8.8   
-#&gt; </span><span style='color: #555555;'># ... with 240 more rows</span><span></div><div class='input'>
-</div></span></pre>
+<span class='va'>link</span>     <span class='op'>&lt;-</span> <span class='st'>"https://www.topscorersfootball.com/premier-league"</span>
+<span class='fu'>table_scrap</span><span class='op'>(</span><span class='va'>link</span><span class='op'>)</span><span class='co'># }</span>
+</div><div class='output co'>#&gt;     #                Player              Team Nationality Goals
+#&gt; 1   1 Dominic Calvert-Lewin           Everton     England     8
+#&gt; 2  NA           Jamie Vardy         Leicester     England     8
+#&gt; 3  NA         Mohamed Salah         Liverpool       Egypt     8
+#&gt; 4  NA         Son Heung-Min         Tottenham South Korea     8
+#&gt; 5   5            Harry Kane         Tottenham     England     7
+#&gt; 6  NA       Patrick Bamford             Leeds     England     7
+#&gt; 7   7         Callum Wilson         Newcastle     England     6
+#&gt; 8  NA         Ollie Watkins       Aston Villa     England     6
+#&gt; 9   9       Bruno Fernandes Manchester United    Portugal     5
+#&gt; 10 NA            Danny Ings       Southampton     England     5
+#&gt; 11 NA         Wilfried Zaha    Crystal Palace     England     5
+#&gt; 12 12         Jack Grealish       Aston Villa     England     4
+#&gt; 13 NA           Neal Maupay          Brighton      France     4
+#&gt; 14 NA          Raul Jimenez     Wolverhampton      Mexico     4
+#&gt; 15 NA            Sadio Mané         Liverpool     Senegal     4
+#&gt; 16 NA           Timo Werner           Chelsea     Germany     4
+#&gt; 17 17   Alexandre Lacazette           Arsenal      France     3
+#&gt; 18 NA             Che Adams       Southampton     England     3
+#&gt; 19 NA            Diogo Jota         Liverpool    Portugal     3
+#&gt; 20 NA       James Rodriguez           Everton    Colombia     3
+#&gt; 21 NA     James Ward-Prowse       Southampton     England     3
+#&gt; 22 NA          Jarrod Bowen          West Ham     England     3
+#&gt; 23 NA              Jorginho           Chelsea       Italy     3
+#&gt; 24 NA            Kurt Zouma           Chelsea      France     3
+#&gt; 25 NA       Michail Antonio          West Ham     England     3</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

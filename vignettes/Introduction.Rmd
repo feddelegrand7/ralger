@@ -1,8 +1,8 @@
 ---
-title: "ralger"
+title: "Quick example"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ralger}
+  %\VignetteIndexEntry{Quick example}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,17 +15,18 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-ralger is a package that aims to facilitate to the maximum web scraping in R. For scraping some data, you only need two elements, the **link** of the web page and the **html** or **css** node that references the needed information. Don't panic, you don't have to spend hours learning html and css. You can just use the **SelectorGadget** chrome extension. You can check out this [tutorial](https://www.youtube.com/watch?v=oqNTfWrGdbk) for more information.
+
+`ralger` is a package that aims to facilitate to the maximum web scraping in R. For scraping some data, you only need two elements, the **link** of the web page and the **HTML** or **CSS** node that references the needed information. Don't panic, you don't have to spend hours learning HTML and CSS. You can just use the **SelectorGadget** chrome extension. You can check out this [tutorial](https://www.youtube.com/watch?v=oqNTfWrGdbk) for more information.
 
 ----------------------------------------------------
 
 # scrap()
 
-Let's dive into an example ! Suppose we want to extract all Golden Globes Best Actress Nominees (including the winner). In ralger you need only two elements: 
+Let's dive into an example ! Suppose we want to extract all Golden Globes Best Actress Nominees (including the winner). In `ralger` you need only two elements: 
 
-- The link: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama 
+- The link: `https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama` 
 
-- The node: .primary-nominee a
+- The node: `.primary-nominee a`
 
 And that's it, we're ready to scrap ! 
 
