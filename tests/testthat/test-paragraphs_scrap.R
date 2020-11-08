@@ -1,11 +1,11 @@
 test_that("paragraphs_scrap() works", {
   expect_identical(
 
-    paragraphs_scrap(link = "https://www.nytimes.com/")
+    paragraphs_scrap(link = "https://www.un.org/en/")
 
     ,
 
-     "https://www.nytimes.com/" %>%
+     "https://www.un.org/en/" %>%
       read_html() %>%
       html_nodes("p") %>%
       html_text()
@@ -14,11 +14,11 @@ test_that("paragraphs_scrap() works", {
 
   ###############################################################################
 
-  expect_type(paragraphs_scrap(link = "https://www.nytimes.com/"),
+  expect_type(paragraphs_scrap(link = "https://www.un.org/en/"),
               "character")
 
   ###############################################################################
 
-  expect_vector(paragraphs_scrap(link = "https://www.nytimes.com/"))
+  expect_vector(paragraphs_scrap(link = "https://www.un.org/en/"))
 
 })
