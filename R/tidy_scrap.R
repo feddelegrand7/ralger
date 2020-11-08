@@ -73,8 +73,6 @@ colnames(result) <- colnames
 
 result <- as_tibble(result)
 
-result <- result %>% unnest(col = all_of(colnames))
-
 
 if (!clean){
 
