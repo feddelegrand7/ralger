@@ -21,7 +21,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_text
 #' @importFrom xml2 read_html
-#' @importFrom stringr str_replace_all str_trim 
+#' @importFrom stringr str_replace_all str_trim
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
@@ -45,7 +45,6 @@ scrap <- function(link,
 
     }
   }
-
   #########################################################################################
 
     tryCatch(
@@ -66,14 +65,14 @@ scrap <- function(link,
         return(unlist(data))
 
         } else {
-        
+
         unlist(data) %>%
         str_replace_all(c("\n" = " ", "\r" = " ", "\t" = " ")) %>%
         str_trim()
-                  
+
         }
 
-      }, 
+      },
 
     error = function(cond){
 
