@@ -207,6 +207,49 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 
 ```
 
+## images_scrap()
+
+`images_scrap()` allows you to scrape images from a webpage. It takes the following arguments: 
+
++ **link**: The URL of the web page; 
+
++ **imgpath**: The destination folder of your images. It defaults to `getwd()`
+
++ **extn**: the extension of the image: jpg, png, jpeg ... among others; 
+
++ **askRobot**: ask the robots.txt file if it's permitted to scrape the web page. 
+
+
+In the following example we extract all the `png` images from the [RStudio official website](https://rstudio.com/): 
+
+
+```{r, eval=FALSE}
+
+# Suppose we're in a project which has a folder called myimages: 
+
+images_scrap(link = "https://rstudio.com/", 
+             imgpath = here::here("myimages"), 
+             extn = "png") # without the .
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Code of Conduct

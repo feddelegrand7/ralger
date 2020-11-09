@@ -33,6 +33,17 @@ images_scrap <- function(link, imgpath = getwd(), extn, askRobot = FALSE) {
 
   }
 
+  if(imgpath != getwd() & !dir.exists(imgpath)){
+
+    stop("the path ", imgpath, " doesn't seem to exist, I'm creating it ...")
+  
+  }
+
+  if(grepl(x = extn, pattern = "\\.")){
+
+    stop("No need to include the '.' in `extn`, just provide the extension as it is")
+
+  }
   
   ###################### Ask robot related ##################################################
   if (askRobot) {
