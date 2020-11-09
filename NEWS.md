@@ -1,5 +1,11 @@
 # ralger 2.2.0
 
+I have wrapped `ralger` functions inside a `tryCatch()` function. Now `ralger` detects catches the following errors: 
+
++ No internet connection: In this case, `ralger` displays a message and returns `NA` 
++ Invalid link: package's functions display an informative message and returns also `NA`
+
+
 # ralger 2.1.0
 
 # ralger 2.0.1
