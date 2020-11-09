@@ -29,7 +29,7 @@ images_scrap <- function(link, imgpath = getwd(), extn, askRobot = FALSE) {
 
   if(missing(extn)){
 
-    stop("You need to provide the extension of the required images: png, jpeg, ...")
+    stop("You need to provide the extension of the required images: jpg, png, jpeg, ...")
 
   }
 
