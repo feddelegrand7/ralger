@@ -207,9 +207,9 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 
 ```
 
-## images_scrap()
+## images_scrap() (only available in development version)
 
-`images_scrap()` allows you to scrape images from a webpage. It takes the following arguments: 
+`images_scrap()` allows you to scrape images from a web page. It takes the following arguments: 
 
 + **link**: The URL of the web page; 
 
@@ -223,31 +223,20 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 In the following example we extract all the `png` images from the [RStudio official website](https://rstudio.com/): 
 
 
+
+
 ```{r, eval=FALSE}
 
 # Suppose we're in a project which has a folder called myimages: 
 
-images_scrap(link = "https://rstudio.com/", 
+images_scrap(link = "https://website-containing-images.com/", 
              imgpath = here::here("myimages"), 
              extn = "png") # without the .
 
 
-
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+The images will be scraped into the folder `here::here("myimages")` and named `img-1`, `img-2`, `img-3` ...according to the number of extracted images and by order of appearance in the web page. 
 
 
 

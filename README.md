@@ -257,60 +257,60 @@ easily extract the titles displayed within a specific web page :
 
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] " Live Updates "                                                                                                                                                                                                                                                                                                                      
-#>  [2] " See full presidential results "                                                                                                                                                                                                                                                                                                     
-#>  [3] " Key States "                                                                                                                                                                                                                                                                                                                        
-#>  [4] "U.S. Surpasses 10 Million Coronavirus Cases"                                                                                                                                                                                                                                                                                         
-#>  [5] "An Explanation for Some Covid-19 Deaths May Not Be Holding Up"                                                                                                                                                                                                                                                                       
-#>  [6] "Alex Trebek, Longtime Host of ‘Jeopardy!,’ Dies at 80"                                                                                                                                                                                                                                                                               
-#>  [7] "O Captain, My ‘Jeopardy!’ Captain"                                                                                                                                                                                                                                                                                                   
-#>  [8] "“We have no idea what the show is going to be without him.” Fans mourned the loss of Alex Trebek."                                                                                                                                                                                                                                   
-#>  [9] "Making It Work"                                                                                                                                                                                                                                                                                                                      
-#> [10] "Yes, it is possible to buy a good used computer online. Here’s how."                                                                                                                                                                                                                                                                 
-#> [11] "If you’re on edge, try taking a controlled breath."                                                                                                                                                                                                                                                                                  
-#> [12] "The Weekender"                                                                                                                                                                                                                                                                                                                       
-#> [13] "Did you follow the news this week? Take our quiz."                                                                                                                                                                                                                                                                                   
-#> [14] "We Hereby Dump Trump"                                                                                                                                                                                                                                                                                                                
-#> [15] "What Alex Trebek Was Really Like"                                                                                                                                                                                                                                                                                                    
-#> [16] "Black Empowerment Outside the Headlines"                                                                                                                                                                                                                                                                                             
-#> [17] "The Human Experience Will Not Be Quantified"                                                                                                                                                                                                                                                                                         
-#> [18] "Elections Don’t Have to Be So Chaotic and Excruciating"                                                                                                                                                                                                                                                                              
-#> [19] "A Loving Chastisement for America"                                                                                                                                                                                                                                                                                                   
-#> [20] "Victory for Joe Biden, at Last"                                                                                                                                                                                                                                                                                                      
-#> [21] "Is There a Trumpism After Trump?"                                                                                                                                                                                                                                                                                                    
-#> [22] "A Black Hero in the Jim Crow Navy"                                                                                                                                                                                                                                                                                                   
-#> [23] "Biden Can’t Be F.D.R. He Could Still Be L.B.J."                                                                                                                                                                                                                                                                                      
-#> [24] "Why You Should Brave the ‘Bad’ Weather"                                                                                                                                                                                                                                                                                              
-#> [25] "When the Virus Came for the American Dream"                                                                                                                                                                                                                                                                                          
-#> [26] "Cardi B’s ‘WAP’ Proves Censorship Is Good Business"                                                                                                                                                                                                                                                                                  
-#> [27] "Review: ‘How to Make a Slave’ Offers Restless Thoughts About Race"                                                                                                                                                                                                                                                                   
-#> [28] "Site Index"                                                                                                                                                                                                                                                                                                                          
-#> [29] "Site Information Navigation"                                                                                                                                                                                                                                                                                                         
-#> [30] "As Biden Plans for Day 1, G.O.P. Navigates Trump’s Refusal to Concede"                                                                                                                                                                                                                                                               
-#> [31] "George W. Bush Congratulates Biden"                                                                                                                                                                                                                                                                                                  
-#> [32] ".css-11f6h48{margin-right:5px;}.css-11f6h48:hover{border-bottom:1px solid #e2e2e2;}Biden won her state, but her Uncle Sam protest costume isn’t going in storage..css-m7dmkp{font-family:nyt-franklin,helvetica,arial,sans-serif;color:#d0021b;font-weight:600;font-size:0.75rem;line-height:0.8125rem;display:inline-block;}26m ago"
-#> [33] "Putin is silent on Biden’s victory, foreshadowing tense years ahead.1h ago"                                                                                                                                                                                                                                                          
-#> [34] "Christian conservatives reflect on Trump’s loss and look ahead.2h ago"                                                                                                                                                                                                                                                               
-#> [35] "Here are 5 things the Biden administration could do quickly on the environment.2h ago"                                                                                                                                                                                                                                               
-#> [36] "President"                                                                                                                                                                                                                                                                                                                           
-#> [37] "Senate"                                                                                                                                                                                                                                                                                                                              
-#> [38] "House"                                                                                                                                                                                                                                                                                                                               
-#> [39] "Senate"                                                                                                                                                                                                                                                                                                                              
-#> [40] "House"                                                                                                                                                                                                                                                                                                                               
-#> [41] "Can Joe Biden and Mitch McConnell Get It Done?"                                                                                                                                                                                                                                                                                      
-#> [42] "Why the Biden Economy Could Be the Same Long Slog as the Obama Economy"                                                                                                                                                                                                                                                              
-#> [43] "Kamala Harris’s ancestral village in India rejoiced, but many wondered what changes may come."                                                                                                                                                                                                                                       
-#> [44] "‘It’s Such a Relief’: Biden Voters Rebuild a Wall That Trump Smashed"                                                                                                                                                                                                                                                                
-#> [45] "As a Bitter Election Ends, 26 Americans Look to the Future"                                                                                                                                                                                                                                                                          
-#> [46] "Christian Conservatives Respond to Trump’s Loss and Look Ahead"                                                                                                                                                                                                                                                                      
-#> [47] "For 9 of 10 Voters, Protests Over Police Violence Played Role in Their Choice"                                                                                                                                                                                                                                                       
-#> [48] "What’s Next for Trump? Family Business Awaits His Return"                                                                                                                                                                                                                                                                            
-#> [49] "Georgia, From Reliably Republican to Political Ground Zero"                                                                                                                                                                                                                                                                          
-#> [50] "How Biden Flipped Pennsylvania and Won the Election"                                                                                                                                                                                                                                                                                 
-#> [51] "Here’s an overview of Joe Biden’s positions on coronavirus, health care, the economy, taxes and climate change."                                                                                                                                                                                                                     
-#> [52] "AT HOME"                                                                                                                                                                                                                                                                                                                             
-#> [53] "Opinion"                                                                                                                                                                                                                                                                                                                             
-#> [54] "Editors’ Picks"                                                                                                                                                                                                                                                                                                                      
+#>  [1] "Tracking the Coronavirus ›"                                                                       
+#>  [2] "How Democrats Missed Trump’s Appeal to Latino Voters"                                             
+#>  [3] "Christian Conservatives Look Ahead"                                                               
+#>  [4] "What Biden’s Win Could Mean for New York: 5 Takeaways"                                            
+#>  [5] "9 Things the Biden Administration Could Do Quickly on the Environment"                            
+#>  [6] "Even as Trump Cut Immigration, Immigrants Transformed U.S."                                       
+#>  [7] "The Trump presidency is ending. So is Maggie Haberman’s wild ride, Ben Smith writes."             
+#>  [8] "The End of ‘America First’: How Biden Wants to Re-engage the World"                               
+#>  [9] "China Has Little Hope for Warmer Relations With Biden"                                            
+#> [10] "Biden’s Win Means a Demotion for Netanyahu and Less Focus on Israel"                              
+#> [11] "O Captain, My ‘Jeopardy!’ Captain"                                                                
+#> [12] "Alex Trebek, the longtime host of “Jeopardy!,” died on Sunday at 80."                             
+#> [13] "“We have no idea what the show is going to be without him.” Fans mourned the loss of Alex Trebek."
+#> [14] "The Affordable Care Act Faces Another Supreme Court Test"                                         
+#> [15] "Let Them Play (Outside)"                                                                          
+#> [16] "Ready for some drama? Start with these two masters."                                              
+#> [17] "Good wines won’t fix Thanksgiving. But they can’t hurt."                                          
+#> [18] "Hell Hath No Fury Like a Trump Scorned"                                                           
+#> [19] "How to Protect America From the Next Donald Trump"                                                
+#> [20] "71 Million People Voted for Trump. They’re Not Going Anywhere."                                   
+#> [21] "Is Xi Jinping Too Strong for China’s Good?"                                                       
+#> [22] "Post-Election Therapy With Esther Perel"                                                          
+#> [23] "We Hereby Dump Trump"                                                                             
+#> [24] "Elections Don’t Have to Be So Chaotic and Excruciating"                                           
+#> [25] "Third Term of the Obama Presidency"                                                               
+#> [26] "Black Empowerment Outside the Headlines"                                                          
+#> [27] "Joe Biden Is Our Next President. Breathe."                                                        
+#> [28] "One Group Is Unreservedly Happy About the Election Results"                                       
+#> [29] "Old Dogs, New Research and the Secrets of Aging"                                                  
+#> [30] "The Good/Bad News About Ice Skating at Rockefeller Center"                                        
+#> [31] "What We Learned From Week 9 of the N.F.L. Season"                                                 
+#> [32] "Site Index"                                                                                       
+#> [33] "Site Information Navigation"                                                                      
+#> [34] "Biden Plans to Move Quickly on Transition as Trump Balks at Concession"                           
+#> [35] "Announces Leadership of Virus Task Force"                                                         
+#> [36] "G.O.P. Leaders Decline to Recognize Biden’s Election"                                             
+#> [37] "In a Divided Washington, Biden Could Still Exert Economic Power"                                  
+#> [38] "The Election Is Over. The Nation’s Rifts Remain."                                                 
+#> [39] "Pfizer’s Early Data Shows Vaccine Is More Than 90% Effective"                                     
+#> [40] "Virus Cases Spike Again in N.Y.C. as New Restrictions Are Considered"                             
+#> [41] "Biden’s Virus Advisory Board Includes Whistle-Blower Ousted by Trump"                             
+#> [42] "Markets Surge on News of Pfizer’s Coronavirus Vaccine"                                            
+#> [43] "Where cases per capita are\n\t\thighest"                                                            
+#> [44] "U.S. hot spots ›"                                                                                 
+#> [45] "College cases ›"                                                                                  
+#> [46] "Worldwide ›"                                                                                      
+#> [47] "U.S. hot spots ›"                                                                                 
+#> [48] "College cases ›"                                                                                  
+#> [49] "Worldwide ›"                                                                                      
+#> [50] "U.S. hot spots ›"                                                                                 
+#> [51] "College cases ›"                                                                                  
+#> [52] "Worldwide ›"                                                                                      
+#> [53] "Opinion"                                                                                          
+#> [54] "Editors’ Picks"                                                                                   
 #> [55] "Advertisement"
 ```
 
@@ -320,14 +320,15 @@ argument:
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "We Hereby Dump Trump"                                                 
-#> [2] "Is There a Trumpism After Trump?"                                     
-#> [3] "‘Saturday Night Live’ Sends Off Trump With a Ballad"                  
-#> [4] "As Biden Plans for Day 1, G.O.P. Navigates Trump’s Refusal to Concede"
-#> [5] "Christian conservatives reflect on Trump’s loss and look ahead.1h ago"
-#> [6] "‘It’s Such a Relief’: Biden Voters Rebuild a Wall That Trump Smashed" 
-#> [7] "Christian Conservatives Respond to Trump’s Loss and Look Ahead"       
-#> [8] "What’s Next for Trump? Family Business Awaits His Return"
+#> [1] "How Democrats Missed Trump’s Appeal to Latino Voters"                                
+#> [2] "Even as Trump Cut Immigration, Immigrants Transformed U.S."                          
+#> [3] "The Trump presidency is ending. So is Maggie Haberman’s wild ride, Ben Smith writes."
+#> [4] "Hell Hath No Fury Like a Trump Scorned"                                              
+#> [5] "How to Protect America From the Next Donald Trump"                                   
+#> [6] "71 Million People Voted for Trump. They’re Not Going Anywhere."                      
+#> [7] "We Hereby Dump Trump"                                                                
+#> [8] "Biden Plans to Move Quickly on Transition as Trump Balks at Concession"              
+#> [9] "Biden’s Virus Advisory Board Includes Whistle-Blower Ousted by Trump"
 ```
 
 ## paragraphs\_scrap()
@@ -413,6 +414,37 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 #> [18] "http://pubdocs.worldbank.org/en/939471588348288176/pdf/Access-to-Information-Directive-Procedure-Arabic.pdf"     
 #> [19] "http://pubdocs.worldbank.org/en/248301574182372360/World-Bank-consultations-guidelines.pdf"
 ```
+
+## images\_scrap() (only available in development version)
+
+`images_scrap()` allows you to scrape images from a web page. It takes
+the following arguments:
+
+  - **link**: The URL of the web page;
+
+  - **imgpath**: The destination folder of your images. It defaults to
+    `getwd()`
+
+  - **extn**: the extension of the image: jpg, png, jpeg … among others;
+
+  - **askRobot**: ask the robots.txt file if it’s permitted to scrape
+    the web page.
+
+In the following example we extract all the `png` images from the
+[RStudio official website](https://rstudio.com/):
+
+``` r
+
+# Suppose we're in a project which has a folder called myimages: 
+
+images_scrap(link = "https://website-containing-images.com/", 
+             imgpath = here::here("myimages"), 
+             extn = "png") # without the .
+```
+
+The images will be scraped into the folder `here::here("myimages")` and
+named `img-1`, `img-2`, `img-3` …according to the number of extracted
+images and by order of appearance in the web page.
 
 ## Code of Conduct
 
