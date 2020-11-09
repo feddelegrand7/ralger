@@ -8,6 +8,11 @@ I have wrapped `ralger` functions inside a `tryCatch()` function. Now `ralger` d
 
 # ralger 2.1.0
 
++ code cleaning 
++ removing some dependencies
++ modifying the message displayed by the robot.txt
++ now titles_scrap() scrapes h1, h2 & h3 (previously only h1 and h2)
+
 # ralger 2.0.1
 
 1- Thanks to Ezekiel (ctb) I've added an argument to the table_scrap() function which is fill (the argument is from the rvest package), the user has now the ability to set fill = TRUE when dealing with tables with inconsistent number of columns/rows. 

@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ralger</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
       </span>
     </div>
 
@@ -102,7 +102,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Functions overview.html">Functions overview</a>
+      <a href="../articles/Functions_Overview.html">Functions Overview</a>
     </li>
     <li>
       <a href="../articles/Introduction.html">Quick example</a>
@@ -137,10 +137,28 @@
       <small>Source: <a href='https://github.com/feddelegrand7/ralger/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="ralger-220" class="section level1">
+<h1 class="page-header" data-toc-text="2.2.0">
+<a href="#ralger-220" class="anchor"></a>ralger 2.2.0<small> 2020-11-09 </small>
+</h1>
+<p>I have wrapped <code>ralger</code> functions inside a <code><a href="https://rdrr.io/r/base/conditions.html">tryCatch()</a></code> function. Now <code>ralger</code> detects catches the following errors:</p>
+<ul>
+<li>No internet connection: In this case, <code>ralger</code> displays a message and returns <code>NA</code>
+</li>
+<li>Invalid link: package’s functions display an informative message and returns also <code>NA</code>
+</li>
+</ul>
+</div>
     <div id="ralger-210" class="section level1">
 <h1 class="page-header" data-toc-text="2.1.0">
 <a href="#ralger-210" class="anchor"></a>ralger 2.1.0<small> 2020-10-09 </small>
 </h1>
+<ul>
+<li>code cleaning</li>
+<li>removing some dependencies</li>
+<li>modifying the message displayed by the robot.txt</li>
+<li>now titles_scrap() scrapes h1, h2 &amp; h3 (previously only h1 and h2)</li>
+</ul>
 </div>
     <div id="ralger-201" class="section level1">
 <h1 class="page-header" data-toc-text="2.0.1">
