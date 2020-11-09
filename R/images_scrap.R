@@ -35,7 +35,7 @@ images_scrap <- function(link, imgpath = getwd(), extn, askRobot = FALSE) {
 
   if(imgpath != getwd() & !dir.exists(imgpath)){
 
-    stop("the path ", imgpath, " doesn't seem to exist, I'm creating it ...")
+    stop("the path ", imgpath, " doesn't seem to exist !")
   
   }
 
