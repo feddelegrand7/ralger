@@ -17,7 +17,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom rvest html_nodes html_attr
 #' @importFrom xml2 read_html
-#' @importFrom stringr str_replace_all str_trim
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
@@ -27,24 +26,24 @@
 
 images_scrap <- function(link, imgpath = getwd(), extn, askRobot = FALSE) {
 
-  if(missing(extn)){
+  if (missing(extn)) {
 
     stop("You need to provide the extension of the required images: jpg, png, jpeg, ...")
 
   }
 
-  if(imgpath != getwd() & !dir.exists(imgpath)){
+  if (imgpath != getwd() & !dir.exists(imgpath)) {
 
     stop("the path ", imgpath, " doesn't seem to exist !")
-  
+
   }
 
-  if(grepl(x = extn, pattern = "\\.")){
+  if (grepl(x = extn, pattern = "\\.")) {
 
     stop("No need to include the '.' in `extn`, just provide the extension as it is")
 
   }
-  
+
   ###################### Ask robot related ##################################################
   if (askRobot) {
 
@@ -64,21 +63,23 @@ images_scrap <- function(link, imgpath = getwd(), extn, askRobot = FALSE) {
 
   expr = {
 
-  img_urls <- lapply(link, function(url) {
+    img_urls <- lapply(link, function(url) {
 
       url %>%
-        read_html()  %>% 
+        read_html() %>%
         html_nodes("img") %>%
         html_attr("src")
-    })  %>% unlist()
+    })
 
-  img_urls_f <- img_urls[grepl(pattern = paste0(".", extn), x = img_urls, ignore.case = FALSE)] 
-      
-  for(i in seq_along(img_urls_f)){
-  
-  download.file(img_urls_f[i], destfile = paste0(imgpath,"/img-", i, "." , extn), mode = "wb")
+    img_urls_unlist <- img_urls %>% unlist()
 
-  }
+    img_urls_f <- img_urls_unlist[grepl(pattern = paste0(".", extn), x = img_urls_unlist, ignore.case = FALSE)]
+
+    for (i in seq_along(img_urls_f)) {
+
+      download.file(img_urls_f[i], destfile = paste0(imgpath, "/img-", i, ".", extn), mode = "wb")
+
+    }
 
 
   },
