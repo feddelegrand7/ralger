@@ -17,9 +17,6 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r
 status](https://travis-ci.com/feddelegrand7/ralger.svg?branch=master)](https://travis-ci.com/feddelegrand7/ralger)
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
-[![Codecov test
-coverage](https://codecov.io/gh/feddelegrand7/ralger/branch/master/graph/badge.svg)](https://codecov.io/gh/feddelegrand7/ralger?branch=master)
-
 [![R
 badge](https://img.shields.io/badge/-Sponsor-brightgreen)](https://www.buymeacoffee.com/Fodil)
 <!-- badges: end -->
@@ -467,6 +464,13 @@ images_scrap(link = "https://rstudio.com/",
 The images will be downloaded into the folder `here::here("myimages")`
 and named `img-1`, `img-2`, `img-3` …according to the number of
 extracted images and by order of appearance in the web page.
+
+## Sponsor
+
+If you have the mean and like the package, feel free to sponsor it at
+<span> [![R
+badge](https://img.shields.io/badge/-Sponsor-brightgreen)](https://www.buymeacoffee.com/Fodil)
+</span>, this will allow me to buy some expensive books.
 
 ## Code of Conduct
 
