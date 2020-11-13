@@ -42,7 +42,7 @@ or you can install the development version from
 devtools::install_github("feddelegrand7/ralger")
 ```
 
-## scrap()
+## `scrap()`
 
 This is an example which shows how to extract firms’ denomination from
 the website of the [Algerian Chamber of Commerce and
@@ -155,7 +155,7 @@ Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you
 can set `askRobot = T` to ask the `robots.txt` file if it’s permitted to
 scrape a specific web page.
 
-## table\_scrap()
+## `table_scrap()`
 
 If you want to extract an **HTML Table**, you can use the
 `table_scrap()` function. Take a look at this
@@ -181,7 +181,7 @@ head(data)
 **When you deal with a web page that contains many HTML table you can
 use the `choose` argument to target a specific table**
 
-## tidy\_scrap()
+## `tidy_scrap()`
 
 Sometimes you’ll find some useful information on the internet that you
 want to extract in a tabular manner however these information are not
@@ -231,10 +231,10 @@ tidy_scrap(link = my_link, nodes = my_nodes, colnames = names)
 #>  2 The Godfather                                 (1972) 9.2   
 #>  3 The Dark Knight                               (2008) 9.0   
 #>  4 The Godfather: Part II                        (1974) 9.0   
-#>  5 The Lord of the Rings: The Return of the King (2003) 8.9   
-#>  6 Pulp Fiction                                  (1994) 8.9   
-#>  7 Schindler's List                              (1993) 8.9   
-#>  8 12 Angry Men                                  (1957) 8.9   
+#>  5 12 Angry Men                                  (1957) 9.0   
+#>  6 The Lord of the Rings: The Return of the King (2003) 8.9   
+#>  7 Pulp Fiction                                  (1994) 8.9   
+#>  8 Schindler's List                              (1993) 8.9   
 #>  9 Inception                                     (2010) 8.8   
 #> 10 Fight Club                                    (1999) 8.8   
 #> # ... with 40 more rows
@@ -243,7 +243,7 @@ tidy_scrap(link = my_link, nodes = my_nodes, colnames = names)
 Note that all columns will be of *character* class. you’ll have to
 convert them according to your needs.
 
-## titles\_scrap()
+## `titles_scrap()`
 
 Using `titles_scrap()`, one can efficiently scrape titles which
 correspond to the *h1, h2 & h3* HTML tags.
@@ -257,61 +257,48 @@ easily extract the titles displayed within a specific web page :
 
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Tracking the Coronavirus ›"                                                                       
-#>  [2] "How Democrats Missed Trump’s Appeal to Latino Voters"                                             
-#>  [3] "Christian Conservatives Look Ahead"                                                               
-#>  [4] "What Biden’s Win Could Mean for New York: 5 Takeaways"                                            
-#>  [5] "9 Things the Biden Administration Could Do Quickly on the Environment"                            
-#>  [6] "Even as Trump Cut Immigration, Immigrants Transformed U.S."                                       
-#>  [7] "The Trump presidency is ending. So is Maggie Haberman’s wild ride, Ben Smith writes."             
-#>  [8] "The End of ‘America First’: How Biden Wants to Re-engage the World"                               
-#>  [9] "China Has Little Hope for Warmer Relations With Biden"                                            
-#> [10] "Biden’s Win Means a Demotion for Netanyahu and Less Focus on Israel"                              
-#> [11] "O Captain, My ‘Jeopardy!’ Captain"                                                                
-#> [12] "Alex Trebek, the longtime host of “Jeopardy!,” died on Sunday at 80."                             
-#> [13] "“We have no idea what the show is going to be without him.” Fans mourned the loss of Alex Trebek."
-#> [14] "The Affordable Care Act Faces Another Supreme Court Test"                                         
-#> [15] "Let Them Play (Outside)"                                                                          
-#> [16] "Ready for some drama? Start with these two masters."                                              
-#> [17] "Good wines won’t fix Thanksgiving. But they can’t hurt."                                          
-#> [18] "Hell Hath No Fury Like a Trump Scorned"                                                           
-#> [19] "How to Protect America From the Next Donald Trump"                                                
-#> [20] "71 Million People Voted for Trump. They’re Not Going Anywhere."                                   
-#> [21] "Is Xi Jinping Too Strong for China’s Good?"                                                       
-#> [22] "Post-Election Therapy With Esther Perel"                                                          
-#> [23] "We Hereby Dump Trump"                                                                             
-#> [24] "Elections Don’t Have to Be So Chaotic and Excruciating"                                           
-#> [25] "Third Term of the Obama Presidency"                                                               
-#> [26] "Black Empowerment Outside the Headlines"                                                          
-#> [27] "Joe Biden Is Our Next President. Breathe."                                                        
-#> [28] "One Group Is Unreservedly Happy About the Election Results"                                       
-#> [29] "Old Dogs, New Research and the Secrets of Aging"                                                  
-#> [30] "The Good/Bad News About Ice Skating at Rockefeller Center"                                        
-#> [31] "What We Learned From Week 9 of the N.F.L. Season"                                                 
-#> [32] "Site Index"                                                                                       
-#> [33] "Site Information Navigation"                                                                      
-#> [34] "Biden Plans to Move Quickly on Transition as Trump Balks at Concession"                           
-#> [35] "Announces Leadership of Virus Task Force"                                                         
-#> [36] "G.O.P. Leaders Decline to Recognize Biden’s Election"                                             
-#> [37] "In a Divided Washington, Biden Could Still Exert Economic Power"                                  
-#> [38] "The Election Is Over. The Nation’s Rifts Remain."                                                 
-#> [39] "Pfizer’s Early Data Shows Vaccine Is More Than 90% Effective"                                     
-#> [40] "Virus Cases Spike Again in N.Y.C. as New Restrictions Are Considered"                             
-#> [41] "Biden’s Virus Advisory Board Includes Whistle-Blower Ousted by Trump"                             
-#> [42] "Markets Surge on News of Pfizer’s Coronavirus Vaccine"                                            
-#> [43] "Where cases per capita are\n\t\thighest"                                                            
-#> [44] "U.S. hot spots ›"                                                                                 
-#> [45] "College cases ›"                                                                                  
-#> [46] "Worldwide ›"                                                                                      
-#> [47] "U.S. hot spots ›"                                                                                 
-#> [48] "College cases ›"                                                                                  
-#> [49] "Worldwide ›"                                                                                      
-#> [50] "U.S. hot spots ›"                                                                                 
-#> [51] "College cases ›"                                                                                  
-#> [52] "Worldwide ›"                                                                                      
-#> [53] "Opinion"                                                                                          
-#> [54] "Editors’ Picks"                                                                                   
-#> [55] "Advertisement"
+#>  [1] "Listen to ‘The Daily’"                                                                         
+#>  [2] "Listen to ‘Still Processing’"                                                                  
+#>  [3] "The Modern Love Podcast"                                                                       
+#>  [4] "Live Updates"                                                                                  
+#>  [5] "Politics"                                                                                      
+#>  [6] "Economy"                                                                                       
+#>  [7] "Biden Flips Arizona, Further Cementing His Presidential Victory"                               
+#>  [8] "Trump Floats Improbable Survival Scenarios as He Ponders His Future"                           
+#>  [9] "Cracks Emerge in G.O.P. Support for Trump’s Unfounded Fraud Claims"                            
+#> [10] "Trump’s Rebuffs Prompt Warnings Over National Security"                                        
+#> [11] "As Soon as Trump Leaves Office, He Faces Greater Risk of Prosecution"                          
+#> [12] "Biden’s Education Department Will Rapidly Reverse Trump Era Policies"                          
+#> [13] "Europe Keeps Schools Open, Not Restaurants. The U.S. Has Other Ideas."                         
+#> [14] "See Coronavirus Restrictions and Mask Mandates for All 50 States"                              
+#> [15] "John Waters’s Personal Art Collection"                                                         
+#> [16] "Sign your kids up for virtual improv classes with Freestyle Love Supreme Academy."             
+#> [17] "If you’re divorced or separated, we’ll help you navigate co-parenting during the pandemic."    
+#> [18] "The Post-Presidency of a Con Man"                                                              
+#> [19] "Vice President-Elect Kamala Harris Moved Me to Tears"                                          
+#> [20] "2020 Shows Why the Electoral College Is Stupid and Immoral"                                    
+#> [21] "The Apocalyptic Politics of the Populist Right"                                                
+#> [22] "‘There Is a Real Opportunity Here That I Think Biden Is Capturing’"                            
+#> [23] "How to End ‘Women’s Work’"                                                                     
+#> [24] "A Republican Senate Would Be Bad for Business"                                                 
+#> [25] "How Biden Could Steer a Divided Government"                                                    
+#> [26] "A Good Deal for California Gig Companies Is Bad for Their Workers"                             
+#> [27] "Leave Fat Kids Alone"                                                                          
+#> [28] "What Happens if Trump Doesn’t Concede?"                                                        
+#> [29] "In 1958, Martin Luther King Almost Died. This Man Saved Him."                                  
+#> [30] "When It Comes to Living With Uncertainty, Michael J. Fox Is a Pro"                             
+#> [31] "Modern Love: How I Got Caught Up in a Global Romance Scam"                                     
+#> [32] "Site Index"                                                                                    
+#> [33] "Site Information Navigation"                                                                   
+#> [34] "U.S. Virus Cases Shatter New Records Daily, Prompting Talk of Lockdowns"                       
+#> [35] "Investors shrug off coronavirus concerns, sending shares higher."                              
+#> [36] "Uneasy under lockdown, pubs in England are counting the days till Christmas."                  
+#> [37] "Election officials flatly declare that the election ‘was the most secure in American history.’"
+#> [38] "Republicans’ slow, incremental crawl toward acknowledging a Biden victory."                    
+#> [39] "At Home"                                                                                       
+#> [40] "Opinion"                                                                                       
+#> [41] "Editors’ Picks"                                                                                
+#> [42] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -320,18 +307,15 @@ argument:
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "How Democrats Missed Trump’s Appeal to Latino Voters"                                
-#> [2] "Even as Trump Cut Immigration, Immigrants Transformed U.S."                          
-#> [3] "The Trump presidency is ending. So is Maggie Haberman’s wild ride, Ben Smith writes."
-#> [4] "Hell Hath No Fury Like a Trump Scorned"                                              
-#> [5] "How to Protect America From the Next Donald Trump"                                   
-#> [6] "71 Million People Voted for Trump. They’re Not Going Anywhere."                      
-#> [7] "We Hereby Dump Trump"                                                                
-#> [8] "Biden Plans to Move Quickly on Transition as Trump Balks at Concession"              
-#> [9] "Biden’s Virus Advisory Board Includes Whistle-Blower Ousted by Trump"
+#> [1] "Trump Floats Improbable Survival Scenarios as He Ponders His Future" 
+#> [2] "Cracks Emerge in G.O.P. Support for Trump’s Unfounded Fraud Claims"  
+#> [3] "Trump’s Rebuffs Prompt Warnings Over National Security"              
+#> [4] "As Soon as Trump Leaves Office, He Faces Greater Risk of Prosecution"
+#> [5] "Biden’s Education Department Will Rapidly Reverse Trump Era Policies"
+#> [6] "What Happens if Trump Doesn’t Concede?"
 ```
 
-## paragraphs\_scrap()
+## `paragraphs_scrap()`
 
 In the same way, we can use the `paragraphs_scrap()` function to extract
 paragraphs. This function relies on the `p` HTML tag.
@@ -383,7 +367,7 @@ paragraphs_scrap(link = "https://ropensci.org/", collapse = TRUE)
 #> [1] " We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages. Workflow Tools for Your Code and Data Get Data from the Web Convert and Munge Data Document and Release Your Data Visualize Data Work with Databases From R Access, Manipulate, Convert Geospatial Data Interact with Web Resources Use Image & Audio Data Analyze Scientific Papers (and Text in General) Secure Your Data and Workflow Handle and Transform Taxonomic Information Get inspired by real examples of how our packages can be used. Or browse scientific publications that cited our packages. Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure. We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative & more efficient review process\n   Based on best practices of software development and standards of R, it’s\napplications and user base. Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reporoducible science We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process. Discover, learn and get involved in helping to shape the future of Data Science Join in our quarterly Community Calls with fellow developers and scientists - open\nto all Upcoming events including meetings at which our team members are speaking. The latest developments from rOpenSci and the wider R community Release notes, updates and package related developements A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive. Happy rOpenSci users can be found at Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"
 ```
 
-## weblink\_scrap()
+## `weblink_scrap()`
 
 `weblink_scrap()` is used to srape the web links available within a web
 page. Useful in some cases, for example, getting a list of the available
@@ -415,10 +399,38 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 #> [19] "http://pubdocs.worldbank.org/en/248301574182372360/World-Bank-consultations-guidelines.pdf"
 ```
 
-## images\_scrap() (only available in development version)
+## `images_scrap()` and `images_preview()`
 
-`images_scrap()` allows you to scrape images from a web page. It takes
-the following arguments:
+> (only available in the development version)
+
+`images_preview()` allows you to scrape the URLs of the images available
+within a web page so that you can choose which images **extension** (see
+below) you want to focus on.
+
+Let’s say we want to list all the images from the official
+[RStudio](https://rstudio.com/) website:
+
+``` r
+
+images_preview(link = "https://rstudio.com/")
+#>  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&fmt=gif"                                                                       
+#>  [2] "https://www.facebook.com/tr?id=151855192184380&ev=PageView&noscript=1"                                                         
+#>  [3] "https://d33wubrfki0l68.cloudfront.net/08b39bfcd76ebaf8360ed9135a50a2348fe2ed83/75738/assets/img/logo-white.svg"                
+#>  [4] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
+#>  [5] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
+#>  [6] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
+#>  [7] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
+#>  [8] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
+#>  [9] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
+#> [10] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
+#> [11] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
+#> [12] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
+#> [13] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
+#> [14] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"
+```
+
+`images_scrap()` on the other hand download the images. It takes the
+following arguments:
 
   - **link**: The URL of the web page;
 
@@ -430,20 +442,21 @@ the following arguments:
   - **askRobot**: ask the robots.txt file if it’s permitted to scrape
     the web page.
 
-In the following example we extract all the `png` images from an hypothetical web page:
+In the following example we extract all the `png` images from
+[RStudio](https://rstudio.com/) :
 
 ``` r
 
-# Suppose we're in a project which has a folder called myimages: 
+# Suppose we're in a project which has a folder called my_images: 
 
-images_scrap(link = "https://website-containing-images.com/", 
-             imgpath = here::here("myimages"), 
+images_scrap(link = "https://rstudio.com/", 
+             imgpath = here::here("my_images"), 
              extn = "png") # without the .
 ```
 
-The images will be scraped into the folder `here::here("myimages")` and
-named `img-1`, `img-2`, `img-3` …according to the number of extracted
-images and by order of appearance in the web page.
+The images will be downloaded into the folder `here::here("myimages")`
+and named `img-1`, `img-2`, `img-3` …according to the number of
+extracted images and by order of appearance in the web page.
 
 ## Code of Conduct
 
