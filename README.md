@@ -430,8 +430,7 @@ the following arguments:
   - **askRobot**: ask the robots.txt file if it’s permitted to scrape
     the web page.
 
-In the following example we extract all the `png` images from the
-[RStudio official website](https://rstudio.com/):
+In the following example we extract all the `png` images from an hypothetical web page:
 
 ``` r
 
