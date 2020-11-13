@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+
 The goal of **ralger** is to facilitate web scraping in R. For a quick video tutorial, I gave a talk at useR2020, which you can find [here](https://www.youtube.com/watch?v=OHi6E8jegQg) 
 
 ## Installation
@@ -31,7 +32,7 @@ or you can install the development version from [GitHub](https://github.com/) wi
 # install.packages("devtools")
 devtools::install_github("feddelegrand7/ralger")
 ```
-## scrap()
+## `scrap()`
 
 This is an example which shows how to extract firms' denomination from the website of the [Algerian Chamber of Commerce and Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we'll focus on firms operating within the capital (Algiers). 
 
@@ -61,7 +62,7 @@ scrap(link = paste0(my_link, 0:2), node = my_node)
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = T` to ask the `robots.txt` file if it's permitted to scrape a specific web page.  
 
 
-## table_scrap()
+## `table_scrap()`
 
 If you want to extract an __HTML Table__, you can use the `table_scrap()` function. Take a look at this [webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW) which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows: 
 
@@ -78,7 +79,7 @@ head(data)
 __When you deal with a web page that contains many HTML table you can use the `choose` argument to target a specific table__
 
 
-## tidy_scrap()
+## `tidy_scrap()`
 
 Sometimes you'll find some useful information on the internet that you want to extract in a tabular manner however these information are not provided in an HTML format. In this context, you can use the `tidy_scrap()` function which returns a tidy data frame according to the arguments that you introduce. The function takes four arguments:
 
@@ -120,7 +121,7 @@ Note that all columns will be of *character* class. you'll have to convert them 
 
 
 
-## titles_scrap()
+## `titles_scrap()`
 
 Using `titles_scrap()`, one can efficiently scrape titles which correspond to the _h1, h2 & h3_ HTML tags. 
 
@@ -145,14 +146,14 @@ Further, it's possible to filter the results using the `contain` argument:
 
 ```{r}
 
-titles_scrap(link = "https://www.nytimes.com/", contain = "York", case_sensitive = FALSE)
+titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
 
 
 
 ```
 
 
-## paragraphs_scrap()
+## `paragraphs_scrap()`
 
 
 In the same way, we can use the `paragraphs_scrap()` function to extract paragraphs. This function relies on the `p` HTML tag.  
@@ -176,7 +177,7 @@ paragraphs_scrap(link = "https://ropensci.org/", collapse = TRUE)
 ```
 
 
-## weblink_scrap()
+## `weblink_scrap()`
 
 `weblink_scrap()` is used to srape the web links available within a web page. Useful in some cases, for example, getting a list of the available PDFs: 
 
@@ -189,6 +190,48 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 
 
 ```
+
+## `images_scrap() ` and `images_preview()` 
+
+> (only available in the development version)
+
+`images_preview()` allows you to scrape the URLs of the images available within a web page so that you can choose which images __extension__ (see below) you want to focus on.
+
+Let's say we want to list all the images from the official [RStudio](https://rstudio.com/) website: 
+
+
+```{r}
+
+images_preview(link = "https://rstudio.com/")
+
+```
+
+`images_scrap()` on the other hand download the images. It takes the following arguments: 
+
++ **link**: The URL of the web page; 
+
++ **imgpath**: The destination folder of your images. It defaults to `getwd()`
+
++ **extn**: the extension of the image: jpg, png, jpeg ... among others; 
+
++ **askRobot**: ask the robots.txt file if it's permitted to scrape the web page. 
+
+
+In the following example we extract all the `png` images from [RStudio](https://rstudio.com/)  : 
+
+
+```{r, eval=FALSE}
+
+# Suppose we're in a project which has a folder called my_images: 
+
+images_scrap(link = "https://rstudio.com/", 
+             imgpath = here::here("my_images"), 
+             extn = "png") # without the .
+
+```
+
+The images will be downloaded into the folder `here::here("myimages")` and named `img-1`, `img-2`, `img-3` ...according to the number of extracted images and by order of appearance in the web page. 
+
 
 
 
