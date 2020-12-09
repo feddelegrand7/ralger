@@ -2,6 +2,7 @@
 #'
 #' @param link the link of the web page
 #' @param imgpath the path of the images. Defaults to the current directory
+#' @param imgname how the images should be named. Defaults to "img" which will yield img-1, img-2 ... etc. 
 #' @param extn the extension of the image: png, jpeg ... 
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.
 #' 
@@ -24,7 +25,11 @@
 #' @importFrom utils download.file
 
 
-images_scrap <- function(link, imgpath = getwd(), extn, askRobot = FALSE) {
+images_scrap <- function(link, 
+                        imgname = "img",
+                        imgpath = getwd(), 
+                        extn, 
+                        askRobot = FALSE) {
 
   if (missing(extn)) {
 
@@ -77,7 +82,7 @@ images_scrap <- function(link, imgpath = getwd(), extn, askRobot = FALSE) {
 
     for (i in seq_along(img_urls_f)) {
 
-      download.file(img_urls_f[i], destfile = paste0(imgpath, "/img-", i, ".", extn), mode = "wb")
+      download.file(img_urls_f[i], destfile = paste0(imgpath, "/", imgname, "-", i, ".", extn), mode = "wb")
 
     }
 
