@@ -25,10 +25,10 @@
 #' @importFrom utils download.file
 
 
-images_scrap <- function(link, 
+images_scrap <- function(link,
                         imgname = "img",
-                        imgpath = getwd(), 
-                        extn, 
+                        imgpath = getwd(),
+                        extn,
                         askRobot = FALSE) {
 
   if (missing(extn)) {
