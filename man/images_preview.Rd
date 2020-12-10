@@ -20,7 +20,7 @@ Scrape Images URLs
 \examples{
 \donttest{
 
-preview_images(link = "https://rstudio.com/")
+images_preview(link = "https://rstudio.com/")
 
 }
 
