@@ -22,7 +22,7 @@ Images
 Scrape Images from a Web Page
 }
 \examples{
-\donttest{
+\dontrun{
 
 images_scrap(link = "https://rstudio.com/", extn = "png")
 

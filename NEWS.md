@@ -1,3 +1,5 @@
+# ralger 2.2.1
+
 # ralger 2.2.0
 
 I have wrapped `ralger` functions inside a `tryCatch()` function. Now `ralger` detects catches the following errors: 

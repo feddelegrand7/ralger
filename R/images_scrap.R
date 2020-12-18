@@ -7,7 +7,7 @@
 #'
 #' @return Images
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #'
 #' images_scrap(link = "https://rstudio.com/", extn = "png")
 #'
