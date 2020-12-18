@@ -1,5 +1,9 @@
 # ralger 2.2.1
 
++ Adding the `images_scrap()` function which allows the user to download images from a website
++ Adding the `images_preview()` function which allows the user to list the images url from a specific web page
++ Wrapping `paragraphs_scrap()` within a `tryCatch` function. 
+
 # ralger 2.2.0
 
 I have wrapped `ralger` functions inside a `tryCatch()` function. Now `ralger` detects catches the following errors: 
