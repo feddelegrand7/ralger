@@ -4,12 +4,10 @@
 \alias{images_scrap}
 \title{Scrape Images from a Web Page}
 \usage{
-images_scrap(link, imgname = "img", imgpath = getwd(), extn, askRobot = FALSE)
+images_scrap(link, imgpath = getwd(), extn, askRobot = FALSE)
 }
 \arguments{
 \item{link}{the link of the web page}
-
-\item{imgname}{how the images should be named. Defaults to "img" which will yield img-1, img-2 ... etc.}
 
 \item{imgpath}{the path of the images. Defaults to the current directory}
 

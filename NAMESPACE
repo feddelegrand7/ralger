@@ -3,7 +3,6 @@
 export(images_preview)
 export(images_scrap)
 export(paragraphs_scrap)
-export(pdf_scrap)
 export(scrap)
 export(table_scrap)
 export(tidy_scrap)
