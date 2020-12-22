@@ -25,6 +25,12 @@
 images_preview <- function(link, askRobot = FALSE) {
 
 
+  if (missing(link)) {
+
+    stop("the 'link' paramater is mandatory")
+
+  }
+
     ###############
       ####### Ask robot related ##################################################
       if (askRobot) {
@@ -64,9 +70,7 @@ images_preview <- function(link, askRobot = FALSE) {
 
     if (!has_internet()) {
 
-      message("Please check your internet connexion: ")
-
-      message(cond)
+      message(paste0("Please check your internet connexion: ", cond))
 
       return(NA)
 
@@ -74,11 +78,17 @@ images_preview <- function(link, askRobot = FALSE) {
 
       message(paste0("The URL doesn't seem to be a valid one: ", link))
 
-      message("Here the original error message: ")
-
-      message(cond)
+      message(paste0("Here the original error message: ", cond))
 
       return(NA)
+
+    } else {
+
+      message(paste0("Undefined Error: ", cond))
+
+      return(NA)
+
+
     }
   }
 

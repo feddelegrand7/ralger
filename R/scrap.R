@@ -94,9 +94,7 @@ scrap <- function(link,
 
       if(!has_internet()){
 
-        message("Please check your internet connexion: ")
-
-        message(cond)
+        message(paste0("Please check your internet connexion: ", cond))
 
         return(NA)
 
@@ -104,9 +102,7 @@ scrap <- function(link,
 
           message(paste0("The URL doesn't seem to be a valid one: ", link))
 
-          message("Here the original error message: ")
-
-          message(cond)
+          message(paste0("Here the original error message: ", cond))
 
           return(NA)
 
