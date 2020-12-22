@@ -40,11 +40,29 @@ tidy_scrap <- function(link,
                        askRobot = FALSE) {
 
 
+  if(missing(link) ||
+     missing(nodes)|| missing(colnames)) {
 
+    stop("'link', 'nodes' and 'colnames' parameters are mandatory")
+
+  }
+
+  if(!is.character(link) ||
+     !is.character(nodes)||
+     !is.character(colnames)) {
+
+    stop("'link', 'nodes' and 'colnames' parameters must be
+         provided as strings")
+
+  }
+
+
+  if (length(nodes) != length(colnames)) {
+
+    stop("nodes and colnames lengths do not match")
+
+  }
 ######################### Ask Robot part #####################################################
-
-    if (length(nodes) != length(colnames))
-      stop("nodes and colnames lengths do not match")
 
     if (askRobot) {
       if (paths_allowed(link) == TRUE) {
@@ -85,8 +103,8 @@ result %>%
         mutate_all(str_trim)
 
 }
-      
-}, 
+
+},
 
 error = function(cond){
 
@@ -107,8 +125,15 @@ error = function(cond){
           message(cond)
 
           return(NA)
+
+      } else {
+
+        message(paste0("Undefined Error: ", cond))
+
+        return(NA)
       }
+
       }
-      )
+) # tryCatch end
 
   }
