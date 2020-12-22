@@ -19,8 +19,7 @@
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
-#' @importFrom rvest html_table
-#' @importFrom purrr pluck
+#' @importFrom rvest html_table pluck
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
@@ -29,12 +28,32 @@
 
 
 
-table_scrap <-
-  function(link,
-           choose = 1,
-           header = T,
-           askRobot = FALSE,
-           fill = FALSE) {
+table_scrap <- function(link,
+                        choose = 1,
+                        header = TRUE,
+                        fill = FALSE,
+                        askRobot = FALSE) {
+
+
+if(missing(link)) {
+
+  stop("'link' is a mandatory parameter")
+
+}
+
+
+if(!is.character(link)) {
+
+  stop("'link' parameter must be provided as a character string")
+}
+
+
+if(!is.numeric(choose)){
+
+  stop(paste0("the 'choose' parameter must be provided as numeric not as "),
+       typeof(choose))
+
+}
 
 
 ############################## Ask robot part ###################################################
@@ -59,13 +78,16 @@ tryCatch(
 
 expr = {
 
-link %>%
+table <- link %>%
       read_html() %>%
-      html_table(header, fill = fill) %>%
-      purrr::pluck(choose)
+      html_table(header, fill = fill)
+
+chosen_table <- table[[choose]]
+
+return(chosen_table)
 
 
-  }, 
+  },
 
 error = function(cond){
 
@@ -86,6 +108,27 @@ if(!has_internet()){
           message(cond)
 
           return(NA)
+
+
+
+      } else if(grepl("subscript out of bounds", cond)) {
+
+
+        message(
+        "Are you sure that your web page contains more than one HTML table ?"
+          )
+
+        message(paste0("Here the original error message: ", cond))
+
+        return(NA)
+
+      } else {
+
+
+        message(paste0("Undefined Error: ", cond))
+
+        return(NA)
+
       }
 }
 
