@@ -33,7 +33,7 @@ expect_equal(
             1)
 
 
-  expect_error(weblink_scrap(""))
+  expect_error(weblink_scrap())
 
 
   expect_false(!is.character(weblink_scrap("https://www.worldbank.org/en/research")))
