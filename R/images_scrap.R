@@ -29,21 +29,29 @@ images_scrap <- function(link,
                         extn,
                         askRobot = FALSE) {
 
-  if (missing(extn)) {
+  if (missing(link)) {
 
-    stop("You need to provide the extension of the required images: jpg, png, jpeg, ...")
+    stop("'link' is a mandatory parameter")
 
   }
 
-  if (imgpath != getwd() & !dir.exists(imgpath)) {
+  if (missing(extn)) {
 
-    stop("the path ", imgpath, " doesn't seem to exist !")
+    stop("You need to provide the extension of the required images:
+    jpg, png, jpeg, ...")
+
+  }
+
+  if (imgpath != getwd() && !dir.exists(imgpath)) {
+
+    stop("the path: ", imgpath, " doesn't seem to exist !")
 
   }
 
   if (grepl(x = extn, pattern = "\\.")) {
 
-    stop("No need to include the '.' in `extn`, just provide the extension as it is")
+    stop("No need to include the '.' in 'extn', 
+    just provide the extension as it is")
 
   }
 
@@ -76,11 +84,15 @@ images_scrap <- function(link,
 
     img_urls_unlist <- img_urls %>% unlist()
 
-    img_urls_f <- img_urls_unlist[grepl(pattern = paste0(".", extn), x = img_urls_unlist, ignore.case = FALSE)]
+    img_urls_f <- img_urls_unlist[grepl(pattern = paste0(".", extn),
+                                  x = img_urls_unlist,
+                                  ignore.case = FALSE)]
 
     for (i in seq_along(img_urls_f)) {
 
-      download.file(img_urls_f[i], destfile = basename(img_urls_f[i]), mode = "wb")
+      download.file(img_urls_f[i],
+                    destfile = basename(img_urls_f[i]),
+                    mode = "wb")
 
     }
 
@@ -91,19 +103,16 @@ images_scrap <- function(link,
 
     if (!has_internet()) {
 
-      message("Please check your internet connexion: ")
-
-      message(cond)
+      message(paste0("Please check your internet connexion: ", cond))
 
       return(NA)
 
-    } else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+    } else if (grepl("current working directory", cond) ||
+               grepl("HTTP error 404", cond)) {
 
       message(paste0("The URL doesn't seem to be a valid one: ", link))
 
-      message("Here the original error message: ")
-
-      message(cond)
+      message(paste0("Here the original error message: ", cond))
 
       return(NA)
     }
