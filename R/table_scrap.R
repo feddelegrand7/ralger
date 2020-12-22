@@ -86,7 +86,7 @@ return(chosen_table)
 
 error = function(cond){
 
-if(!has_internet()){
+      if(!has_internet()){
 
         message(paste0("Please check your internet connexion: ", cond))
 
@@ -103,7 +103,6 @@ if(!has_internet()){
 
       } else if(grepl("subscript out of bounds", cond)) {
 
-
         message(
         "Are you sure that your web page contains more than one HTML table ?"
           )
@@ -113,7 +112,6 @@ if(!has_internet()){
         return(NA)
 
       } else {
-
 
         message(paste0("Undefined Error: ", cond))
 

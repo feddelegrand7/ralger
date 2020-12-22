@@ -8,7 +8,6 @@ Authors@R: c(
     person("Romain", "François", email = "romain@purrple.cat", role = c("ctb"))) 
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
 Description: The goal of 'ralger' is to facilitate web scraping in R. 
-    The user has the ability to extract a vector with scrap(), a tidy dataframe using tidy_scrap(), a table with table_scrap() and web links with weblink_scrap().
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
