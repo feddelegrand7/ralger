@@ -33,6 +33,36 @@ expect_equal(
   ###############################################
 
 
+  expect_error(table_scrap())
+
+  # expecting an error if the choose parameter is provided as
+  # a character string
+  expect_error(
+
+    table_scrap(link = "https://www.topscorersfootball.com/premier-league",
+               choose = "1")
+
+    )
+
+  # expecting an error if the link parameter is not provided
+  expect_error(table_scrap(choose = 1))
+
+
+  # if the user choose HTML table not available,
+  # the result should be NA
+
+  expect_identical(
+
+    table_scrap(link = "https://www.topscorersfootball.com/premier-league",
+                choose = 100),
+
+    NA
+  )
+
+
+
+
+
 })
 
 

@@ -36,23 +36,18 @@ table_scrap <- function(link,
 
 
 if(missing(link)) {
-
   stop("'link' is a mandatory parameter")
-
 }
 
 
 if(!is.character(link)) {
-
   stop("'link' parameter must be provided as a character string")
 }
 
 
 if(!is.numeric(choose)){
-
   stop(paste0("the 'choose' parameter must be provided as numeric not as "),
        typeof(choose))
-
 }
 
 

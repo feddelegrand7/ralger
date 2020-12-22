@@ -25,7 +25,6 @@ Imports:
     stringr,
     robotstxt,
     crayon,
-    purrr,
     curl
 Suggests: 
     knitr,
