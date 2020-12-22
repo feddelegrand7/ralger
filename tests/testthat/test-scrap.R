@@ -37,6 +37,17 @@ expect_equal(
 
   )
 
+  expect_error(scrap(link = "https://www.imdb.com/chart/top/"))
+
+  expect_error(scrap(node = ".titleColumn a"))
+
+  expect_error(scrap())
+
+  expect_error(scrap(
+    link = www.imdb.com,
+    node = .titleColumn
+  ))
+
 
 
 

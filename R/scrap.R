@@ -32,6 +32,22 @@ scrap <- function(link,
                   clean = FALSE,
                   askRobot = FALSE) {
 
+
+  # returns an error if either link or node are not provided
+  if(missing(link) || missing(node)) {
+
+    stop("'link' and 'node' are mandatory parameters")
+
+  }
+
+  # returns an error if link and node are not character strings
+  if(!is.character(link) || !is.character(node)){
+
+    stop("'link' and 'node' parameters must be provided as character strings")
+
+  }
+
+
 ###################### Ask robot related ##################################################
   if (askRobot) {
 
@@ -93,7 +109,17 @@ scrap <- function(link,
           message(cond)
 
           return(NA)
-      }})
+
+      } else {
+
+        message(paste0("Undefined Error: ", cond))
+
+        return(NA)
+
+      }
+
+
+      })
 
 
 }
