@@ -32,7 +32,7 @@ titles_scrap <- function(link,
                          askRobot = FALSE) {
 
 
-###################### Ask Robot part ######################################################
+  ###################### Ask Robot part ######################################################
 
   if (askRobot) {
     if (paths_allowed(link) == TRUE) {
@@ -45,50 +45,58 @@ titles_scrap <- function(link,
 
     }
   }
-###########################################################################################
+  ###########################################################################################
 
-tryCatch(
+  tryCatch(
 
-expr = {
+  expr = {
 
-alltitles <- lapply(c("h1", "h2", "h3"), function(x) scrap(link, x))
+    alltitles <- lapply(c("h1", "h2", "h3"), function(x) scrap(link, x))
 
-data <- do.call(c, alltitles)
+    data <- do.call(c, alltitles)
 
-if (is.null(contain)) {
-    
-    return(data)
+    if (is.null(contain)) {
 
-  } else {
+      return(data)
 
-    data[grepl(contain, data, ignore.case = !case_sensitive)]
+    } else {
 
+      data[grepl(contain,
+                 data,
+                 ignore.case = !case_sensitive)]
+
+    }
+
+  },
+
+  error = function(cond) {
+
+    if (!has_internet()) {
+
+      message("Please check your internet connexion: ")
+
+      message(cond)
+
+      return(NA)
+
+    } else if (grepl("current working directory", cond) ||
+               grepl("HTTP error 404", cond)) {
+
+      message(paste0("The URL doesn't seem to be a valid one: ", link))
+
+      message(paste0("Here the original error message: ", cond))
+
+      return(NA)
+
+    } else {
+
+      message("Undefined Error: ", cond)
+
+      return(NA)
+
+    }
   }
 
-}, 
-
-error = function(cond){
-
-if(!has_internet()){
-
-        message("Please check your internet connexion: ")
-
-        message(cond)
-
-        return(NA)
-
-} else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
-
-          message(paste0("The URL doesn't seem to be a valid one: ", link))
-
-          message("Here the original error message: ")
-
-          message(cond)
-
-          return(NA)
-      }
-}
-
-)
+  )
 
 }

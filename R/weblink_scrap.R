@@ -32,6 +32,18 @@ weblink_scrap <- function(link,
                           case_sensitive = FALSE,
                           askRobot = FALSE) {
 
+  if (missing(link)) {
+
+    stop("'link' is a mandatory argument")
+
+  }
+
+  if (!is.null(contain) && !is.character(contain)) {
+
+    stop("the 'contain' argument must be provided as a character string")
+
+  }
+
   ################################### Ask Robot Part #################################################
 
   if (askRobot) {
@@ -45,47 +57,49 @@ weblink_scrap <- function(link,
 
     }
   }
-########################################################################################################
+  ########################################################################################################
 
-tryCatch(
+  tryCatch(
 
-expr = {
+  expr = {
 
-links <- link %>%
+    links <- link %>%
     read_html() %>%
     html_nodes("a") %>%
     html_attr("href")
 
-  if (is.null(contain)) {
-    return(links)
+    if (is.null(contain)) {
+      return(links)
 
-  } else {
-    links[grepl(contain, links, ignore.case = !case_sensitive)]
+    } else {
+      links[grepl(contain,
+                  links,
+                  ignore.case = !case_sensitive)]
+    }
+
+  },
+
+  error = function(cond) {
+
+    if (!has_internet()) {
+
+      message("Please check your internet connexion: ")
+      message(cond)
+      return(NA)
+
+    } else if (grepl("current working directory", cond) ||
+               grepl("HTTP error 404", cond)) {
+
+      message(paste0("The URL doesn't seem to be a valid one: ", link))
+      message(paste0("Here the original error message: ", cond))
+      return(NA)
+
+    } else {
+
+      message("Undefined Error: ", cond)
+      return(NA)
+    }
   }
 
-}, 
-
-error = function(cond){
-
-if(!has_internet()){
-
-        message("Please check your internet connexion: ")
-
-        message(cond)
-
-        return(NA)
-
-} else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
-
-          message(paste0("The URL doesn't seem to be a valid one: ", link))
-
-          message("Here the original error message: ")
-
-          message(cond)
-
-          return(NA)
-      }
-}
-
-)
+  )
 }

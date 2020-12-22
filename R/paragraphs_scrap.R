@@ -34,7 +34,7 @@ paragraphs_scrap <- function(link,
                              collapse = FALSE,
                              askRobot = FALSE) {
 
-##################### Ask Robot part ###############################################
+  ##################### Ask Robot part ###############################################
   if (askRobot) {
     if (paths_allowed(link) == TRUE) {
       message(green("the robot.txt doesn't prohibit scraping this web page"))
@@ -48,56 +48,65 @@ paragraphs_scrap <- function(link,
 
   }
 
-####################################################################################
+  ####################################################################################
 
 
-tryCatch(
+  tryCatch(
 
-expr = {
+  expr = {
 
-data <- link %>%
+    data <- link %>%
     read_html() %>%
     html_nodes("p") %>%
     html_text()
 
-  if (is.null(contain) & collapse == FALSE) {
-    return(data)
+    if (is.null(contain) & collapse == FALSE) {
+      return(data)
 
-  } else if (is.null(contain) & collapse == TRUE) {
-    return(paste(data, collapse = " "))
+    } else if (is.null(contain) & collapse == TRUE) {
+      return(paste(data, collapse = " "))
 
-  } else if (!is.null(contain) & collapse == FALSE) {
-    return(data[grepl(contain, data, ignore.case = !case_sensitive)])
+    } else if (!is.null(contain) & collapse == FALSE) {
+      return(data[grepl(contain,
+                        data,
+                        ignore.case = !case_sensitive)])
+    } else {
+      message("if you decide to collapse the paragraphs,
+      the contain argument will be ignored")
+      return(paste(data, collapse = " "))
+    }
 
-  } else {
-    message("if you decide to collapse the paragraphs, the contain argument will be ignored")
-    return(paste(data, collapse = " "))
+  },
+
+
+  error = function(cond) {
+
+    if (!has_internet()) {
+
+      message("Please check your internet connexion: ")
+
+      message(cond)
+
+      return(NA)
+
+    } else if (grepl("current working directory", cond) ||
+               grepl("HTTP error 404", cond)) {
+
+      message(paste0("The URL doesn't seem to be a valid one: ", link))
+
+      message(paste0("Here the original error message: ", cond))
+
+      return(NA)
+
+    } else {
+
+      message(paste0("Undefined Error: ", cond))
+
+      return(NA)
+
+    }
   }
 
-}, 
-
-
-error = function(cond){
-
-      if(!has_internet()){
-
-        message("Please check your internet connexion: ")
-
-        message(cond)
-
-        return(NA)
-
-      } else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
-
-          message(paste0("The URL doesn't seem to be a valid one: ", link))
-
-          message("Here the original error message: ")
-
-          message(cond)
-
-          return(NA)
-      }}
-
-)
+  )
 
 }

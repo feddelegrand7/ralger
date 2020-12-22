@@ -115,6 +115,13 @@ images_scrap <- function(link,
       message(paste0("Here the original error message: ", cond))
 
       return(NA)
+    } else {
+
+      message(paste0("Undefined Error: ", cond))
+
+      return(NA)
+
+
     }
   }
 
