@@ -31,6 +31,14 @@ images_preview <- function(link, askRobot = FALSE) {
 
   }
 
+  if (!is.character(link)) {
+
+    stop("the 'link' parameter must be provided
+         as a character string")
+
+
+  }
+
     ###############
       ####### Ask robot related ##################################################
       if (askRobot) {

@@ -34,6 +34,19 @@ paragraphs_scrap <- function(link,
                              collapse = FALSE,
                              askRobot = FALSE) {
 
+
+  if (missing(link)) {
+    stop("'link' is a mandatory parameter")
+  }
+
+  if (!is.character(contain) && !is.null(contain)) {
+
+    stop("the 'contain' parameter must be passed a character string")
+
+
+  }
+
+
   ##################### Ask Robot part ###############################################
   if (askRobot) {
     if (paths_allowed(link) == TRUE) {

@@ -42,6 +42,15 @@ images_scrap <- function(link,
 
   }
 
+  if (!is.character(link)   ||
+      !is.character(imgpath)||
+      !is.character(extn)) {
+
+    stop("'link', 'imgpath' and 'extn' parameters must
+         be provided as character strings")
+
+  }
+
   if (imgpath != getwd() && !dir.exists(imgpath)) {
 
     stop("the path: ", imgpath, " doesn't seem to exist !")
@@ -50,7 +59,7 @@ images_scrap <- function(link,
 
   if (grepl(x = extn, pattern = "\\.")) {
 
-    stop("No need to include the '.' in 'extn', 
+    stop("No need to include the '.' in 'extn',
     just provide the extension as it is")
 
   }
@@ -115,6 +124,8 @@ images_scrap <- function(link,
       message(paste0("Here the original error message: ", cond))
 
       return(NA)
+
+
     } else {
 
       message(paste0("Undefined Error: ", cond))
