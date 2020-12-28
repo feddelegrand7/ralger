@@ -457,13 +457,6 @@ images_scrap(link = "https://rstudio.com/",
 
 The images will be downloaded into the folder `here::here("myimages")`.
 
-## Sponsor
-
-If you have the mean and like the package, feel free to sponsor it at
-[![R
-badge](https://img.shields.io/badge/-Sponsor-brightgreen)](https://www.buymeacoffee.com/Fodil)
-, this will allow me to buy some expensive books.
-
 ## Code of Conduct
 
 Please note that the ralger project is released with a [Contributor Code
