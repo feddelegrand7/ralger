@@ -455,9 +455,7 @@ images_scrap(link = "https://rstudio.com/",
              extn = "png") # without the .
 ```
 
-The images will be downloaded into the folder `here::here("myimages")`
-and named `img-1`, `img-2`, `img-3` …according to the number of
-extracted images and by order of appearance in the web page.
+The images will be downloaded into the folder `here::here("myimages")`.
 
 ## Sponsor
 
