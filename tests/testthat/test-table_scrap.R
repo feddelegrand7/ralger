@@ -10,11 +10,16 @@ expect_equal(
 
 
   ,
+  {
 
-  "https://www.topscorersfootball.com/premier-league" %>%
-    read_html() %>%
-    html_table() %>%
-    purrr::pluck(1)
+    table <-  "https://www.topscorersfootball.com/premier-league" %>%
+      read_html() %>%
+      html_table()
+
+    table[[1]]
+
+  }
+
 
     )
 
