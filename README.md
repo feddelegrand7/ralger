@@ -19,6 +19,8 @@ badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://gi
 badge](https://img.shields.io/badge/-Sponsor-brightgreen)](https://www.buymeacoffee.com/Fodil)
 [![R build
 status](https://github.com/feddelegrand7/ralger/workflows/R-CMD-check/badge.svg)](https://github.com/feddelegrand7/ralger/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/feddelegrand7/ralger/branch/master/graph/badge.svg)](https://codecov.io/gh/feddelegrand7/ralger?branch=master)
 <!-- badges: end -->
 
 The goal of **ralger** is to facilitate web scraping in R. For a quick
@@ -57,26 +59,8 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 my_node <- ".listing_default" # The CSS class, we recommend SelectorGadget
 
 scrap(link = my_link, node = my_node)
-#>  [1] "Adjerid Hanifa"                                                               
-#>  [2] "Dar Chamila"                                                                  
-#>  [3] "BNP Paribas / Agences Alger Bordj El Kiffan"                                  
-#>  [4] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                        
-#>  [5] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"
-#>  [6] "YOUKAIS"                                                                      
-#>  [7] "SYRIAN AIR LINES"                                                             
-#>  [8] "Turkish Airlines / Direction Générale"                                        
-#>  [9] "Aigle Azur / Agence Didouche Mourad"                                          
-#> [10] "British Airways"                                                              
-#> [11] "Cabinet Ammiche Amer"                                                         
-#> [12] "VERITEX"                                                                      
-#> [13] "Kermiche Partener"                                                            
-#> [14] "Marine Soft"                                                                  
-#> [15] "PROGOS"                                                                       
-#> [16] "Ambassade du Royaume d'Arabie Saoudite"                                       
-#> [17] "Ambassade de la République d'Argentine"                                       
-#> [18] "Ambassade du Burkina Faso"                                                    
-#> [19] "Ambassade du Canada"                                                          
-#> [20] "Ambassade de la République de Corée"
+#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [elmouchir.caci.dz] Resolving timed out after 10000 milliseconds
+#> [1] NA
 ```
 
 If you want to scrap multiple list pages, just use `scrap()` in
@@ -89,66 +73,8 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 my_node <- ".listing_default"
 
 scrap(link = paste0(my_link, 0:2), node = my_node)
-#>  [1] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              
-#>  [2] "VERITAL/ Direction Générale"                                                                                                   
-#>  [3] "Wilaya d'Alger"                                                                                                                
-#>  [4] "Officine Abeille"                                                                                                              
-#>  [5] "Twingle"                                                                                                                       
-#>  [6] "FCM"                                                                                                                           
-#>  [7] "UGTA / Union Générale des Travailleurs Algériens"                                                                              
-#>  [8] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"
-#>  [9] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        
-#> [10] "Conseil Constitutionnel"                                                                                                       
-#> [11] "Ambassade de la République de Serbie"                                                                                          
-#> [12] "Conseil de la Nation"                                                                                                          
-#> [13] "Radio El Bahdja"                                                                                                               
-#> [14] "Radio Mitidja"                                                                                                                 
-#> [15] "Mina Sport"                                                                                                                    
-#> [16] "Geete Services Industries"                                                                                                     
-#> [17] "Ambassade De Pologne"                                                                                                          
-#> [18] "LHC/ Laboratoire de l'Habitat & de Construction Alger"                                                                         
-#> [19] "Clinique de la Vision / Alger"                                                                                                 
-#> [20] "LEM / Laboratoire d'Etudes Maritimes"                                                                                          
-#> [21] "Adjerid Hanifa"                                                                                                                
-#> [22] "Dar Chamila"                                                                                                                   
-#> [23] "BNP Paribas / Agences Alger Bordj El Kiffan"                                                                                   
-#> [24] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                                                                         
-#> [25] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"                                                 
-#> [26] "YOUKAIS"                                                                                                                       
-#> [27] "SYRIAN AIR LINES"                                                                                                              
-#> [28] "Turkish Airlines / Direction Générale"                                                                                         
-#> [29] "Aigle Azur / Agence Didouche Mourad"                                                                                           
-#> [30] "British Airways"                                                                                                               
-#> [31] "Cabinet Ammiche Amer"                                                                                                          
-#> [32] "VERITEX"                                                                                                                       
-#> [33] "Kermiche Partener"                                                                                                             
-#> [34] "Marine Soft"                                                                                                                   
-#> [35] "PROGOS"                                                                                                                        
-#> [36] "Ambassade du Royaume d'Arabie Saoudite"                                                                                        
-#> [37] "Ambassade de la République d'Argentine"                                                                                        
-#> [38] "Ambassade du Burkina Faso"                                                                                                     
-#> [39] "Ambassade du Canada"                                                                                                           
-#> [40] "Ambassade de la République de Corée"                                                                                           
-#> [41] "Ambassade de la République de Côte d'Ivoire"                                                                                   
-#> [42] "Ambassade des Emirats Arabes Unis"                                                                                             
-#> [43] "Ambassade du Royaume d'Espagne"                                                                                                
-#> [44] "Ambassade des Etats Unis d’Amérique"                                                                                           
-#> [45] "Ambassade de la République de Guinée Bissau"                                                                                   
-#> [46] "Ambassade du Royaume Hachémite de Jordanie"                                                                                    
-#> [47] "ONDA / Office National des Droits d'Auteurs"                                                                                   
-#> [48] "Ambassade de la République du Mali"                                                                                            
-#> [49] "Ambassade du Royaume du Maroc"                                                                                                 
-#> [50] "Ambassade de la République du Niger"                                                                                           
-#> [51] "Ambassade de la République Islamique du Pakistan"                                                                              
-#> [52] "RPL / Réseaux Poids Lourds / Alger"                                                                                            
-#> [53] "Ambassade de l'Etat de Palestine"                                                                                              
-#> [54] "Ambassade du Royaume de Suède"                                                                                                 
-#> [55] "Ambassade de la République Yemenite"                                                                                           
-#> [56] "Ambassade de la République Démocratique du Congo"                                                                              
-#> [57] "Ambassade de la République Arabe Sahraouie Démocratique"                                                                       
-#> [58] "Ambassade de la République Fédérale du Nigeria"                                                                                
-#> [59] "Ambassade du Sultanat d'Oman"                                                                                                  
-#> [60] "CNIS / Centre National de l'Informatique et des Statistiques"
+#> Undefined Error: Error in open.connection(x, "rb"): Could not resolve host: elmouchir.caci.dz
+#> [1] NA
 ```
 
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you
@@ -254,62 +180,55 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Listen to ‘The Daily’"                                                                                        
-#>  [2] "Listen to ‘Sway’ With Kara Swisher"                                                                           
-#>  [3] "Got a confidential news tip?"                                                                                 
-#>  [4] "Pfizer Vaccine Faces Test as Expert Panel Votes on Guidance for F.D.A."                                       
-#>  [5] " "                                                                                                            
-#>  [6] "What You Need to Know About Getting Tested for Coronavirus"                                                   
-#>  [7] "A crime wave has hit New York City’s bodegas, threatening a lifeline in the pandemic."                        
-#>  [8] "Tracking the Coronavirus ›"                                                                                   
-#>  [9] "Mnuchin Scrutinized Over Stimulus Funds"                                                                      
-#> [10] "Airlines Gear Up to Transport Vaccines That Could Revive Travel"                                              
-#> [11] "‘Is Exxon a Survivor?’ The Oil Giant Is at a Crossroads."                                                     
-#> [12] "Biden Picks Susan Rice and Denis McDonough for Top Jobs"                                                      
-#> [13] "Team of Rivals? Biden’s Cabinet Looks More Like a Team of Buddies"                                            
-#> [14] "The N.C.A.A. crisis revealed how President-elect Joe Biden’s pick for surgeon general navigated the pandemic."
-#> [15] "Airbnb Tops $100 Billion on First Day of Trading, Reviving Talk of a Bubble"                                  
-#> [16] "Why Splitting Up Facebook Won’t Be Easy"                                                                      
-#> [17] "Five basic questions about the Facebook lawsuits, answered."                                                  
-#> [18] "As President Trump Disputes Election, Republicans Target Voting by Mail"                                      
-#> [19] "Seventeen Republican attorneys general backed the president in a far-fetched election lawsuit."               
-#> [20] "The Olive Garden Is Open, but Marilyn Hagerty Isn’t Eating There"                                             
-#> [21] "They’re Among the World’s Oldest Living Things. The Climate Crisis Is Killing Them."                          
-#> [22] "What Really Saved the Republic From Trump?"                                                                   
-#> [23] "‘These Girls Are Being Cut and Married in Droves’"                                                            
-#> [24] "There’s Still a Loaded Weapon Lying Around in Our Election System"                                            
-#> [25] "Yes, Facebook Has Become a Menace"                                                                            
-#> [26] "Masks Are Saving and Ruining My Life"                                                                         
-#> [27] "The Hidden ‘Fourth Wave’ of the Pandemic"                                                                     
-#> [28] "An Uplifting Update, on the Terrible World of Pornhub"                                                        
-#> [29] "Join Nicholas Kristof in a chat about Pornhub’s policies and more"                                            
-#> [30] "‘How Many Fact Checkers Do They Have?’"                                                                       
-#> [31] "The Coronavirus Vaccines Were Developed in Record Speed. Now, the Hard Part."                                 
-#> [32] "The Obstacles to Vaccine Distribution Aren’t What You Think"                                                  
-#> [33] "Our Last-Minute, Extremely Online Gift Guide"                                                                 
-#> [34] "How ‘The Queen’s Gambit’ Is Inspiring Women to Take Up Chess"                                                 
-#> [35] "A Couple Explore ‘New York’s Greatest-Kept Secret’"                                                           
-#> [36] "Site Index"                                                                                                   
-#> [37] "Site Information Navigation"                                                                                  
-#> [38] "Where cases per capita are\n\t\thighest"                                                                        
-#> [39] "U.S. hot spots ›"                                                                                             
-#> [40] "College cases ›"                                                                                              
-#> [41] "Worldwide ›"                                                                                                  
-#> [42] "Other trackers: \n            Choose your own places to track"                                                
-#> [43] "Other trackers:"                                                                                              
-#> [44] "U.S. hot spots ›"                                                                                             
-#> [45] "Worldwide ›"                                                                                                  
-#> [46] "Vaccine tracker ›"                                                                                            
-#> [47] "Other trackers: \n            "                                                                               
-#> [48] "Other trackers:"                                                                                              
-#> [49] "U.S. hot spots ›"                                                                                             
-#> [50] "Worldwide ›"                                                                                                  
-#> [51] "Vaccine tracker ›"                                                                                            
-#> [52] "Other trackers: \n            "                                                                               
-#> [53] "Other trackers:"                                                                                              
-#> [54] "Opinion"                                                                                                      
-#> [55] "Editors’ Picks"                                                                                               
-#> [56] "Advertisement"
+#>  [1] "This Year’s Best Episodes of ‘The Daily’"                                 
+#>  [2] "Visit ‘At Home’"                                                          
+#>  [3] "The Modern Love Podcast"                                                  
+#>  [4] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"
+#>  [5] "New York Halted Evictions. But What Happens When the Ban Ends?"           
+#>  [6] "Why Markets Boomed in a Year of Human Misery"                             
+#>  [7] "Philippines Bars Travelers From U.S. After Florida Finds U.K. Variant"    
+#>  [8] "In Minority Communities, Doctors Are Changing Minds About Vaccination"    
+#>  [9] "Before Embracing America-First Agenda, Perdue Was an Outsourcing Expert"  
+#> [10] "Georgia Republicans Deliver Persistent Message: Fear the Democrats"       
+#> [11] "Can You Poison Your Way to Good Health?"                                  
+#> [12] "2020 Belongs in the History Books"                                        
+#> [13] "For a Healthier 2021, Keep the Best Habits of a Very Bad Year"            
+#> [14] "Confessions of a Virtual Reality Gym Rat"                                 
+#> [15] "Things Will Get Better. Seriously."                                       
+#> [16] "Britain Has Lost Itself"                                                  
+#> [17] "Goodbye, Twitter Trump! And Other Predictions for 2021"                   
+#> [18] "We Came All This Way to Let Vaccines Go Bad in the Freezer?"              
+#> [19] "Bosses, Consider Caring a Bit"                                            
+#> [20] "My Joe Biden Story"                                                       
+#> [21] "This Is Why Nursing Homes Failed So Badly"                                
+#> [22] "After Five Centuries, a Native American With Real Power"                  
+#> [23] "‘Because of You Guys, I’m Stuck in My Room’"                              
+#> [24] "What New Science Techniques Tells Us About Ancient Women Warriors"        
+#> [25] "Your Dog Had the Best Year Ever"                                          
+#> [26] "David Fincher, the Unhappiest Auteur"                                     
+#> [27] "How the Oldest Old Can Endure Even This"                                  
+#> [28] "N.F.L. Week 17 Predictions: Our Picks Against the Spread"                 
+#> [29] "Site Index"                                                               
+#> [30] "Site Information Navigation"                                              
+#> [31] "Where cases per capita are\n\t\thighest"                                    
+#> [32] "U.S. hot spots ›"                                                         
+#> [33] "Vaccinations ›"                                                           
+#> [34] "Worldwide ›"                                                              
+#> [35] "Other trackers: \n            Choose your own places to track"            
+#> [36] "Other trackers:"                                                          
+#> [37] "U.S. hot spots ›"                                                         
+#> [38] "Worldwide ›"                                                              
+#> [39] "Vaccine tracker ›"                                                        
+#> [40] "Other trackers: \n            "                                           
+#> [41] "Other trackers:"                                                          
+#> [42] "U.S. hot spots ›"                                                         
+#> [43] "Worldwide ›"                                                              
+#> [44] "Vaccine tracker ›"                                                        
+#> [45] "Other trackers: \n            "                                           
+#> [46] "Other trackers:"                                                          
+#> [47] "Opinion"                                                                  
+#> [48] "Editors’ Picks"                                                           
+#> [49] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -317,8 +236,9 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "As President Trump Disputes Election, Republicans Target Voting by Mail"
-#> [2] "What Really Saved the Republic From Trump?"
+#> [1] "Trump’s Focus as Pandemic Raged: What Would It Mean for Him?"               
+#> [2] "How Trump Tried, but Largely Failed, to Derail America’s Top Climate Report"
+#> [3] "Goodbye, Twitter Trump! And Other Predictions for 2021"
 ```
 
 ## `paragraphs_scrap()`
@@ -417,18 +337,19 @@ Let’s say we want to list all the images from the official
 images_preview(link = "https://rstudio.com/")
 #>  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&fmt=gif"                                                                       
 #>  [2] "https://www.facebook.com/tr?id=151855192184380&ev=PageView&noscript=1"                                                         
-#>  [3] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
-#>  [4] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
-#>  [5] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
-#>  [6] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
-#>  [7] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
-#>  [8] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
-#>  [9] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
-#> [10] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
-#> [11] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
-#> [12] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
-#> [13] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
-#> [14] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"
+#>  [3] "https://d33wubrfki0l68.cloudfront.net/08b39bfcd76ebaf8360ed9135a50a2348fe2ed83/75738/assets/img/logo-white.svg"                
+#>  [4] "https://d33wubrfki0l68.cloudfront.net/f255381cf5fd8f44b899f01761a82ad1f149382d/ade3a/assets/img/2021-logo.png"                 
+#>  [5] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
+#>  [6] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
+#>  [7] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
+#>  [8] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
+#>  [9] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
+#> [10] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
+#> [11] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
+#> [12] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
+#> [13] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
+#> [14] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
+#> [15] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"
 ```
 
 `images_scrap()` on the other hand download the images. It takes the
@@ -454,8 +375,6 @@ images_scrap(link = "https://rstudio.com/",
              imgpath = here::here("my_images"), 
              extn = "png") # without the .
 ```
-
-The images will be downloaded into the folder `here::here("myimages")`.
 
 ## Code of Conduct
 
