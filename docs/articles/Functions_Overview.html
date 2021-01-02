@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ralger</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.1</span>
       </span>
     </div>
 
@@ -46,7 +46,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -75,7 +75,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/feddelegrand7/ralger/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -89,7 +89,7 @@
 
       
 
-      </header><script src="Functions_Overview_files/header-attrs-2.3/header-attrs.js"></script><script src="Functions_Overview_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="Functions_Overview_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Functions Overview</h1>
@@ -118,102 +118,55 @@
 <h2 class="hasAnchor">
 <a href="#scrap" class="anchor"></a><code>scrap()</code>
 </h2>
-<p>This is an example which shows how to extract firms’ denomination from the website of the <a href="http://elmouchir.caci.dz">Algerian Chamber of Commerce and Industry</a> (CACI). For simplicity, we’ll focus on firms operating within the capital (Algiers).</p>
+<p>This is an example which shows how to extract <a href="http://www.shanghairanking.com/ARWU2020.html">top ranked universities’ names</a> according to the ShanghaiRanking Consultancy:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/feddelegrand7/ralger">ralger</a></span><span class="op">)</span>
 
-<span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver"</span>
+<span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"http://www.shanghairanking.com/ARWU2020.html"</span>
 
-<span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">".listing_default"</span> <span class="co"># The CSS class, we recommend SelectorGadget</span>
+<span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">"#UniversityRanking a"</span> <span class="co"># The class ID , we recommend SelectorGadget</span>
 
-<span class="fu"><a href="../reference/scrap.html">scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="va">my_link</span>, node <span class="op">=</span> <span class="va">my_node</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "Adjerid Hanifa"                                                               </span>
-<span class="co">#&gt;  [2] "Dar Chamila"                                                                  </span>
-<span class="co">#&gt;  [3] "BNP Paribas / Agences Alger Bordj El Kiffan"                                  </span>
-<span class="co">#&gt;  [4] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                        </span>
-<span class="co">#&gt;  [5] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"</span>
-<span class="co">#&gt;  [6] "YOUKAIS"                                                                      </span>
-<span class="co">#&gt;  [7] "EDIMETAL"                                                                     </span>
-<span class="co">#&gt;  [8] "SYRIAN AIR LINES"                                                             </span>
-<span class="co">#&gt;  [9] "Turkish Airlines / Direction Générale"                                        </span>
-<span class="co">#&gt; [10] "Aigle Azur / Agence Didouche Mourad"                                          </span>
-<span class="co">#&gt; [11] "British Airways"                                                              </span>
-<span class="co">#&gt; [12] "Cabinet Ammiche Amer"                                                         </span>
-<span class="co">#&gt; [13] "VERITEX"                                                                      </span>
-<span class="co">#&gt; [14] "Kermiche Partener"                                                            </span>
-<span class="co">#&gt; [15] "Marine Soft"                                                                  </span>
-<span class="co">#&gt; [16] "PROGOS"                                                                       </span>
-<span class="co">#&gt; [17] "Ambassade du Royaume d'Arabie Saoudite"                                       </span>
-<span class="co">#&gt; [18] "Ambassade de la République d'Argentine"                                       </span>
-<span class="co">#&gt; [19] "Ambassade du Burkina Faso"                                                    </span>
-<span class="co">#&gt; [20] "Ambassade du Canada"</span></code></pre></div>
-<p>If you want to scrap multiple list pages, just use <code><a href="../reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>. Suppose, we want to extract the above information from the first 3 pages (starts from 0):</p>
+<span class="va">best_uni</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scrap.html">scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="va">my_link</span>, node <span class="op">=</span> <span class="va">my_node</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">best_uni</span>, <span class="fl">10</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "Harvard University"                         </span>
+<span class="co">#&gt;  [2] "Stanford University"                        </span>
+<span class="co">#&gt;  [3] "University of Cambridge"                    </span>
+<span class="co">#&gt;  [4] "Massachusetts Institute of Technology (MIT)"</span>
+<span class="co">#&gt;  [5] "University of California, Berkeley"         </span>
+<span class="co">#&gt;  [6] "Princeton University"                       </span>
+<span class="co">#&gt;  [7] "Columbia University"                        </span>
+<span class="co">#&gt;  [8] "California Institute of Technology"         </span>
+<span class="co">#&gt;  [9] "University of Oxford"                       </span>
+<span class="co">#&gt; [10] "University of Chicago"</span></code></pre></div>
+<p>If you want to scrap multiple list pages, just use <code><a href="../reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>. Suppose, we want to extract the names of the <a href="https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page=0">Golden Globes Awards Nominees</a>, we could proceed as follow to scrape the first 3 pages (which starts from 0):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"http://elmouchir.caci.dz/search_results.php?keyword=&amp;category=&amp;location=Alger&amp;submit=Trouver&amp;page="</span> 
+<code class="sourceCode R"><span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page="</span>
 
-<span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">".listing_default"</span>
+<span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">".primary-nominee a"</span>
 
 <span class="fu"><a href="../reference/scrap.html">scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">my_link</span>, <span class="fl">0</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span>, node <span class="op">=</span> <span class="va">my_node</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "SCAL / La Société des Ciments de l'Algérois"                                                                                   </span>
-<span class="co">#&gt;  [2] "EVSM / Entreprise de Viabilisation de Sidi Moussa"                                                                             </span>
-<span class="co">#&gt;  [3] "Chambre d'Agriculture de la Wilaya d'Alger / CNA"                                                                              </span>
-<span class="co">#&gt;  [4] "VERITAL/ Direction Générale"                                                                                                   </span>
-<span class="co">#&gt;  [5] "Wilaya d'Alger"                                                                                                                </span>
-<span class="co">#&gt;  [6] "Officine Abeille"                                                                                                              </span>
-<span class="co">#&gt;  [7] "Twingle"                                                                                                                       </span>
-<span class="co">#&gt;  [8] "FCM"                                                                                                                           </span>
-<span class="co">#&gt;  [9] "UGTA / Union Générale des Travailleurs Algériens"                                                                              </span>
-<span class="co">#&gt; [10] "ENEFEP / Etablissement National Des Equipements Techniques Et Pédagogiques de la Formation et de L’enseignement Professionnels"</span>
-<span class="co">#&gt; [11] "CCIM / Chambre de Commerce et d'Industrie de Mezghenna"                                                                        </span>
-<span class="co">#&gt; [12] "Conseil Constitutionnel"                                                                                                       </span>
-<span class="co">#&gt; [13] "Ambassade de la République de Serbie"                                                                                          </span>
-<span class="co">#&gt; [14] "Conseil de la Nation"                                                                                                          </span>
-<span class="co">#&gt; [15] "Radio El Bahdja"                                                                                                               </span>
-<span class="co">#&gt; [16] "Radio Mitidja"                                                                                                                 </span>
-<span class="co">#&gt; [17] "Mina Sport"                                                                                                                    </span>
-<span class="co">#&gt; [18] "Geete Services Industries"                                                                                                     </span>
-<span class="co">#&gt; [19] "Ambassade De Pologne"                                                                                                          </span>
-<span class="co">#&gt; [20] "LHC/ Laboratoire de l'Habitat &amp; de Construction Alger"                                                                         </span>
-<span class="co">#&gt; [21] "Adjerid Hanifa"                                                                                                                </span>
-<span class="co">#&gt; [22] "Dar Chamila"                                                                                                                   </span>
-<span class="co">#&gt; [23] "BNP Paribas / Agences Alger Bordj El Kiffan"                                                                                   </span>
-<span class="co">#&gt; [24] "TVA / Touring Voyages Algérie Centre / Zighoud Youcef"                                                                         </span>
-<span class="co">#&gt; [25] "SAMRIA AUTO / Salon Algerian du Materiel Roulant et de L'industrie Automobile"                                                 </span>
-<span class="co">#&gt; [26] "YOUKAIS"                                                                                                                       </span>
-<span class="co">#&gt; [27] "EDIMETAL"                                                                                                                      </span>
-<span class="co">#&gt; [28] "SYRIAN AIR LINES"                                                                                                              </span>
-<span class="co">#&gt; [29] "Turkish Airlines / Direction Générale"                                                                                         </span>
-<span class="co">#&gt; [30] "Aigle Azur / Agence Didouche Mourad"                                                                                           </span>
-<span class="co">#&gt; [31] "British Airways"                                                                                                               </span>
-<span class="co">#&gt; [32] "Cabinet Ammiche Amer"                                                                                                          </span>
-<span class="co">#&gt; [33] "VERITEX"                                                                                                                       </span>
-<span class="co">#&gt; [34] "Kermiche Partener"                                                                                                             </span>
-<span class="co">#&gt; [35] "Marine Soft"                                                                                                                   </span>
-<span class="co">#&gt; [36] "PROGOS"                                                                                                                        </span>
-<span class="co">#&gt; [37] "Ambassade du Royaume d'Arabie Saoudite"                                                                                        </span>
-<span class="co">#&gt; [38] "Ambassade de la République d'Argentine"                                                                                        </span>
-<span class="co">#&gt; [39] "Ambassade du Burkina Faso"                                                                                                     </span>
-<span class="co">#&gt; [40] "Ambassade du Canada"                                                                                                           </span>
-<span class="co">#&gt; [41] "Ambassade de la République de Corée"                                                                                           </span>
-<span class="co">#&gt; [42] "Ambassade de la République de Côte d'Ivoire"                                                                                   </span>
-<span class="co">#&gt; [43] "Ambassade des Emirats Arabes Unis"                                                                                             </span>
-<span class="co">#&gt; [44] "Ambassade du Royaume d'Espagne"                                                                                                </span>
-<span class="co">#&gt; [45] "Ambassade des Etats Unis d’Amérique"                                                                                           </span>
-<span class="co">#&gt; [46] "Ambassade de la République de Guinée Bissau"                                                                                   </span>
-<span class="co">#&gt; [47] "Ambassade du Royaume Hachémite de Jordanie"                                                                                    </span>
-<span class="co">#&gt; [48] "ONDA / Office National des Droits d'Auteurs"                                                                                   </span>
-<span class="co">#&gt; [49] "Ambassade de la République du Mali"                                                                                            </span>
-<span class="co">#&gt; [50] "Ambassade du Royaume du Maroc"                                                                                                 </span>
-<span class="co">#&gt; [51] "Ambassade de la République du Niger"                                                                                           </span>
-<span class="co">#&gt; [52] "Ambassade de la République Islamique du Pakistan"                                                                              </span>
-<span class="co">#&gt; [53] "RPL / Réseaux Poids Lourds"                                                                                                    </span>
-<span class="co">#&gt; [54] "Ambassade de l'Etat de Palestine"                                                                                              </span>
-<span class="co">#&gt; [55] "Ambassade du Royaume de Suède"                                                                                                 </span>
-<span class="co">#&gt; [56] "Ambassade de la République Yemenite"                                                                                           </span>
-<span class="co">#&gt; [57] "Ambassade de la République Démocratique du Congo"                                                                              </span>
-<span class="co">#&gt; [58] "Ambassade de la République Arabe Sahraouie Démocratique"                                                                       </span>
-<span class="co">#&gt; [59] "Ambassade de la République Fédérale du Nigeria"                                                                                </span>
-<span class="co">#&gt; [60] "Ambassade du Sultanat d'Oman"</span></code></pre></div>
+<span class="co">#&gt;  [1] "Joaquin Phoenix"       "Christian Bale"        "Antonio Banderas"     </span>
+<span class="co">#&gt;  [4] "Spain"                 "Adam Driver"           "Jonathan Pryce"       </span>
+<span class="co">#&gt;  [7] "Rami Malek"            "John David Washington" "Bradley Cooper"       </span>
+<span class="co">#&gt; [10] "Willem Dafoe"          "Lucas Hedges"          "Gary Oldman"          </span>
+<span class="co">#&gt; [13] "Timothée Chalamet"     "Daniel Day-Lewis"      "Tom Hanks"            </span>
+<span class="co">#&gt; [16] "Denzel Washington"     "Casey Affleck"         "Viggo Mortensen"      </span>
+<span class="co">#&gt; [19] "Denzel Washington"     "Joel Edgerton"         "Andrew Garfield"      </span>
+<span class="co">#&gt; [22] "Leonardo DiCaprio"     "Will Smith"            "Michael Fassbender"   </span>
+<span class="co">#&gt; [25] "Eddie Redmayne"        "Bryan Cranston"        "Eddie Redmayne"       </span>
+<span class="co">#&gt; [28] "Benedict Cumberbatch"  "David Oyelowo"         "Steve Carell"         </span>
+<span class="co">#&gt; [31] "Jake Gyllenhaal"       "Matthew McConaughey"   "Chiwetel Ejiofor"     </span>
+<span class="co">#&gt; [34] "Tom Hanks"             "Idris Elba"            "Robert Redford"       </span>
+<span class="co">#&gt; [37] "Daniel Day-Lewis"      "Richard Gere"          "Joaquin Phoenix"      </span>
+<span class="co">#&gt; [40] "Denzel Washington"     "John Hawkes"           "George Clooney"       </span>
+<span class="co">#&gt; [43] "Leonardo DiCaprio"     "Michael Fassbender"    "Ryan Gosling"         </span>
+<span class="co">#&gt; [46] "Brad Pitt"             "Colin Firth"           "Jesse Eisenberg"      </span>
+<span class="co">#&gt; [49] "James Franco"          "Ryan Gosling"          "Mark Wahlberg"        </span>
+<span class="co">#&gt; [52] "Jeff Bridges"          "George Clooney"        "Colin Firth"          </span>
+<span class="co">#&gt; [55] "Morgan Freeman"        "Tobey Maguire"         "Mickey Rourke"        </span>
+<span class="co">#&gt; [58] "Leonardo DiCaprio"     "Frank Langella"        "Sean Penn"            </span>
+<span class="co">#&gt; [61] "Brad Pitt"</span></code></pre></div>
 <p>Thanks to the <a href="https://github.com/ropensci/robotstxt">robotstxt</a>, you can set <code>askRobot = T</code> to ask the <code>robots.txt</code> file if it’s permitted to scrape a specific web page.</p>
 </div>
 <div id="table_scrap" class="section level2">
@@ -230,7 +183,7 @@
 <span class="co">#&gt;   Rank                                      Title Lifetime Gross Year</span>
 <span class="co">#&gt; 1    1                          Avengers: Endgame $2,797,800,564 2019</span>
 <span class="co">#&gt; 2    2                                     Avatar $2,790,439,092 2009</span>
-<span class="co">#&gt; 3    3                                    Titanic $2,195,170,133 1997</span>
+<span class="co">#&gt; 3    3                                    Titanic $2,471,751,922 1997</span>
 <span class="co">#&gt; 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015</span>
 <span class="co">#&gt; 5    5                     Avengers: Infinity War $2,048,359,754 2018</span>
 <span class="co">#&gt; 6    6                             Jurassic World $1,670,401,444 2015</span></code></pre></div>
@@ -307,60 +260,47 @@
 <code class="sourceCode R">
 
 <span class="fu"><a href="../reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "Listen to ‘The Daily’"                                                                         </span>
-<span class="co">#&gt;  [2] "Listen to ‘Still Processing’"                                                                  </span>
-<span class="co">#&gt;  [3] "The Modern Love Podcast"                                                                       </span>
-<span class="co">#&gt;  [4] "Live Updates"                                                                                  </span>
-<span class="co">#&gt;  [5] "Politics"                                                                                      </span>
-<span class="co">#&gt;  [6] "Economy"                                                                                       </span>
-<span class="co">#&gt;  [7] "Biden Flips Arizona, Further Cementing His Presidential Victory"                               </span>
-<span class="co">#&gt;  [8] "Trump Floats Improbable Survival Scenarios as He Ponders His Future"                           </span>
-<span class="co">#&gt;  [9] "Cracks Emerge in G.O.P. Support for Trump’s Unfounded Fraud Claims"                            </span>
-<span class="co">#&gt; [10] "Trump’s Rebuffs Prompt Warnings Over National Security"                                        </span>
-<span class="co">#&gt; [11] "As Soon as Trump Leaves Office, He Faces Greater Risk of Prosecution"                          </span>
-<span class="co">#&gt; [12] "Biden’s Education Department Will Rapidly Reverse Trump Era Policies"                          </span>
-<span class="co">#&gt; [13] "Europe Keeps Schools Open, Not Restaurants. The U.S. Has Other Ideas."                         </span>
-<span class="co">#&gt; [14] "See Coronavirus Restrictions and Mask Mandates for All 50 States"                              </span>
-<span class="co">#&gt; [15] "John Waters’s Personal Art Collection"                                                         </span>
-<span class="co">#&gt; [16] "Sign your kids up for virtual improv classes with Freestyle Love Supreme Academy."             </span>
-<span class="co">#&gt; [17] "If you’re divorced or separated, we’ll help you navigate co-parenting during the pandemic."    </span>
-<span class="co">#&gt; [18] "The Post-Presidency of a Con Man"                                                              </span>
-<span class="co">#&gt; [19] "Vice President-Elect Kamala Harris Moved Me to Tears"                                          </span>
-<span class="co">#&gt; [20] "2020 Shows Why the Electoral College Is Stupid and Immoral"                                    </span>
-<span class="co">#&gt; [21] "The Apocalyptic Politics of the Populist Right"                                                </span>
-<span class="co">#&gt; [22] "‘There Is a Real Opportunity Here That I Think Biden Is Capturing’"                            </span>
-<span class="co">#&gt; [23] "How to End ‘Women’s Work’"                                                                     </span>
-<span class="co">#&gt; [24] "A Republican Senate Would Be Bad for Business"                                                 </span>
-<span class="co">#&gt; [25] "How Biden Could Steer a Divided Government"                                                    </span>
-<span class="co">#&gt; [26] "A Good Deal for California Gig Companies Is Bad for Their Workers"                             </span>
-<span class="co">#&gt; [27] "Leave Fat Kids Alone"                                                                          </span>
-<span class="co">#&gt; [28] "What Happens if Trump Doesn’t Concede?"                                                        </span>
-<span class="co">#&gt; [29] "In 1958, Martin Luther King Almost Died. This Man Saved Him."                                  </span>
-<span class="co">#&gt; [30] "When It Comes to Living With Uncertainty, Michael J. Fox Is a Pro"                             </span>
-<span class="co">#&gt; [31] "Modern Love: How I Got Caught Up in a Global Romance Scam"                                     </span>
-<span class="co">#&gt; [32] "Site Index"                                                                                    </span>
-<span class="co">#&gt; [33] "Site Information Navigation"                                                                   </span>
-<span class="co">#&gt; [34] "Lockdowns Considered as U.S. Virus Cases Shatter Records Daily"                                </span>
-<span class="co">#&gt; [35] "Election officials flatly declare that the election ‘was the most secure in American history.’"</span>
-<span class="co">#&gt; [36] "Republicans’ slow, incremental crawl toward acknowledging a Biden victory."                    </span>
-<span class="co">#&gt; [37] "Biden flips Arizona, further cementing his presidential victory."                              </span>
-<span class="co">#&gt; [38] "Stocks climb, with Wall Street on track for a second weekly gain."                             </span>
-<span class="co">#&gt; [39] "Uneasy under lockdown, pubs in England are counting the days till Christmas."                  </span>
-<span class="co">#&gt; [40] "WeWork’s revenue fell in the third quarter as office workers stayed home."                     </span>
-<span class="co">#&gt; [41] "At Home"                                                                                       </span>
-<span class="co">#&gt; [42] "Opinion"                                                                                       </span>
-<span class="co">#&gt; [43] "Editors’ Picks"                                                                                </span>
-<span class="co">#&gt; [44] "Advertisement"</span></code></pre></div>
+<span class="co">#&gt;  [1] "This Year’s Best Episodes of ‘The Daily’"                                                                                  </span>
+<span class="co">#&gt;  [2] "Listen to ‘The Argument’"                                                                                                  </span>
+<span class="co">#&gt;  [3] "Visit ‘At Home’"                                                                                                           </span>
+<span class="co">#&gt;  [4] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"                                                 </span>
+<span class="co">#&gt;  [5] "The antiquities trade, a fertile ground for illicit activities, is subject to greater oversight under the new legislation."</span>
+<span class="co">#&gt;  [6] "New York Halted Evictions. But What Happens When the Ban Ends?"                                                            </span>
+<span class="co">#&gt;  [7] "Why Markets Boomed in a Year of Human Misery"                                                                              </span>
+<span class="co">#&gt;  [8] "Highly Contagious Virus Variant Now Found in 33 Countries"                                                                 </span>
+<span class="co">#&gt;  [9] "How Israel Became a World Leader in Vaccinating Against the Coronavirus"                                                   </span>
+<span class="co">#&gt; [10] "Britain Opts for Mix-and-Match Vaccinations, Confounding Experts"                                                          </span>
+<span class="co">#&gt; [11] "As Virus Shuts Down Prisons, Experts Warn of Fallout"                                                                      </span>
+<span class="co">#&gt; [12] "In Minority Communities, Doctors Are Changing Minds About Vaccination"                                                     </span>
+<span class="co">#&gt; [13] "Before Embracing America-First Agenda, Perdue Was an Outsourcing Expert"                                                   </span>
+<span class="co">#&gt; [14] "In Abrupt Reversal of Iran Strategy, Pentagon Orders Aircraft Carrier Home"                                                </span>
+<span class="co">#&gt; [15] "A Monster Wind Turbine Is Upending an Industry"                                                                            </span>
+<span class="co">#&gt; [16] "Can You Poison Your Way to Good Health?"                                                                                   </span>
+<span class="co">#&gt; [17] "Things Will Get Better. Seriously."                                                                                        </span>
+<span class="co">#&gt; [18] "Britain Has Lost Itself"                                                                                                   </span>
+<span class="co">#&gt; [19] "Goodbye, Twitter Trump! And Other Predictions for 2021"                                                                    </span>
+<span class="co">#&gt; [20] "Bosses, Consider Caring a Bit"                                                                                             </span>
+<span class="co">#&gt; [21] "After Five Centuries, a Native American With Real Power"                                                                   </span>
+<span class="co">#&gt; [22] "This Is Why Nursing Homes Failed So Badly"                                                                                 </span>
+<span class="co">#&gt; [23] "My Joe Biden Story"                                                                                                        </span>
+<span class="co">#&gt; [24] "We Came All This Way to Let Vaccines Go Bad in the Freezer?"                                                               </span>
+<span class="co">#&gt; [25] "‘Because of You Guys, I’m Stuck in My Room’"                                                                               </span>
+<span class="co">#&gt; [26] "What New Science Techniques Tells Us About Ancient Women Warriors"                                                         </span>
+<span class="co">#&gt; [27] "A Former F.B.I. Agent on the Blackwater Pardons: ‘I Am Embarrassed for Our Country’"                                       </span>
+<span class="co">#&gt; [28] "An Embattled Public Servant in a Fractured France"                                                                         </span>
+<span class="co">#&gt; [29] "Was That a Dropped Call From ET?"                                                                                          </span>
+<span class="co">#&gt; [30] "David Fincher, the Unhappiest Auteur"                                                                                      </span>
+<span class="co">#&gt; [31] "Site Index"                                                                                                                </span>
+<span class="co">#&gt; [32] "Site Information Navigation"                                                                                               </span>
+<span class="co">#&gt; [33] "Opinion"                                                                                                                   </span>
+<span class="co">#&gt; [34] "Editors’ Picks"                                                                                                            </span>
+<span class="co">#&gt; [35] "Advertisement"</span></code></pre></div>
 <p>Further, it’s possible to filter the results using the <code>contain</code> argument:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="../reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span>, contain <span class="op">=</span> <span class="st">"TrUMp"</span>, case_sensitive <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Trump Floats Improbable Survival Scenarios as He Ponders His Future" </span>
-<span class="co">#&gt; [2] "Cracks Emerge in G.O.P. Support for Trump’s Unfounded Fraud Claims"  </span>
-<span class="co">#&gt; [3] "Trump’s Rebuffs Prompt Warnings Over National Security"              </span>
-<span class="co">#&gt; [4] "As Soon as Trump Leaves Office, He Faces Greater Risk of Prosecution"</span>
-<span class="co">#&gt; [5] "Biden’s Education Department Will Rapidly Reverse Trump Era Policies"</span>
-<span class="co">#&gt; [6] "What Happens if Trump Doesn’t Concede?"</span></code></pre></div>
+<span class="co">#&gt; [1] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"</span>
+<span class="co">#&gt; [2] "Goodbye, Twitter Trump! And Other Predictions for 2021"</span></code></pre></div>
 </div>
 </div>
 <div id="paragraphs_scrap" class="section level2">
@@ -391,8 +331,8 @@
 <span class="co">#&gt; [17] "Or browse scientific publications that cited our packages."                                                                                                                                                                                                              </span>
 <span class="co">#&gt; [18] "Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure."                                                             </span>
 <span class="co">#&gt; [19] "We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative &amp; more efficient review process\n  "                                                                                                                      </span>
-<span class="co">#&gt; [20] "Based on best practices of software development and standards of R, it’s\napplications and user base."                                                                                                                                                                   </span>
-<span class="co">#&gt; [21] "Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reporoducible science"                                                                                                                     </span>
+<span class="co">#&gt; [20] "Based on best practices of software development and standards of R, its\napplications and user base."                                                                                                                                                                    </span>
+<span class="co">#&gt; [21] "Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reproducible science"                                                                                                                      </span>
 <span class="co">#&gt; [22] "We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process."</span>
 <span class="co">#&gt; [23] "Discover, learn and get involved in helping to shape the future of Data Science"                                                                                                                                                                                         </span>
 <span class="co">#&gt; [24] "Join in our quarterly Community Calls with fellow developers and scientists - open\nto all"                                                                                                                                                                              </span>
@@ -406,7 +346,7 @@
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="../reference/paragraphs_scrap.html">paragraphs_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://ropensci.org/"</span>, collapse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; [1] " We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages. Workflow Tools for Your Code and Data Get Data from the Web Convert and Munge Data Document and Release Your Data Visualize Data Work with Databases From R Access, Manipulate, Convert Geospatial Data Interact with Web Resources Use Image &amp; Audio Data Analyze Scientific Papers (and Text in General) Secure Your Data and Workflow Handle and Transform Taxonomic Information Get inspired by real examples of how our packages can be used. Or browse scientific publications that cited our packages. Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure. We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative &amp; more efficient review process\n   Based on best practices of software development and standards of R, it’s\napplications and user base. Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reporoducible science We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process. Discover, learn and get involved in helping to shape the future of Data Science Join in our quarterly Community Calls with fellow developers and scientists - open\nto all Upcoming events including meetings at which our team members are speaking. The latest developments from rOpenSci and the wider R community Release notes, updates and package related developements A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive. Happy rOpenSci users can be found at Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"</span></code></pre></div>
+<span class="co">#&gt; [1] " We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages. Workflow Tools for Your Code and Data Get Data from the Web Convert and Munge Data Document and Release Your Data Visualize Data Work with Databases From R Access, Manipulate, Convert Geospatial Data Interact with Web Resources Use Image &amp; Audio Data Analyze Scientific Papers (and Text in General) Secure Your Data and Workflow Handle and Transform Taxonomic Information Get inspired by real examples of how our packages can be used. Or browse scientific publications that cited our packages. Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure. We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative &amp; more efficient review process\n   Based on best practices of software development and standards of R, its\napplications and user base. Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reproducible science We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process. Discover, learn and get involved in helping to shape the future of Data Science Join in our quarterly Community Calls with fellow developers and scientists - open\nto all Upcoming events including meetings at which our team members are speaking. The latest developments from rOpenSci and the wider R community Release notes, updates and package related developements A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive. Happy rOpenSci users can be found at Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"</span></code></pre></div>
 </div>
 <div id="weblink_scrap" class="section level2">
 <h2 class="hasAnchor">
@@ -453,17 +393,18 @@
 <span class="co">#&gt;  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&amp;fmt=gif"                                                                       </span>
 <span class="co">#&gt;  [2] "https://www.facebook.com/tr?id=151855192184380&amp;ev=PageView&amp;noscript=1"                                                         </span>
 <span class="co">#&gt;  [3] "https://d33wubrfki0l68.cloudfront.net/08b39bfcd76ebaf8360ed9135a50a2348fe2ed83/75738/assets/img/logo-white.svg"                </span>
-<span class="co">#&gt;  [4] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"</span>
-<span class="co">#&gt;  [5] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              </span>
-<span class="co">#&gt;  [6] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            </span>
-<span class="co">#&gt;  [7] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            </span>
-<span class="co">#&gt;  [8] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 </span>
-<span class="co">#&gt;  [9] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              </span>
-<span class="co">#&gt; [10] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              </span>
-<span class="co">#&gt; [11] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 </span>
-<span class="co">#&gt; [12] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      </span>
-<span class="co">#&gt; [13] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               </span>
-<span class="co">#&gt; [14] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"</span></code></pre></div>
+<span class="co">#&gt;  [4] "https://d33wubrfki0l68.cloudfront.net/f255381cf5fd8f44b899f01761a82ad1f149382d/ade3a/assets/img/2021-logo.png"                 </span>
+<span class="co">#&gt;  [5] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"</span>
+<span class="co">#&gt;  [6] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              </span>
+<span class="co">#&gt;  [7] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            </span>
+<span class="co">#&gt;  [8] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            </span>
+<span class="co">#&gt;  [9] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 </span>
+<span class="co">#&gt; [10] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              </span>
+<span class="co">#&gt; [11] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              </span>
+<span class="co">#&gt; [12] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 </span>
+<span class="co">#&gt; [13] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      </span>
+<span class="co">#&gt; [14] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               </span>
+<span class="co">#&gt; [15] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"</span></code></pre></div>
 <p><code><a href="../reference/images_scrap.html">images_scrap()</a></code> on the other hand download the images. It takes the following arguments:</p>
 <ul>
 <li><p><strong>link</strong>: The URL of the web page;</p></li>

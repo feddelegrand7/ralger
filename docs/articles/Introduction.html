@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ralger</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.1</span>
       </span>
     </div>
 
@@ -46,7 +46,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -61,7 +61,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/Functions%20overview.html">Functions overview</a>
+      <a href="../articles/Functions_Overview.html">Functions Overview</a>
     </li>
     <li>
       <a href="../articles/Introduction.html">Quick example</a>
@@ -75,7 +75,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/feddelegrand7/ralger/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -89,7 +89,7 @@
 
       
 
-      </header><script src="Introduction_files/header-attrs-2.3/header-attrs.js"></script><script src="Introduction_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="Introduction_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Getting_Started</h1>
@@ -128,8 +128,8 @@
 <pre><code>##  [1] "Renée Zellweger"    "Cynthia Erivo"      "Scarlett Johansson"
 ##  [4] "Saoirse Ronan"      "Charlize Theron"    "Glenn Close"       
 ##  [7] "Lady Gaga"          "Nicole Kidman"      "Melissa McCarthy"  
-## [10] "Rosamund Pike"      "Frances McDormand"  "Meryl Streep"      
-## [13] "Michelle Williams"  "Jessica Chastain"   "Sally Hawkins"     
+## [10] "Rosamund Pike"      "Frances McDormand"  "Jessica Chastain"  
+## [13] "Sally Hawkins"      "Meryl Streep"       "Michelle Williams" 
 ## [16] "Isabelle Huppert"   "France"             "Amy Adams"         
 ## [19] "Jessica Chastain"   "Ruth Negga"         "Natalie Portman"</code></pre>
 <p>Pretty simple right ? I hope so. Anyway, the problem here is that the main page displays only 20 nominees, from 2017 to 2020. What if we wanted to extract all nominees in history ? Indeed, you’re right, we’d have to scroll multiple pages (20 to be exact) across the website. In this context, we need to use <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> in conjunction with <code><a href="../reference/scrap.html">scrap()</a></code> as follows:</p>
@@ -170,10 +170,10 @@
 ##    Actress            Movie                   
 ##    &lt;chr&gt;              &lt;chr&gt;                   
 ##  1 Renée Zellweger    Judy                    
-##  2 Cynthia Erivo      Harriet                 
-##  3 Scarlett Johansson Marriage Story          
-##  4 Saoirse Ronan      Little Women            
-##  5 Charlize Theron    Bombshell               
+##  2 Scarlett Johansson Marriage Story          
+##  3 Saoirse Ronan      Little Women            
+##  4 Charlize Theron    Bombshell               
+##  5 Cynthia Erivo      Harriet                 
 ##  6 Glenn Close        Wife, The               
 ##  7 Lady Gaga          Star Is Born, A (2018)  
 ##  8 Nicole Kidman      Destroyer               

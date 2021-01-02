@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • ralger</title>
+<title>Scrape Images from a Web Page — images_scrap • ralger</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Scrape Images from a Web Page — images_scrap" />
+<meta property="og:description" content="Scrape Images from a Web Page" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -133,20 +134,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Scrape Images from a Web Page</h1>
+    <small class="dont-index">Source: <a href='https://github.com/feddelegrand7/ralger/blob/master/R/images_scrap.R'><code>R/images_scrap.R</code></a></small>
+    <div class="hidden name"><code>images_scrap.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="Functions_Overview.html">Functions Overview</a></dt>
-        <dd></dt>
-        <dt><a href="Introduction.html">Quick example</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Scrape Images from a Web Page</p>
     </div>
+
+    <pre class="usage"><span class='fu'>images_scrap</span><span class='op'>(</span><span class='va'>link</span>, imgpath <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='va'>extn</span>, askRobot <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>link</th>
+      <td><p>the link of the web page</p></td>
+    </tr>
+    <tr>
+      <th>imgpath</th>
+      <td><p>the path of the images. Defaults to the current directory</p></td>
+    </tr>
+    <tr>
+      <th>extn</th>
+      <td><p>the extension of the image: png, jpeg ...</p></td>
+    </tr>
+    <tr>
+      <th>askRobot</th>
+      <td><p>logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Images</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+
+<span class='fu'>images_scrap</span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>"https://rstudio.com/"</span>, extn <span class='op'>=</span> <span class='st'>"png"</span><span class='op'>)</span>
+
+<span class='op'>}</span>
+
+</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 

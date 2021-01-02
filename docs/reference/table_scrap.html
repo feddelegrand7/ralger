@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ralger</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.1</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -103,7 +103,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Functions overview.html">Functions overview</a>
+      <a href="../articles/Functions_Overview.html">Functions Overview</a>
     </li>
     <li>
       <a href="../articles/Introduction.html">Quick example</a>
@@ -117,7 +117,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/feddelegrand7/ralger/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -143,7 +143,7 @@
     <p>This function is used to scrape an html table from a website.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>table_scrap</span><span class='op'>(</span><span class='va'>link</span>, choose <span class='op'>=</span> <span class='fl'>1</span>, header <span class='op'>=</span> <span class='cn'>T</span>, askRobot <span class='op'>=</span> <span class='cn'>FALSE</span>, fill <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>table_scrap</span><span class='op'>(</span><span class='va'>link</span>, choose <span class='op'>=</span> <span class='fl'>1</span>, header <span class='op'>=</span> <span class='cn'>TRUE</span>, fill <span class='op'>=</span> <span class='cn'>FALSE</span>, askRobot <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -161,12 +161,12 @@
       <td><p>do you want the first line to be the leader (default to TRUE)</p></td>
     </tr>
     <tr>
-      <th>askRobot</th>
-      <td><p>logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.</p></td>
-    </tr>
-    <tr>
       <th>fill</th>
       <td><p>logical. Should be set to TRUE when the table has an inconsistent number of columns.</p></td>
+    </tr>
+    <tr>
+      <th>askRobot</th>
+      <td><p>logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.</p></td>
     </tr>
     </table>
 
@@ -181,31 +181,28 @@
 <span class='va'>link</span>     <span class='op'>&lt;-</span> <span class='st'>"https://www.topscorersfootball.com/premier-league"</span>
 <span class='fu'>table_scrap</span><span class='op'>(</span><span class='va'>link</span><span class='op'>)</span><span class='co'># }</span>
 </div><div class='output co'>#&gt;     #                Player              Team Nationality Goals
-#&gt; 1   1 Dominic Calvert-Lewin           Everton     England     8
-#&gt; 2  NA           Jamie Vardy         Leicester     England     8
-#&gt; 3  NA         Mohamed Salah         Liverpool       Egypt     8
-#&gt; 4  NA         Son Heung-Min         Tottenham South Korea     8
-#&gt; 5   5            Harry Kane         Tottenham     England     7
-#&gt; 6  NA       Patrick Bamford             Leeds     England     7
-#&gt; 7   7         Callum Wilson         Newcastle     England     6
-#&gt; 8  NA         Ollie Watkins       Aston Villa     England     6
-#&gt; 9   9       Bruno Fernandes Manchester United    Portugal     5
-#&gt; 10 NA            Danny Ings       Southampton     England     5
-#&gt; 11 NA         Wilfried Zaha    Crystal Palace     England     5
-#&gt; 12 12         Jack Grealish       Aston Villa     England     4
-#&gt; 13 NA           Neal Maupay          Brighton      France     4
-#&gt; 14 NA          Raul Jimenez     Wolverhampton      Mexico     4
-#&gt; 15 NA            Sadio Mané         Liverpool     Senegal     4
-#&gt; 16 NA           Timo Werner           Chelsea     Germany     4
-#&gt; 17 17   Alexandre Lacazette           Arsenal      France     3
-#&gt; 18 NA             Che Adams       Southampton     England     3
-#&gt; 19 NA            Diogo Jota         Liverpool    Portugal     3
-#&gt; 20 NA       James Rodriguez           Everton    Colombia     3
-#&gt; 21 NA     James Ward-Prowse       Southampton     England     3
-#&gt; 22 NA          Jarrod Bowen          West Ham     England     3
-#&gt; 23 NA              Jorginho           Chelsea       Italy     3
-#&gt; 24 NA            Kurt Zouma           Chelsea      France     3
-#&gt; 25 NA       Michail Antonio          West Ham     England     3</div><div class='input'>
+#&gt; 1   1         Mohamed Salah         Liverpool       Egypt    13
+#&gt; 2   2       Bruno Fernandes Manchester United    Portugal    11
+#&gt; 3  NA Dominic Calvert-Lewin           Everton     England    11
+#&gt; 4  NA           Jamie Vardy         Leicester     England    11
+#&gt; 5  NA         Son Heung-Min         Tottenham South Korea    11
+#&gt; 6   6       Patrick Bamford             Leeds     England    10
+#&gt; 7   7            Harry Kane         Tottenham     England     9
+#&gt; 8   8         Callum Wilson         Newcastle     England     8
+#&gt; 9  NA         Wilfried Zaha    Crystal Palace     England     8
+#&gt; 10 10       Marcus Rashford Manchester United     England     7
+#&gt; 11 11            Danny Ings       Southampton     England     6
+#&gt; 12 NA         Ollie Watkins       Aston Villa     England     6
+#&gt; 13 NA            Sadio Mané         Liverpool     Senegal     6
+#&gt; 14 NA         Tammy Abraham           Chelsea     England     6
+#&gt; 15 15   Alexandre Lacazette           Arsenal      France     5
+#&gt; 16 NA        Anwar El Ghazi       Aston Villa Netherlands     5
+#&gt; 17 NA            Diogo Jota         Liverpool    Portugal     5
+#&gt; 18 NA         Harvey Barnes         Leicester     England     5
+#&gt; 19 NA         Jack Grealish       Aston Villa     England     5
+#&gt; 20 NA           Neal Maupay          Brighton      France     5
+#&gt; 21 NA       Roberto Firmino         Liverpool      Brazil     5
+#&gt; 22 NA          Tomas Soucek          West Ham     Unknown     5</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

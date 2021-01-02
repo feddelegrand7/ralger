@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • ralger</title>
+<title>Scrape Images URLs — images_preview • ralger</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Scrape Images URLs — images_preview" />
+<meta property="og:description" content="Scrape Images URLs" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -133,20 +134,61 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Scrape Images URLs</h1>
+    <small class="dont-index">Source: <a href='https://github.com/feddelegrand7/ralger/blob/master/R/preview_images.R'><code>R/preview_images.R</code></a></small>
+    <div class="hidden name"><code>images_preview.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="Functions_Overview.html">Functions Overview</a></dt>
-        <dd></dt>
-        <dt><a href="Introduction.html">Quick example</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Scrape Images URLs</p>
     </div>
+
+    <pre class="usage"><span class='fu'>images_preview</span><span class='op'>(</span><span class='va'>link</span>, askRobot <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>link</th>
+      <td><p>the link of the web page</p></td>
+    </tr>
+    <tr>
+      <th>askRobot</th>
+      <td><p>logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Images URLs</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+
+<span class='fu'>images_preview</span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>"https://rstudio.com/"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&amp;fmt=gif"                                                                       
+#&gt;  [2] "https://www.facebook.com/tr?id=151855192184380&amp;ev=PageView&amp;noscript=1"                                                         
+#&gt;  [3] "https://d33wubrfki0l68.cloudfront.net/08b39bfcd76ebaf8360ed9135a50a2348fe2ed83/75738/assets/img/logo-white.svg"                
+#&gt;  [4] "https://d33wubrfki0l68.cloudfront.net/f255381cf5fd8f44b899f01761a82ad1f149382d/ade3a/assets/img/2021-logo.png"                 
+#&gt;  [5] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
+#&gt;  [6] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
+#&gt;  [7] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
+#&gt;  [8] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
+#&gt;  [9] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
+#&gt; [10] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
+#&gt; [11] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
+#&gt; [12] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
+#&gt; [13] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
+#&gt; [14] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
+#&gt; [15] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"               </div><div class='input'>
+<span class='co'># }</span>
+
+</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 

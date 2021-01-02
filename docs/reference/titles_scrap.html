@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ralger</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.2.1</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -103,7 +103,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Functions overview.html">Functions overview</a>
+      <a href="../articles/Functions_Overview.html">Functions Overview</a>
     </li>
     <li>
       <a href="../articles/Introduction.html">Quick example</a>
@@ -117,7 +117,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/feddelegrand7/ralger/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -177,63 +177,40 @@
 <span class='va'>link</span>     <span class='op'>&lt;-</span> <span class='st'>"https://www.nytimes.com/"</span>
 
 <span class='fu'>titles_scrap</span><span class='op'>(</span><span class='va'>link</span><span class='op'>)</span><span class='co'># }</span>
-</div><div class='output co'>#&gt;  [1] " Live Updates "                                                                                                                                                                                                                                                                                                           
-#&gt;  [2] " See full presidential results "                                                                                                                                                                                                                                                                                          
-#&gt;  [3] " Key States "                                                                                                                                                                                                                                                                                                             
-#&gt;  [4] "U.S. Surpasses 10 Million Coronavirus Cases"                                                                                                                                                                                                                                                                              
-#&gt;  [5] "An Explanation for Some Covid-19 Deaths May Not Be Holding Up"                                                                                                                                                                                                                                                            
-#&gt;  [6] "Alex Trebek, Longtime Host of ‘Jeopardy!,’ Dies at 80"                                                                                                                                                                                                                                                                    
-#&gt;  [7] "O Captain, My ‘Jeopardy!’ Captain"                                                                                                                                                                                                                                                                                        
-#&gt;  [8] "“We have no idea what the show is going to be without him.” Fans mourned the loss of Alex Trebek."                                                                                                                                                                                                                        
-#&gt;  [9] "Making It Work"                                                                                                                                                                                                                                                                                                           
-#&gt; [10] "Yes, it is possible to buy a good used computer online. Here’s how."                                                                                                                                                                                                                                                      
-#&gt; [11] "If you’re on edge, try taking a controlled breath."                                                                                                                                                                                                                                                                       
-#&gt; [12] "The Weekender"                                                                                                                                                                                                                                                                                                            
-#&gt; [13] "Did you follow the news this week? Take our quiz."                                                                                                                                                                                                                                                                        
-#&gt; [14] "We Hereby Dump Trump"                                                                                                                                                                                                                                                                                                     
-#&gt; [15] "What Alex Trebek Was Really Like"                                                                                                                                                                                                                                                                                         
-#&gt; [16] "Black Empowerment Outside the Headlines"                                                                                                                                                                                                                                                                                  
-#&gt; [17] "The Human Experience Will Not Be Quantified"                                                                                                                                                                                                                                                                              
-#&gt; [18] "Elections Don’t Have to Be So Chaotic and Excruciating"                                                                                                                                                                                                                                                                   
-#&gt; [19] "A Loving Chastisement for America"                                                                                                                                                                                                                                                                                        
-#&gt; [20] "Victory for Joe Biden, at Last"                                                                                                                                                                                                                                                                                           
-#&gt; [21] "Is There a Trumpism After Trump?"                                                                                                                                                                                                                                                                                         
-#&gt; [22] "A Black Hero in the Jim Crow Navy"                                                                                                                                                                                                                                                                                        
-#&gt; [23] "Biden Can’t Be F.D.R. He Could Still Be L.B.J."                                                                                                                                                                                                                                                                           
-#&gt; [24] "Why You Should Brave the ‘Bad’ Weather"                                                                                                                                                                                                                                                                                   
-#&gt; [25] "How Do You Know When Society Is About to Fall Apart?"                                                                                                                                                                                                                                                                     
-#&gt; [26] "‘Saturday Night Live’ Sends Off Trump With a Ballad"                                                                                                                                                                                                                                                                      
-#&gt; [27] "Review: At Home With Our Ancient Cousins, the Neanderthals"                                                                                                                                                                                                                                                               
-#&gt; [28] "Site Index"                                                                                                                                                                                                                                                                                                               
-#&gt; [29] "Site Information Navigation"                                                                                                                                                                                                                                                                                              
-#&gt; [30] "As Biden Plans for Day 1, G.O.P. Navigates Trump’s Refusal to Concede"                                                                                                                                                                                                                                                    
-#&gt; [31] "George W. Bush Congratulates Biden"                                                                                                                                                                                                                                                                                       
-#&gt; [32] ".css-11f6h48{margin-right:5px;}.css-11f6h48:hover{border-bottom:1px solid #e2e2e2;}Putin is silent on Biden’s victory, foreshadowing tense years ahead..css-m7dmkp{font-family:nyt-franklin,helvetica,arial,sans-serif;color:#d0021b;font-weight:600;font-size:0.75rem;line-height:0.8125rem;display:inline-block;}1h ago"
-#&gt; [33] "Christian conservatives reflect on Trump’s loss and look ahead.1h ago"                                                                                                                                                                                                                                                    
-#&gt; [34] "Here are 5 things the Biden administration could do quickly on the environment.2h ago"                                                                                                                                                                                                                                    
-#&gt; [35] "Biden’s German shepherds will restore a presidential tradition.2h ago"                                                                                                                                                                                                                                                    
-#&gt; [36] "President"                                                                                                                                                                                                                                                                                                                
-#&gt; [37] "Senate"                                                                                                                                                                                                                                                                                                                   
-#&gt; [38] "House"                                                                                                                                                                                                                                                                                                                    
-#&gt; [39] "Senate"                                                                                                                                                                                                                                                                                                                   
-#&gt; [40] "House"                                                                                                                                                                                                                                                                                                                    
-#&gt; [41] "Five Takeaways From Biden’s Victory Speech"                                                                                                                                                                                                                                                                               
-#&gt; [42] "Why the Biden Economy Could Be the Same Long Slog as the Obama Economy"                                                                                                                                                                                                                                                   
-#&gt; [43] "‘A Long Time Coming’: Black Women Celebrate Harris’s Ascension"                                                                                                                                                                                                                                                           
-#&gt; [44] "Kamala Harris’s ancestral village in India rejoiced, but many wondered what changes may come."                                                                                                                                                                                                                            
-#&gt; [45] "What’s Next for Trump? Family Business Awaits His Return"                                                                                                                                                                                                                                                                 
-#&gt; [46] "Analysis: Dancing in the Streets for Joe Biden"                                                                                                                                                                                                                                                                           
-#&gt; [47] "A Crisis Candidacy, Then Party Unity"                                                                                                                                                                                                                                                                                     
-#&gt; [48] "As a Bitter Election Ends, 26 Americans Look to the Future"                                                                                                                                                                                                                                                               
-#&gt; [49] "For 9 of 10 Voters, Protests Over Police Violence Played Role in Their Choice"                                                                                                                                                                                                                                            
-#&gt; [50] "Georgia, From Reliably Republican to Political Ground Zero"                                                                                                                                                                                                                                                               
-#&gt; [51] "‘It’s Such a Relief’: Biden Voters Rebuild a Wall That Trump Smashed"                                                                                                                                                                                                                                                     
-#&gt; [52] "How Biden Flipped Pennsylvania and Won the Election"                                                                                                                                                                                                                                                                      
-#&gt; [53] "With control of the Senate unclear, liberal Democrats are lining up to press their agenda."                                                                                                                                                                                                                               
-#&gt; [54] "AT HOME"                                                                                                                                                                                                                                                                                                                  
-#&gt; [55] "Opinion"                                                                                                                                                                                                                                                                                                                  
-#&gt; [56] "Editors’ Picks"                                                                                                                                                                                                                                                                                                           
-#&gt; [57] "Advertisement"                                                                                                                                                                                                                                                                                                            </div><div class='input'>
+</div><div class='output co'>#&gt;  [1] "This Year’s Best Episodes of ‘The Daily’"                                                                                  
+#&gt;  [2] "Listen to ‘The Argument’"                                                                                                  
+#&gt;  [3] "Visit ‘At Home’"                                                                                                           
+#&gt;  [4] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"                                                 
+#&gt;  [5] "The antiquities trade, a fertile ground for illicit activities, is subject to greater oversight under the new legislation."
+#&gt;  [6] "New York Halted Evictions. But What Happens When the Ban Ends?"                                                            
+#&gt;  [7] "Why Markets Boomed in a Year of Human Misery"                                                                              
+#&gt;  [8] "Highly Contagious Virus Variant Now Found in 33 Countries"                                                                 
+#&gt;  [9] "How Israel Became a World Leader in Vaccinating Against the Coronavirus"                                                   
+#&gt; [10] "Britain Opts for Mix-and-Match Vaccinations, Confounding Experts"                                                          
+#&gt; [11] "As Virus Shuts Down Prisons, Experts Warn of Fallout"                                                                      
+#&gt; [12] "In Minority Communities, Doctors Are Changing Minds About Vaccination"                                                     
+#&gt; [13] "Before Embracing America-First Agenda, Perdue Was an Outsourcing Expert"                                                   
+#&gt; [14] "A Monster Wind Turbine Is Upending an Industry"                                                                            
+#&gt; [15] "Can You Poison Your Way to Good Health?"                                                                                   
+#&gt; [16] "Things Will Get Better. Seriously."                                                                                        
+#&gt; [17] "Britain Has Lost Itself"                                                                                                   
+#&gt; [18] "Goodbye, Twitter Trump! And Other Predictions for 2021"                                                                    
+#&gt; [19] "Bosses, Consider Caring a Bit"                                                                                             
+#&gt; [20] "After Five Centuries, a Native American With Real Power"                                                                   
+#&gt; [21] "This Is Why Nursing Homes Failed So Badly"                                                                                 
+#&gt; [22] "My Joe Biden Story"                                                                                                        
+#&gt; [23] "We Came All This Way to Let Vaccines Go Bad in the Freezer?"                                                               
+#&gt; [24] "‘Because of You Guys, I’m Stuck in My Room’"                                                                               
+#&gt; [25] "What New Science Techniques Tells Us About Ancient Women Warriors"                                                         
+#&gt; [26] "A Former F.B.I. Agent on the Blackwater Pardons: ‘I Am Embarrassed for Our Country’"                                       
+#&gt; [27] "An Embattled Public Servant in a Fractured France"                                                                         
+#&gt; [28] "Was That a Dropped Call From ET?"                                                                                          
+#&gt; [29] "David Fincher, the Unhappiest Auteur"                                                                                      
+#&gt; [30] "Site Index"                                                                                                                
+#&gt; [31] "Site Information Navigation"                                                                                               
+#&gt; [32] "Opinion"                                                                                                                   
+#&gt; [33] "Editors’ Picks"                                                                                                            
+#&gt; [34] "Advertisement"                                                                                                             </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
