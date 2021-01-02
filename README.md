@@ -73,7 +73,7 @@ my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&locat
 my_node <- ".listing_default"
 
 scrap(link = paste0(my_link, 0:2), node = my_node)
-#> Undefined Error: Error in open.connection(x, "rb"): Could not resolve host: elmouchir.caci.dz
+#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [elmouchir.caci.dz] Resolving timed out after 10000 milliseconds
 #> [1] NA
 ```
 
@@ -180,55 +180,40 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "This Year’s Best Episodes of ‘The Daily’"                                 
-#>  [2] "Visit ‘At Home’"                                                          
-#>  [3] "The Modern Love Podcast"                                                  
-#>  [4] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"
-#>  [5] "New York Halted Evictions. But What Happens When the Ban Ends?"           
-#>  [6] "Why Markets Boomed in a Year of Human Misery"                             
-#>  [7] "Philippines Bars Travelers From U.S. After Florida Finds U.K. Variant"    
-#>  [8] "In Minority Communities, Doctors Are Changing Minds About Vaccination"    
-#>  [9] "Before Embracing America-First Agenda, Perdue Was an Outsourcing Expert"  
-#> [10] "Georgia Republicans Deliver Persistent Message: Fear the Democrats"       
-#> [11] "Can You Poison Your Way to Good Health?"                                  
-#> [12] "2020 Belongs in the History Books"                                        
-#> [13] "For a Healthier 2021, Keep the Best Habits of a Very Bad Year"            
-#> [14] "Confessions of a Virtual Reality Gym Rat"                                 
-#> [15] "Things Will Get Better. Seriously."                                       
-#> [16] "Britain Has Lost Itself"                                                  
-#> [17] "Goodbye, Twitter Trump! And Other Predictions for 2021"                   
-#> [18] "We Came All This Way to Let Vaccines Go Bad in the Freezer?"              
-#> [19] "Bosses, Consider Caring a Bit"                                            
-#> [20] "My Joe Biden Story"                                                       
-#> [21] "This Is Why Nursing Homes Failed So Badly"                                
-#> [22] "After Five Centuries, a Native American With Real Power"                  
-#> [23] "‘Because of You Guys, I’m Stuck in My Room’"                              
-#> [24] "What New Science Techniques Tells Us About Ancient Women Warriors"        
-#> [25] "Your Dog Had the Best Year Ever"                                          
-#> [26] "David Fincher, the Unhappiest Auteur"                                     
-#> [27] "How the Oldest Old Can Endure Even This"                                  
-#> [28] "N.F.L. Week 17 Predictions: Our Picks Against the Spread"                 
-#> [29] "Site Index"                                                               
-#> [30] "Site Information Navigation"                                              
-#> [31] "Where cases per capita are\n\t\thighest"                                    
-#> [32] "U.S. hot spots ›"                                                         
-#> [33] "Vaccinations ›"                                                           
-#> [34] "Worldwide ›"                                                              
-#> [35] "Other trackers: \n            Choose your own places to track"            
-#> [36] "Other trackers:"                                                          
-#> [37] "U.S. hot spots ›"                                                         
-#> [38] "Worldwide ›"                                                              
-#> [39] "Vaccine tracker ›"                                                        
-#> [40] "Other trackers: \n            "                                           
-#> [41] "Other trackers:"                                                          
-#> [42] "U.S. hot spots ›"                                                         
-#> [43] "Worldwide ›"                                                              
-#> [44] "Vaccine tracker ›"                                                        
-#> [45] "Other trackers: \n            "                                           
-#> [46] "Other trackers:"                                                          
-#> [47] "Opinion"                                                                  
-#> [48] "Editors’ Picks"                                                           
-#> [49] "Advertisement"
+#>  [1] "This Year’s Best Episodes of ‘The Daily’"                                                                                  
+#>  [2] "Listen to ‘The Argument’"                                                                                                  
+#>  [3] "Visit ‘At Home’"                                                                                                           
+#>  [4] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"                                                 
+#>  [5] "The antiquities trade, a fertile ground for illicit activities, is subject to greater oversight under the new legislation."
+#>  [6] "New York Halted Evictions. But What Happens When the Ban Ends?"                                                            
+#>  [7] "Why Markets Boomed in a Year of Human Misery"                                                                              
+#>  [8] "Highly Contagious Virus Variant Now Found in 33 Countries"                                                                 
+#>  [9] "How Israel Became a World Leader in Vaccinating Against the Coronavirus"                                                   
+#> [10] "Britain Opts for Mix-and-Match Vaccinations, Confounding Experts"                                                          
+#> [11] "As Virus Shuts Down Prisons, Experts Warn of Fallout"                                                                      
+#> [12] "In Minority Communities, Doctors Are Changing Minds About Vaccination"                                                     
+#> [13] "Before Embracing America-First Agenda, Perdue Was an Outsourcing Expert"                                                   
+#> [14] "A Monster Wind Turbine Is Upending an Industry"                                                                            
+#> [15] "Can You Poison Your Way to Good Health?"                                                                                   
+#> [16] "Things Will Get Better. Seriously."                                                                                        
+#> [17] "Britain Has Lost Itself"                                                                                                   
+#> [18] "Goodbye, Twitter Trump! And Other Predictions for 2021"                                                                    
+#> [19] "Bosses, Consider Caring a Bit"                                                                                             
+#> [20] "After Five Centuries, a Native American With Real Power"                                                                   
+#> [21] "This Is Why Nursing Homes Failed So Badly"                                                                                 
+#> [22] "My Joe Biden Story"                                                                                                        
+#> [23] "We Came All This Way to Let Vaccines Go Bad in the Freezer?"                                                               
+#> [24] "‘Because of You Guys, I’m Stuck in My Room’"                                                                               
+#> [25] "What New Science Techniques Tells Us About Ancient Women Warriors"                                                         
+#> [26] "A Former F.B.I. Agent on the Blackwater Pardons: ‘I Am Embarrassed for Our Country’"                                       
+#> [27] "An Embattled Public Servant in a Fractured France"                                                                         
+#> [28] "Was That a Dropped Call From ET?"                                                                                          
+#> [29] "David Fincher, the Unhappiest Auteur"                                                                                      
+#> [30] "Site Index"                                                                                                                
+#> [31] "Site Information Navigation"                                                                                               
+#> [32] "Opinion"                                                                                                                   
+#> [33] "Editors’ Picks"                                                                                                            
+#> [34] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -236,9 +221,8 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "Trump’s Focus as Pandemic Raged: What Would It Mean for Him?"               
-#> [2] "How Trump Tried, but Largely Failed, to Derail America’s Top Climate Report"
-#> [3] "Goodbye, Twitter Trump! And Other Predictions for 2021"
+#> [1] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"
+#> [2] "Goodbye, Twitter Trump! And Other Predictions for 2021"
 ```
 
 ## `paragraphs_scrap()`

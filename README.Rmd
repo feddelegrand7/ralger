@@ -51,26 +51,31 @@ devtools::install_github("feddelegrand7/ralger")
 ```
 ## `scrap()`
 
-This is an example which shows how to extract firms' denomination from the website of the [Algerian Chamber of Commerce and Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we'll focus on firms operating within the capital (Algiers). 
+This is an example which shows how to extract [top ranked universities](http://www.shanghairanking.com/ARWU2020.html) according to the ShanghaiRanking Consultancy:
+
 
 ```{r example}
 library(ralger)
 
-my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver"
+my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- ".listing_default" # The CSS class, we recommend SelectorGadget
+my_node <- "#UniversityRanking a" # The class ID , we recommend SelectorGadget
 
-scrap(link = my_link, node = my_node)
+best_uni <- scrap(link = my_link, node = my_node)
+
+head(best_uni, 10)
 
 
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. Suppose, we want to extract the above information from the first 3 pages (starts from 0): 
+If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. Suppose, we want to extract the names of the [Golden Globes Awards Nominees](https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page=0), we could proceed as follow to scrape the first 3 pages (which starts from 0):
+
+
 
 ```{r example2}
-my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 
+my_link <- "https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page="
 
-my_node <- ".listing_default"
+my_node <- ".primary-nominee a"
 
 scrap(link = paste0(my_link, 0:2), node = my_node)
 

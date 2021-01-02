@@ -26,6 +26,8 @@
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
 #' @importFrom curl has_internet
+#' @importFrom stringi stri_remove_empty
+#'
 
 scrap <- function(link,
                   node,
@@ -75,14 +77,13 @@ scrap <- function(link,
                      html_text()
                  })
 
-
         if(!clean){
 
-        return(unlist(data))
+        return(stri_remove_empty(unlist(data)))
 
         } else {
 
-        unlist(data) %>%
+        stri_remove_empty(unlist(data)) %>%
         str_replace_all(c("\n" = " ", "\r" = " ", "\t" = " ")) %>%
         str_trim()
 
