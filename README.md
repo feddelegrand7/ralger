@@ -46,35 +46,66 @@ devtools::install_github("feddelegrand7/ralger")
 
 ## `scrap()`
 
-This is an example which shows how to extract firms’ denomination from
-the website of the [Algerian Chamber of Commerce and
-Industry](http://elmouchir.caci.dz) (CACI). For simplicity, we’ll focus
-on firms operating within the capital (Algiers).
+This is an example which shows how to extract [top ranked universities’
+names](http://www.shanghairanking.com/ARWU2020.html) according to the
+ShanghaiRanking Consultancy:
 
 ``` r
 library(ralger)
 
-my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver"
+my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- ".listing_default" # The CSS class, we recommend SelectorGadget
+my_node <- "#UniversityRanking a" # The class ID , we recommend SelectorGadget
 
-scrap(link = my_link, node = my_node)
-#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [elmouchir.caci.dz] Resolving timed out after 10000 milliseconds
-#> [1] NA
+best_uni <- scrap(link = my_link, node = my_node)
+
+head(best_uni, 10)
+#>  [1] "Harvard University"                         
+#>  [2] "Stanford University"                        
+#>  [3] "University of Cambridge"                    
+#>  [4] "Massachusetts Institute of Technology (MIT)"
+#>  [5] "University of California, Berkeley"         
+#>  [6] "Princeton University"                       
+#>  [7] "Columbia University"                        
+#>  [8] "California Institute of Technology"         
+#>  [9] "University of Oxford"                       
+#> [10] "University of Chicago"
 ```
 
 If you want to scrap multiple list pages, just use `scrap()` in
-conjunction with `paste0()`. Suppose, we want to extract the above
-information from the first 3 pages (starts from 0):
+conjunction with `paste0()`. Suppose, we want to extract the names of
+the [Golden Globes Awards
+Nominees](https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page=0),
+we could proceed as follow to scrape the first 3 pages (which starts
+from 0):
 
 ``` r
-my_link <- "http://elmouchir.caci.dz/search_results.php?keyword=&category=&location=Alger&submit=Trouver&page=" 
+my_link <- "https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page="
 
-my_node <- ".listing_default"
+my_node <- ".primary-nominee a"
 
 scrap(link = paste0(my_link, 0:2), node = my_node)
-#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [elmouchir.caci.dz] Resolving timed out after 10000 milliseconds
-#> [1] NA
+#>  [1] "Joaquin Phoenix"       "Antonio Banderas"      "Spain"                
+#>  [4] "Adam Driver"           "Jonathan Pryce"        "Christian Bale"       
+#>  [7] "Rami Malek"            "Bradley Cooper"        "Willem Dafoe"         
+#> [10] "Lucas Hedges"          "John David Washington" "Gary Oldman"          
+#> [13] "Daniel Day-Lewis"      "Tom Hanks"             "Denzel Washington"    
+#> [16] "Timothée Chalamet"     "Casey Affleck"         "Joel Edgerton"        
+#> [19] "Andrew Garfield"       "Viggo Mortensen"       "Denzel Washington"    
+#> [22] "Leonardo DiCaprio"     "Will Smith"            "Michael Fassbender"   
+#> [25] "Eddie Redmayne"        "Bryan Cranston"        "Eddie Redmayne"       
+#> [28] "Benedict Cumberbatch"  "David Oyelowo"         "Steve Carell"         
+#> [31] "Jake Gyllenhaal"       "Matthew McConaughey"   "Chiwetel Ejiofor"     
+#> [34] "Tom Hanks"             "Idris Elba"            "Robert Redford"       
+#> [37] "Daniel Day-Lewis"      "Richard Gere"          "Joaquin Phoenix"      
+#> [40] "Denzel Washington"     "John Hawkes"           "George Clooney"       
+#> [43] "Leonardo DiCaprio"     "Michael Fassbender"    "Ryan Gosling"         
+#> [46] "Brad Pitt"             "Colin Firth"           "Jesse Eisenberg"      
+#> [49] "James Franco"          "Ryan Gosling"          "Mark Wahlberg"        
+#> [52] "Jeff Bridges"          "George Clooney"        "Colin Firth"          
+#> [55] "Morgan Freeman"        "Tobey Maguire"         "Mickey Rourke"        
+#> [58] "Leonardo DiCaprio"     "Frank Langella"        "Sean Penn"            
+#> [61] "Brad Pitt"
 ```
 
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you

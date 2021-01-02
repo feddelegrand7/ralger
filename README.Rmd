@@ -51,7 +51,7 @@ devtools::install_github("feddelegrand7/ralger")
 ```
 ## `scrap()`
 
-This is an example which shows how to extract [top ranked universities](http://www.shanghairanking.com/ARWU2020.html) according to the ShanghaiRanking Consultancy:
+This is an example which shows how to extract [top ranked universities' names](http://www.shanghairanking.com/ARWU2020.html) according to the ShanghaiRanking Consultancy:
 
 
 ```{r example}
