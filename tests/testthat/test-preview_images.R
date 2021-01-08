@@ -1,5 +1,8 @@
+
+
 test_that("images_preview() return character", {
-  expect_type(object = images_preview(link = "https://rstudio.com/"), type = "character")
+  expect_type(object = images_preview(link = "https://rstudio.com/"),
+              type = "character")
 
 })
 

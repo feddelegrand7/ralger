@@ -3,6 +3,8 @@
 + Adding the `images_scrap()` function which allows the user to download images from a website
 + Adding the `images_preview()` function which allows the user to list the images url from a specific web page
 + Wrapping `paragraphs_scrap()` within a `tryCatch` function. 
++ adding the string::stri_remove_empty() to the scrap() function in order to remove empty elements
+
 
 # ralger 2.2.0
 
