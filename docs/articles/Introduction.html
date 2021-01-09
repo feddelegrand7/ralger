@@ -122,26 +122,24 @@
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scrap.html">scrap</a></span><span class="op">(</span>
   <span class="st">"https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama"</span>, 
   <span class="st">".primary-nominee a"</span>
-<span class="op">)</span>
-
-<span class="va">data</span></code></pre></div>
-<pre><code>##  [1] "Renée Zellweger"    "Cynthia Erivo"      "Scarlett Johansson"
-##  [4] "Saoirse Ronan"      "Charlize Theron"    "Glenn Close"       
-##  [7] "Lady Gaga"          "Nicole Kidman"      "Melissa McCarthy"  
-## [10] "Rosamund Pike"      "Frances McDormand"  "Jessica Chastain"  
-## [13] "Sally Hawkins"      "Meryl Streep"       "Michelle Williams" 
-## [16] "Isabelle Huppert"   "France"             "Amy Adams"         
-## [19] "Jessica Chastain"   "Ruth Negga"         "Natalie Portman"</code></pre>
+<span class="op">)</span></code></pre></div>
+<pre><code>## The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama</code></pre>
+<pre><code>## Here the original error message: Error in open.connection(x, "rb"): HTTP error 404.</code></pre>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
 <p>Pretty simple right ? I hope so. Anyway, the problem here is that the main page displays only 20 nominees, from 2017 to 2020. What if we wanted to extract all nominees in history ? Indeed, you’re right, we’d have to scroll multiple pages (20 to be exact) across the website. In this context, we need to use <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> in conjunction with <code><a href="../reference/scrap.html">scrap()</a></code> as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">link</span> <span class="op">&lt;-</span> <span class="st">"https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page="</span> <span class="co"># Mind the change in the link structure "page=" </span>
 
 <span class="va">node</span> <span class="op">&lt;-</span> <span class="st">".primary-nominee a"</span> <span class="co"># we use the same node as previously</span>
 
-<span class="va">data_all</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scrap.html">scrap</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">link</span>, <span class="fl">0</span><span class="op">:</span><span class="fl">20</span>, sep <span class="op">=</span> <span class="st">""</span><span class="op">)</span>, <span class="va">node</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">data_all</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 360</code></pre>
+<span class="va">data_all</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scrap.html">scrap</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">link</span>, <span class="fl">0</span><span class="op">:</span><span class="fl">20</span>, sep <span class="op">=</span> <span class="st">""</span><span class="op">)</span>, <span class="va">node</span><span class="op">)</span></code></pre></div>
+<pre><code>## The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=0The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=1The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=2The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=3The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=4The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=5The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=6The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=7The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=8The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=9The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=10The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=11The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=12The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=13The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=14The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=15The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=16The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=17The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=18The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=19The URL doesn't seem to be a valid one: https://www.goldenglobes.com/winners-nominees/best-performance-actress-motion-picture-drama?page=20</code></pre>
+<pre><code>## Here the original error message: Error in open.connection(x, "rb"): HTTP error 404.</code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">data_all</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
 <p>And here we’re we have our all time nominees !!!</p>
 <hr>
 </div>
@@ -154,7 +152,7 @@
 <li>Movie: The movie title for which they were nominated,</li>
 </ul>
 <p>To construct our data frame we’ll use the <code><a href="../reference/tidy_scrap.html">tidy_scrap()</a></code> function as follows:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">links</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">link</span>, <span class="fl">0</span><span class="op">:</span><span class="fl">20</span>, sep <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="co"># The links required to extract the 350 observations</span>
 
 <span class="va">nodes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">".primary-nominee a"</span>, <span class="st">".secondary-nominee"</span><span class="op">)</span>
@@ -166,19 +164,10 @@
 
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">global_df</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre></div>
-<pre><code>## # A tibble: 10 x 2
-##    Actress            Movie                   
-##    &lt;chr&gt;              &lt;chr&gt;                   
-##  1 Renée Zellweger    Judy                    
-##  2 Scarlett Johansson Marriage Story          
-##  3 Saoirse Ronan      Little Women            
-##  4 Charlize Theron    Bombshell               
-##  5 Cynthia Erivo      Harriet                 
-##  6 Glenn Close        Wife, The               
-##  7 Lady Gaga          Star Is Born, A (2018)  
-##  8 Nicole Kidman      Destroyer               
-##  9 Melissa McCarthy   Can You Ever Forgive Me?
-## 10 Rosamund Pike      Private War, A</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   Actress Movie
+##   &lt;lgl&gt;   &lt;lgl&gt;
+## 1 NA      NA</code></pre>
 <p>If you have any feedback don’t hesitate to make a pull request or reach out on <a href="https://twitter.com/moh_fodil">Twitter</a>.</p>
 </div>
   </div>

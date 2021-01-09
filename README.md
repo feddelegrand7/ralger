@@ -72,45 +72,12 @@ head(best_uni, 10)
 #> [10] "University of Chicago"
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in
-conjunction with `paste0()`. Suppose, we want to extract the names of
-the [Golden Globes Awards
-Nominees](https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page=0),
-we could proceed as follow to scrape the first 3 pages (which starts
-from 0):
-
-``` r
-my_link <- "https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page="
-
-my_node <- ".primary-nominee a"
-
-scrap(link = paste0(my_link, 0:2), node = my_node)
-#>  [1] "Joaquin Phoenix"       "Antonio Banderas"      "Spain"                
-#>  [4] "Adam Driver"           "Jonathan Pryce"        "Christian Bale"       
-#>  [7] "Rami Malek"            "Bradley Cooper"        "Willem Dafoe"         
-#> [10] "Lucas Hedges"          "John David Washington" "Gary Oldman"          
-#> [13] "Daniel Day-Lewis"      "Tom Hanks"             "Denzel Washington"    
-#> [16] "Timothée Chalamet"     "Casey Affleck"         "Joel Edgerton"        
-#> [19] "Andrew Garfield"       "Viggo Mortensen"       "Denzel Washington"    
-#> [22] "Leonardo DiCaprio"     "Will Smith"            "Michael Fassbender"   
-#> [25] "Eddie Redmayne"        "Bryan Cranston"        "Eddie Redmayne"       
-#> [28] "Benedict Cumberbatch"  "David Oyelowo"         "Steve Carell"         
-#> [31] "Jake Gyllenhaal"       "Matthew McConaughey"   "Chiwetel Ejiofor"     
-#> [34] "Tom Hanks"             "Idris Elba"            "Robert Redford"       
-#> [37] "Daniel Day-Lewis"      "Richard Gere"          "Joaquin Phoenix"      
-#> [40] "Denzel Washington"     "John Hawkes"           "George Clooney"       
-#> [43] "Leonardo DiCaprio"     "Michael Fassbender"    "Ryan Gosling"         
-#> [46] "Brad Pitt"             "Colin Firth"           "Jesse Eisenberg"      
-#> [49] "James Franco"          "Ryan Gosling"          "Mark Wahlberg"        
-#> [52] "Jeff Bridges"          "George Clooney"        "Colin Firth"          
-#> [55] "Morgan Freeman"        "Tobey Maguire"         "Mickey Rourke"        
-#> [58] "Leonardo DiCaprio"     "Frank Langella"        "Sean Penn"            
-#> [61] "Brad Pitt"
-```
-
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you
 can set `askRobot = T` to ask the `robots.txt` file if it’s permitted to
 scrape a specific web page.
+
+If you want to scrap multiple list pages, just use `scrap()` in
+conjunction with `paste0()`.
 
 ## `table_scrap()`
 
@@ -211,40 +178,50 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "This Year’s Best Episodes of ‘The Daily’"                                                                                  
-#>  [2] "Listen to ‘The Argument’"                                                                                                  
-#>  [3] "Visit ‘At Home’"                                                                                                           
-#>  [4] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"                                                 
-#>  [5] "The antiquities trade, a fertile ground for illicit activities, is subject to greater oversight under the new legislation."
-#>  [6] "New York Halted Evictions. But What Happens When the Ban Ends?"                                                            
-#>  [7] "Why Markets Boomed in a Year of Human Misery"                                                                              
-#>  [8] "Highly Contagious Virus Variant Now Found in 33 Countries"                                                                 
-#>  [9] "How Israel Became a World Leader in Vaccinating Against the Coronavirus"                                                   
-#> [10] "Britain Opts for Mix-and-Match Vaccinations, Confounding Experts"                                                          
-#> [11] "As Virus Shuts Down Prisons, Experts Warn of Fallout"                                                                      
-#> [12] "In Minority Communities, Doctors Are Changing Minds About Vaccination"                                                     
-#> [13] "Before Embracing America-First Agenda, Perdue Was an Outsourcing Expert"                                                   
-#> [14] "A Monster Wind Turbine Is Upending an Industry"                                                                            
-#> [15] "Can You Poison Your Way to Good Health?"                                                                                   
-#> [16] "Things Will Get Better. Seriously."                                                                                        
-#> [17] "Britain Has Lost Itself"                                                                                                   
-#> [18] "Goodbye, Twitter Trump! And Other Predictions for 2021"                                                                    
-#> [19] "Bosses, Consider Caring a Bit"                                                                                             
-#> [20] "After Five Centuries, a Native American With Real Power"                                                                   
-#> [21] "This Is Why Nursing Homes Failed So Badly"                                                                                 
-#> [22] "My Joe Biden Story"                                                                                                        
-#> [23] "We Came All This Way to Let Vaccines Go Bad in the Freezer?"                                                               
-#> [24] "‘Because of You Guys, I’m Stuck in My Room’"                                                                               
-#> [25] "What New Science Techniques Tells Us About Ancient Women Warriors"                                                         
-#> [26] "A Former F.B.I. Agent on the Blackwater Pardons: ‘I Am Embarrassed for Our Country’"                                       
-#> [27] "An Embattled Public Servant in a Fractured France"                                                                         
-#> [28] "Was That a Dropped Call From ET?"                                                                                          
-#> [29] "David Fincher, the Unhappiest Auteur"                                                                                      
-#> [30] "Site Index"                                                                                                                
-#> [31] "Site Information Navigation"                                                                                               
-#> [32] "Opinion"                                                                                                                   
-#> [33] "Editors’ Picks"                                                                                                            
-#> [34] "Advertisement"
+#>  [1] "Listen to ‘The Daily’"                                                                                                   
+#>  [2] "Listen to ‘The Argument’"                                                                                                
+#>  [3] "In the ‘At Home’ Newsletter"                                                                                             
+#>  [4] "Indonesian Jetliner Crashes Into the Sea After Takeoff"                                                                  
+#>  [5] "He Dreamed of Being a Police Officer, Then Was Killed by a Pro-Trump Mob"                                                
+#>  [6] "11 Journalists on Covering the Capitol Siege: ‘This Could Get Ugly’"                                                     
+#>  [7] "Trump’s Legacy: Voters Who Reject Democracy and Any Politics but Their Own"                                              
+#>  [8] "Bravery or reputation management? The resignations of some Trump officials are drawing skepticism."                      
+#>  [9] "Here are the Trump aides who plan to stay to the end."                                                                   
+#> [10] "As Coronavirus Mutates, the World Stumbles Again to Respond"                                                             
+#> [11] "False Reports of a New ‘U.S. Variant’ Came from White House Task Force"                                                  
+#> [12] "‘Our New York Moment’: Virus Surges in Southern California"                                                              
+#> [13] "Four Reasons the N.F.L. Shattered Its Scoring Record in 2020"                                                            
+#> [14] "Covid-19 is forcing N.F.L. players and other pro athletes to make unusually hard decisions about work-life balance."     
+#> [15] "The Weekender"                                                                                                           
+#> [16] "Did you follow the headlines this week? Take our quiz to find out."                                                      
+#> [17] "Awe and Shock"                                                                                                           
+#> [18] "Can Donald Trump Survive Without Twitter?"                                                                               
+#> [19] "Far-Right Protesters Stormed Germany’s Parliament. What Can America Learn?"                                              
+#> [20] "Listen to ‘Sway’: If You Were on Parler, You Saw the Mob Coming"                                                         
+#> [21] "Impeach Now. Running Out the Clock on Trump Is Cowardly and Dangerous."                                                  
+#> [22] "Stop Pretending ‘This Is Not Who We Are’"                                                                                
+#> [23] "Neil Sheehan Forced an American Reckoning"                                                                               
+#> [24] "Appeasement Got Us Where We Are"                                                                                         
+#> [25] "This Is When the Fever Breaks"                                                                                           
+#> [26] "How to Ensure This Never Happens Again"                                                                                  
+#> [27] "More Immigrants Will Come to the U.S. Under President Biden. That’s a Good Thing."                                       
+#> [28] "He Was Going to Close the Family Diner. Then He Got a Sign."                                                             
+#> [29] "Louise Linton Has Made a Movie"                                                                                          
+#> [30] "The Man Who Turned Credit-Card Points Into an Empire"                                                                    
+#> [31] "Site Index"                                                                                                              
+#> [32] "Site Information Navigation"                                                                                             
+#> [33] "Democrats Lay Groundwork for Impeaching Trump Again"                                                                     
+#> [34] "‘I Want Him Out’: Murkowski Is First G.O.P. Senator to Call for Removal"                                                 
+#> [35] "Twitter Permanently Bans Trump, Capping Online Revolt"                                                                   
+#> [36] "Google and Apple told Parler, a popular platform for conservatives, to step up its policing to stay in their app stores."
+#> [37] "Can a president be impeached in 12 days? Here’s how the process might work."                                             
+#> [38] "In Capital, a G.O.P. Crisis. At the R.N.C. Meeting, a Trump Celebration."                                                
+#> [39] "Senator Josh Hawley, who drew condemnation for challenging the election results, defended his decision."                 
+#> [40] "Seeing the Confederate flag in the Capitol was a jarring first in U.S. history. Historians weighed in on the moment."    
+#> [41] "For those who survived the Nazi death camp, pictures of a man in a “Camp Auschwitz” sweatshirt were painful."            
+#> [42] "Opinion"                                                                                                                 
+#> [43] "Editors’ Picks"                                                                                                          
+#> [44] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -252,8 +229,15 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"
-#> [2] "Goodbye, Twitter Trump! And Other Predictions for 2021"
+#> [1] "He Dreamed of Being a Police Officer, Then Was Killed by a Pro-Trump Mob"                          
+#> [2] "Trump’s Legacy: Voters Who Reject Democracy and Any Politics but Their Own"                        
+#> [3] "Bravery or reputation management? The resignations of some Trump officials are drawing skepticism."
+#> [4] "Here are the Trump aides who plan to stay to the end."                                             
+#> [5] "Can Donald Trump Survive Without Twitter?"                                                         
+#> [6] "Impeach Now. Running Out the Clock on Trump Is Cowardly and Dangerous."                            
+#> [7] "Democrats Lay Groundwork for Impeaching Trump Again"                                               
+#> [8] "Twitter Permanently Bans Trump, Capping Online Revolt"                                             
+#> [9] "In Capital, a G.O.P. Crisis. At the R.N.C. Meeting, a Trump Celebration."
 ```
 
 ## `paragraphs_scrap()`

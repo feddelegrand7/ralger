@@ -51,20 +51,10 @@ head(best_uni, 10)
 
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. Suppose, we want to extract the names of the [Golden Globes Awards Nominees](https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page=0), we could proceed as follow to scrape the first 3 pages (which starts from 0):
-
-
-
-```{r example2}
-my_link <- "https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page="
-
-my_node <- ".primary-nominee a"
-
-scrap(link = paste0(my_link, 0:2), node = my_node)
-
-```
-
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = T` to ask the `robots.txt` file if it's permitted to scrape a specific web page.  
+
+
+If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`.
 
 
 ## `table_scrap()`
@@ -198,7 +188,6 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 
 ## `images_scrap() ` and `images_preview()` 
 
-> (only available in the development version)
 
 `images_preview()` allows you to scrape the URLs of the images available within a web page so that you can choose which images __extension__ (see below) you want to focus on.
 
@@ -235,9 +224,7 @@ images_scrap(link = "https://rstudio.com/",
 
 ```
 
-The images will be downloaded into the folder `here::here("myimages")` and named `img-1`, `img-2`, `img-3` ...according to the number of extracted images and by order of appearance in the web page. 
-
-
+The images will be downloaded into the folder `here::here("myimages")`.
 
 
 ## Code of Conduct

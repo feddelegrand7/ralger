@@ -63,9 +63,6 @@
 <li>
       <a href="articles/Functions_Overview.html">Functions Overview</a>
     </li>
-    <li>
-      <a href="articles/Introduction.html">Quick example</a>
-    </li>
   </ul>
 </li>
 <li>
@@ -134,42 +131,15 @@
 <span class="co">#&gt;  [8] "California Institute of Technology"         </span>
 <span class="co">#&gt;  [9] "University of Oxford"                       </span>
 <span class="co">#&gt; [10] "University of Chicago"</span></code></pre></div>
-<p>If you want to scrap multiple list pages, just use <code><a href="reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>. Suppose, we want to extract the names of the <a href="https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page=0">Golden Globes Awards Nominees</a>, we could proceed as follow to scrape the first 3 pages (which starts from 0):</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page="</span>
-
-<span class="va">my_node</span> <span class="op">&lt;-</span> <span class="st">".primary-nominee a"</span>
-
-<span class="fu"><a href="reference/scrap.html">scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">my_link</span>, <span class="fl">0</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span>, node <span class="op">=</span> <span class="va">my_node</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "Joaquin Phoenix"       "Antonio Banderas"      "Spain"                </span>
-<span class="co">#&gt;  [4] "Adam Driver"           "Jonathan Pryce"        "Christian Bale"       </span>
-<span class="co">#&gt;  [7] "Rami Malek"            "Bradley Cooper"        "Willem Dafoe"         </span>
-<span class="co">#&gt; [10] "Lucas Hedges"          "John David Washington" "Gary Oldman"          </span>
-<span class="co">#&gt; [13] "Daniel Day-Lewis"      "Tom Hanks"             "Denzel Washington"    </span>
-<span class="co">#&gt; [16] "Timothée Chalamet"     "Casey Affleck"         "Joel Edgerton"        </span>
-<span class="co">#&gt; [19] "Andrew Garfield"       "Viggo Mortensen"       "Denzel Washington"    </span>
-<span class="co">#&gt; [22] "Leonardo DiCaprio"     "Will Smith"            "Michael Fassbender"   </span>
-<span class="co">#&gt; [25] "Eddie Redmayne"        "Bryan Cranston"        "Eddie Redmayne"       </span>
-<span class="co">#&gt; [28] "Benedict Cumberbatch"  "David Oyelowo"         "Steve Carell"         </span>
-<span class="co">#&gt; [31] "Jake Gyllenhaal"       "Matthew McConaughey"   "Chiwetel Ejiofor"     </span>
-<span class="co">#&gt; [34] "Tom Hanks"             "Idris Elba"            "Robert Redford"       </span>
-<span class="co">#&gt; [37] "Daniel Day-Lewis"      "Richard Gere"          "Joaquin Phoenix"      </span>
-<span class="co">#&gt; [40] "Denzel Washington"     "John Hawkes"           "George Clooney"       </span>
-<span class="co">#&gt; [43] "Leonardo DiCaprio"     "Michael Fassbender"    "Ryan Gosling"         </span>
-<span class="co">#&gt; [46] "Brad Pitt"             "Colin Firth"           "Jesse Eisenberg"      </span>
-<span class="co">#&gt; [49] "James Franco"          "Ryan Gosling"          "Mark Wahlberg"        </span>
-<span class="co">#&gt; [52] "Jeff Bridges"          "George Clooney"        "Colin Firth"          </span>
-<span class="co">#&gt; [55] "Morgan Freeman"        "Tobey Maguire"         "Mickey Rourke"        </span>
-<span class="co">#&gt; [58] "Leonardo DiCaprio"     "Frank Langella"        "Sean Penn"            </span>
-<span class="co">#&gt; [61] "Brad Pitt"</span></code></pre></div>
 <p>Thanks to the <a href="https://github.com/ropensci/robotstxt">robotstxt</a>, you can set <code>askRobot = T</code> to ask the <code>robots.txt</code> file if it’s permitted to scrape a specific web page.</p>
+<p>If you want to scrap multiple list pages, just use <code><a href="reference/scrap.html">scrap()</a></code> in conjunction with <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>.</p>
 </div>
 <div id="table_scrap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#table_scrap" class="anchor"></a><code>table_scrap()</code>
 </h2>
 <p>If you want to extract an <strong>HTML Table</strong>, you can use the <code><a href="reference/table_scrap.html">table_scrap()</a></code> function. Take a look at this <a href="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW">webpage</a> which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/table_scrap.html">table_scrap</a></span><span class="op">(</span>link <span class="op">=</span><span class="st">"https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW"</span><span class="op">)</span>
 
@@ -210,7 +180,7 @@
 <li>Their rating</li>
 </ul>
 <p>We will need to use the <code><a href="reference/tidy_scrap.html">tidy_scrap()</a></code> function as follows:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_link</span> <span class="op">&lt;-</span> <span class="st">"https://www.imdb.com/search/title/?groups=top_250&amp;sort=user_rating"</span>
 
 <span class="va">my_nodes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
@@ -249,48 +219,65 @@
 <h3 class="hasAnchor">
 <a href="#example-1" class="anchor"></a>Example</h3>
 <p>If we go to the <a href="https://www.nytimes.com/">New York Times</a>, we can easily extract the titles displayed within a specific web page :</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "This Year’s Best Episodes of ‘The Daily’"                                                                                  </span>
-<span class="co">#&gt;  [2] "Listen to ‘The Argument’"                                                                                                  </span>
-<span class="co">#&gt;  [3] "Visit ‘At Home’"                                                                                                           </span>
-<span class="co">#&gt;  [4] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"                                                 </span>
-<span class="co">#&gt;  [5] "The antiquities trade, a fertile ground for illicit activities, is subject to greater oversight under the new legislation."</span>
-<span class="co">#&gt;  [6] "New York Halted Evictions. But What Happens When the Ban Ends?"                                                            </span>
-<span class="co">#&gt;  [7] "Why Markets Boomed in a Year of Human Misery"                                                                              </span>
-<span class="co">#&gt;  [8] "Highly Contagious Virus Variant Now Found in 33 Countries"                                                                 </span>
-<span class="co">#&gt;  [9] "How Israel Became a World Leader in Vaccinating Against the Coronavirus"                                                   </span>
-<span class="co">#&gt; [10] "Britain Opts for Mix-and-Match Vaccinations, Confounding Experts"                                                          </span>
-<span class="co">#&gt; [11] "As Virus Shuts Down Prisons, Experts Warn of Fallout"                                                                      </span>
-<span class="co">#&gt; [12] "In Minority Communities, Doctors Are Changing Minds About Vaccination"                                                     </span>
-<span class="co">#&gt; [13] "Before Embracing America-First Agenda, Perdue Was an Outsourcing Expert"                                                   </span>
-<span class="co">#&gt; [14] "A Monster Wind Turbine Is Upending an Industry"                                                                            </span>
-<span class="co">#&gt; [15] "Can You Poison Your Way to Good Health?"                                                                                   </span>
-<span class="co">#&gt; [16] "Things Will Get Better. Seriously."                                                                                        </span>
-<span class="co">#&gt; [17] "Britain Has Lost Itself"                                                                                                   </span>
-<span class="co">#&gt; [18] "Goodbye, Twitter Trump! And Other Predictions for 2021"                                                                    </span>
-<span class="co">#&gt; [19] "Bosses, Consider Caring a Bit"                                                                                             </span>
-<span class="co">#&gt; [20] "After Five Centuries, a Native American With Real Power"                                                                   </span>
-<span class="co">#&gt; [21] "This Is Why Nursing Homes Failed So Badly"                                                                                 </span>
-<span class="co">#&gt; [22] "My Joe Biden Story"                                                                                                        </span>
-<span class="co">#&gt; [23] "We Came All This Way to Let Vaccines Go Bad in the Freezer?"                                                               </span>
-<span class="co">#&gt; [24] "‘Because of You Guys, I’m Stuck in My Room’"                                                                               </span>
-<span class="co">#&gt; [25] "What New Science Techniques Tells Us About Ancient Women Warriors"                                                         </span>
-<span class="co">#&gt; [26] "A Former F.B.I. Agent on the Blackwater Pardons: ‘I Am Embarrassed for Our Country’"                                       </span>
-<span class="co">#&gt; [27] "An Embattled Public Servant in a Fractured France"                                                                         </span>
-<span class="co">#&gt; [28] "Was That a Dropped Call From ET?"                                                                                          </span>
-<span class="co">#&gt; [29] "David Fincher, the Unhappiest Auteur"                                                                                      </span>
-<span class="co">#&gt; [30] "Site Index"                                                                                                                </span>
-<span class="co">#&gt; [31] "Site Information Navigation"                                                                                               </span>
-<span class="co">#&gt; [32] "Opinion"                                                                                                                   </span>
-<span class="co">#&gt; [33] "Editors’ Picks"                                                                                                            </span>
-<span class="co">#&gt; [34] "Advertisement"</span></code></pre></div>
+<span class="co">#&gt;  [1] "Listen to ‘The Daily’"                                                                                                   </span>
+<span class="co">#&gt;  [2] "Listen to ‘The Argument’"                                                                                                </span>
+<span class="co">#&gt;  [3] "In the ‘At Home’ Newsletter"                                                                                             </span>
+<span class="co">#&gt;  [4] "Indonesian Jetliner Crashes Into the Sea After Takeoff"                                                                  </span>
+<span class="co">#&gt;  [5] "He Dreamed of Being a Police Officer, Then Was Killed by a Pro-Trump Mob"                                                </span>
+<span class="co">#&gt;  [6] "11 Journalists on Covering the Capitol Siege: ‘This Could Get Ugly’"                                                     </span>
+<span class="co">#&gt;  [7] "Trump’s Legacy: Voters Who Reject Democracy and Any Politics but Their Own"                                              </span>
+<span class="co">#&gt;  [8] "Bravery or reputation management? The resignations of some Trump officials are drawing skepticism."                      </span>
+<span class="co">#&gt;  [9] "Here are the Trump aides who plan to stay to the end."                                                                   </span>
+<span class="co">#&gt; [10] "As Coronavirus Mutates, the World Stumbles Again to Respond"                                                             </span>
+<span class="co">#&gt; [11] "False Reports of a New ‘U.S. Variant’ Came from White House Task Force"                                                  </span>
+<span class="co">#&gt; [12] "‘Our New York Moment’: Virus Surges in Southern California"                                                              </span>
+<span class="co">#&gt; [13] "Four Reasons the N.F.L. Shattered Its Scoring Record in 2020"                                                            </span>
+<span class="co">#&gt; [14] "Covid-19 is forcing N.F.L. players and other pro athletes to make unusually hard decisions about work-life balance."     </span>
+<span class="co">#&gt; [15] "The Weekender"                                                                                                           </span>
+<span class="co">#&gt; [16] "Did you follow the headlines this week? Take our quiz to find out."                                                      </span>
+<span class="co">#&gt; [17] "Awe and Shock"                                                                                                           </span>
+<span class="co">#&gt; [18] "Can Donald Trump Survive Without Twitter?"                                                                               </span>
+<span class="co">#&gt; [19] "Far-Right Protesters Stormed Germany’s Parliament. What Can America Learn?"                                              </span>
+<span class="co">#&gt; [20] "Listen to ‘Sway’: If You Were on Parler, You Saw the Mob Coming"                                                         </span>
+<span class="co">#&gt; [21] "Impeach Now. Running Out the Clock on Trump Is Cowardly and Dangerous."                                                  </span>
+<span class="co">#&gt; [22] "Stop Pretending ‘This Is Not Who We Are’"                                                                                </span>
+<span class="co">#&gt; [23] "Neil Sheehan Forced an American Reckoning"                                                                               </span>
+<span class="co">#&gt; [24] "Appeasement Got Us Where We Are"                                                                                         </span>
+<span class="co">#&gt; [25] "This Is When the Fever Breaks"                                                                                           </span>
+<span class="co">#&gt; [26] "How to Ensure This Never Happens Again"                                                                                  </span>
+<span class="co">#&gt; [27] "More Immigrants Will Come to the U.S. Under President Biden. That’s a Good Thing."                                       </span>
+<span class="co">#&gt; [28] "He Was Going to Close the Family Diner. Then He Got a Sign."                                                             </span>
+<span class="co">#&gt; [29] "Louise Linton Has Made a Movie"                                                                                          </span>
+<span class="co">#&gt; [30] "The Man Who Turned Credit-Card Points Into an Empire"                                                                    </span>
+<span class="co">#&gt; [31] "Site Index"                                                                                                              </span>
+<span class="co">#&gt; [32] "Site Information Navigation"                                                                                             </span>
+<span class="co">#&gt; [33] "Democrats Lay Groundwork for Impeaching Trump Again"                                                                     </span>
+<span class="co">#&gt; [34] "‘I Want Him Out’: Murkowski Is First G.O.P. Senator to Call for Removal"                                                 </span>
+<span class="co">#&gt; [35] "Twitter Permanently Bans Trump, Capping Online Revolt"                                                                   </span>
+<span class="co">#&gt; [36] "Google and Apple told Parler, a popular platform for conservatives, to step up its policing to stay in their app stores."</span>
+<span class="co">#&gt; [37] "Can a president be impeached in 12 days? Here’s how the process might work."                                             </span>
+<span class="co">#&gt; [38] "In Capital, a G.O.P. Crisis. At the R.N.C. Meeting, a Trump Celebration."                                                </span>
+<span class="co">#&gt; [39] "Senator Josh Hawley, who drew condemnation for challenging the election results, defended his decision."                 </span>
+<span class="co">#&gt; [40] "Seeing the Confederate flag in the Capitol was a jarring first in U.S. history. Historians weighed in on the moment."    </span>
+<span class="co">#&gt; [41] "For those who survived the Nazi death camp, pictures of a man in a “Camp Auschwitz” sweatshirt were painful."            </span>
+<span class="co">#&gt; [42] "Opinion"                                                                                                                 </span>
+<span class="co">#&gt; [43] "Editors’ Picks"                                                                                                          </span>
+<span class="co">#&gt; [44] "Advertisement"</span></code></pre></div>
 <p>Further, it’s possible to filter the results using the <code>contain</code> argument:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span>, contain <span class="op">=</span> <span class="st">"TrUMp"</span>, case_sensitive <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Senate Overrides Trump’s Veto of Defense Bill, Dealing a Legislative Blow"</span>
-<span class="co">#&gt; [2] "Goodbye, Twitter Trump! And Other Predictions for 2021"</span></code></pre></div>
+<span class="co">#&gt; [1] "He Dreamed of Being a Police Officer, Then Was Killed by a Pro-Trump Mob"                          </span>
+<span class="co">#&gt; [2] "Trump’s Legacy: Voters Who Reject Democracy and Any Politics but Their Own"                        </span>
+<span class="co">#&gt; [3] "Bravery or reputation management? The resignations of some Trump officials are drawing skepticism."</span>
+<span class="co">#&gt; [4] "Here are the Trump aides who plan to stay to the end."                                             </span>
+<span class="co">#&gt; [5] "Can Donald Trump Survive Without Twitter?"                                                         </span>
+<span class="co">#&gt; [6] "Impeach Now. Running Out the Clock on Trump Is Cowardly and Dangerous."                            </span>
+<span class="co">#&gt; [7] "Democrats Lay Groundwork for Impeaching Trump Again"                                               </span>
+<span class="co">#&gt; [8] "Twitter Permanently Bans Trump, Capping Online Revolt"                                             </span>
+<span class="co">#&gt; [9] "In Capital, a G.O.P. Crisis. At the R.N.C. Meeting, a Trump Celebration."</span></code></pre></div>
 </div>
 </div>
 <div id="paragraphs_scrap" class="section level2">
@@ -299,7 +286,7 @@
 </h2>
 <p>In the same way, we can use the <code><a href="reference/paragraphs_scrap.html">paragraphs_scrap()</a></code> function to extract paragraphs. This function relies on the <code>p</code> HTML tag.</p>
 <p>Let’s get some paragraphs from the lovely <a href="https://ropensci.org/">ropensci.org</a> website:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/paragraphs_scrap.html">paragraphs_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://ropensci.org/"</span><span class="op">)</span>
 <span class="co">#&gt;  [1] ""                                                                                                                                                                                                                                                                        </span>
 <span class="co">#&gt;  [2] "We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem"                                                                                                                           </span>
@@ -332,7 +319,7 @@
 <span class="co">#&gt; [29] "Happy rOpenSci users can be found at"                                                                                                                                                                                                                                    </span>
 <span class="co">#&gt; [30] "Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"</span></code></pre></div>
 <p>If needed, it’s possible to collapse the paragraphs into one bag of words:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/paragraphs_scrap.html">paragraphs_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://ropensci.org/"</span>, collapse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#&gt; [1] " We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages. Workflow Tools for Your Code and Data Get Data from the Web Convert and Munge Data Document and Release Your Data Visualize Data Work with Databases From R Access, Manipulate, Convert Geospatial Data Interact with Web Resources Use Image &amp; Audio Data Analyze Scientific Papers (and Text in General) Secure Your Data and Workflow Handle and Transform Taxonomic Information Get inspired by real examples of how our packages can be used. Or browse scientific publications that cited our packages. Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure. We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative &amp; more efficient review process\n   Based on best practices of software development and standards of R, its\napplications and user base. Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reproducible science We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process. Discover, learn and get involved in helping to shape the future of Data Science Join in our quarterly Community Calls with fellow developers and scientists - open\nto all Upcoming events including meetings at which our team members are speaking. The latest developments from rOpenSci and the wider R community Release notes, updates and package related developements A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive. Happy rOpenSci users can be found at Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"</span></code></pre></div>
 </div>
@@ -341,7 +328,7 @@
 <a href="#weblink_scrap" class="anchor"></a><code>weblink_scrap()</code>
 </h2>
 <p><code><a href="reference/weblink_scrap.html">weblink_scrap()</a></code> is used to srape the web links available within a web page. Useful in some cases, for example, getting a list of the available PDFs:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/weblink_scrap.html">weblink_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.worldbank.org/en/access-to-information/reports/"</span>, 
               contain <span class="op">=</span> <span class="st">"PDF"</span>, 
               case_sensitive <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -374,7 +361,7 @@
 </blockquote>
 <p><code><a href="reference/images_preview.html">images_preview()</a></code> allows you to scrape the URLs of the images available within a web page so that you can choose which images <strong>extension</strong> (see below) you want to focus on.</p>
 <p>Let’s say we want to list all the images from the official <a href="https://rstudio.com/">RStudio</a> website:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/images_preview.html">images_preview</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://rstudio.com/"</span><span class="op">)</span>
 <span class="co">#&gt;  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&amp;fmt=gif"                                                                       </span>
 <span class="co">#&gt;  [2] "https://www.facebook.com/tr?id=151855192184380&amp;ev=PageView&amp;noscript=1"                                                         </span>
@@ -399,7 +386,7 @@
 <li><p><strong>askRobot</strong>: ask the robots.txt file if it’s permitted to scrape the web page.</p></li>
 </ul>
 <p>In the following example we extract all the <code>png</code> images from <a href="https://rstudio.com/">RStudio</a> :</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Suppose we're in a project which has a folder called my_images: </span>
 
 <span class="fu"><a href="reference/images_scrap.html">images_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://rstudio.com/"</span>, 
@@ -430,7 +417,7 @@
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 <div class="community">

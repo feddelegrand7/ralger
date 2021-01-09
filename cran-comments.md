@@ -1,7 +1,6 @@
 ## Submission of a new version
-
--- R CMD check results --------------------------- ralger 2.2.1 ----
-Duration: 6m 27.5s
+-- R CMD check results -------------------------------- ralger 2.2.1 ----
+Duration: 2m 55.4s
 
 0 errors √ | 0 warnings √ | 0 notes √
 

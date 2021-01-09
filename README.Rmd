@@ -68,20 +68,9 @@ head(best_uni, 10)
 
 ```
 
-If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. Suppose, we want to extract the names of the [Golden Globes Awards Nominees](https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page=0), we could proceed as follow to scrape the first 3 pages (which starts from 0):
-
-
-
-```{r example2}
-my_link <- "https://www.goldenglobes.com/winners-nominees/best-performance-actor-motion-picture-drama?page="
-
-my_node <- ".primary-nominee a"
-
-scrap(link = paste0(my_link, 0:2), node = my_node)
-
-```
-
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = T` to ask the `robots.txt` file if it's permitted to scrape a specific web page.  
+
+If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. 
 
 
 ## `table_scrap()`
