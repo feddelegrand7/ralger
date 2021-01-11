@@ -68,7 +68,7 @@ head(best_uni, 10)
 
 ```
 
-Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = T` to ask the `robots.txt` file if it's permitted to scrape a specific web page.  
+Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = TRUE` to ask the `robots.txt` file if it's permitted to scrape a specific web page.  
 
 If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. 
 
@@ -204,7 +204,6 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 
 ## `images_scrap() ` and `images_preview()` 
 
-> (only available in the development version)
 
 `images_preview()` allows you to scrape the URLs of the images available within a web page so that you can choose which images __extension__ (see below) you want to focus on.
 
