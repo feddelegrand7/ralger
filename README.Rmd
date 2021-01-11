@@ -204,7 +204,6 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 
 ## `images_scrap() ` and `images_preview()` 
 
-
 `images_preview()` allows you to scrape the URLs of the images available within a web page so that you can choose which images __extension__ (see below) you want to focus on.
 
 Let's say we want to list all the images from the official [RStudio](https://rstudio.com/) website: 

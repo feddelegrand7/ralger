@@ -73,8 +73,8 @@ head(best_uni, 10)
 ```
 
 Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you
-can set `askRobot = T` to ask the `robots.txt` file if it’s permitted to
-scrape a specific web page.
+can set `askRobot = TRUE` to ask the `robots.txt` file if it’s permitted
+to scrape a specific web page.
 
 If you want to scrap multiple list pages, just use `scrap()` in
 conjunction with `paste0()`.
@@ -98,7 +98,7 @@ head(data)
 #> 3    3                                    Titanic $2,471,751,922 1997
 #> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
-#> 6    6                             Jurassic World $1,670,401,444 2015
+#> 6    6                             Jurassic World $1,670,426,444 2015
 ```
 
 **When you deal with a web page that contains many HTML table you can
@@ -178,50 +178,45 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Listen to ‘The Daily’"                                                                                                   
-#>  [2] "Listen to ‘The Argument’"                                                                                                
-#>  [3] "In the ‘At Home’ Newsletter"                                                                                             
-#>  [4] "Indonesian Jetliner Crashes Into the Sea After Takeoff"                                                                  
-#>  [5] "He Dreamed of Being a Police Officer, Then Was Killed by a Pro-Trump Mob"                                                
-#>  [6] "11 Journalists on Covering the Capitol Siege: ‘This Could Get Ugly’"                                                     
-#>  [7] "Trump’s Legacy: Voters Who Reject Democracy and Any Politics but Their Own"                                              
-#>  [8] "Bravery or reputation management? The resignations of some Trump officials are drawing skepticism."                      
-#>  [9] "Here are the Trump aides who plan to stay to the end."                                                                   
-#> [10] "As Coronavirus Mutates, the World Stumbles Again to Respond"                                                             
-#> [11] "False Reports of a New ‘U.S. Variant’ Came from White House Task Force"                                                  
-#> [12] "‘Our New York Moment’: Virus Surges in Southern California"                                                              
-#> [13] "Four Reasons the N.F.L. Shattered Its Scoring Record in 2020"                                                            
-#> [14] "Covid-19 is forcing N.F.L. players and other pro athletes to make unusually hard decisions about work-life balance."     
-#> [15] "The Weekender"                                                                                                           
-#> [16] "Did you follow the headlines this week? Take our quiz to find out."                                                      
-#> [17] "Awe and Shock"                                                                                                           
-#> [18] "Can Donald Trump Survive Without Twitter?"                                                                               
-#> [19] "Far-Right Protesters Stormed Germany’s Parliament. What Can America Learn?"                                              
-#> [20] "Listen to ‘Sway’: If You Were on Parler, You Saw the Mob Coming"                                                         
-#> [21] "Impeach Now. Running Out the Clock on Trump Is Cowardly and Dangerous."                                                  
-#> [22] "Stop Pretending ‘This Is Not Who We Are’"                                                                                
-#> [23] "Neil Sheehan Forced an American Reckoning"                                                                               
-#> [24] "Appeasement Got Us Where We Are"                                                                                         
-#> [25] "This Is When the Fever Breaks"                                                                                           
-#> [26] "How to Ensure This Never Happens Again"                                                                                  
-#> [27] "More Immigrants Will Come to the U.S. Under President Biden. That’s a Good Thing."                                       
-#> [28] "He Was Going to Close the Family Diner. Then He Got a Sign."                                                             
-#> [29] "Louise Linton Has Made a Movie"                                                                                          
-#> [30] "The Man Who Turned Credit-Card Points Into an Empire"                                                                    
-#> [31] "Site Index"                                                                                                              
-#> [32] "Site Information Navigation"                                                                                             
-#> [33] "Democrats Lay Groundwork for Impeaching Trump Again"                                                                     
-#> [34] "‘I Want Him Out’: Murkowski Is First G.O.P. Senator to Call for Removal"                                                 
-#> [35] "Twitter Permanently Bans Trump, Capping Online Revolt"                                                                   
-#> [36] "Google and Apple told Parler, a popular platform for conservatives, to step up its policing to stay in their app stores."
-#> [37] "Can a president be impeached in 12 days? Here’s how the process might work."                                             
-#> [38] "In Capital, a G.O.P. Crisis. At the R.N.C. Meeting, a Trump Celebration."                                                
-#> [39] "Senator Josh Hawley, who drew condemnation for challenging the election results, defended his decision."                 
-#> [40] "Seeing the Confederate flag in the Capitol was a jarring first in U.S. history. Historians weighed in on the moment."    
-#> [41] "For those who survived the Nazi death camp, pictures of a man in a “Camp Auschwitz” sweatshirt were painful."            
-#> [42] "Opinion"                                                                                                                 
-#> [43] "Editors’ Picks"                                                                                                          
-#> [44] "Advertisement"
+#>  [1] "Your Monday Briefing"                                                                                             
+#>  [2] "Listen to ‘The Sunday Read’"                                                                                      
+#>  [3] "In the ‘At Home’ Newsletter"                                                                                      
+#>  [4] "The Art of the Lie? The Bigger the Better"                                                                        
+#>  [5] "In a viral video, Arnold Schwarzenegger linked the Capitol riot to a rampage that was a prelude to the Holocaust."
+#>  [6] "‘It Became Sort of Lawless’: Florida Vaccine Rollout Turns Into a Free-for-All"                                   
+#>  [7] "After unused coronavirus vaccine doses were discarded, New York State loosened rules on who can get the shot."    
+#>  [8] "A Year After Wuhan, China Tells a Tale of Triumph (and No Mistakes)"                                              
+#>  [9] "Chicago Is Reopening Schools Against Fierce Resistance From Teachers"                                             
+#> [10] "Indonesia Crash Thwarts Push to Rehabilitate Country’s Airlines"                                                  
+#> [11] "Here’s what we know about the Boeing plane in the Indonesia crash."                                               
+#> [12] "Ved Mehta, Celebrated Writer for The New Yorker, Dies at 86"                                                      
+#> [13] "Trump’s Lackeys Must Also Be Punished"                                                                            
+#> [14] "Impeach and Convict Trump. Congress Must Defend Itself."                                                          
+#> [15] "The Narcissist in Chief Brings It All Crashing Down"                                                              
+#> [16] "Are We Stuck With Trump in the White House?"                                                                      
+#> [17] "It Took a Genocide for Me to Remember My Uighur Roots"                                                            
+#> [18] "Trump Just Had to Light the Match"                                                                                
+#> [19] "How Trump Made the Fantasy Real"                                                                                  
+#> [20] "Trump’s Capitol Offense"                                                                                          
+#> [21] "Were These the Fingerprints of a Terrorist?"                                                                      
+#> [22] "I Desegregated the University of Georgia. History Is Still in the Making."                                        
+#> [23] "What Would David Bowie Do?"                                                                                       
+#> [24] "52 Places to Love in 2021"                                                                                        
+#> [25] "With ‘I Hate Men,’ a French Feminist Touches a Nerve"                                                             
+#> [26] "Book Review: How Comey’s View of Justice Differs From Trump’s"                                                    
+#> [27] "Site Index"                                                                                                       
+#> [28] "Site Information Navigation"                                                                                      
+#> [29] "How a String of Failures Led to a Deadly Siege at the Capitol"                                                    
+#> [30] "Arrests Across Nation as D.C. Mayor Warns of Further Violence"                                                    
+#> [31] "House Moves to Force Trump Out, Vowing Impeachment if Pence Won’t Act"                                            
+#> [32] "The Times analyzed the speech President Trump gave before his supporters rushed the Capitol."                     
+#> [33] "Parler, a Chosen App of Trump Fans, Has Become a Test of Free Speech"                                             
+#> [34] "We Worked Together on the Internet. Last Week, He Stormed the Capitol."                                           
+#> [35] "Stripped of Twitter, Trump Faces a New Challenge: How to Get Attention"                                           
+#> [36] "Dozens have been charged after the riot. Here are some of the notable arrests."                                   
+#> [37] "Opinion"                                                                                                          
+#> [38] "Editors’ Picks"                                                                                                   
+#> [39] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -229,15 +224,17 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "He Dreamed of Being a Police Officer, Then Was Killed by a Pro-Trump Mob"                          
-#> [2] "Trump’s Legacy: Voters Who Reject Democracy and Any Politics but Their Own"                        
-#> [3] "Bravery or reputation management? The resignations of some Trump officials are drawing skepticism."
-#> [4] "Here are the Trump aides who plan to stay to the end."                                             
-#> [5] "Can Donald Trump Survive Without Twitter?"                                                         
-#> [6] "Impeach Now. Running Out the Clock on Trump Is Cowardly and Dangerous."                            
-#> [7] "Democrats Lay Groundwork for Impeaching Trump Again"                                               
-#> [8] "Twitter Permanently Bans Trump, Capping Online Revolt"                                             
-#> [9] "In Capital, a G.O.P. Crisis. At the R.N.C. Meeting, a Trump Celebration."
+#>  [1] "Trump’s Lackeys Must Also Be Punished"                                                       
+#>  [2] "Impeach and Convict Trump. Congress Must Defend Itself."                                     
+#>  [3] "Are We Stuck With Trump in the White House?"                                                 
+#>  [4] "Trump Just Had to Light the Match"                                                           
+#>  [5] "How Trump Made the Fantasy Real"                                                             
+#>  [6] "Trump’s Capitol Offense"                                                                     
+#>  [7] "Book Review: How Comey’s View of Justice Differs From Trump’s"                               
+#>  [8] "House Moves to Force Trump Out, Vowing Impeachment if Pence Won’t Act"                       
+#>  [9] "The Times analyzed the speech President Trump gave before his supporters rushed the Capitol."
+#> [10] "Parler, a Chosen App of Trump Fans, Has Become a Test of Free Speech"                        
+#> [11] "Stripped of Twitter, Trump Faces a New Challenge: How to Get Attention"
 ```
 
 ## `paragraphs_scrap()`
@@ -322,8 +319,6 @@ weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports
 ```
 
 ## `images_scrap()` and `images_preview()`
-
-> (only available in the development version)
 
 `images_preview()` allows you to scrape the URLs of the images available
 within a web page so that you can choose which images **extension** (see
