@@ -55,7 +55,7 @@ library(ralger)
 
 my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- "#UniversityRanking a" # The ID, we recommend SelectorGadget
+my_node <- "#UniversityRanking a" # The reference ID, we recommend SelectorGadget
 
 best_uni <- scrap(link = my_link, node = my_node)
 
