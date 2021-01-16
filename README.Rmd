@@ -32,7 +32,7 @@ knitr::opts_chunk$set(
 
 
 
-The goal of **ralger** is to facilitate web scraping in R. For a quick video tutorial, I gave a talk at useR2020, which you can find [here](https://www.youtube.com/watch?v=OHi6E8jegQg) 
+The goal of **ralger** is to facilitate web scraping in R. For a quick video tutorial, I gave a talk at useR2020, which you can find [here](https://www.youtube.com/watch?v=OHi6E8jegQg)
 
 ## Installation
 
@@ -68,14 +68,28 @@ head(best_uni, 10)
 
 ```
 
-Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = TRUE` to ask the `robots.txt` file if it's permitted to scrape a specific web page.  
+Thanks to the [robotstxt](https://github.com/ropensci/robotstxt), you can set `askRobot = TRUE` to ask the `robots.txt` file if it's permitted to scrape a specific web page.
 
-If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`. 
+If you want to scrap multiple list pages, just use `scrap()` in conjunction with `paste0()`.
+Suppose that you want to scrape all `RStudio::conf 2021` speakers:
+
+```{r}
+
+base_link <- "https://global.rstudio.com/student/catalog/list?category_ids=1796-speakers&page="
+
+links <- paste0(base_link, 1:3) # the speakers are listed from page 1 to 3
+
+node <- ".mediablock__link"
+
+
+head(scrap(links, node), 10) # printing the first 10 speakers
+
+```
 
 
 ## `table_scrap()`
 
-If you want to extract an __HTML Table__, you can use the `table_scrap()` function. Take a look at this [webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW) which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows: 
+If you want to extract an __HTML Table__, you can use the `table_scrap()` function. Take a look at this [webpage](https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW) which lists the highest gross revenues in the cinema industry. You can extract the HTML table as follows:
 
 ```{r}
 
@@ -98,7 +112,7 @@ Sometimes you'll find some useful information on the internet that you want to e
 - **nodes**: a vector of CSS elements that you want to extract. These elements will form the columns of your data frame;
 - **colnames**: this argument represents the vector of names you want to assign to your columns. Note that you should respect the same order as within the **nodes** vector;
 - **clean**: if true the function will clean the tibble's columns;
-- **askRobot**: ask the robots.txt file if it's permitted to scrape the web page. 
+- **askRobot**: ask the robots.txt file if it's permitted to scrape the web page.
 
 ### Example
 
@@ -108,15 +122,15 @@ We'll work on the famous [IMDb website](https://www.imdb.com/). Let's say we nee
 - Their release year
 - Their rating
 
-We will need to use the `tidy_scrap()` function as follows: 
+We will need to use the `tidy_scrap()` function as follows:
 
 ```{r example3, message=FALSE, warning=FALSE}
 
 my_link <- "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
 
 my_nodes <- c(
-  ".lister-item-header a", # The title 
-  ".text-muted.unbold", # The year of release 
+  ".lister-item-header a", # The title
+  ".text-muted.unbold", # The year of release
   ".ratings-imdb-rating strong" # The rating)
   )
 
@@ -128,19 +142,19 @@ tidy_scrap(link = my_link, nodes = my_nodes, colnames = names)
 
 ```
 
-Note that all columns will be of *character* class. you'll have to convert them according to your needs. 
+Note that all columns will be of *character* class. you'll have to convert them according to your needs.
 
 
 
 ## `titles_scrap()`
 
-Using `titles_scrap()`, one can efficiently scrape titles which correspond to the _h1, h2 & h3_ HTML tags. 
+Using `titles_scrap()`, one can efficiently scrape titles which correspond to the _h1, h2 & h3_ HTML tags.
 
 
 
-### Example 
+### Example
 
-If we go to the [New York Times](https://www.nytimes.com/), we can easily extract the titles displayed within a specific web page : 
+If we go to the [New York Times](https://www.nytimes.com/), we can easily extract the titles displayed within a specific web page :
 
 
 ```{r example4}
@@ -152,7 +166,7 @@ titles_scrap(link = "https://www.nytimes.com/")
 
 ```
 
-Further, it's possible to filter the results using the `contain` argument: 
+Further, it's possible to filter the results using the `contain` argument:
 
 
 ```{r}
@@ -167,9 +181,9 @@ titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitiv
 ## `paragraphs_scrap()`
 
 
-In the same way, we can use the `paragraphs_scrap()` function to extract paragraphs. This function relies on the `p` HTML tag.  
+In the same way, we can use the `paragraphs_scrap()` function to extract paragraphs. This function relies on the `p` HTML tag.
 
-Let's get some paragraphs from the lovely [ropensci.org](https://ropensci.org/) website: 
+Let's get some paragraphs from the lovely [ropensci.org](https://ropensci.org/) website:
 
 
 ```{r}
@@ -178,7 +192,7 @@ paragraphs_scrap(link = "https://ropensci.org/")
 
 ```
 
-If needed, it's possible to collapse the paragraphs into one bag of words: 
+If needed, it's possible to collapse the paragraphs into one bag of words:
 
 
 ```{r}
@@ -190,23 +204,23 @@ paragraphs_scrap(link = "https://ropensci.org/", collapse = TRUE)
 
 ## `weblink_scrap()`
 
-`weblink_scrap()` is used to srape the web links available within a web page. Useful in some cases, for example, getting a list of the available PDFs: 
+`weblink_scrap()` is used to srape the web links available within a web page. Useful in some cases, for example, getting a list of the available PDFs:
 
 
 ```{r}
 
-weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports/", 
-              contain = "PDF", 
+weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports/",
+              contain = "PDF",
               case_sensitive = FALSE)
 
 
 ```
 
-## `images_scrap() ` and `images_preview()` 
+## `images_scrap() ` and `images_preview()`
 
 `images_preview()` allows you to scrape the URLs of the images available within a web page so that you can choose which images __extension__ (see below) you want to focus on.
 
-Let's say we want to list all the images from the official [RStudio](https://rstudio.com/) website: 
+Let's say we want to list all the images from the official [RStudio](https://rstudio.com/) website:
 
 
 ```{r}
@@ -215,26 +229,26 @@ images_preview(link = "https://rstudio.com/")
 
 ```
 
-`images_scrap()` on the other hand download the images. It takes the following arguments: 
+`images_scrap()` on the other hand download the images. It takes the following arguments:
 
-+ **link**: The URL of the web page; 
++ **link**: The URL of the web page;
 
 + **imgpath**: The destination folder of your images. It defaults to `getwd()`
 
-+ **extn**: the extension of the image: jpg, png, jpeg ... among others; 
++ **extn**: the extension of the image: jpg, png, jpeg ... among others;
 
-+ **askRobot**: ask the robots.txt file if it's permitted to scrape the web page. 
++ **askRobot**: ask the robots.txt file if it's permitted to scrape the web page.
 
 
-In the following example we extract all the `png` images from [RStudio](https://rstudio.com/)  : 
+In the following example we extract all the `png` images from [RStudio](https://rstudio.com/)  :
 
 
 ```{r, eval=FALSE}
 
-# Suppose we're in a project which has a folder called my_images: 
+# Suppose we're in a project which has a folder called my_images:
 
-images_scrap(link = "https://rstudio.com/", 
-             imgpath = here::here("my_images"), 
+images_scrap(link = "https://rstudio.com/",
+             imgpath = here::here("my_images"),
              extn = "png") # without the .
 
 ```

@@ -55,7 +55,7 @@ library(ralger)
 
 my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- "#UniversityRanking a" # The reference ID, we recommend SelectorGadget
+my_node <- "#UniversityRanking a" # The class ID , we recommend SelectorGadget
 
 best_uni <- scrap(link = my_link, node = my_node)
 
@@ -77,7 +77,24 @@ can set `askRobot = TRUE` to ask the `robots.txt` file if it’s permitted
 to scrape a specific web page.
 
 If you want to scrap multiple list pages, just use `scrap()` in
-conjunction with `paste0()`.
+conjunction with `paste0()`. Suppose that you want to scrape all
+`RStudio::conf 2021` speakers:
+
+``` r
+base_link <- "https://global.rstudio.com/student/catalog/list?category_ids=1796-speakers&page="
+
+links <- paste0(base_link, 1:3) # the speakers are listed from page 1 to 3
+
+node <- ".mediablock__link"
+
+
+head(scrap(links, node), 10) # printing the first 10 speakers
+#>  [1] "Aaron Jacobs"              "Ahmadou Dicko"            
+#>  [3] "Alan Feder"                "Alex Cookson"             
+#>  [5] "Allison Horst"             "Andrew Ba Tran"           
+#>  [7] "Athanasia M. Mowinckel"    "Barret Schloerke"         
+#>  [9] "Carson Sievert"            "Chelsea Parlett-Pelleriti"
+```
 
 ## `table_scrap()`
 
@@ -137,8 +154,8 @@ We will need to use the `tidy_scrap()` function as follows:
 my_link <- "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
 
 my_nodes <- c(
-  ".lister-item-header a", # The title 
-  ".text-muted.unbold", # The year of release 
+  ".lister-item-header a", # The title
+  ".text-muted.unbold", # The year of release
   ".ratings-imdb-rating strong" # The rating)
   )
 
@@ -178,45 +195,44 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Your Monday Briefing"                                                                                             
-#>  [2] "Listen to ‘The Sunday Read’"                                                                                      
-#>  [3] "In the ‘At Home’ Newsletter"                                                                                      
-#>  [4] "The Art of the Lie? The Bigger the Better"                                                                        
-#>  [5] "In a viral video, Arnold Schwarzenegger linked the Capitol riot to a rampage that was a prelude to the Holocaust."
-#>  [6] "‘It Became Sort of Lawless’: Florida Vaccine Rollout Turns Into a Free-for-All"                                   
-#>  [7] "After unused coronavirus vaccine doses were discarded, New York State loosened rules on who can get the shot."    
-#>  [8] "A Year After Wuhan, China Tells a Tale of Triumph (and No Mistakes)"                                              
-#>  [9] "Chicago Is Reopening Schools Against Fierce Resistance From Teachers"                                             
-#> [10] "Indonesia Crash Thwarts Push to Rehabilitate Country’s Airlines"                                                  
-#> [11] "Here’s what we know about the Boeing plane in the Indonesia crash."                                               
-#> [12] "Ved Mehta, Celebrated Writer for The New Yorker, Dies at 86"                                                      
-#> [13] "Trump’s Lackeys Must Also Be Punished"                                                                            
-#> [14] "Impeach and Convict Trump. Congress Must Defend Itself."                                                          
-#> [15] "The Narcissist in Chief Brings It All Crashing Down"                                                              
-#> [16] "Are We Stuck With Trump in the White House?"                                                                      
-#> [17] "It Took a Genocide for Me to Remember My Uighur Roots"                                                            
-#> [18] "Trump Just Had to Light the Match"                                                                                
-#> [19] "How Trump Made the Fantasy Real"                                                                                  
-#> [20] "Trump’s Capitol Offense"                                                                                          
-#> [21] "Were These the Fingerprints of a Terrorist?"                                                                      
-#> [22] "I Desegregated the University of Georgia. History Is Still in the Making."                                        
-#> [23] "What Would David Bowie Do?"                                                                                       
-#> [24] "52 Places to Love in 2021"                                                                                        
-#> [25] "With ‘I Hate Men,’ a French Feminist Touches a Nerve"                                                             
-#> [26] "Book Review: How Comey’s View of Justice Differs From Trump’s"                                                    
-#> [27] "Site Index"                                                                                                       
-#> [28] "Site Information Navigation"                                                                                      
-#> [29] "How a String of Failures Led to a Deadly Siege at the Capitol"                                                    
-#> [30] "Arrests Across Nation as D.C. Mayor Warns of Further Violence"                                                    
-#> [31] "House Moves to Force Trump Out, Vowing Impeachment if Pence Won’t Act"                                            
-#> [32] "The Times analyzed the speech President Trump gave before his supporters rushed the Capitol."                     
-#> [33] "Parler, a Chosen App of Trump Fans, Has Become a Test of Free Speech"                                             
-#> [34] "We Worked Together on the Internet. Last Week, He Stormed the Capitol."                                           
-#> [35] "Stripped of Twitter, Trump Faces a New Challenge: How to Get Attention"                                           
-#> [36] "Dozens have been charged after the riot. Here are some of the notable arrests."                                   
-#> [37] "Opinion"                                                                                                          
-#> [38] "Editors’ Picks"                                                                                                   
-#> [39] "Advertisement"
+#>  [1] "Listen to ‘The Daily’"                                                                                   
+#>  [2] "The Book Review Podcast"                                                                                 
+#>  [3] "Listen to ‘Sway’ With Kara Swisher"                                                                      
+#>  [4] "Trump Will Leave Office With Worst Approval Rating of His Presidency"                                    
+#>  [5] "Inside Twitter’s Decision to Cut Off Trump"                                                              
+#>  [6] "A far-right activist known as “Baked Alaska” is among the latest Capitol rioters who have been arrested."
+#>  [7] "Virus Updates: India Starts Vaccinating Its 1.3 Billion People"                                          
+#>  [8] "Children’s Screen Time Has Soared in the Pandemic, Alarming Parents"                                     
+#>  [9] "How to (Literally) Drive the Coronavirus Away"                                                           
+#> [10] "Analysis: The Deceptive Tactic Behind Trump’s ‘Law and Order’"                                           
+#> [11] "A First for an American President, and a First for Donald Trump"                                         
+#> [12] "The Pariah Post-Presidency"                                                                              
+#> [13] "Longtime Ugandan President Defeats Ex-Rapper in Disputed Election"                                       
+#> [14] "Merkel’s Party Chooses a New Leader"                                                                     
+#> [15] "The Weekender: True Stories of Hooking Up During Covid-19"                                               
+#> [16] "Did you follow the news this week? Take our quiz."                                                       
+#> [17] "Why Are There So Few Courageous Senators?"                                                               
+#> [18] "Images From the Capitol Under Siege"                                                                     
+#> [19] "Trump Ignites a War Within the Church"                                                                   
+#> [20] "We Need to Vaccinate Faster. Here’s How."                                                                
+#> [21] "A Ray of Hope in a Slimy Southern Cave"                                                                  
+#> [22] "Trump’s Inevitable End"                                                                                  
+#> [23] "‘Stop the Steal’ Didn’t Start With Trump"                                                                
+#> [24] "Secretary of State Pompeo Leaves No Bridges Unburned"                                                    
+#> [25] "Listen to ‘The Argument’: Will impeachment change Republican minds?"                                     
+#> [26] "Big Tech Has Helped Trash America"                                                                       
+#> [27] "No, the Chaos in America Is Not a Gift to China and Russia"                                              
+#> [28] "Go Ahead. Fantasize."                                                                                    
+#> [29] "A Farewell to the Trump Aesthetic"                                                                       
+#> [30] "Can’t Measure Heart? N.F.L. Teams Are Trying"                                                            
+#> [31] "Site Index"                                                                                              
+#> [32] "Site Information Navigation"                                                                             
+#> [33] "Republicans Are Headed for a Bitter Internal Showdown"                                                   
+#> [34] "Before Capitol Riot, Calls for Cash and Talk of Revolution"                                              
+#> [35] "Capitol Attack Could Fuel Extremist Recruitment For Years, Experts Warn"                                 
+#> [36] "Opinion"                                                                                                 
+#> [37] "Editors’ Picks"                                                                                          
+#> [38] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -224,17 +240,14 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#>  [1] "Trump’s Lackeys Must Also Be Punished"                                                       
-#>  [2] "Impeach and Convict Trump. Congress Must Defend Itself."                                     
-#>  [3] "Are We Stuck With Trump in the White House?"                                                 
-#>  [4] "Trump Just Had to Light the Match"                                                           
-#>  [5] "How Trump Made the Fantasy Real"                                                             
-#>  [6] "Trump’s Capitol Offense"                                                                     
-#>  [7] "Book Review: How Comey’s View of Justice Differs From Trump’s"                               
-#>  [8] "House Moves to Force Trump Out, Vowing Impeachment if Pence Won’t Act"                       
-#>  [9] "The Times analyzed the speech President Trump gave before his supporters rushed the Capitol."
-#> [10] "Parler, a Chosen App of Trump Fans, Has Become a Test of Free Speech"                        
-#> [11] "Stripped of Twitter, Trump Faces a New Challenge: How to Get Attention"
+#> [1] "Trump Will Leave Office With Worst Approval Rating of His Presidency"
+#> [2] "Inside Twitter’s Decision to Cut Off Trump"                          
+#> [3] "Analysis: The Deceptive Tactic Behind Trump’s ‘Law and Order’"       
+#> [4] "A First for an American President, and a First for Donald Trump"     
+#> [5] "Trump Ignites a War Within the Church"                               
+#> [6] "Trump’s Inevitable End"                                              
+#> [7] "‘Stop the Steal’ Didn’t Start With Trump"                            
+#> [8] "A Farewell to the Trump Aesthetic"
 ```
 
 ## `paragraphs_scrap()`
@@ -294,8 +307,8 @@ page. Useful in some cases, for example, getting a list of the available
 PDFs:
 
 ``` r
-weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports/", 
-              contain = "PDF", 
+weblink_scrap(link = "https://www.worldbank.org/en/access-to-information/reports/",
+              contain = "PDF",
               case_sensitive = FALSE)
 #>  [1] "http://pubdocs.worldbank.org/en/304561593192266592/pdf/A2i-2019-annual-report-FINAL.pdf"                         
 #>  [2] "http://pubdocs.worldbank.org/en/539071573586305710/pdf/A2I-annual-report-2018-Final.pdf"                         
@@ -363,10 +376,10 @@ In the following example we extract all the `png` images from
 [RStudio](https://rstudio.com/) :
 
 ``` r
-# Suppose we're in a project which has a folder called my_images: 
+# Suppose we're in a project which has a folder called my_images:
 
-images_scrap(link = "https://rstudio.com/", 
-             imgpath = here::here("my_images"), 
+images_scrap(link = "https://rstudio.com/",
+             imgpath = here::here("my_images"),
              extn = "png") # without the .
 ```
 
