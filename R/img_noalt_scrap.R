@@ -49,7 +49,7 @@ img_noalt_scrap <- function(link, askRobot = FALSE) {
           read_html() %>%
           html_nodes("img:not([alt])")
       })
-      return(img_urls[[1]])
+      return(noquote(as.character(img_urls[[1]])))
     },
 
     error = function(cond) {
