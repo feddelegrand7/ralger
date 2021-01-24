@@ -1,9 +1,9 @@
 #' Scrape Images URLS that don't have 'alt' attributes
 #'
 #' @param link the URL of the web page
-#' @param askRobot
+#' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.
 #'
-#' @return
+#' @return a character vector of images' URL without "alt" attribute
 #' @export
 #'
 #' @examples
@@ -15,19 +15,14 @@
 #' @importFrom curl has_internet
 #' @importFrom utils download.file
 
-img_noalt_scrap <- function(link, askRobot = FALSE) {
-
+images_noalt_scrap <- function(link, askRobot = FALSE) {
   if (missing(link)) {
-
     stop("the 'link' paramater is mandatory")
-
   }
 
   if (!is.character(link)) {
-
     stop("the 'link' parameter must be provided
          as a character string")
-
   }
 
   ####### Ask robot related ################################################################
@@ -49,7 +44,15 @@ img_noalt_scrap <- function(link, askRobot = FALSE) {
           read_html() %>%
           html_nodes("img:not([alt])")
       })
-      return(noquote(as.character(img_urls[[1]])))
+
+      final_urls <- noquote(as.character(img_urls[[1]]))
+
+      if (length(final_urls) == 0) {
+        message(paste0("No images without 'alt' attribute found at: ", link))
+        return(NULL)
+      } else {
+        return(final_urls)
+      }
     },
 
     error = function(cond) {

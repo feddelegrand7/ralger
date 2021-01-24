@@ -254,6 +254,32 @@ images_scrap(link = "https://rstudio.com/",
 ```
 
 
+# Accessibility related functions 
+
+
+## `images_noalt_scrap()` 
+
+> available only in the development version of the package
+
+`images_noalt_scrap()` can be used to get the images within a specific web page that don't have an `alt` attribute which can be annoying for people using a screen reader: 
+
+
+```{r}
+
+images_noalt_scrap(link = "https://www.r-consortium.org/")
+
+```
+If not images without `alt` attributes are found, the function returns `NULL` and displays an indication message: 
+
+
+```{r}
+# WebAim is ther reference website for web accessibility
+
+images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
+```
+
+
+
 ## Code of Conduct
 
 Please note that the ralger project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
