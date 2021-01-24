@@ -115,7 +115,7 @@ head(data)
 #> 3    3                                    Titanic $2,471,751,922 1997
 #> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
-#> 6    6                             Jurassic World $1,670,426,444 2015
+#> 6    6                             Jurassic World $1,670,462,444 2015
 ```
 
 **When you deal with a web page that contains many HTML table you can
@@ -195,44 +195,48 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Listen to ‘The Daily’"                                                                                   
-#>  [2] "The Book Review Podcast"                                                                                 
-#>  [3] "Listen to ‘Sway’ With Kara Swisher"                                                                      
-#>  [4] "Trump Will Leave Office With Worst Approval Rating of His Presidency"                                    
-#>  [5] "Inside Twitter’s Decision to Cut Off Trump"                                                              
-#>  [6] "A far-right activist known as “Baked Alaska” is among the latest Capitol rioters who have been arrested."
-#>  [7] "Virus Updates: India Starts Vaccinating Its 1.3 Billion People"                                          
-#>  [8] "Children’s Screen Time Has Soared in the Pandemic, Alarming Parents"                                     
-#>  [9] "How to (Literally) Drive the Coronavirus Away"                                                           
-#> [10] "Analysis: The Deceptive Tactic Behind Trump’s ‘Law and Order’"                                           
-#> [11] "A First for an American President, and a First for Donald Trump"                                         
-#> [12] "The Pariah Post-Presidency"                                                                              
-#> [13] "Longtime Ugandan President Defeats Ex-Rapper in Disputed Election"                                       
-#> [14] "Merkel’s Party Chooses a New Leader"                                                                     
-#> [15] "The Weekender: True Stories of Hooking Up During Covid-19"                                               
-#> [16] "Did you follow the news this week? Take our quiz."                                                       
-#> [17] "Why Are There So Few Courageous Senators?"                                                               
-#> [18] "Images From the Capitol Under Siege"                                                                     
-#> [19] "Trump Ignites a War Within the Church"                                                                   
-#> [20] "We Need to Vaccinate Faster. Here’s How."                                                                
-#> [21] "A Ray of Hope in a Slimy Southern Cave"                                                                  
-#> [22] "Trump’s Inevitable End"                                                                                  
-#> [23] "‘Stop the Steal’ Didn’t Start With Trump"                                                                
-#> [24] "Secretary of State Pompeo Leaves No Bridges Unburned"                                                    
-#> [25] "Listen to ‘The Argument’: Will impeachment change Republican minds?"                                     
-#> [26] "Big Tech Has Helped Trash America"                                                                       
-#> [27] "No, the Chaos in America Is Not a Gift to China and Russia"                                              
-#> [28] "Go Ahead. Fantasize."                                                                                    
-#> [29] "A Farewell to the Trump Aesthetic"                                                                       
-#> [30] "Can’t Measure Heart? N.F.L. Teams Are Trying"                                                            
-#> [31] "Site Index"                                                                                              
-#> [32] "Site Information Navigation"                                                                             
-#> [33] "Republicans Are Headed for a Bitter Internal Showdown"                                                   
-#> [34] "Before Capitol Riot, Calls for Cash and Talk of Revolution"                                              
-#> [35] "Capitol Attack Could Fuel Extremist Recruitment For Years, Experts Warn"                                 
-#> [36] "Opinion"                                                                                                 
-#> [37] "Editors’ Picks"                                                                                          
-#> [38] "Advertisement"
+#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [www.nytimes.com] Operation timed out after 10001 milliseconds with 0 out of 0 bytes received
+#>  [1] NA                                                                                                              
+#>  [2] "Listen to ‘The Daily’"                                                                                         
+#>  [3] "In the ‘At Home’ Newsletter"                                                                                   
+#>  [4] "Listen to ‘Sway’ With Kara Swisher"                                                                            
+#>  [5] "Surge of Student Suicides Pushes Las Vegas Schools to Reopen"                                                  
+#>  [6] "What if You Never Get Better From Covid-19?"                                                                   
+#>  [7] "“An incredible scale of tragedy”: The U.S. has surpassed 25 million coronavirus cases. Catch up on the latest."
+#>  [8] "Why Vaccines Alone Will Not End the Pandemic"                                                                  
+#>  [9] "In Biden’s Catholic Faith, an Ascendant Liberal Christianity"                                                  
+#> [10] "Is President Biden Ready for the New Senate?"                                                                  
+#> [11] "High School Grades Could Be Worth $100,000. Time to Tell Your Child?"                                          
+#> [12] "Retirement in Florida? Tom Brady’s Next Move Might Be to the Super Bowl"                                       
+#> [13] "The Bills Rack Up Wins. Folding Tables Get Wrecked."                                                           
+#> [14] "Ted Thompson, who helped revive the Green Bay Packers, died at 68."                                            
+#> [15] "The Weekender: An Unexpected Benefit of Catnip"                                                                
+#> [16] "Did you follow the news this week? Take our quiz."                                                             
+#> [17] "Democrats, Here’s How to Lose in 2022. And Deserve It."                                                        
+#> [18] "What Happens When You Click ‘Agree’?"                                                                          
+#> [19] "Biden Must Reckon With Obama-Era Immigration Mistakes"                                                         
+#> [20] "Is an Innocent Man Still Languishing on Death Row?"                                                            
+#> [21] "Joe Biden’s Catholic Moment"                                                                                   
+#> [22] "The ‘Muslim Ban’ Is Over. The Harm Lives On."                                                                  
+#> [23] "A Final Interview With Hank Aaron: ‘I Recognized That I Had a Gift’"                                           
+#> [24] "America Has a GPS Problem"                                                                                     
+#> [25] "A Summit of Their Own: A Nepali Team Climbs K2"                                                                
+#> [26] "Hola, President Biden. Latin America Has a Message for You."                                                   
+#> [27] "Is There a Small Business That’s Special to You? We Want to Hear About It"                                     
+#> [28] "A Shot Above the Rest"                                                                                         
+#> [29] "Just Don’t Call Her a Ghostwriter"                                                                             
+#> [30] "Providence Kept Classrooms Open, and Students Came Back"                                                       
+#> [31] "Site Index"                                                                                                    
+#> [32] "Site Information Navigation"                                                                                   
+#> [33] "Capitol Riot Puts Spotlight on ‘Apocalyptically Minded’ Global Far Right"                                      
+#> [34] "Pennsylvania Lawmaker Played Key Role in Plot to Oust Attorney General"                                        
+#> [35] "How Democrats Planned for Doomsday Scenarios"                                                                  
+#> [36] "Rudolph Giuliani and Bill O’Reilly Still Have a Major N.Y. Platform"                                           
+#> [37] "A Texas man who stormed the Capitol threatened to assassinate Representative Alexandria Ocasio-Cortez."        
+#> [38] "Arizona Republicans voted to censure three of their own party’s most high-profile members."                    
+#> [39] "Opinion"                                                                                                       
+#> [40] "Editors’ Picks"                                                                                                
+#> [41] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -240,14 +244,7 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "Trump Will Leave Office With Worst Approval Rating of His Presidency"
-#> [2] "Inside Twitter’s Decision to Cut Off Trump"                          
-#> [3] "Analysis: The Deceptive Tactic Behind Trump’s ‘Law and Order’"       
-#> [4] "A First for an American President, and a First for Donald Trump"     
-#> [5] "Trump Ignites a War Within the Church"                               
-#> [6] "Trump’s Inevitable End"                                              
-#> [7] "‘Stop the Steal’ Didn’t Start With Trump"                            
-#> [8] "A Farewell to the Trump Aesthetic"
+#> character(0)
 ```
 
 ## `paragraphs_scrap()`
@@ -260,36 +257,8 @@ Let’s get some paragraphs from the lovely
 
 ``` r
 paragraphs_scrap(link = "https://ropensci.org/")
-#>  [1] ""                                                                                                                                                                                                                                                                        
-#>  [2] "We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem"                                                                                                                           
-#>  [3] "Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages."                                                      
-#>  [4] "Workflow Tools for Your Code and Data"                                                                                                                                                                                                                                   
-#>  [5] "Get Data from the Web"                                                                                                                                                                                                                                                   
-#>  [6] "Convert and Munge Data"                                                                                                                                                                                                                                                  
-#>  [7] "Document and Release Your Data"                                                                                                                                                                                                                                          
-#>  [8] "Visualize Data"                                                                                                                                                                                                                                                          
-#>  [9] "Work with Databases From R"                                                                                                                                                                                                                                              
-#> [10] "Access, Manipulate, Convert Geospatial Data"                                                                                                                                                                                                                             
-#> [11] "Interact with Web Resources"                                                                                                                                                                                                                                             
-#> [12] "Use Image & Audio Data"                                                                                                                                                                                                                                                  
-#> [13] "Analyze Scientific Papers (and Text in General)"                                                                                                                                                                                                                         
-#> [14] "Secure Your Data and Workflow"                                                                                                                                                                                                                                           
-#> [15] "Handle and Transform Taxonomic Information"                                                                                                                                                                                                                              
-#> [16] "Get inspired by real examples of how our packages can be used."                                                                                                                                                                                                          
-#> [17] "Or browse scientific publications that cited our packages."                                                                                                                                                                                                              
-#> [18] "Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure."                                                             
-#> [19] "We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative & more efficient review process\n  "                                                                                                                      
-#> [20] "Based on best practices of software development and standards of R, its\napplications and user base."                                                                                                                                                                    
-#> [21] "Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reproducible science"                                                                                                                      
-#> [22] "We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process."
-#> [23] "Discover, learn and get involved in helping to shape the future of Data Science"                                                                                                                                                                                         
-#> [24] "Join in our quarterly Community Calls with fellow developers and scientists - open\nto all"                                                                                                                                                                              
-#> [25] "Upcoming events including meetings at which our team members are speaking."                                                                                                                                                                                              
-#> [26] "The latest developments from rOpenSci and the wider R community"                                                                                                                                                                                                         
-#> [27] "Release notes, updates and package related developements"                                                                                                                                                                                                                
-#> [28] "A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive."                                                                                                    
-#> [29] "Happy rOpenSci users can be found at"                                                                                                                                                                                                                                    
-#> [30] "Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"
+#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [ropensci.org] Operation timed out after 10000 milliseconds with 0 out of 0 bytes received
+#> [1] NA
 ```
 
 If needed, it’s possible to collapse the paragraphs into one bag of
@@ -345,18 +314,17 @@ images_preview(link = "https://rstudio.com/")
 #>  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&fmt=gif"                                                                       
 #>  [2] "https://www.facebook.com/tr?id=151855192184380&ev=PageView&noscript=1"                                                         
 #>  [3] "https://d33wubrfki0l68.cloudfront.net/08b39bfcd76ebaf8360ed9135a50a2348fe2ed83/75738/assets/img/logo-white.svg"                
-#>  [4] "https://d33wubrfki0l68.cloudfront.net/f255381cf5fd8f44b899f01761a82ad1f149382d/ade3a/assets/img/2021-logo.png"                 
-#>  [5] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
-#>  [6] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
-#>  [7] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
-#>  [8] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
-#>  [9] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
-#> [10] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
-#> [11] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
-#> [12] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
-#> [13] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
-#> [14] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
-#> [15] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"
+#>  [4] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
+#>  [5] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
+#>  [6] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
+#>  [7] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
+#>  [8] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
+#>  [9] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
+#> [10] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
+#> [11] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
+#> [12] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
+#> [13] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
+#> [14] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"
 ```
 
 `images_scrap()` on the other hand download the images. It takes the
@@ -381,6 +349,32 @@ In the following example we extract all the `png` images from
 images_scrap(link = "https://rstudio.com/",
              imgpath = here::here("my_images"),
              extn = "png") # without the .
+```
+
+# Accessibility related functions
+
+## `images_noalt_scrap()`
+
+> available only in the development version of the package
+
+`images_noalt_scrap()` can be used to get the images within a specific
+web page that don’t have an `alt` attribute which can be annoying for
+people using a screen reader:
+
+``` r
+images_noalt_scrap(link = "https://www.r-consortium.org/")
+#> [1] <img src="https://www.r-consortium.org/wp-content/themes/salient-child/images/logo_lf_projects_horizontal_2018.png">
+```
+
+If not images without `alt` attributes are found, the function returns
+`NULL` and displays an indication message:
+
+``` r
+# WebAim is ther reference website for web accessibility
+
+images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
+#> No images without 'alt' attribute found at: https://webaim.org/techniques/forms/controls
+#> NULL
 ```
 
 ## Code of Conduct
