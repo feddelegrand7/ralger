@@ -6,7 +6,12 @@
 #' @return a character vector of images' URL without "alt" attribute
 #' @export
 #'
-#' @examples
+#' @examples \donttest{
+#'
+#' images_noalt_scrap(link = "https://www.r-consortium.org/")
+#'
+#' }
+#'
 #' @importFrom rvest html_nodes html_attr %>%
 #' @importFrom xml2 read_html
 #' @importFrom robotstxt paths_allowed

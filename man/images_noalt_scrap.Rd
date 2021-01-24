@@ -17,3 +17,11 @@ a character vector of images' URL without "alt" attribute
 \description{
 Scrape Images URLS that don't have 'alt' attributes
 }
+\examples{
+\donttest{
+
+images_noalt_scrap(link = "https://www.r-consortium.org/")
+
+}
+
+}
