@@ -18,8 +18,7 @@
 #' scrap(link, node)}
 #'
 #' @export
-#' @importFrom magrittr %>%
-#' @importFrom rvest html_nodes html_text
+#' @importFrom rvest html_nodes html_text %>%
 #' @importFrom xml2 read_html
 #' @importFrom stringr str_replace_all str_trim
 #' @importFrom robotstxt paths_allowed

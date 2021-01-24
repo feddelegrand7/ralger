@@ -18,8 +18,7 @@
 #' paragraphs_scrap(link)}
 #'
 #' @export
-#' @importFrom magrittr %>%
-#' @importFrom rvest html_nodes html_text html_attr
+#' @importFrom rvest html_nodes html_text html_attr %>%
 #' @importFrom xml2 read_html
 #' @importFrom crayon green
 #' @importFrom crayon bgRed

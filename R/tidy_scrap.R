@@ -20,8 +20,7 @@
 #' tidy_scrap(link, my_nodes, names)}
 #'
 #' @export
-#' @importFrom magrittr %>%
-#' @importFrom rvest html_nodes html_text
+#' @importFrom rvest html_nodes html_text %>%
 #' @importFrom xml2 read_html
 #' @importFrom tidyr as_tibble
 #' @importFrom stringr str_replace

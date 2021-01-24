@@ -14,8 +14,7 @@
 #' }
 #'
 #' @export
-#' @importFrom magrittr %>%
-#' @importFrom rvest html_nodes html_attr
+#' @importFrom rvest html_nodes html_attr %>%
 #' @importFrom xml2 read_html
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green

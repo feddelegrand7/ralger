@@ -15,7 +15,6 @@ URL: https://github.com/feddelegrand7/ralger
 BugReports: https://github.com/feddelegrand7/ralger/issues
 VignetteBuilder: knitr
 Imports: 
-    magrittr,
     rvest,
     xml2,
     testthat,

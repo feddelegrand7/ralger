@@ -17,9 +17,8 @@
 #' table_scrap(link)}
 #'
 #' @export
-#' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
-#' @importFrom rvest html_table
+#' @importFrom rvest html_table %>%
 #' @importFrom robotstxt paths_allowed
 #' @importFrom crayon green
 #' @importFrom crayon bgRed
