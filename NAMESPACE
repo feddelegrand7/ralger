@@ -2,7 +2,7 @@
 
 export(images_preview)
 export(images_scrap)
-export(img_no_alt_scrap)
+export(img_noalt_scrap)
 export(paragraphs_scrap)
 export(scrap)
 export(table_scrap)
