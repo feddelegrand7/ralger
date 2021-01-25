@@ -28,6 +28,7 @@ This function is used to scrape one element from a website.
 link <- "https://www.imdb.com/chart/top/"
 node <- ".titleColumn a"
 
-scrap(link, node)}
+scrap(link, node)
+}
 
 }

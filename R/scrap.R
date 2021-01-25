@@ -9,13 +9,15 @@
 #' @param clean logical. Should the function clean the extracted vector or not ? Default is FALSE.
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.
 #' @return a character vector
-#' @examples \donttest{
+#' @examples
+#' \donttest{
 #' # Extracting imdb top 250 movie titles
 #'
 #' link <- "https://www.imdb.com/chart/top/"
 #' node <- ".titleColumn a"
 #'
-#' scrap(link, node)}
+#' scrap(link, node)
+#' }
 #'
 #' @export
 #' @importFrom rvest html_nodes html_text %>%
@@ -35,88 +37,65 @@ scrap <- function(link,
 
 
   # returns an error if either link or node are not provided
-  if(missing(link) || missing(node)) {
-
+  if (missing(link) || missing(node)) {
     stop("'link' and 'node' are mandatory parameters")
-
   }
 
   # returns an error if link and node are not character strings
-  if(!is.character(link) || !is.character(node)){
-
+  if (!is.character(link) || !is.character(node)) {
     stop("'link' and 'node' parameters must be provided as character strings")
-
   }
 
 
-###################### Ask robot related ##################################################
+  ###################### Ask robot related ##################################################
   if (askRobot) {
-
     if (paths_allowed(link) == TRUE) {
       message(green("the robot.txt doesn't prohibit scraping this web page"))
-
     } else {
       message(bgRed(
         "WARNING: the robot.txt doesn't allow scraping this web page"
       ))
-
     }
   }
   #########################################################################################
 
-    tryCatch(
-
-
-      expr = {
-
-        data <- lapply(link,
-                 function(url) {
-                   url %>% read_html() %>%
-                     html_nodes(node) %>%
-                     html_text()
-                 })
-
-        if(!clean){
-
-        return(stri_remove_empty(unlist(data)))
-
-        } else {
-
-        stri_remove_empty(unlist(data)) %>%
-        str_replace_all(c("\n" = " ", "\r" = " ", "\t" = " ")) %>%
-        str_trim()
-
+  tryCatch(
+    expr = {
+      data <- lapply(
+        link,
+        function(url) {
+          url %>%
+            read_html() %>%
+            html_nodes(node) %>%
+            html_text()
         }
+      )
 
-      },
+      if (!clean) {
+        return(stri_remove_empty(unlist(data)))
+      } else {
+        stri_remove_empty(unlist(data)) %>%
+          str_replace_all(c("\n" = " ", "\r" = " ", "\t" = " ")) %>%
+          str_trim()
+      }
+    },
 
-    error = function(cond){
-
-      if(!has_internet()){
-
+    error = function(cond) {
+      if (!has_internet()) {
         message(paste0("Please check your internet connexion: ", cond))
 
         return(NA)
-
       } else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+        message(paste0("The URL doesn't seem to be a valid one: ", link))
 
-          message(paste0("The URL doesn't seem to be a valid one: ", link))
+        message(paste0("Here the original error message: ", cond))
 
-          message(paste0("Here the original error message: ", cond))
-
-          return(NA)
-
+        return(NA)
       } else {
-
         message(paste0("Undefined Error: ", cond))
 
         return(NA)
-
       }
-
-
-      })
-
-
+    }
+  )
 }
-

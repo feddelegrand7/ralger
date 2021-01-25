@@ -273,7 +273,7 @@ If not images without `alt` attributes are found, the function returns `NULL` an
 
 
 ```{r}
-# WebAim is ther reference website for web accessibility
+# WebAim is the reference website for web accessibility
 
 images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
 ```

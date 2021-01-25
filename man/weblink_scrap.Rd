@@ -25,8 +25,9 @@ This function is used to scrape web links from a website.
 \donttest{
 # Extracting the web links within the World Bank research and publications page
 
-link     <- "https://www.worldbank.org/en/research"
+link <- "https://www.worldbank.org/en/research"
 
-weblink_scrap(link)}
+weblink_scrap(link)
+}
 
 }
