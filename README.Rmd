@@ -86,6 +86,27 @@ head(scrap(links, node), 10) # printing the first 10 speakers
 
 ```
 
+## `attribute_scrap()`
+
+> Available only in the development version of the package
+
+If you need to scrape some elements' attributes, you can use the `attribute_scrap()` function as in the following example: 
+
+
+```{r}
+# Getting all classes' names from the anchor elements
+# from the ropensci website 
+
+attributes <- attribute_scrap(link = "https://ropensci.org/", 
+                node = "a", # the a tag
+                attr = "class" # getting the class attribute
+                )  
+
+head(attributes, 10) # NA values are a tags without classes
+```
+
+
+
 
 ## `table_scrap()`
 

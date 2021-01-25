@@ -55,7 +55,7 @@ library(ralger)
 
 my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- "#UniversityRanking a" # The ID attribute , SelectorGadget is recommanded
+my_node <- "#UniversityRanking a" # The class ID , we recommend SelectorGadget
 
 best_uni <- scrap(link = my_link, node = my_node)
 
@@ -96,6 +96,29 @@ head(scrap(links, node), 10) # printing the first 10 speakers
 #>  [9] "Carson Sievert"            "Chelsea Parlett-Pelleriti"
 ```
 
+## `attribute_scrap()`
+
+> Available only in the development version of the package
+
+If you need to scrape some elements’ attributes, you can use the
+`attribute_scrap()` function as in the following example:
+
+``` r
+# Getting all classes' names from the anchor elements
+# from the ropensci website 
+
+attributes <- attribute_scrap(link = "https://ropensci.org/", 
+                node = "a", # the a tag
+                attr = "class" # getting the class attribute
+                )  
+
+head(attributes, 10) # NA values are a tags without classes
+#>  [1] "navbar-brand logo" "nav-link"          NA                 
+#>  [4] NA                  NA                  NA                 
+#>  [7] NA                  NA                  "nav-link"         
+#> [10] NA
+```
+
 ## `table_scrap()`
 
 If you want to extract an **HTML Table**, you can use the
@@ -112,7 +135,7 @@ head(data)
 #>   Rank                                      Title Lifetime Gross Year
 #> 1    1                          Avengers: Endgame $2,797,800,564 2019
 #> 2    2                                     Avatar $2,790,439,092 2009
-#> 3    3                                    Titanic $2,471,751,922 1997
+#> 3    3                                    Titanic $2,471,754,307 1997
 #> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
 #> 6    6                             Jurassic World $1,670,471,444 2015
@@ -195,46 +218,39 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Listen to ‘The Sunday Read’"                                                                                             
-#>  [2] "In the ‘At Home’ Newsletter"                                                                                             
-#>  [3] "Listen to ‘Sway’ With Kara Swisher"                                                                                      
-#>  [4] "It’s 30 Degrees. Shall We Have Brunch Outdoors?"                                                                         
-#>  [5] "Why Vaccines Alone Will Not End the Pandemic"                                                                            
-#>  [6] "How Space Became the Next ‘Great Power’ Contest Between the U.S. and China"                                              
-#>  [7] "Here are five takeaways from the developing space war between China and the U.S."                                        
-#>  [8] "Capitol Riot Puts Spotlight on ‘Apocalyptically Minded’ Global Far Right"                                                
-#>  [9] "Divisions Harden in Senate as It Prepares to Receive Impeachment Article"                                                
-#> [10] "How Democrats Planned for Doomsday Scenarios"                                                                            
-#> [11] "In Biden’s Catholic Faith, an Ascendant Liberal Christianity"                                                            
-#> [12] "The Senate Isn’t What It Used to Be. Is President Biden Ready?"                                                          
-#> [13] "Trump Wants Back on Facebook. This Star-Studded Jury Might Let Him."                                                     
-#> [14] "Tom Brady Heads Back to Super Bowl With Buccaneers’ Win Over Packers"                                                    
-#> [15] "At 43, Tom Brady will be playing in his 10th Super Bowl, proving he can still compete at the highest level."             
-#> [16] "Analysis: Amid Protests, Kremlin Drops Its ‘Navalny Who?’ Tack"                                                          
-#> [17] "Pro-Navalny Protest Photos: Wave of Anger Rolls Across Russia"                                                           
-#> [18] "Hong Kong Crackdown Is an Early Test for Biden"                                                                          
-#> [19] "Avoiding the Obama-Era Silence Trap"                                                                                     
-#> [20] "My Language Is Dying, Too"                                                                                               
-#> [21] "Has China Done Too Well Against Covid-19?"                                                                               
-#> [22] "America’s Other Front Line"                                                                                              
-#> [23] "Democrats, Here’s How to Lose in 2022. And Deserve It."                                                                  
-#> [24] "America Has a GPS Problem"                                                                                               
-#> [25] "3 Million People Were Deported Under Obama. What Will Biden Do About It?"                                                
-#> [26] "Joe Biden’s Catholic Moment"                                                                                             
-#> [27] "What Happens When You Click ‘Agree’?"                                                                                    
-#> [28] "A Final Interview With Hank Aaron: ‘I Recognized That I Had a Gift’"                                                     
-#> [29] "How Can We Read Edith Wharton Today?"                                                                                    
-#> [30] "When Some Critics Reject the Film That’s About Your Life"                                                                
-#> [31] "A School District Vowed to Stay Open, Until Its Staffing Ran Out"                                                        
-#> [32] "Site Index"                                                                                                              
-#> [33] "Site Information Navigation"                                                                                             
-#> [34] "How West Virginia Became a U.S. Leader in Vaccine Rollout"                                                               
-#> [35] "Fauci on What Working for Trump Was Really Like"                                                                         
-#> [36] "Mexico’s President Is Latest World Leader Infected With the Virus"                                                       
-#> [37] "A virus variant that could be deadlier is a powerful argument that relaxing restrictions in Britain could be calamitous."
-#> [38] "Opinion"                                                                                                                 
-#> [39] "Editors’ Picks"                                                                                                          
-#> [40] "Advertisement"
+#>  [1] "Listen to ‘The Daily’"                                                      
+#>  [2] "The Book Review Podcast"                                                    
+#>  [3] "Got a Confidential News Tip?"                                               
+#>  [4] "As Virus Grows Stealthier, Vaccine Makers Reconsider Battle Plans"          
+#>  [5] "California Lifts Stay-at-Home Orders in Much of the State"                  
+#>  [6] "Schools Were Set to Reopen. Then the Teachers’ Union Stepped In."           
+#>  [7] "Tired of Waiting on the City, Shelters Solved a Wi-Fi Problem Themselves"   
+#>  [8] "President Biden is vowing to reopen schools quickly. It won’t be easy."     
+#>  [9] "After the Capitol Was Stormed, Teachers Try Explaining History in Real Time"
+#> [10] "25 Great Writers and Thinkers Weigh In on Books That Matter"                
+#> [11] "Are We Ready for a Monday Without Trump?"                                   
+#> [12] "I’ve Said Goodbye to ‘Normal.’ You Should, Too."                            
+#> [13] "Something Special Just Happened in Russia"                                  
+#> [14] "Even for Bargain Hunters, Green Cars Make Sense"                            
+#> [15] "The Site Trump Could Run to Next"                                           
+#> [16] "How Parler Reveals the Alarming Trajectory of Political Violence"           
+#> [17] "The Trial of Donald Trump: The Sequel"                                      
+#> [18] "We Don’t Need Another War on Terror"                                        
+#> [19] "I Can’t Believe I Need to Say This, but We Need Schools More Than Bars"     
+#> [20] "Avoiding the Obama-Era Silence Trap"                                        
+#> [21] "How to Fix 4 Years of Trump’s War Against Government"                       
+#> [22] "Monitoring the Weather at the Edge of the World"                            
+#> [23] "The Talk of the Super Bowl Is Quarterbacks, Except One"                     
+#> [24] "Ninja, a Gaming Superstar, Has a Message for Parents"                       
+#> [25] "Site Index"                                                                 
+#> [26] "Site Information Navigation"                                                
+#> [27] "Justice Dept. Watchdog to Investigate Any Efforts to Undo Election"         
+#> [28] "New U.S. Strategy Would Quickly Free Billions in Climate Funds"             
+#> [29] "Transgender People Get a Long-Sought Chance to Enlist"                      
+#> [30] "A War Over Filibuster, a Stalling Tactic, Stops the Senate From the Start"  
+#> [31] "Opinion"                                                                    
+#> [32] "Editors’ Picks"                                                             
+#> [33] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -242,8 +258,10 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "Trump Wants Back on Facebook. This Star-Studded Jury Might Let Him."
-#> [2] "Fauci on What Working for Trump Was Really Like"
+#> [1] "Are We Ready for a Monday Without Trump?"            
+#> [2] "The Site Trump Could Run to Next"                    
+#> [3] "The Trial of Donald Trump: The Sequel"               
+#> [4] "How to Fix 4 Years of Trump’s War Against Government"
 ```
 
 ## `paragraphs_scrap()`
@@ -338,20 +356,8 @@ Let’s say we want to list all the images from the official
 
 ``` r
 images_preview(link = "https://rstudio.com/")
-#>  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&fmt=gif"                                                                       
-#>  [2] "https://www.facebook.com/tr?id=151855192184380&ev=PageView&noscript=1"                                                         
-#>  [3] "https://d33wubrfki0l68.cloudfront.net/08b39bfcd76ebaf8360ed9135a50a2348fe2ed83/75738/assets/img/logo-white.svg"                
-#>  [4] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
-#>  [5] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
-#>  [6] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
-#>  [7] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
-#>  [8] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
-#>  [9] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
-#> [10] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
-#> [11] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
-#> [12] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
-#> [13] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
-#> [14] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"
+#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [rstudio.com] Resolving timed out after 10000 milliseconds
+#> [1] NA
 ```
 
 `images_scrap()` on the other hand download the images. It takes the
@@ -400,8 +406,8 @@ If not images without `alt` attributes are found, the function returns
 # WebAim is the reference website for web accessibility
 
 images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
-#> No images without 'alt' attribute found at: https://webaim.org/techniques/forms/controls
-#> NULL
+#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [webaim.org] Resolving timed out after 10000 milliseconds
+#> [1] NA
 ```
 
 ## Code of Conduct
