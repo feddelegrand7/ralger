@@ -55,7 +55,7 @@ library(ralger)
 
 my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- "#UniversityRanking a" # The class ID , we recommend SelectorGadget
+my_node <- "#UniversityRanking a" # The ID attribute , SelectorGadget is recommanded
 
 best_uni <- scrap(link = my_link, node = my_node)
 
@@ -397,7 +397,7 @@ If not images without `alt` attributes are found, the function returns
 `NULL` and displays an indication message:
 
 ``` r
-# WebAim is ther reference website for web accessibility
+# WebAim is the reference website for web accessibility
 
 images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
 #> No images without 'alt' attribute found at: https://webaim.org/techniques/forms/controls
