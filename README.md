@@ -115,7 +115,7 @@ head(data)
 #> 3    3                                    Titanic $2,471,751,922 1997
 #> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
-#> 6    6                             Jurassic World $1,670,462,444 2015
+#> 6    6                             Jurassic World $1,670,471,444 2015
 ```
 
 **When you deal with a web page that contains many HTML table you can
@@ -195,48 +195,46 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [www.nytimes.com] Operation timed out after 10001 milliseconds with 0 out of 0 bytes received
-#>  [1] NA                                                                                                              
-#>  [2] "Listen to ‘The Daily’"                                                                                         
-#>  [3] "In the ‘At Home’ Newsletter"                                                                                   
-#>  [4] "Listen to ‘Sway’ With Kara Swisher"                                                                            
-#>  [5] "Surge of Student Suicides Pushes Las Vegas Schools to Reopen"                                                  
-#>  [6] "What if You Never Get Better From Covid-19?"                                                                   
-#>  [7] "“An incredible scale of tragedy”: The U.S. has surpassed 25 million coronavirus cases. Catch up on the latest."
-#>  [8] "Why Vaccines Alone Will Not End the Pandemic"                                                                  
-#>  [9] "In Biden’s Catholic Faith, an Ascendant Liberal Christianity"                                                  
-#> [10] "Is President Biden Ready for the New Senate?"                                                                  
-#> [11] "High School Grades Could Be Worth $100,000. Time to Tell Your Child?"                                          
-#> [12] "Retirement in Florida? Tom Brady’s Next Move Might Be to the Super Bowl"                                       
-#> [13] "The Bills Rack Up Wins. Folding Tables Get Wrecked."                                                           
-#> [14] "Ted Thompson, who helped revive the Green Bay Packers, died at 68."                                            
-#> [15] "The Weekender: An Unexpected Benefit of Catnip"                                                                
-#> [16] "Did you follow the news this week? Take our quiz."                                                             
-#> [17] "Democrats, Here’s How to Lose in 2022. And Deserve It."                                                        
-#> [18] "What Happens When You Click ‘Agree’?"                                                                          
-#> [19] "Biden Must Reckon With Obama-Era Immigration Mistakes"                                                         
-#> [20] "Is an Innocent Man Still Languishing on Death Row?"                                                            
-#> [21] "Joe Biden’s Catholic Moment"                                                                                   
-#> [22] "The ‘Muslim Ban’ Is Over. The Harm Lives On."                                                                  
-#> [23] "A Final Interview With Hank Aaron: ‘I Recognized That I Had a Gift’"                                           
-#> [24] "America Has a GPS Problem"                                                                                     
-#> [25] "A Summit of Their Own: A Nepali Team Climbs K2"                                                                
-#> [26] "Hola, President Biden. Latin America Has a Message for You."                                                   
-#> [27] "Is There a Small Business That’s Special to You? We Want to Hear About It"                                     
-#> [28] "A Shot Above the Rest"                                                                                         
-#> [29] "Just Don’t Call Her a Ghostwriter"                                                                             
-#> [30] "Providence Kept Classrooms Open, and Students Came Back"                                                       
-#> [31] "Site Index"                                                                                                    
-#> [32] "Site Information Navigation"                                                                                   
-#> [33] "Capitol Riot Puts Spotlight on ‘Apocalyptically Minded’ Global Far Right"                                      
-#> [34] "Pennsylvania Lawmaker Played Key Role in Plot to Oust Attorney General"                                        
-#> [35] "How Democrats Planned for Doomsday Scenarios"                                                                  
-#> [36] "Rudolph Giuliani and Bill O’Reilly Still Have a Major N.Y. Platform"                                           
-#> [37] "A Texas man who stormed the Capitol threatened to assassinate Representative Alexandria Ocasio-Cortez."        
-#> [38] "Arizona Republicans voted to censure three of their own party’s most high-profile members."                    
-#> [39] "Opinion"                                                                                                       
-#> [40] "Editors’ Picks"                                                                                                
-#> [41] "Advertisement"
+#>  [1] "Listen to ‘The Sunday Read’"                                                                                             
+#>  [2] "In the ‘At Home’ Newsletter"                                                                                             
+#>  [3] "Listen to ‘Sway’ With Kara Swisher"                                                                                      
+#>  [4] "It’s 30 Degrees. Shall We Have Brunch Outdoors?"                                                                         
+#>  [5] "Why Vaccines Alone Will Not End the Pandemic"                                                                            
+#>  [6] "How Space Became the Next ‘Great Power’ Contest Between the U.S. and China"                                              
+#>  [7] "Here are five takeaways from the developing space war between China and the U.S."                                        
+#>  [8] "Capitol Riot Puts Spotlight on ‘Apocalyptically Minded’ Global Far Right"                                                
+#>  [9] "Divisions Harden in Senate as It Prepares to Receive Impeachment Article"                                                
+#> [10] "How Democrats Planned for Doomsday Scenarios"                                                                            
+#> [11] "In Biden’s Catholic Faith, an Ascendant Liberal Christianity"                                                            
+#> [12] "The Senate Isn’t What It Used to Be. Is President Biden Ready?"                                                          
+#> [13] "Trump Wants Back on Facebook. This Star-Studded Jury Might Let Him."                                                     
+#> [14] "Tom Brady Heads Back to Super Bowl With Buccaneers’ Win Over Packers"                                                    
+#> [15] "At 43, Tom Brady will be playing in his 10th Super Bowl, proving he can still compete at the highest level."             
+#> [16] "Analysis: Amid Protests, Kremlin Drops Its ‘Navalny Who?’ Tack"                                                          
+#> [17] "Pro-Navalny Protest Photos: Wave of Anger Rolls Across Russia"                                                           
+#> [18] "Hong Kong Crackdown Is an Early Test for Biden"                                                                          
+#> [19] "Avoiding the Obama-Era Silence Trap"                                                                                     
+#> [20] "My Language Is Dying, Too"                                                                                               
+#> [21] "Has China Done Too Well Against Covid-19?"                                                                               
+#> [22] "America’s Other Front Line"                                                                                              
+#> [23] "Democrats, Here’s How to Lose in 2022. And Deserve It."                                                                  
+#> [24] "America Has a GPS Problem"                                                                                               
+#> [25] "3 Million People Were Deported Under Obama. What Will Biden Do About It?"                                                
+#> [26] "Joe Biden’s Catholic Moment"                                                                                             
+#> [27] "What Happens When You Click ‘Agree’?"                                                                                    
+#> [28] "A Final Interview With Hank Aaron: ‘I Recognized That I Had a Gift’"                                                     
+#> [29] "How Can We Read Edith Wharton Today?"                                                                                    
+#> [30] "When Some Critics Reject the Film That’s About Your Life"                                                                
+#> [31] "A School District Vowed to Stay Open, Until Its Staffing Ran Out"                                                        
+#> [32] "Site Index"                                                                                                              
+#> [33] "Site Information Navigation"                                                                                             
+#> [34] "How West Virginia Became a U.S. Leader in Vaccine Rollout"                                                               
+#> [35] "Fauci on What Working for Trump Was Really Like"                                                                         
+#> [36] "Mexico’s President Is Latest World Leader Infected With the Virus"                                                       
+#> [37] "A virus variant that could be deadlier is a powerful argument that relaxing restrictions in Britain could be calamitous."
+#> [38] "Opinion"                                                                                                                 
+#> [39] "Editors’ Picks"                                                                                                          
+#> [40] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -244,7 +242,8 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> character(0)
+#> [1] "Trump Wants Back on Facebook. This Star-Studded Jury Might Let Him."
+#> [2] "Fauci on What Working for Trump Was Really Like"
 ```
 
 ## `paragraphs_scrap()`
@@ -257,8 +256,36 @@ Let’s get some paragraphs from the lovely
 
 ``` r
 paragraphs_scrap(link = "https://ropensci.org/")
-#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [ropensci.org] Operation timed out after 10000 milliseconds with 0 out of 0 bytes received
-#> [1] NA
+#>  [1] ""                                                                                                                                                                                                                                                                        
+#>  [2] "We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem"                                                                                                                           
+#>  [3] "Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages."                                                      
+#>  [4] "Workflow Tools for Your Code and Data"                                                                                                                                                                                                                                   
+#>  [5] "Get Data from the Web"                                                                                                                                                                                                                                                   
+#>  [6] "Convert and Munge Data"                                                                                                                                                                                                                                                  
+#>  [7] "Document and Release Your Data"                                                                                                                                                                                                                                          
+#>  [8] "Visualize Data"                                                                                                                                                                                                                                                          
+#>  [9] "Work with Databases From R"                                                                                                                                                                                                                                              
+#> [10] "Access, Manipulate, Convert Geospatial Data"                                                                                                                                                                                                                             
+#> [11] "Interact with Web Resources"                                                                                                                                                                                                                                             
+#> [12] "Use Image & Audio Data"                                                                                                                                                                                                                                                  
+#> [13] "Analyze Scientific Papers (and Text in General)"                                                                                                                                                                                                                         
+#> [14] "Secure Your Data and Workflow"                                                                                                                                                                                                                                           
+#> [15] "Handle and Transform Taxonomic Information"                                                                                                                                                                                                                              
+#> [16] "Get inspired by real examples of how our packages can be used."                                                                                                                                                                                                          
+#> [17] "Or browse scientific publications that cited our packages."                                                                                                                                                                                                              
+#> [18] "Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure."                                                             
+#> [19] "We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative & more efficient review process\n  "                                                                                                                      
+#> [20] "Based on best practices of software development and standards of R, its\napplications and user base."                                                                                                                                                                    
+#> [21] "Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reproducible science"                                                                                                                      
+#> [22] "We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process."
+#> [23] "Discover, learn and get involved in helping to shape the future of Data Science"                                                                                                                                                                                         
+#> [24] "Join in our quarterly Community Calls with fellow developers and scientists - open\nto all"                                                                                                                                                                              
+#> [25] "Upcoming events including meetings at which our team members are speaking."                                                                                                                                                                                              
+#> [26] "The latest developments from rOpenSci and the wider R community"                                                                                                                                                                                                         
+#> [27] "Release notes, updates and package related developements"                                                                                                                                                                                                                
+#> [28] "A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive."                                                                                                    
+#> [29] "Happy rOpenSci users can be found at"                                                                                                                                                                                                                                    
+#> [30] "Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"
 ```
 
 If needed, it’s possible to collapse the paragraphs into one bag of
