@@ -12,7 +12,7 @@
 downloads](https://cranlogs.r-pkg.org/badges/ralger)](https://cran.r-project.org/package=ralger)
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r-project.org/package=ralger)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
+<!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/) -->
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
 [![R
@@ -112,11 +112,28 @@ attributes <- attribute_scrap(link = "https://ropensci.org/",
                 attr = "class" # getting the class attribute
                 )  
 
-head(attributes, 10) # NA values are a tags without classes
+head(attributes, 10) # NA values are a tags without a class attribute
 #>  [1] "navbar-brand logo" "nav-link"          NA                 
 #>  [4] NA                  NA                  NA                 
 #>  [7] NA                  NA                  "nav-link"         
 #> [10] NA
+```
+
+Another example, let’s we want to get all javascript dependencies within
+the same web page:
+
+``` r
+js_depend <- attribute_scrap(link = "https://ropensci.org/", 
+                             node = "script", 
+                             attr = "src")
+
+js_depend
+#> [1] "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"                                                                                            
+#> [2] "https://d33wubrfki0l68.cloudfront.net/js/295d4ac8c96ee1aa9d251ad0e567140c0a2c95cf/scripts/matomo.js"                                                                
+#> [3] "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"                                                                                                  
+#> [4] "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"                                                                                               
+#> [5] "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"                                                                                             
+#> [6] "https://ropensci.org/common.min.a685190e216b8a11a01166455cd0dd959a01aafdcb2fa8ed14871dafeaa4cf22cec232184079e5b6ba7360b77b0ee721d070ad07a24b83d454a3caf7d1efe371.js"
 ```
 
 ## `table_scrap()`
@@ -136,7 +153,7 @@ head(data)
 #> 1    1                          Avengers: Endgame $2,797,800,564 2019
 #> 2    2                                     Avatar $2,790,439,092 2009
 #> 3    3                                    Titanic $2,471,754,307 1997
-#> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,133 2015
+#> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,310 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
 #> 6    6                             Jurassic World $1,670,471,444 2015
 ```
@@ -218,39 +235,40 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Listen to ‘The Daily’"                                                      
-#>  [2] "The Book Review Podcast"                                                    
-#>  [3] "Got a Confidential News Tip?"                                               
-#>  [4] "As Virus Grows Stealthier, Vaccine Makers Reconsider Battle Plans"          
-#>  [5] "California Lifts Stay-at-Home Orders in Much of the State"                  
-#>  [6] "Schools Were Set to Reopen. Then the Teachers’ Union Stepped In."           
-#>  [7] "Tired of Waiting on the City, Shelters Solved a Wi-Fi Problem Themselves"   
-#>  [8] "President Biden is vowing to reopen schools quickly. It won’t be easy."     
-#>  [9] "After the Capitol Was Stormed, Teachers Try Explaining History in Real Time"
-#> [10] "25 Great Writers and Thinkers Weigh In on Books That Matter"                
-#> [11] "Are We Ready for a Monday Without Trump?"                                   
-#> [12] "I’ve Said Goodbye to ‘Normal.’ You Should, Too."                            
-#> [13] "Something Special Just Happened in Russia"                                  
-#> [14] "Even for Bargain Hunters, Green Cars Make Sense"                            
-#> [15] "The Site Trump Could Run to Next"                                           
-#> [16] "How Parler Reveals the Alarming Trajectory of Political Violence"           
-#> [17] "The Trial of Donald Trump: The Sequel"                                      
-#> [18] "We Don’t Need Another War on Terror"                                        
-#> [19] "I Can’t Believe I Need to Say This, but We Need Schools More Than Bars"     
-#> [20] "Avoiding the Obama-Era Silence Trap"                                        
-#> [21] "How to Fix 4 Years of Trump’s War Against Government"                       
-#> [22] "Monitoring the Weather at the Edge of the World"                            
-#> [23] "The Talk of the Super Bowl Is Quarterbacks, Except One"                     
-#> [24] "Ninja, a Gaming Superstar, Has a Message for Parents"                       
-#> [25] "Site Index"                                                                 
-#> [26] "Site Information Navigation"                                                
-#> [27] "Justice Dept. Watchdog to Investigate Any Efforts to Undo Election"         
-#> [28] "New U.S. Strategy Would Quickly Free Billions in Climate Funds"             
-#> [29] "Transgender People Get a Long-Sought Chance to Enlist"                      
-#> [30] "A War Over Filibuster, a Stalling Tactic, Stops the Senate From the Start"  
-#> [31] "Opinion"                                                                    
-#> [32] "Editors’ Picks"                                                             
-#> [33] "Advertisement"
+#>  [1] "Listen to ‘The Daily’"                                                                                               
+#>  [2] "The Book Review Podcast"                                                                                             
+#>  [3] "Got a Confidential News Tip?"                                                                                        
+#>  [4] "A War Over Filibuster, a Stalling Tactic, Stops the Senate From the Start"                                           
+#>  [5] "Senator Rob Portman of Ohio, a Republican, said he would not seek re-election in 2022, opening a major battleground."
+#>  [6] "As Virus Grows Stealthier, Vaccine Makers Reconsider Battle Plans"                                                   
+#>  [7] "California Lifts Stay-at-Home Orders in Much of the State"                                                           
+#>  [8] "Sarah Huckabee Sanders Is Running for Office. Will Other Trump Allies?"                                              
+#>  [9] "Four Falsehoods Giuliani Spread About Dominion"                                                                      
+#> [10] "After the Capitol Was Stormed, Teachers Try Explaining History in Real Time"                                         
+#> [11] "25 Great Writers and Thinkers Weigh In on Books That Matter"                                                         
+#> [12] "Are We Ready for a Monday Without Trump?"                                                                            
+#> [13] "I’ve Said Goodbye to ‘Normal.’ You Should, Too."                                                                     
+#> [14] "Something Special Just Happened in Russia"                                                                           
+#> [15] "Even for Bargain Hunters, Green Cars Make Sense"                                                                     
+#> [16] "The Site Trump Could Run to Next"                                                                                    
+#> [17] "How Parler Reveals the Alarming Trajectory of Political Violence"                                                    
+#> [18] "The Trial of Donald Trump: The Sequel"                                                                               
+#> [19] "I Want to Call the Capitol Rioters ‘Terrorists.’ Here’s Why We Shouldn’t."                                           
+#> [20] "I Can’t Believe I Need to Say This, but We Need Schools More Than Bars"                                              
+#> [21] "Avoiding the Obama-Era Silence Trap"                                                                                 
+#> [22] "How to Fix 4 Years of Trump’s War Against Government"                                                                
+#> [23] "Those We’ve Lost"                                                                                                    
+#> [24] "Ninja, a Gaming Superstar, Has a Message for Parents"                                                                
+#> [25] "‘One Day, After Several Months of Not Stopping By, He Poked His Head In’"                                            
+#> [26] "Site Index"                                                                                                          
+#> [27] "Site Information Navigation"                                                                                         
+#> [28] "House Delivers Impeachment Charge Against Trump to Senate"                                                           
+#> [29] "Senate Confirms Yellen as Treasury Secretary as Stimulus Talks Loom"                                                 
+#> [30] "Biden Sets in Motion Plan to Ban New Oil and Gas Drilling on Federal Land"                                           
+#> [31] "Transgender People Get a Long-Sought Chance to Enlist"                                                               
+#> [32] "Opinion"                                                                                                             
+#> [33] "Editors’ Picks"                                                                                                      
+#> [34] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -258,10 +276,12 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "Are We Ready for a Monday Without Trump?"            
-#> [2] "The Site Trump Could Run to Next"                    
-#> [3] "The Trial of Donald Trump: The Sequel"               
-#> [4] "How to Fix 4 Years of Trump’s War Against Government"
+#> [1] "Sarah Huckabee Sanders Is Running for Office. Will Other Trump Allies?"
+#> [2] "Are We Ready for a Monday Without Trump?"                              
+#> [3] "The Site Trump Could Run to Next"                                      
+#> [4] "The Trial of Donald Trump: The Sequel"                                 
+#> [5] "How to Fix 4 Years of Trump’s War Against Government"                  
+#> [6] "House Delivers Impeachment Charge Against Trump to Senate"
 ```
 
 ## `paragraphs_scrap()`
@@ -356,8 +376,20 @@ Let’s say we want to list all the images from the official
 
 ``` r
 images_preview(link = "https://rstudio.com/")
-#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [rstudio.com] Resolving timed out after 10000 milliseconds
-#> [1] NA
+#>  [1] "https://dc.ads.linkedin.com/collect/?pid=218281&fmt=gif"                                                                       
+#>  [2] "https://www.facebook.com/tr?id=151855192184380&ev=PageView&noscript=1"                                                         
+#>  [3] "https://d33wubrfki0l68.cloudfront.net/08b39bfcd76ebaf8360ed9135a50a2348fe2ed83/75738/assets/img/logo-white.svg"                
+#>  [4] "https://d33wubrfki0l68.cloudfront.net/8bd479afc1037554e6218c41015a8e047b6af0f2/d1330/assets/img/libertymutual-logo-regular.png"
+#>  [5] "https://d33wubrfki0l68.cloudfront.net/089844d0e19d6176a5c8ddff682b3bf47dbcb3dc/9ba69/assets/img/walmart-logo.png"              
+#>  [6] "https://d33wubrfki0l68.cloudfront.net/a4ebff239e3de426fbb43c2e34159979f9214ce2/fabff/assets/img/janssen-logo-2.png"            
+#>  [7] "https://d33wubrfki0l68.cloudfront.net/6fc5a4a8c3fa96eaf7c2dc829416c31d5dbdb514/0a559/assets/img/accenture-logo.png"            
+#>  [8] "https://d33wubrfki0l68.cloudfront.net/d66c3b004735d83f205bc8a1c08dc39cc1ca5590/2b90b/assets/img/nasa-logo.png"                 
+#>  [9] "https://d33wubrfki0l68.cloudfront.net/521a038ed009b97bf73eb0a653b1cb7e66645231/8e3fd/assets/img/rstudio-icon.png"              
+#> [10] "https://d33wubrfki0l68.cloudfront.net/19dbfe44f79ee3249392a5effaa64e424785369e/91a7c/assets/img/connect-icon.png"              
+#> [11] "https://d33wubrfki0l68.cloudfront.net/edf453f69b61f156d1d303c9ebe42ba8dc05e58a/213d1/assets/img/icon-rspm.png"                 
+#> [12] "https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg"                      
+#> [13] "https://d33wubrfki0l68.cloudfront.net/9249ca7ba197318b488c0b295b94357694647802/6d33b/assets/img/logo-lockup.svg"               
+#> [14] "https://d33wubrfki0l68.cloudfront.net/30ef84abbbcfbd7b025671ae74131762844e90a1/3392d/assets/img/bcorps-logo.svg"
 ```
 
 `images_scrap()` on the other hand download the images. It takes the
@@ -399,15 +431,15 @@ images_noalt_scrap(link = "https://www.r-consortium.org/")
 #> [1] <img src="https://www.r-consortium.org/wp-content/themes/salient-child/images/logo_lf_projects_horizontal_2018.png">
 ```
 
-If not images without `alt` attributes are found, the function returns
+If no images without `alt` attributes are found, the function returns
 `NULL` and displays an indication message:
 
 ``` r
 # WebAim is the reference website for web accessibility
 
 images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
-#> Undefined Error: Error in open.connection(x, "rb"): Timeout was reached: [webaim.org] Resolving timed out after 10000 milliseconds
-#> [1] NA
+#> No images without 'alt' attribute found at: https://webaim.org/techniques/forms/controls
+#> NULL
 ```
 
 ## Code of Conduct

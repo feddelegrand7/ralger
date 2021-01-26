@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 [![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/ralger)](https://cran.r-project.org/package=ralger)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/ralger)](https://cran.r-project.org/package=ralger)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r-project.org/package=ralger)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
+<!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/) -->
 [![R badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
 [![R badge](https://img.shields.io/badge/-Sponsor-brightgreen)](https://www.buymeacoffee.com/Fodil)
 [![R build status](https://github.com/feddelegrand7/ralger/workflows/R-CMD-check/badge.svg)](https://github.com/feddelegrand7/ralger/actions)
@@ -102,11 +102,20 @@ attributes <- attribute_scrap(link = "https://ropensci.org/",
                 attr = "class" # getting the class attribute
                 )  
 
-head(attributes, 10) # NA values are a tags without classes
+head(attributes, 10) # NA values are a tags without a class attribute
 ```
 
+Another example, let's we want to get all javascript dependencies within the same web page: 
 
+```{r}
 
+js_depend <- attribute_scrap(link = "https://ropensci.org/", 
+                             node = "script", 
+                             attr = "src")
+
+js_depend
+
+```
 
 ## `table_scrap()`
 
@@ -290,7 +299,7 @@ images_scrap(link = "https://rstudio.com/",
 images_noalt_scrap(link = "https://www.r-consortium.org/")
 
 ```
-If not images without `alt` attributes are found, the function returns `NULL` and displays an indication message: 
+If no images without `alt` attributes are found, the function returns `NULL` and displays an indication message: 
 
 
 ```{r}
