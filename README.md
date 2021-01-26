@@ -55,7 +55,7 @@ library(ralger)
 
 my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- "#UniversityRanking a" # The class ID , we recommend SelectorGadget
+my_node <- "#UniversityRanking a" # The ID HTML attribute, SelectorGadget extension is recommanded
 
 best_uni <- scrap(link = my_link, node = my_node)
 
@@ -413,7 +413,7 @@ In the following example we extract all the `png` images from
 
 images_scrap(link = "https://rstudio.com/",
              imgpath = here::here("my_images"),
-             extn = "png") # without the .
+             extn = "png") # without the . (dot)
 ```
 
 # Accessibility related functions
@@ -441,7 +441,6 @@ images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
 #> No images without 'alt' attribute found at: https://webaim.org/techniques/forms/controls
 #> NULL
 ```
-
 ## Code of Conduct
 
 Please note that the ralger project is released with a [Contributor Code
