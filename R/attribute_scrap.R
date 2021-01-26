@@ -70,9 +70,7 @@ attribute_scrap <- function(link,
         }
       )
 
-      links <- unlist(links)
-
-      return(links)
+      return(unlist(links))
     },
 
     error = function(cond) {
