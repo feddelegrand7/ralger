@@ -6,3 +6,4 @@ Duration: 5m 12.9s
 
 + Adding the `attribute_scrap()` function. 
 + Adding the `images_noalt_scrap()` function.
++ I've added skip_on_cran on some tests that require an internet connexion and take an important amount of time to run. 
