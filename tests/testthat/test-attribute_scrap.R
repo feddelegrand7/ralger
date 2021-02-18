@@ -1,3 +1,6 @@
+testthat::skip_on_cran()
+
+
 test_that("attribute_scrap works similar to rvest", {
 
 

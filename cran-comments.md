@@ -6,4 +6,3 @@ Duration: 5m 12.9s
 
 + Adding the `attribute_scrap()` function. 
 + Adding the `images_noalt_scrap()` function.
-+ I've changed the URL used in some tests so that they don't fail when they hit `Timeout was reached`. 

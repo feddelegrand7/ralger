@@ -1,3 +1,4 @@
+testthat::skip_on_cran()
 
 
 test_that(desc = "errors when mandatory arguments missing", {

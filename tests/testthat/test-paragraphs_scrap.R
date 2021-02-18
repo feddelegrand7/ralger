@@ -1,3 +1,6 @@
+testthat::skip_on_cran()
+
+
 test_that("paragraphs_scrap() works", {
   expect_identical(
 

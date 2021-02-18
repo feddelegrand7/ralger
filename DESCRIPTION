@@ -17,7 +17,6 @@ VignetteBuilder: knitr
 Imports: 
     rvest,
     xml2,
-    testthat,
     tidyr,
     dplyr,
     stringr,
@@ -27,6 +26,7 @@ Imports:
     stringi
 Suggests: 
     knitr,
+    testthat,
     rmarkdown,
     covr
 RoxygenNote: 7.1.1
