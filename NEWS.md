@@ -2,6 +2,7 @@
 
 + Adding the `attribute_scrap()` 
 + Adding the `images_noalt_scrap()`
++ I've added skip_on_cran on some tests that require an internet connexion and take an important amount of time to run. 
 
 
 # ralger 2.2.1

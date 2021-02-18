@@ -59,7 +59,7 @@ library(ralger)
 
 my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- "#UniversityRanking a" # The class ID , we recommend SelectorGadget
+my_node <- "#UniversityRanking a" # The element ID , I recommend SelectorGadget if you're not familiar with CSS selectors
 
 best_uni <- scrap(link = my_link, node = my_node)
 
@@ -87,8 +87,6 @@ head(scrap(links, node), 10) # printing the first 10 speakers
 ```
 
 ## `attribute_scrap()`
-
-> Available only in the development version of the package
 
 If you need to scrape some elements' attributes, you can use the `attribute_scrap()` function as in the following example: 
 
@@ -289,7 +287,6 @@ images_scrap(link = "https://rstudio.com/",
 
 ## `images_noalt_scrap()` 
 
-> available only in the development version of the package
 
 `images_noalt_scrap()` can be used to get the images within a specific web page that don't have an `alt` attribute which can be annoying for people using a screen reader: 
 

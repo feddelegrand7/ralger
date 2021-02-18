@@ -55,7 +55,7 @@ library(ralger)
 
 my_link <- "http://www.shanghairanking.com/ARWU2020.html"
 
-my_node <- "#UniversityRanking a" # The ID HTML attribute, SelectorGadget extension is recommanded
+my_node <- "#UniversityRanking a" # The element ID , I recommend SelectorGadget if you're not familiar with CSS selectors
 
 best_uni <- scrap(link = my_link, node = my_node)
 
@@ -89,16 +89,10 @@ node <- ".mediablock__link"
 
 
 head(scrap(links, node), 10) # printing the first 10 speakers
-#>  [1] "Aaron Jacobs"              "Ahmadou Dicko"            
-#>  [3] "Alan Feder"                "Alex Cookson"             
-#>  [5] "Allison Horst"             "Andrew Ba Tran"           
-#>  [7] "Athanasia M. Mowinckel"    "Barret Schloerke"         
-#>  [9] "Carson Sievert"            "Chelsea Parlett-Pelleriti"
+#> character(0)
 ```
 
 ## `attribute_scrap()`
-
-> Available only in the development version of the package
 
 If you need to scrape some elements’ attributes, you can use the
 `attribute_scrap()` function as in the following example:
@@ -129,7 +123,7 @@ js_depend <- attribute_scrap(link = "https://ropensci.org/",
 
 js_depend
 #> [1] "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"                                                                                            
-#> [2] "https://d33wubrfki0l68.cloudfront.net/js/295d4ac8c96ee1aa9d251ad0e567140c0a2c95cf/scripts/matomo.js"                                                                
+#> [2] "/scripts/matomo.js"                                                                                                                                                 
 #> [3] "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"                                                                                                  
 #> [4] "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"                                                                                               
 #> [5] "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"                                                                                             
@@ -155,7 +149,7 @@ head(data)
 #> 3    3                                    Titanic $2,471,754,307 1997
 #> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,310 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
-#> 6    6                             Jurassic World $1,670,471,444 2015
+#> 6    6                             Jurassic World $1,670,516,444 2015
 ```
 
 **When you deal with a web page that contains many HTML table you can
@@ -235,40 +229,43 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Listen to ‘The Daily’"                                                                                               
-#>  [2] "The Book Review Podcast"                                                                                             
-#>  [3] "Got a Confidential News Tip?"                                                                                        
-#>  [4] "A War Over Filibuster, a Stalling Tactic, Stops the Senate From the Start"                                           
-#>  [5] "Senator Rob Portman of Ohio, a Republican, said he would not seek re-election in 2022, opening a major battleground."
-#>  [6] "As Virus Grows Stealthier, Vaccine Makers Reconsider Battle Plans"                                                   
-#>  [7] "California Lifts Stay-at-Home Orders in Much of the State"                                                           
-#>  [8] "Sarah Huckabee Sanders Is Running for Office. Will Other Trump Allies?"                                              
-#>  [9] "Four Falsehoods Giuliani Spread About Dominion"                                                                      
-#> [10] "After the Capitol Was Stormed, Teachers Try Explaining History in Real Time"                                         
-#> [11] "25 Great Writers and Thinkers Weigh In on Books That Matter"                                                         
-#> [12] "Are We Ready for a Monday Without Trump?"                                                                            
-#> [13] "I’ve Said Goodbye to ‘Normal.’ You Should, Too."                                                                     
-#> [14] "Something Special Just Happened in Russia"                                                                           
-#> [15] "Even for Bargain Hunters, Green Cars Make Sense"                                                                     
-#> [16] "The Site Trump Could Run to Next"                                                                                    
-#> [17] "How Parler Reveals the Alarming Trajectory of Political Violence"                                                    
-#> [18] "The Trial of Donald Trump: The Sequel"                                                                               
-#> [19] "I Want to Call the Capitol Rioters ‘Terrorists.’ Here’s Why We Shouldn’t."                                           
-#> [20] "I Can’t Believe I Need to Say This, but We Need Schools More Than Bars"                                              
-#> [21] "Avoiding the Obama-Era Silence Trap"                                                                                 
-#> [22] "How to Fix 4 Years of Trump’s War Against Government"                                                                
-#> [23] "Those We’ve Lost"                                                                                                    
-#> [24] "Ninja, a Gaming Superstar, Has a Message for Parents"                                                                
-#> [25] "‘One Day, After Several Months of Not Stopping By, He Poked His Head In’"                                            
-#> [26] "Site Index"                                                                                                          
-#> [27] "Site Information Navigation"                                                                                         
-#> [28] "House Delivers Impeachment Charge Against Trump to Senate"                                                           
-#> [29] "Senate Confirms Yellen as Treasury Secretary as Stimulus Talks Loom"                                                 
-#> [30] "Biden Sets in Motion Plan to Ban New Oil and Gas Drilling on Federal Land"                                           
-#> [31] "Transgender People Get a Long-Sought Chance to Enlist"                                                               
-#> [32] "Opinion"                                                                                                             
-#> [33] "Editors’ Picks"                                                                                                      
-#> [34] "Advertisement"
+#>  [1] "Listen to ‘Still Processing’"                                                                                         
+#>  [2] "Introducing ‘The Argument’ With Jane Coaston"                                                                         
+#>  [3] "DealBook D.C. Policy Project"                                                                                         
+#>  [4] "NASA Successfully Lands New Rover on Mars"                                                                            
+#>  [5] "Immigration Overhaul Would Offer 8-Year Path to Citizenship for Millions"                                             
+#>  [6] "Biden’s Plan to Link Arms With Europe Against Russia and China Isn’t So Simple"                                       
+#>  [7] "Manhattan D.A. Recruits Top Prosecutor for Trump Inquiry"                                                             
+#>  [8] "Grilled in Hearing, Robinhood Head Apologizes for Limiting GameStop Trades"                                           
+#>  [9] "Work Will Never Be the Same"                                                                                          
+#> [10] "As Israel Reopens, ‘Whoever Does Not Get Vaccinated Will Be Left Behind’"                                             
+#> [11] "Women Leaving Work Force in Pandemic Is ‘National Emergency,’ Harris Says"                                            
+#> [12] "After getting an early start to inoculations, Canadians are worrying as the country falls behind."                    
+#> [13] "A College Program for Disadvantaged Teens Could Shake Up Elite Admissions"                                            
+#> [14] "Pigeon Guys Face Tough Times: ‘Who Has the Money? Who Has the Roof?’"                                                 
+#> [15] "There’s One Big Problem With Electric Cars"                                                                           
+#> [16] "Texas, Land of Wind and Lies"                                                                                         
+#> [17] "Anti-Asian Racism Isn’t New"                                                                                          
+#> [18] "The Government Has Not Explained How These 13 People Were Selected to Die"                                            
+#> [19] "‘There’s No Natural Dignity in Work’"                                                                                 
+#> [20] "Don’t Go Down the Rabbit Hole"                                                                                        
+#> [21] "The Storm That Knocked Out Texas"                                                                                     
+#> [22] "Support the Resistance in Myanmar"                                                                                    
+#> [23] "The Real Story of the ‘Draft Riots’"                                                                                  
+#> [24] "No Parties. No Sports. How Oberlin College Is Surviving the Pandemic."                                                
+#> [25] "A Plan to Future-Proof the Texas Power Grid"                                                                          
+#> [26] "In L.A., a Health Food Store Has Become the Place to See and Be Seen"                                                 
+#> [27] "These Two LeBron James Cards Are Worth $7 Million"                                                                    
+#> [28] "Their Upper East Side Rental Was ‘Nearly Perfect.’ Until It Wasn’t."                                                  
+#> [29] "Site Index"                                                                                                           
+#> [30] "Site Information Navigation"                                                                                          
+#> [31] "As Power Begins to Return, Many Texans Lack Drinking Water"                                                           
+#> [32] "Texas Storms, California Heat Waves and ‘Vulnerable’ Utilities"                                                       
+#> [33] "We’re mapping the power outages and frigid temperatures across the nation."                                           
+#> [34] "Senator Ted Cruz left for Cancún as Texas was battered by a storm, sparking an outcry. He planned to return Thursday."
+#> [35] "Opinion"                                                                                                              
+#> [36] "Editors’ Picks"                                                                                                       
+#> [37] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -276,12 +273,7 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "Sarah Huckabee Sanders Is Running for Office. Will Other Trump Allies?"
-#> [2] "Are We Ready for a Monday Without Trump?"                              
-#> [3] "The Site Trump Could Run to Next"                                      
-#> [4] "The Trial of Donald Trump: The Sequel"                                 
-#> [5] "How to Fix 4 Years of Trump’s War Against Government"                  
-#> [6] "House Delivers Impeachment Charge Against Trump to Senate"
+#> [1] "Manhattan D.A. Recruits Top Prosecutor for Trump Inquiry"
 ```
 
 ## `paragraphs_scrap()`
@@ -413,14 +405,12 @@ In the following example we extract all the `png` images from
 
 images_scrap(link = "https://rstudio.com/",
              imgpath = here::here("my_images"),
-             extn = "png") # without the . (dot)
+             extn = "png") # without the .
 ```
 
 # Accessibility related functions
 
 ## `images_noalt_scrap()`
-
-> available only in the development version of the package
 
 `images_noalt_scrap()` can be used to get the images within a specific
 web page that don’t have an `alt` attribute which can be annoying for
@@ -441,6 +431,7 @@ images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
 #> No images without 'alt' attribute found at: https://webaim.org/techniques/forms/controls
 #> NULL
 ```
+
 ## Code of Conduct
 
 Please note that the ralger project is released with a [Contributor Code
