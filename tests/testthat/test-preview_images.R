@@ -1,7 +1,6 @@
 
 
 test_that("images_preview() return character", {
-  testthat::skip_on_cran()
   expect_type(object = images_preview(link = "https://rstudio.com/"),
               type = "character")
 

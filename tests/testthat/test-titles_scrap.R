@@ -1,19 +1,18 @@
 
 test_that("titles_scrap() works", {
 
-  testthat::skip_on_cran()
 
-  h1 <- "https://www.un.org/en/" %>%
+  h1 <- "https://rstudio.com/" %>%
     read_html() %>%
     html_nodes("h1") %>%
     html_text()
 
-  h2 <- "https://www.un.org/en/" %>%
+  h2 <- "https://rstudio.com/" %>%
     read_html() %>%
     html_nodes("h2") %>%
     html_text()
 
-  h3 <- "https://www.un.org/en/" %>%
+  h3 <- "https://rstudio.com/" %>%
     read_html() %>%
     html_nodes("h3") %>%
     html_text()
@@ -22,7 +21,7 @@ test_that("titles_scrap() works", {
   expect_equivalent(
 
 
-  titles_scrap("https://www.un.org/en/")
+  titles_scrap("https://rstudio.com/")
 
 
     ,
@@ -36,11 +35,11 @@ test_that("titles_scrap() works", {
 
   ###############################################################################
 
-  expect_type(titles_scrap("https://www.un.org/en/"),
+  expect_type(titles_scrap("https://rstudio.com/"),
               "character")
 
   ###############################################################################
 
-  expect_vector(titles_scrap("https://www.un.org/en/"))
+  expect_vector(titles_scrap("https://rstudio.com/"))
 
 })

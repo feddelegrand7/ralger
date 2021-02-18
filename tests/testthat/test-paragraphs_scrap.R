@@ -1,14 +1,12 @@
 test_that("paragraphs_scrap() works", {
 
-  testthat::skip_on_cran()
-
   expect_identical(
 
-    paragraphs_scrap(link = "https://www.un.org/en/")
+    paragraphs_scrap(link = "https://rstudio.com/")
 
     ,
 
-     "https://www.un.org/en/" %>%
+     "https://rstudio.com/" %>%
       read_html() %>%
       html_nodes("p") %>%
       html_text()
@@ -17,12 +15,12 @@ test_that("paragraphs_scrap() works", {
 
   ###############################################################################
 
-  expect_type(paragraphs_scrap(link = "https://www.un.org/en/"),
+  expect_type(paragraphs_scrap(link = "https://rstudio.com/"),
               "character")
 
   ###############################################################################
 
-  expect_vector(paragraphs_scrap(link = "https://www.un.org/en/"))
+  expect_vector(paragraphs_scrap(link = "https://rstudio.com/"))
 
 
   # expecting to throw an error if the 'link' parameter is missing
@@ -31,10 +29,10 @@ test_that("paragraphs_scrap() works", {
 
   # expecting an error if the 'contain' parameter is not a string
 
-  expect_error(paragraphs_scrap(link = "https://www.un.org/en/",
+  expect_error(paragraphs_scrap(link = "https://rstudio.com/",
                                 contain = 232342342))
 
-  expect_gte(length(paragraphs_scrap(link = "https://www.un.org/en/")),
+  expect_gte(length(paragraphs_scrap(link = "https://rstudio.com/")),
             1)
 
 

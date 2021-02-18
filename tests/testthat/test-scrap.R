@@ -1,6 +1,5 @@
 
 test_that("scrap() function", {
-testthat::skip_on_cran()
 
 expect_equal(
 

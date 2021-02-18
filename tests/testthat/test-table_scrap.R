@@ -1,8 +1,6 @@
 
 test_that("table_scrap() function", {
 
-testthat::skip_on_cran()
-
 expect_equal(
 
 
