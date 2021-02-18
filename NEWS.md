@@ -1,3 +1,9 @@
+# ralger 2.2.2
+
++ Adding the `attribute_scrap()` 
++ Adding the `images_noalt_scrap()`
+
+
 # ralger 2.2.1
 
 + Adding the `images_scrap()` function which allows the user to download images from a website
