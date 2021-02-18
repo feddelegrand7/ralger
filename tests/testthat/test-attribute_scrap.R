@@ -1,7 +1,7 @@
-testthat::skip_on_cran()
-
 
 test_that("attribute_scrap works similar to rvest", {
+
+  testthat::skip_on_cran()
 
 
   link <- "https://ropensci.org/"

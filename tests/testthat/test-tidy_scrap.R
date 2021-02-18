@@ -1,6 +1,7 @@
-testthat::skip_on_cran()
 
 test_that("tidy_scrap() function", {
+
+testthat::skip_on_cran()
 
   expect_equal(
     tidy_scrap(

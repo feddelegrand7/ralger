@@ -1,23 +1,24 @@
-testthat::skip_on_cran()
-
-
-h1 <- "https://www.un.org/en/" %>%
-  read_html() %>%
-  html_nodes("h1") %>%
-  html_text()
-
-h2 <- "https://www.un.org/en/" %>%
-  read_html() %>%
-  html_nodes("h2") %>%
-  html_text()
-
-h3 <- "https://www.un.org/en/" %>%
-  read_html() %>%
-  html_nodes("h3") %>%
-  html_text()
-
 
 test_that("titles_scrap() works", {
+
+  testthat::skip_on_cran()
+
+  h1 <- "https://www.un.org/en/" %>%
+    read_html() %>%
+    html_nodes("h1") %>%
+    html_text()
+
+  h2 <- "https://www.un.org/en/" %>%
+    read_html() %>%
+    html_nodes("h2") %>%
+    html_text()
+
+  h3 <- "https://www.un.org/en/" %>%
+    read_html() %>%
+    html_nodes("h3") %>%
+    html_text()
+
+
   expect_equivalent(
 
 
