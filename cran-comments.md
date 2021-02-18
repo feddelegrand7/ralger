@@ -6,3 +6,4 @@ Duration: 2m 51.6s
 
 + Adding the `attribute_scrap()` 
 + Adding the `images_noalt_scrap()`
++ I've changed the configuration of some tests so that they don't fail when they hit `Timeout was reached`. 
