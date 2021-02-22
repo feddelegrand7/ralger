@@ -1,6 +1,5 @@
 
 test_that("tidy_scrap() function", {
-
   expect_equal(
     tidy_scrap(
       link = "https://www.imdb.com/chart/top/",
