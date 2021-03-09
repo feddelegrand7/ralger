@@ -1,6 +1,7 @@
 
 test_that("titles_scrap() works", {
 
+  skip_on_cran()
 
   h1 <- "https://rstudio.com/" %>%
     read_html() %>%

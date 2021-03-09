@@ -1,6 +1,10 @@
 
 test_that("scrap() function", {
 
+
+  skip_on_cran()
+
+
 expect_equal(
 
   scrap(

@@ -1,6 +1,9 @@
 
 
 test_that("images_preview() return character", {
+
+  skip_on_cran()
+
   expect_type(object = images_preview(link = "https://rstudio.com/"),
               type = "character")
 
@@ -9,15 +12,19 @@ test_that("images_preview() return character", {
 ###########################################################
 
 test_that("images_preview() returns a vector", {
-  testthat::skip_on_cran()
+
+  skip_on_cran()
+
   expect_vector(object = images_preview(link = "https://rstudio.com/"))
 
 })
 
 
 test_that("images_preview() returns a vector of length superior or equal than 1", {
-testthat::skip_on_cran()
-expect_gte(length(images_preview(link = "https://rstudio.com/")), 1)
+
+  skip_on_cran()
+
+  expect_gte(length(images_preview(link = "https://rstudio.com/")), 1)
 
 })
 

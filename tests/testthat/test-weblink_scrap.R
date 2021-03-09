@@ -1,6 +1,9 @@
 
 test_that("weblink_scrap() function", {
 
+  skip_on_cran()
+
+
 expect_equal(
 
   weblink_scrap("https://www.worldbank.org/en/research")

@@ -1,6 +1,9 @@
 
 test_that("tidy_scrap() function", {
-  expect_equal(
+
+  skip_on_cran()
+
+    expect_equal(
     tidy_scrap(
       link = "https://www.imdb.com/chart/top/",
       nodes = ".titleColumn a",
@@ -19,6 +22,8 @@ test_that("tidy_scrap() function", {
   # expecting a data.frame output
 
   expect_s3_class(
+
+    skip_on_cran()
 
     tidy_scrap("https://www.imdb.com/chart/top/",
                c(".titleColumn a", "strong"),

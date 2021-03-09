@@ -1,5 +1,8 @@
 test_that("paragraphs_scrap() works", {
 
+  skip_on_cran()
+
+
   expect_identical(
 
     paragraphs_scrap(link = "https://rstudio.com/")

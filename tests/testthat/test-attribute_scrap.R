@@ -57,6 +57,8 @@ test_that("expect error when wrong parameters provided or missing", {
 
 test_that("expecting the function to return a character vector superior than 1", {
 
+  skip_on_cran()
+
   link <- "https://ropensci.org/"
 
   expect_type(attribute_scrap(link = link,
