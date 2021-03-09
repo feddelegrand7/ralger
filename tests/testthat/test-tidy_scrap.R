@@ -23,8 +23,6 @@ test_that("tidy_scrap() function", {
 
   expect_s3_class(
 
-    skip_on_cran()
-
     tidy_scrap("https://www.imdb.com/chart/top/",
                c(".titleColumn a", "strong"),
                c("title", "rating")),
