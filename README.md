@@ -5,14 +5,7 @@
 
 <!-- badges: start -->
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
-[![CRAN\_time\_from\_release](https://www.r-pkg.org/badges/ago/ralger)](https://cran.r-project.org/package=ralger)
-[![CRAN\_latest\_release\_date](https://www.r-pkg.org/badges/last-release/ralger)](https://cran.r-project.org/package=ralger)
-[![metacran
-downloads](https://cranlogs.r-pkg.org/badges/ralger)](https://cran.r-project.org/package=ralger)
-[![metacran
-downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r-project.org/package=ralger)
-<!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/) -->
+
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
 [![R
@@ -28,16 +21,6 @@ video tutorial, I gave a talk at useR2020, which you can find
 [here](https://www.youtube.com/watch?v=OHi6E8jegQg)
 
 ## Installation
-
-You can install the `ralger` package from
-[CRAN](https://cran.r-project.org/) with:
-
-``` r
-install.packages("ralger")
-```
-
-or you can install the development version from
-[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
