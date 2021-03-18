@@ -5,7 +5,14 @@
 
 <!-- badges: start -->
 
-
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
+[![CRAN\_time\_from\_release](https://www.r-pkg.org/badges/ago/ralger)](https://cran.r-project.org/package=ralger)
+[![CRAN\_latest\_release\_date](https://www.r-pkg.org/badges/last-release/ralger)](https://cran.r-project.org/package=ralger)
+[![metacran
+downloads](https://cranlogs.r-pkg.org/badges/ralger)](https://cran.r-project.org/package=ralger)
+[![metacran
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r-project.org/package=ralger)
+<!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/) -->
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
 [![R
@@ -21,6 +28,16 @@ video tutorial, I gave a talk at useR2020, which you can find
 [here](https://www.youtube.com/watch?v=OHi6E8jegQg)
 
 ## Installation
+
+You can install the `ralger` package from
+[CRAN](https://cran.r-project.org/) with:
+
+``` r
+install.packages("ralger")
+```
+
+or you can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -68,11 +85,14 @@ base_link <- "https://global.rstudio.com/student/catalog/list?category_ids=1796-
 
 links <- paste0(base_link, 1:3) # the speakers are listed from page 1 to 3
 
-node <- ".mediablock__link"
+node <- ".pr-1"
 
 
 head(scrap(links, node), 10) # printing the first 10 speakers
-#> character(0)
+#>  [1] "Hadley Wickham"    "Vicki Boykis"      "John Burn-Murdoch"
+#>  [4] "Matt Thomas, "     "Mike Page"         "Ahmadou Dicko"    
+#>  [7] "Shelmith Kariuki"  "Andrew Ba Tran"    "Michael Chow"     
+#> [10] "Sean Lopp"
 ```
 
 ## `attribute_scrap()`
@@ -92,7 +112,7 @@ attributes <- attribute_scrap(link = "https://ropensci.org/",
 head(attributes, 10) # NA values are a tags without a class attribute
 #>  [1] "navbar-brand logo" "nav-link"          NA                 
 #>  [4] NA                  NA                  NA                 
-#>  [7] NA                  NA                  "nav-link"         
+#>  [7] "nav-link"          NA                  "nav-link"         
 #> [10] NA
 ```
 
@@ -127,10 +147,10 @@ data <- table_scrap(link ="https://www.boxofficemojo.com/chart/top_lifetime_gros
 
 head(data)
 #>   Rank                                      Title Lifetime Gross Year
-#> 1    1                          Avengers: Endgame $2,797,800,564 2019
-#> 2    2                                     Avatar $2,790,439,092 2009
-#> 3    3                                    Titanic $2,471,754,307 1997
-#> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,454,310 2015
+#> 1    1                                     Avatar $2,810,779,794 2009
+#> 2    2                          Avengers: Endgame $2,797,501,328 2019
+#> 3    3                                    Titanic $2,201,647,264 1997
+#> 4    4 Star Wars: Episode VII - The Force Awakens $2,068,455,919 2015
 #> 5    5                     Avengers: Infinity War $2,048,359,754 2018
 #> 6    6                             Jurassic World $1,670,516,444 2015
 ```
@@ -212,43 +232,63 @@ easily extract the titles displayed within a specific web page :
 ``` r
 
 titles_scrap(link = "https://www.nytimes.com/")
-#>  [1] "Listen to ‘Still Processing’"                                                                                         
-#>  [2] "Introducing ‘The Argument’ With Jane Coaston"                                                                         
-#>  [3] "DealBook D.C. Policy Project"                                                                                         
-#>  [4] "NASA Successfully Lands New Rover on Mars"                                                                            
-#>  [5] "Immigration Overhaul Would Offer 8-Year Path to Citizenship for Millions"                                             
-#>  [6] "Biden’s Plan to Link Arms With Europe Against Russia and China Isn’t So Simple"                                       
-#>  [7] "Manhattan D.A. Recruits Top Prosecutor for Trump Inquiry"                                                             
-#>  [8] "Grilled in Hearing, Robinhood Head Apologizes for Limiting GameStop Trades"                                           
-#>  [9] "Work Will Never Be the Same"                                                                                          
-#> [10] "As Israel Reopens, ‘Whoever Does Not Get Vaccinated Will Be Left Behind’"                                             
-#> [11] "Women Leaving Work Force in Pandemic Is ‘National Emergency,’ Harris Says"                                            
-#> [12] "After getting an early start to inoculations, Canadians are worrying as the country falls behind."                    
-#> [13] "A College Program for Disadvantaged Teens Could Shake Up Elite Admissions"                                            
-#> [14] "Pigeon Guys Face Tough Times: ‘Who Has the Money? Who Has the Roof?’"                                                 
-#> [15] "There’s One Big Problem With Electric Cars"                                                                           
-#> [16] "Texas, Land of Wind and Lies"                                                                                         
-#> [17] "Anti-Asian Racism Isn’t New"                                                                                          
-#> [18] "The Government Has Not Explained How These 13 People Were Selected to Die"                                            
-#> [19] "‘There’s No Natural Dignity in Work’"                                                                                 
-#> [20] "Don’t Go Down the Rabbit Hole"                                                                                        
-#> [21] "The Storm That Knocked Out Texas"                                                                                     
-#> [22] "Support the Resistance in Myanmar"                                                                                    
-#> [23] "The Real Story of the ‘Draft Riots’"                                                                                  
-#> [24] "No Parties. No Sports. How Oberlin College Is Surviving the Pandemic."                                                
-#> [25] "A Plan to Future-Proof the Texas Power Grid"                                                                          
-#> [26] "In L.A., a Health Food Store Has Become the Place to See and Be Seen"                                                 
-#> [27] "These Two LeBron James Cards Are Worth $7 Million"                                                                    
-#> [28] "Their Upper East Side Rental Was ‘Nearly Perfect.’ Until It Wasn’t."                                                  
-#> [29] "Site Index"                                                                                                           
-#> [30] "Site Information Navigation"                                                                                          
-#> [31] "As Power Begins to Return, Many Texans Lack Drinking Water"                                                           
-#> [32] "Texas Storms, California Heat Waves and ‘Vulnerable’ Utilities"                                                       
-#> [33] "We’re mapping the power outages and frigid temperatures across the nation."                                           
-#> [34] "Senator Ted Cruz left for Cancún as Texas was battered by a storm, sparking an outcry. He planned to return Thursday."
-#> [35] "Opinion"                                                                                                              
-#> [36] "Editors’ Picks"                                                                                                       
-#> [37] "Advertisement"
+#>  [1] "Listen to ‘The Daily’"                                                                                  
+#>  [2] "How Covid Changed Us"                                                                                   
+#>  [3] "Got a Confidential News Tip?"                                                                           
+#>  [4] "Tracking the Coronavirus ›"                                                                             
+#>  [5] "Live"                                                                                                   
+#>  [6] "Economic Updates"                                                                                       
+#>  [7] "When the Filibuster Turns Deadly"                                                                       
+#>  [8] "The Nazi-Fighting Women of the Jewish Resistance"                                                       
+#>  [9] "Napoleon Isn’t a Hero to Celebrate"                                                                     
+#> [10] "Rising to the Challenge of China"                                                                       
+#> [11] "How to Counter the Republican Assault on Voting Rights"                                                 
+#> [12] "Biden Wants No Part of the Culture War the G.O.P. Loves"                                                
+#> [13] "Long Covid Is Not Rare. It’s a Health Crisis."                                                          
+#> [14] "Airbnb Has a Hate Group Problem, Too"                                                                   
+#> [15] "We Need Buses, Buses Everywhere"                                                                        
+#> [16] "Poverty as a Proxy for Race in Voter Suppression"                                                       
+#> [17] "I Brought My Mother Home to Ireland"                                                                    
+#> [18] "‘A Perfect World’ Around Every Miniature Bend"                                                          
+#> [19] "Should the American Theater Take French Lessons?"                                                       
+#> [20] "The Rocketman of San Sebastián"                                                                         
+#> [21] "Site Index"                                                                                             
+#> [22] "Site Information Navigation"                                                                            
+#> [23] "Georgia Killings Deepen Fears of Rising Anti-Asian Hate in U.S."                                        
+#> [24] "Suspect in Atlanta Spa Attacks Is Charged With 8 Counts of Murder"                                      
+#> [25] "The tragedy evoked a long history of violence against people of color and women."                       
+#> [26] "Why Are Hate Crime Charges Rare in Attacks Against Asian-Americans?"                                    
+#> [27] "As Biden and Xi Begin a Careful Dance, a New American Policy Takes Shape"                               
+#> [28] "Russia Erupts in Fury Over Biden’s Calling Putin a Killer"                                              
+#> [29] "The Intelligence on Russia Was Clear. It Was Not Always Presented That Way."                            
+#> [30] "North Korean Threat Forces Biden Into Balancing Act With China"                                         
+#> [31] "Senate Leader Stalls Climate Overhaul of Flood Insurance Program"                                       
+#> [32] "Tribal Communities Set to Receive Big New Infusion of Aid"                                              
+#> [33] "E.U. Drug Regulator Will Give Verdict on AstraZeneca Vaccine"                                           
+#> [34] "The majority of people who recover from Covid-19 remain shielded for at least six months, a study said."
+#> [35] "Risk in your area ›"                                                                                    
+#> [36] "U.S. vaccinations ›"                                                                                    
+#> [37] "Other trackers: \n            Choose your own places to track"                                          
+#> [38] "Other trackers:"                                                                                        
+#> [39] "U.S. hot spots ›"                                                                                       
+#> [40] "Worldwide ›"                                                                                            
+#> [41] "Vaccine tracker ›"                                                                                      
+#> [42] "Other trackers: \n            "                                                                         
+#> [43] "Other trackers:"                                                                                        
+#> [44] "U.S. hot spots ›"                                                                                       
+#> [45] "Worldwide ›"                                                                                            
+#> [46] "Vaccine tracker ›"                                                                                      
+#> [47] "Other trackers: \n            "                                                                         
+#> [48] "Other trackers:"                                                                                        
+#> [49] "Penny Stocks Are Booming, Which Is Good News for Swindlers"                                             
+#> [50] "Unemployment claims remain a distress signal, even as recovery takes hold."                             
+#> [51] "Ford to transition to partial-remote work for many employees after the pandemic."                       
+#> [52] "Biden administration subpoenas Chinese companies over their use of American data."                      
+#> [53] "Will Cuomo’s Scandals Pave the Way for New York’s First Female Mayor?"                                  
+#> [54] "What Happens When Our Faces Are Tracked Everywhere We Go?"                                              
+#> [55] "Opinion"                                                                                                
+#> [56] "Editors’ Picks"                                                                                         
+#> [57] "Advertisement"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -256,7 +296,7 @@ argument:
 
 ``` r
 titles_scrap(link = "https://www.nytimes.com/", contain = "TrUMp", case_sensitive = FALSE)
-#> [1] "Manhattan D.A. Recruits Top Prosecutor for Trump Inquiry"
+#> [1] "A declassified intelligence report showed that government agencies long knew of Russia’s work to aid Donald Trump."
 ```
 
 ## `paragraphs_scrap()`
@@ -296,7 +336,7 @@ paragraphs_scrap(link = "https://ropensci.org/")
 #> [25] "Upcoming events including meetings at which our team members are speaking."                                                                                                                                                                                              
 #> [26] "The latest developments from rOpenSci and the wider R community"                                                                                                                                                                                                         
 #> [27] "Release notes, updates and package related developements"                                                                                                                                                                                                                
-#> [28] "A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive."                                                                                                    
+#> [28] "A digest of R package and software review news, use cases, blog posts, and events, curated monthly. Subscribe to get it in your inbox, or check the archive."                                                                                                            
 #> [29] "Happy rOpenSci users can be found at"                                                                                                                                                                                                                                    
 #> [30] "Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"
 ```
@@ -306,7 +346,7 @@ words:
 
 ``` r
 paragraphs_scrap(link = "https://ropensci.org/", collapse = TRUE)
-#> [1] " We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages. Workflow Tools for Your Code and Data Get Data from the Web Convert and Munge Data Document and Release Your Data Visualize Data Work with Databases From R Access, Manipulate, Convert Geospatial Data Interact with Web Resources Use Image & Audio Data Analyze Scientific Papers (and Text in General) Secure Your Data and Workflow Handle and Transform Taxonomic Information Get inspired by real examples of how our packages can be used. Or browse scientific publications that cited our packages. Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure. We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative & more efficient review process\n   Based on best practices of software development and standards of R, its\napplications and user base. Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reproducible science We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process. Discover, learn and get involved in helping to shape the future of Data Science Join in our quarterly Community Calls with fellow developers and scientists - open\nto all Upcoming events including meetings at which our team members are speaking. The latest developments from rOpenSci and the wider R community Release notes, updates and package related developements A digest of R package and software review news, use cases, blog posts, and events, curated every two weeks. Subscribe to get it in your inbox, or check the archive. Happy rOpenSci users can be found at Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"
+#> [1] " We help develop R packages for the sciences via community driven learning, review and\nmaintenance of contributed software in the R ecosystem Use our carefully vetted, staff- and community-contributed R software tools that lower barriers to working with local and remote scientific data sources. Combine our tools with the rich ecosystem of R packages. Workflow Tools for Your Code and Data Get Data from the Web Convert and Munge Data Document and Release Your Data Visualize Data Work with Databases From R Access, Manipulate, Convert Geospatial Data Interact with Web Resources Use Image & Audio Data Analyze Scientific Papers (and Text in General) Secure Your Data and Workflow Handle and Transform Taxonomic Information Get inspired by real examples of how our packages can be used. Or browse scientific publications that cited our packages. Our suite of packages is comprised of contributions from staff engineers and the wider R\ncommunity via a transparent, constructive and open review process utilising GitHub's open\nsource infrastructure. We combine academic peer reviews with production software code reviews to create a\ntransparent, collaborative & more efficient review process\n   Based on best practices of software development and standards of R, its\napplications and user base. Our diverse community of academics, data scientists and developers provide a\nplatform for shared learning, collaboration and reproducible science We welcome you to join us and help improve tools and practices available to\nresearchers while receiving greater visibility to your contributions. You can\ncontribute with your packages, resources or post questions so our members will help\nyou along your process. Discover, learn and get involved in helping to shape the future of Data Science Join in our quarterly Community Calls with fellow developers and scientists - open\nto all Upcoming events including meetings at which our team members are speaking. The latest developments from rOpenSci and the wider R community Release notes, updates and package related developements A digest of R package and software review news, use cases, blog posts, and events, curated monthly. Subscribe to get it in your inbox, or check the archive. Happy rOpenSci users can be found at Except where otherwise noted, content on this site is licensed under the CC-BY license •\nPrivacy Policy"
 ```
 
 ## `weblink_scrap()`

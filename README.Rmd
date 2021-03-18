@@ -79,7 +79,7 @@ base_link <- "https://global.rstudio.com/student/catalog/list?category_ids=1796-
 
 links <- paste0(base_link, 1:3) # the speakers are listed from page 1 to 3
 
-node <- ".mediablock__link"
+node <- ".pr-1"
 
 
 head(scrap(links, node), 10) # printing the first 10 speakers
