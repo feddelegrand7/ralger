@@ -51,20 +51,21 @@ devtools::install_github("feddelegrand7/ralger")
 ```
 ## `scrap()`
 
-This is an example which shows how to extract [top ranked universities' names](http://www.shanghairanking.com/ARWU2020.html) according to the ShanghaiRanking Consultancy:
+This is an example which shows how to extract [top ranked universities' names](http://www.shanghairanking.com/rankings/arwu/2021) according to the ShanghaiRanking Consultancy:
 
 
 ```{r example}
 library(ralger)
 
-my_link <- "http://www.shanghairanking.com/ARWU2020.html"
+my_link <- "http://www.shanghairanking.com/rankings/arwu/2021"
 
-my_node <- "#UniversityRanking a" # The element ID , I recommend SelectorGadget if you're not familiar with CSS selectors
+my_node <- "a span" # The element ID , I recommend SelectorGadget if you're not familiar with CSS selectors
 
-best_uni <- scrap(link = my_link, node = my_node)
+clean <- TRUE # Should the function clean the extracted vector or not ? Default is FALSE
+
+best_uni <- scrap(link = my_link, node = my_node, clean = clean)
 
 head(best_uni, 10)
-
 
 ```
 
