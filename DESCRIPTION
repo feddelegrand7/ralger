@@ -4,17 +4,17 @@ Title: Easy Web Scraping
 Version: 2.2.4
 Authors@R: c(
     person("Mohamed El Fodil", "Ihaddaden", email = "ihaddaden.fodeil@gmail.com", role = c("aut", "cre")),
-    person("Ezekiel", "Ogundepo", role = c("ctb")), 
-    person("Romain", "François", email = "romain@purrple.cat", role = c("ctb"))) 
+    person("Ezekiel", "Ogundepo", role = c("ctb")),
+    person("Romain", "François", email = "romain@purrple.cat", role = c("ctb")))
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
-Description: The goal of 'ralger' is to facilitate web scraping in R. 
+Description: The goal of 'ralger' is to facilitate web scraping in R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/feddelegrand7/ralger
 BugReports: https://github.com/feddelegrand7/ralger/issues
 VignetteBuilder: knitr
-Imports: 
+Imports:
     rvest,
     xml2,
     tidyr,
@@ -24,7 +24,7 @@ Imports:
     crayon,
     curl,
     stringi
-Suggests: 
+Suggests:
     knitr,
     testthat,
     rmarkdown,
