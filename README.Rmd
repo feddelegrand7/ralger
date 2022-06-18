@@ -51,20 +51,21 @@ devtools::install_github("feddelegrand7/ralger")
 ```
 ## `scrap()`
 
-This is an example which shows how to extract [top ranked universities' names](http://www.shanghairanking.com/ARWU2020.html) according to the ShanghaiRanking Consultancy:
+This is an example which shows how to extract [top ranked universities' names](http://www.shanghairanking.com/rankings/arwu/2021) according to the ShanghaiRanking Consultancy:
 
 
 ```{r example}
 library(ralger)
 
-my_link <- "http://www.shanghairanking.com/ARWU2020.html"
+my_link <- "http://www.shanghairanking.com/rankings/arwu/2021"
 
-my_node <- "#UniversityRanking a" # The element ID , I recommend SelectorGadget if you're not familiar with CSS selectors
+my_node <- "a span" # The element ID , I recommend SelectorGadget if you're not familiar with CSS selectors
 
-best_uni <- scrap(link = my_link, node = my_node)
+clean <- TRUE # Should the function clean the extracted vector or not ? Default is FALSE
+
+best_uni <- scrap(link = my_link, node = my_node, clean = clean)
 
 head(best_uni, 10)
-
 
 ```
 
@@ -88,27 +89,27 @@ head(scrap(links, node), 10) # printing the first 10 speakers
 
 ## `attribute_scrap()`
 
-If you need to scrape some elements' attributes, you can use the `attribute_scrap()` function as in the following example: 
+If you need to scrape some elements' attributes, you can use the `attribute_scrap()` function as in the following example:
 
 
 ```{r}
 # Getting all classes' names from the anchor elements
-# from the ropensci website 
+# from the ropensci website
 
-attributes <- attribute_scrap(link = "https://ropensci.org/", 
+attributes <- attribute_scrap(link = "https://ropensci.org/",
                 node = "a", # the a tag
                 attr = "class" # getting the class attribute
-                )  
+                )
 
 head(attributes, 10) # NA values are a tags without a class attribute
 ```
 
-Another example, let's we want to get all javascript dependencies within the same web page: 
+Another example, let's we want to get all javascript dependencies within the same web page:
 
 ```{r}
 
-js_depend <- attribute_scrap(link = "https://ropensci.org/", 
-                             node = "script", 
+js_depend <- attribute_scrap(link = "https://ropensci.org/",
+                             node = "script",
                              attr = "src")
 
 js_depend
@@ -282,13 +283,13 @@ images_scrap(link = "https://rstudio.com/",
 ```
 
 
-# Accessibility related functions 
+# Accessibility related functions
 
 
-## `images_noalt_scrap()` 
+## `images_noalt_scrap()`
 
 
-`images_noalt_scrap()` can be used to get the images within a specific web page that don't have an `alt` attribute which can be annoying for people using a screen reader: 
+`images_noalt_scrap()` can be used to get the images within a specific web page that don't have an `alt` attribute which can be annoying for people using a screen reader:
 
 
 ```{r}
@@ -296,7 +297,7 @@ images_scrap(link = "https://rstudio.com/",
 images_noalt_scrap(link = "https://www.r-consortium.org/")
 
 ```
-If no images without `alt` attributes are found, the function returns `NULL` and displays an indication message: 
+If no images without `alt` attributes are found, the function returns `NULL` and displays an indication message:
 
 
 ```{r}
@@ -310,4 +311,3 @@ images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
 ## Code of Conduct
 
 Please note that the ralger project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
-

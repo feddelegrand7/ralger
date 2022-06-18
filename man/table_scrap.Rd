@@ -4,7 +4,7 @@
 \alias{table_scrap}
 \title{HTML table scraping}
 \usage{
-table_scrap(link, choose = 1, header = TRUE, fill = FALSE, askRobot = FALSE)
+table_scrap(link, choose = 1, header = TRUE, askRobot = FALSE)
 }
 \arguments{
 \item{link}{the link of the web page containing the table to scrape}
@@ -12,8 +12,6 @@ table_scrap(link, choose = 1, header = TRUE, fill = FALSE, askRobot = FALSE)
 \item{choose}{an integer indicating which table to scrape}
 
 \item{header}{do you want the first line to be the leader (default to TRUE)}
-
-\item{fill}{logical. Should be set to TRUE when the table has an inconsistent number of columns.}
 
 \item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.}
 }
