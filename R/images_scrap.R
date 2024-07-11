@@ -9,7 +9,7 @@
 #'
 #' @examples \dontrun{
 #'
-#' images_scrap(link = "https://rstudio.com/", extn = "png")
+#' images_scrap(link = "https://posit.co/", extn = "jpg")
 #'
 #' }
 #'

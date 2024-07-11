@@ -12,11 +12,9 @@
 #' @examples
 #' \donttest{
 #' # Extracting imdb top 250 movie titles
-#'
-#' link <- "https://www.imdb.com/chart/top/"
-#' node <- ".titleColumn a"
-#'
-#' scrap(link, node)
+#'   link <- "https://www.imdb.com/chart/top/"
+#'   node <- "h3.ipc-title__text"
+#'   scrap(link, node)
 #' }
 #'
 #' @export
