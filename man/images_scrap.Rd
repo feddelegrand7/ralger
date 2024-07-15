@@ -16,7 +16,7 @@ images_scrap(link, imgpath = getwd(), extn, askRobot = FALSE)
 \item{askRobot}{logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.}
 }
 \value{
-Images
+called for the side effect of downloading images
 }
 \description{
 Scrape Images from a Web Page
@@ -24,7 +24,7 @@ Scrape Images from a Web Page
 \examples{
 \dontrun{
 
-images_scrap(link = "https://rstudio.com/", extn = "png")
+images_scrap(link = "https://posit.co/", extn = "jpg")
 
 }
 

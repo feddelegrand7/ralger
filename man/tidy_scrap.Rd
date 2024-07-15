@@ -26,11 +26,10 @@ This function is used to scrape a tibble from a website.
 \examples{
 \donttest{
 # Extracting imdb movie titles and rating
-
 link     <- "https://www.imdb.com/chart/top/"
-my_nodes <- c(".titleColumn a", "strong")
+my_nodes <- c("a > h3.ipc-title__text", "span.ratingGroup--imdb-rating")
 names    <- c("title", "rating")
-
-tidy_scrap(link, my_nodes, names)}
+tidy_scrap(link, my_nodes, names)
+}
 
 }

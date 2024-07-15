@@ -5,7 +5,7 @@
 #' @param extn the extension of the image: png, jpeg ...
 #' @param askRobot logical. Should the function ask the robots.txt if we're allowed or not to scrape the web page ? Default is FALSE.
 #'
-#' @return Images
+#' @return called for the side effect of downloading images
 #'
 #' @examples \dontrun{
 #'
