@@ -12,12 +12,11 @@
 #' @return a tidy data frame.
 #' @examples \donttest{
 #' # Extracting imdb movie titles and rating
-#'
-#' link     <- "https://www.imdb.com/chart/top/"
-#' my_nodes <- c(".titleColumn a", "strong")
-#' names    <- c("title", "rating")
-#'
-#' tidy_scrap(link, my_nodes, names)}
+#'link     <- "https://www.imdb.com/chart/top/"
+#'my_nodes <- c("a > h3.ipc-title__text", "span.ratingGroup--imdb-rating")
+#'names    <- c("title", "rating")
+#'tidy_scrap(link, my_nodes, names)
+#' }
 #'
 #' @export
 #' @importFrom rvest html_nodes html_text %>%
