@@ -120,7 +120,7 @@
 #' @export
 #'
 
-pdfs_scrap <- function(
+pdf_scrap <- function(
   link,
   path = getwd(),
   askRobot = FALSE
