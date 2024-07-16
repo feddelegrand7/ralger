@@ -24,7 +24,8 @@ Imports:
     crayon,
     curl,
     stringi,
-    urltools (>= 1.7.3)
+    urltools (>= 1.7.3),
+    purrr (>= 1.0.2)
 Suggests:
     knitr,
     testthat,

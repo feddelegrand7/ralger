@@ -8,8 +8,6 @@
   base_url
 }
 
-
-
 .format_url <- function(file_url, link) {
 
   if (grepl("^http", file_url)) {
@@ -135,7 +133,6 @@ pdf_scrap <- function(
 
 }
 
-
 #' Scrape and download Excel xlsx files from a Web Page
 #'
 #' @param link the link of the web page
@@ -146,7 +143,7 @@ pdf_scrap <- function(
 #' @export
 #' @examples \dontrun{
 #'
-#' excel_scrap(
+#' xlsx_scrap(
 #' link = "https://www.rieter.com/investor-relations/results-and-presentations/financial-statements"
 #' )
 #'
@@ -191,7 +188,6 @@ xls_scrap <- function(
   )
 
 }
-
 
 
 #' Scrape and download CSV files from a Web Page

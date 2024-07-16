@@ -1,3 +1,10 @@
+# ralger 2.3.0
+### Adding new functionalities: 
+- `pdf_scrap`
+- `xls_scrap`
+- `xlsx_scrap`
+- `csv_scrap`
+
 # ralger 2.2.4
 
 # ralger 2.2.3
