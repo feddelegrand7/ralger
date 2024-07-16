@@ -99,7 +99,7 @@ images_scrap <- function(link,
     for (i in seq_along(img_urls_f)) {
 
       download.file(img_urls_f[i],
-                    destfile = basename(img_urls_f[i]),
+                    destfile = paste0(imgpath, "/", basename(img_urls_f[i])),
                     mode = "wb")
 
     }

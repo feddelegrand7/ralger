@@ -51,13 +51,11 @@
         }
       }
 
-
     )
 
   }
 
 }
-
 
 
 #' Scrape and download pdf files from a Web Page
