@@ -96,6 +96,17 @@ images_scrap <- function(link,
                                   x = img_urls_unlist,
                                   ignore.case = FALSE)]
 
+    if (length(img_urls_f) == 0) {
+      message("No image has been found. Returning NULL")
+      return(invisible(NULL))
+    }
+
+    img_urls_f <- purrr::map_chr(
+      img_urls_f,
+      .format_url,
+      link = link
+    )
+
     for (i in seq_along(img_urls_f)) {
 
       download.file(img_urls_f[i],

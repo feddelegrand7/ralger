@@ -79,6 +79,7 @@ paragraphs_scrap <- function(link,
       return(paste(data, collapse = " "))
 
     } else if (!is.null(contain) & collapse == FALSE) {
+
       return(data[grepl(contain,
                         data,
                         ignore.case = !case_sensitive)])

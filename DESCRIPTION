@@ -23,7 +23,8 @@ Imports:
     robotstxt,
     crayon,
     curl,
-    stringi
+    stringi,
+    urltools (>= 1.7.3)
 Suggests:
     knitr,
     testthat,
