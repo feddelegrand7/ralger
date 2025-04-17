@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-<iframe src="https://github.com/sponsors/feddelegrand7/button" title="Sponsor feddelegrand7" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
-
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ralger)](https://cran.r-project.org/package=ralger)
 [![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/ralger)](https://cran.r-project.org/package=ralger)
 [![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/ralger)](https://cran.r-project.org/package=ralger)
