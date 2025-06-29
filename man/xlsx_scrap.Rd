@@ -22,7 +22,7 @@ Scrape and download Excel xlsx files from a Web Page
 \examples{
 \dontrun{
 
-excel_scrap(
+xlsx_scrap(
 link = "https://www.rieter.com/investor-relations/results-and-presentations/financial-statements"
 )
 

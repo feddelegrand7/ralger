@@ -67,7 +67,6 @@ weblink_scrap <- function(link,
 
       links <- unlist(links)
 
-
       if (is.null(contain)) {
         return(links)
       } else {

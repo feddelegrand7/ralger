@@ -48,6 +48,11 @@
     contain = ext
   )
 
+  if (length(urls_containing_files) == 1 && is.na(urls_containing_files)) {
+    message("No file has been found. Returning NULL.")
+    return(NULL)
+  }
+
   files_to_consider <- urls_containing_files %>%
     purrr::keep(function(x) {
       tolower(tools::file_ext(x)) == ext
@@ -55,9 +60,8 @@
 
   if (length(files_to_consider) == 0) {
     message("No file has been found. Returning NULL.")
-    return(invisible(NULL))
+    return(NULL)
   }
-
 
   files_to_consider <- purrr::map_chr(
     files_to_consider,
