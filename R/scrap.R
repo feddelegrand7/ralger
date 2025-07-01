@@ -32,8 +32,6 @@ scrap <- function(link,
                   node,
                   clean = FALSE,
                   askRobot = FALSE) {
-
-
   # returns an error if either link or node are not provided
   if (missing(link) || missing(node)) {
     stop("'link' and 'node' are mandatory parameters")
@@ -59,21 +57,23 @@ scrap <- function(link,
 
   tryCatch(
     expr = {
-      data <- lapply(
-        link,
-        function(url) {
-          url %>%
-            read_html() %>%
-            html_nodes(node) %>%
-            html_text()
-        }
-      )
+      data <- lapply(link,
+                     function(url) {
+                       url %>%
+                         read_html() %>%
+                         html_nodes(node) %>%
+                         html_text()
+                     })
 
       if (!clean) {
         return(stri_remove_empty(unlist(data)))
       } else {
         stri_remove_empty(unlist(data)) %>%
-          str_replace_all(c("\n" = " ", "\r" = " ", "\t" = " ")) %>%
+          str_replace_all(c(
+            "\n" = " ",
+            "\r" = " ",
+            "\t" = " "
+          )) %>%
           str_trim()
       }
     },
@@ -83,7 +83,8 @@ scrap <- function(link,
         message(paste0("Please check your internet connexion: ", cond))
 
         return(NA)
-      } else if (grepl("current working directory", cond) || grepl("HTTP error 404", cond)) {
+      } else if (grepl("current working directory", cond) ||
+                 grepl("HTTP error 404", cond)) {
         message(paste0("The URL doesn't seem to be a valid one: ", link))
 
         message(paste0("Here the original error message: ", cond))

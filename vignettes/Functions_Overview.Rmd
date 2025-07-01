@@ -14,8 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-
 The goal of **ralger** is to facilitate web scraping in R. For a quick video tutorial, I gave a talk at useR2020, which you can find [here](https://www.youtube.com/watch?v=OHi6E8jegQg)
 
 ## Installation
@@ -218,7 +216,7 @@ head(links)
 
 `images_preview()` allows you to scrape the URLs of the images available within a web page so that you can choose which images __extension__ (see below) you want to focus on.
 
-Let's say we want to list all the images from the official [RStudio](https://rstudio.com/) website:
+Let's say we want to list all the images from the official [Posit](https://posit.co/) website:
 
 
 ```{r}
@@ -237,9 +235,6 @@ head(imgs)
 + **extn**: the extension of the image: jpg, png, jpeg ... among others;
 
 + **askRobot**: ask the robots.txt file if it's permitted to scrape the web page.
-
-
-In the following example we extract all the `png` images from [RStudio](https://rstudio.com/)  :
 
 
 ```{r, eval=FALSE}
@@ -314,6 +309,7 @@ If no images without `alt` attributes are found, the function returns `NULL` and
 
 images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
 ```
+
 
 
 ## Code of Conduct

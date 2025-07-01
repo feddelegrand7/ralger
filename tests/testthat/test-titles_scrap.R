@@ -3,17 +3,17 @@ test_that("titles_scrap() works", {
 
   skip_on_cran()
 
-  h1 <- "https://rstudio.com/" %>%
+  h1 <- "https://posit.co/" %>%
     read_html() %>%
     html_nodes("h1") %>%
     html_text()
 
-  h2 <- "https://rstudio.com/" %>%
+  h2 <- "https://posit.co/" %>%
     read_html() %>%
     html_nodes("h2") %>%
     html_text()
 
-  h3 <- "https://rstudio.com/" %>%
+  h3 <- "https://posit.co/" %>%
     read_html() %>%
     html_nodes("h3") %>%
     html_text()
@@ -22,7 +22,7 @@ test_that("titles_scrap() works", {
   expect_equivalent(
 
 
-  titles_scrap("https://rstudio.com/")
+  titles_scrap("https://posit.co/")
 
 
     ,
@@ -36,11 +36,11 @@ test_that("titles_scrap() works", {
 
   ###############################################################################
 
-  expect_type(titles_scrap("https://rstudio.com/"),
+  expect_type(titles_scrap("https://posit.co/"),
               "character")
 
   ###############################################################################
 
-  expect_vector(titles_scrap("https://rstudio.com/"))
+  expect_vector(titles_scrap("https://posit.co/"))
 
 })

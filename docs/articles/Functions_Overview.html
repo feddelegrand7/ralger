@@ -315,9 +315,9 @@ web page :</p>
 <span><span class="va">titles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">titles</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "New York Times - Top Stories" "What to Watch and Read"      </span></span>
-<span><span class="co">#&gt; [3] "More News"                    "The AthleticSports coverage" </span></span>
-<span><span class="co">#&gt; [5] "Well"                         "Culture and Lifestyle"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "New York Times - Top Stories"        "More News"                          </span></span>
+<span><span class="co">#&gt; [3] "The AthleticSports coverage"         "Well"                               </span></span>
+<span><span class="co">#&gt; [5] "Culture and Lifestyle"               "AudioPodcasts and narrated articles"</span></span></code></pre></div>
 <p>Further, it’s possible to filter the results using the
 <code>contain</code> argument:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
@@ -382,7 +382,7 @@ the available PDFs:</p>
 <p><code><a href="../reference/images_preview.html">images_preview()</a></code> allows you to scrape the URLs of the
 images available within a web page so that you can choose which images
 <strong>extension</strong> (see below) you want to focus on.</p>
-<p>Let’s say we want to list all the images from the official <a href="https://rstudio.com/" class="external-link">RStudio</a> website:</p>
+<p>Let’s say we want to list all the images from the official <a href="https://posit.co/" class="external-link">Posit</a> website:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">imgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/images_preview.html">images_preview</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://posit.co/"</span><span class="op">)</span></span>
@@ -405,8 +405,6 @@ It defaults to <code><a href="https://rdrr.io/r/base/getwd.html" class="external
 <li><p><strong>askRobot</strong>: ask the robots.txt file if it’s
 permitted to scrape the web page.</p></li>
 </ul>
-<p>In the following example we extract all the <code>png</code> images
-from <a href="https://rstudio.com/" class="external-link">RStudio</a> :</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Suppose we're in a project which has a folder called my_images:</span></span>
 <span><span class="fu"><a href="../reference/images_scrap.html">images_scrap</a></span><span class="op">(</span></span>

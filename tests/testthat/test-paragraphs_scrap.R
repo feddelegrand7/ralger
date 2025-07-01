@@ -5,11 +5,11 @@ test_that("paragraphs_scrap() works", {
 
   expect_identical(
 
-    paragraphs_scrap(link = "https://rstudio.com/")
+    paragraphs_scrap(link = "https://posit.co/")
 
     ,
 
-     "https://rstudio.com/" %>%
+     "https://posit.co/" %>%
       read_html() %>%
       html_nodes("p") %>%
       html_text()
@@ -18,12 +18,12 @@ test_that("paragraphs_scrap() works", {
 
   ###############################################################################
 
-  expect_type(paragraphs_scrap(link = "https://rstudio.com/"),
+  expect_type(paragraphs_scrap(link = "https://posit.co/"),
               "character")
 
   ###############################################################################
 
-  expect_vector(paragraphs_scrap(link = "https://rstudio.com/"))
+  expect_vector(paragraphs_scrap(link = "https://posit.co/"))
 
 
   # expecting to throw an error if the 'link' parameter is missing
@@ -32,10 +32,10 @@ test_that("paragraphs_scrap() works", {
 
   # expecting an error if the 'contain' parameter is not a string
 
-  expect_error(paragraphs_scrap(link = "https://rstudio.com/",
+  expect_error(paragraphs_scrap(link = "https://posit.co/",
                                 contain = 232342342))
 
-  expect_gte(length(paragraphs_scrap(link = "https://rstudio.com/")),
+  expect_gte(length(paragraphs_scrap(link = "https://posit.co/")),
             1)
 
 
