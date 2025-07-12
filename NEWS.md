@@ -4,6 +4,7 @@
 - `xls_scrap`
 - `xlsx_scrap`
 - `csv_scrap`
+- `comments_scrap`
 
 # ralger 2.2.4
 

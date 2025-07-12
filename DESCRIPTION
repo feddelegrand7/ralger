@@ -1,7 +1,7 @@
 Package: ralger
 Type: Package
 Title: Easy Web Scraping
-Version: 2.2.4
+Version: 2.3.0
 Authors@R: c(
     person("Mohamed El Fodil", "Ihaddaden", email = "ihaddaden.fodeil@gmail.com", role = c("aut", "cre")),
     person("Ezekiel", "Ogundepo", role = c("ctb")),

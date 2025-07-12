@@ -15,12 +15,10 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/ralger)](https://cran.r
 <!-- [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/) -->
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/ralger)
-[![R
-badge](https://img.shields.io/badge/-Sponsor-brightgreen)](https://www.buymeacoffee.com/Fodil)
+
 [![R build
 status](https://github.com/feddelegrand7/ralger/workflows/R-CMD-check/badge.svg)](https://github.com/feddelegrand7/ralger/actions)
-[![Codecov test
-coverage](https://codecov.io/gh/feddelegrand7/ralger/branch/master/graph/badge.svg)](https://codecov.io/gh/feddelegrand7/ralger?branch=master)
+
 <!-- badges: end -->
 
 The goal of **ralger** is to facilitate web scraping in R. For a quick
@@ -248,9 +246,9 @@ easily extract the titles displayed within a specific web page :
 titles <- titles_scrap(link = "https://www.nytimes.com/")
 
 head(titles)
-#> [1] "New York Times - Top Stories"        "More News"                          
-#> [3] "The AthleticSports coverage"         "Well"                               
-#> [5] "Culture and Lifestyle"               "AudioPodcasts and narrated articles"
+#> [1] "New York Times - Top Stories" "What to Watch and Read"      
+#> [3] "More News"                    "The AthleticSports coverage" 
+#> [5] "Well"                         "Culture and Lifestyle"
 ```
 
 Further, it’s possible to filter the results using the `contain`
@@ -399,6 +397,20 @@ xls_scrap(
 )
 ```
 
+## `comments_scrap()`
+
+Useful when you want to extract the `HTML` comments within a webpage:
+
+``` r
+head(comments_scrap("https://posit.co"))
+#> [1] "<!-- Start VWO Common Smartcode -->"                                                                       
+#> [2] "<!-- End VWO Common Smartcode -->"                                                                         
+#> [3] "<!-- Start VWO Async SmartCode -->"                                                                        
+#> [4] "<!-- End VWO Async SmartCode -->"                                                                          
+#> [5] "<!-- This site is optimized with the Yoast SEO plugin v25.2 - https://yoast.com/wordpress/plugins/seo/ -->"
+#> [6] "<!-- / Yoast SEO plugin. -->"
+```
+
 # Accessibility related functions
 
 ## `images_noalt_scrap()`
@@ -410,9 +422,8 @@ people using a screen reader:
 ``` r
 
 images_noalt_scrap(link = "https://www.r-consortium.org/")
-#> [1] <img loading="lazy" src="./posts/r-consortium-awards-first-round-of-2025-isc-grants/isc-grantees-2025-1.png" class="thumbnail-image card-img" style="height: 150px;">                          
-#> [2] <img loading="lazy" src="./posts/exploring-kuzco-making-computer-vision-for-r-easily-accessible/frankthull.png" class="thumbnail-image card-img" style="height: 150px;">                       
-#> [3] <img loading="lazy" src="./posts/quantifying-participation-risk-with-r-and-r-shiny-a-new-frontier-in-financial-risk-modeling/demo.png" class="thumbnail-image card-img" style="height: 150px;">
+#> No images without 'alt' attribute found at: https://www.r-consortium.org/
+#> NULL
 ```
 
 If no images without `alt` attributes are found, the function returns

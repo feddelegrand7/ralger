@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ralger</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.0</span>
       </span>
     </div>
 
@@ -315,9 +315,9 @@ web page :</p>
 <span><span class="va">titles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/titles_scrap.html">titles_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.nytimes.com/"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">titles</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "New York Times - Top Stories"        "More News"                          </span></span>
-<span><span class="co">#&gt; [3] "The AthleticSports coverage"         "Well"                               </span></span>
-<span><span class="co">#&gt; [5] "Culture and Lifestyle"               "AudioPodcasts and narrated articles"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "New York Times - Top Stories" "What to Watch and Read"      </span></span>
+<span><span class="co">#&gt; [3] "More News"                    "The AthleticSports coverage" </span></span>
+<span><span class="co">#&gt; [5] "Well"                         "Culture and Lifestyle"</span></span></code></pre></div>
 <p>Further, it’s possible to filter the results using the
 <code>contain</code> argument:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
@@ -470,9 +470,8 @@ which can be annoying for people using a screen reader:</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/images_noalt_scrap.html">images_noalt_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://www.r-consortium.org/"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] &lt;img loading="lazy" src="./posts/r-consortium-awards-first-round-of-2025-isc-grants/isc-grantees-2025-1.png" class="thumbnail-image card-img" style="height: 150px;"&gt;                          </span></span>
-<span><span class="co">#&gt; [2] &lt;img loading="lazy" src="./posts/exploring-kuzco-making-computer-vision-for-r-easily-accessible/frankthull.png" class="thumbnail-image card-img" style="height: 150px;"&gt;                       </span></span>
-<span><span class="co">#&gt; [3] &lt;img loading="lazy" src="./posts/quantifying-participation-risk-with-r-and-r-shiny-a-new-frontier-in-financial-risk-modeling/demo.png" class="thumbnail-image card-img" style="height: 150px;"&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; No images without 'alt' attribute found at: https://www.r-consortium.org/</span></span>
+<span><span class="co">#&gt; NULL</span></span></code></pre></div>
 <p>If no images without <code>alt</code> attributes are found, the
 function returns <code>NULL</code> and displays an indication
 message:</p>
@@ -482,6 +481,21 @@ message:</p>
 <span><span class="fu"><a href="../reference/images_noalt_scrap.html">images_noalt_scrap</a></span><span class="op">(</span>link <span class="op">=</span> <span class="st">"https://webaim.org/techniques/forms/controls"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; No images without 'alt' attribute found at: https://webaim.org/techniques/forms/controls</span></span>
 <span><span class="co">#&gt; NULL</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="comments_scrap">
+<code>comments_scrap()</code><a class="anchor" aria-label="anchor" href="#comments_scrap"></a>
+</h3>
+<p>Useful when you want to extract the <code>HTML</code> comments within
+a webpage:</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/comments_scrap.html">comments_scrap</a></span><span class="op">(</span><span class="st">"https://posit.co"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "&lt;!-- Start VWO Common Smartcode --&gt;"                                                                       </span></span>
+<span><span class="co">#&gt; [2] "&lt;!-- End VWO Common Smartcode --&gt;"                                                                         </span></span>
+<span><span class="co">#&gt; [3] "&lt;!-- Start VWO Async SmartCode --&gt;"                                                                        </span></span>
+<span><span class="co">#&gt; [4] "&lt;!-- End VWO Async SmartCode --&gt;"                                                                          </span></span>
+<span><span class="co">#&gt; [5] "&lt;!-- This site is optimized with the Yoast SEO plugin v25.2 - https://yoast.com/wordpress/plugins/seo/ --&gt;"</span></span>
+<span><span class="co">#&gt; [6] "&lt;!-- / Yoast SEO plugin. --&gt;"</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>

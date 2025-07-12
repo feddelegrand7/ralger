@@ -305,6 +305,15 @@ xls_scrap(
 ```
 
 
+## `comments_scrap()`
+
+Useful when you want to extract the `HTML` comments within a webpage: 
+
+```{r}
+head(comments_scrap("https://posit.co"))
+```
+
+
 
 # Accessibility related functions
 

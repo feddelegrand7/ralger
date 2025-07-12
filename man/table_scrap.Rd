@@ -25,7 +25,7 @@ This function is used to scrape an html table from a website.
 \donttest{
 # Extracting premier ligue 2019/2020 top scorers
 
-link     <- "https://www.topscorersfootball.com/premier-league"
+link <- "https://www.topscorersfootball.com/premier-league"
 table_scrap(link)
 
 }

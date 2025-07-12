@@ -311,6 +311,13 @@ images_noalt_scrap(link = "https://webaim.org/techniques/forms/controls")
 ```
 
 
+## `comments_scrap()`
+
+Useful when you want to extract the `HTML` comments within a webpage: 
+
+```{r}
+head(comments_scrap("https://posit.co"))
+```
 
 ## Code of Conduct
 

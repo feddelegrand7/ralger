@@ -33,7 +33,7 @@ expect_error(images_scrap(link = "https://posit.co/",
 test_that(desc = "checking for error when
           'extn' is provided with a dot .", {
 
-expect_error(images_scrap("https://rstudio.com/",
+expect_error(images_scrap("https://posit.co/",
                           extn = ".jpg"))
 
 
