@@ -1,5 +1,4 @@
 
-
 # scraping attributes from HTML elements
 
 #' Scraping attributes from HTML elements
