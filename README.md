@@ -23,7 +23,7 @@ status](https://github.com/feddelegrand7/ralger/workflows/R-CMD-check/badge.svg)
 
 The goal of **ralger** is to facilitate web scraping in R. For a quick
 video tutorial, I gave a talk at useR2020, which you can find
-[here](https://www.youtube.com/watch?v=OHi6E8jegQg)
+[here](https://www.youtube.com/watch?v=OHi6E8jegQg) . There's also a more in depth video [here](https://www.youtube.com/watch?v=d9G4kjf_c4o).
 
 ## Installation
 
