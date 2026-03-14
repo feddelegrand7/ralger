@@ -2,6 +2,7 @@
 
 export(attribute_scrap)
 export(audio_scrap)
+export(colors_scrap)
 export(comments_scrap)
 export(csv_scrap)
 export(images_noalt_scrap)
